@@ -1,24 +1,32 @@
-// components/PositionAwareButton.tsx
-import React, { useRef } from 'react';
-import styles from './PositionAwareButton.module.css';
-import Link from 'next/link';
+import React, { useRef } from "react";
+import Link from "next/link";
+import { IoIosArrowDropright } from "react-icons/io";
+import styles from "./PositionAwareButton.module.css";
 
 interface PositionAwareButtonProps {
   text: string;
+  icon?: boolean; // Optional prop to show/hide icon
+  textColor?: string; // Optional prop for text color
+  iconColor?: string; // Optional prop for icon color
+  bgColor?:string;
 }
 
-const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({ text }) => {
+const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({ text, icon = false, textColor = "#000", iconColor = "#000",bgColor="transparrent" }) => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     if (buttonRef.current) {
-      const span = buttonRef.current.querySelector('span');
+      const span = buttonRef.current.querySelector("span");
       if (span) {
         const { left, top } = buttonRef.current.getBoundingClientRect();
         const relX = e.clientX - left;
         const relY = e.clientY - top;
-        span.style.top = `${relY}px`;
-        span.style.left = `${relX}px`;
+        requestAnimationFrame(() => {
+          span.style.setProperty("--x", `${relX}px`);
+          span.style.setProperty("--y", `${relY}px`);
+        });
       }
     }
   };
@@ -29,8 +37,11 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({ text }) => {
       className={styles.btnPosnawr}
       href="/"
       onMouseMove={handleMouseMove}
+      style={{ color: textColor,backgroundColor:bgColor }} // Set text color dynamically
     >
-      {text}<span></span>
+      {text}
+      {icon && < IoIosArrowDropright className={styles.icon} style={{ color: iconColor }} />} {/* Set icon color dynamically */}
+      <span></span>
     </Link>
   );
 };

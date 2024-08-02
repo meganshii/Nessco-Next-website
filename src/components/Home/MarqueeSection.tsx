@@ -33,7 +33,7 @@ export default function InfiniteMovingCardsDemo() {
     <div className="h-auto ml-6 flex flex-col relative overflow-hidden mt-0 pt-0">
       <motion.div className="flex flex-col mt-0 pt-0">
         <div className="flex space-x-4 mt-0 pt-0">
-          <span className="text-2xl mt-4 font-montserrat whitespace-nowrap">
+          <span className="text-2xl  mr-14 mt-[1.18rem] font-montserrat whitespace-nowrap">
             Trusted By
           </span>
           <div className="flex-grow">
@@ -46,7 +46,7 @@ export default function InfiniteMovingCardsDemo() {
           </div>
         </div>
         <div className="flex items-center space-x-4 mt-0 pt-0">
-          <span className="text-2xl font-montserrat whitespace-nowrap">
+          <span className="text-2xl  font-montserrat whitespace-nowrap">
             Partner Brands
           </span>
           <div className="flex-grow">
@@ -66,6 +66,7 @@ export default function InfiniteMovingCardsDemo() {
           a greener earth and elevating your packaging capabilities.
         </p>
       </motion.div>
+      
     </div>
   );
 }

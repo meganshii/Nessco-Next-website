@@ -118,7 +118,7 @@ const NewsFeature: React.FC = () => {
   };
 
   return (
-    <div className="p-6 mt-32">
+    <div className="p-4 mt-32">
       <div className="text-center mt-10">
         <h1 className="text-3xl font-montserrat">
           <span className="text-[#483d73]">Featured</span> <span className="text-red-600">News</span>
@@ -126,7 +126,7 @@ const NewsFeature: React.FC = () => {
       </div>
       <div className="flex mt-5 h-3/4">
       
-        <div className="relative w-1/3  ml-10">
+        <div className="relative w-1/3  ml-2">
           <div className="relative group h-[100%]">
             <Image
               src={newscardcontent[0].image.src}

@@ -27,11 +27,11 @@ const KnowMachine: React.FC = () => {
   return (
     <div className="p-6 mt-40 h-screen">
       <div className="text-center"></div>
-      <div className="flex justify-around space-x-6 mr-10">
+      <div className="flex justify-around space-x-6">
         {cardContents.map((content, index) => (
           <div
             key={index}
-            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-[35%] h-[32rem] ml-10 group"
+            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-[35%] h-[32rem] ml-0 group"
           >
             <Image
               src={content.image}

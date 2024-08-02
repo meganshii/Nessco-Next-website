@@ -2,10 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import TestimonialCard from "./TestimonialCard";
-import Globe from "../Globe";
 import machine from "../../../../public/assets/HomeKnowmore3.jpg";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import Image from "next/image";
+import { GlobeDemo } from "../GlobeDemo";
 
 const testimonials = [
   {
@@ -153,10 +153,7 @@ const TestimonialCarousel: React.FC = () => {
           </div>
         </div>
         <div className="w-full h-full flex justify-center items-center mt-0">
-          <Globe
-            className="w-full h-auto"
-            country={testimonials[current].country}
-          />
+          <GlobeDemo/>
         </div>
       </div>
     </div>

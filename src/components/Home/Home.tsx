@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Carousel from "./Common/Carousel";
 import Link from "next/link";
 import NavLinksDemo from "./NavLinks";
+import PositionAwareButton from "../ui/PositionAwareButton";
 
 interface NavLinkProps {
   text: string;
@@ -16,11 +17,20 @@ interface NavLinkProps {
 }
 
 const NavLink: React.FC<NavLinkProps> = memo(
-  ({ text, index, activeLink, handleMouseEnter, handleMouseLeave, handleClick }) => (
+  ({
+    text,
+    index,
+    activeLink,
+    handleMouseEnter,
+    handleMouseLeave,
+    handleClick,
+  }) => (
     <Link
       href=""
       scroll={false}
-      className={`text-black hover:font-bold custome-scale-90 ${activeLink === index ? "border-b-2 border-red-600" : ""}`}
+      className={`text-black hover:font-bold custome-scale-90 ${
+        activeLink === index ? "border-b-2 border-red-600" : ""
+      }`}
       onMouseEnter={() => handleMouseEnter(index)}
       onMouseLeave={handleMouseLeave}
       onClick={handleClick}
@@ -116,14 +126,14 @@ const Hero: React.FC<HeroProps> = ({ refs }) => {
             </div>
           )}
         </motion.div>
-        <div className="absolute rounded-3xl px-4 p-0 flex items-center bottom-0 left-8 sm:bottom-10 sm:left-10 md:bottom-20 md:left-20">
-          <div className="btn-common border-2 border-white rounded-xl">
-            <span className="text-16 font-poppins pl-2">GET QUOTES</span>
-            <button className="btn-icon rounded-full">
-              <span>
-                <MdKeyboardArrowRight className="text-black" />
-              </span>
-            </button>
+        <div className="absolute px-8 h-full text-white w-full flex flex-col justify-end items-start bottom-0 left-8 sm:bottom-5 sm:left-10 md:bottom-20 md:left-20">
+          <div className="mb-4">
+            {" "}
+            <PositionAwareButton
+              text={"Get a Quote"}
+              icon={true}
+              bgColor="white"
+            />
           </div>
         </div>
       </div>
@@ -133,7 +143,9 @@ const Hero: React.FC<HeroProps> = ({ refs }) => {
             FOOD PACKING MACHINES
           </p>
           <div className="ml-4">
-            <span className="text-7xl text-[#524c42] font-alexBrush">Manufacturing</span>
+            <span className="text-7xl text-[#524c42] font-alexBrush">
+              Manufacturing
+            </span>
           </div>
         </div>
         <div className="w-full px-4 md:w-3/5">

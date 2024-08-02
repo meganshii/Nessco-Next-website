@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Machine = () => {
   return (
-    <div className="min-h-screen bg-white flex flex-col">
+    <div className="min-h-screen bg-white  flex flex-col">
       <Head>
         <title>Food Packaging Machines</title>
         <meta name="description" content="Food Packaging Machines" />

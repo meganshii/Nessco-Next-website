@@ -21,7 +21,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
     handleClick,
   }) => (
     <Link
-      href=""
+      href="#"
       scroll={false}
       className={`text-black hover:font-bold custome-scale-90 ${
         activeLink === index ? "border-b-2 border-red-600" : ""
@@ -37,21 +37,12 @@ const NavLink: React.FC<NavLinkProps> = memo(
 
 NavLink.displayName = "NavLink";
 
-interface HeroProps {
-  refs: {
-    heroRef: React.RefObject<HTMLDivElement>;
-    aboutUsRef: React.RefObject<HTMLDivElement>;
-    infiniteCardsRef: React.RefObject<HTMLDivElement>;
-    knowMoreRef: React.RefObject<HTMLDivElement>;
-    homeMachineRef: React.RefObject<HTMLDivElement>;
-    newsFeatureRef: React.RefObject<HTMLDivElement>;
-    knowMachineRef: React.RefObject<HTMLDivElement>;
-    homeTestimonialRef: React.RefObject<HTMLDivElement>;
-  };
+interface NavLinksDemoProps {
+  navItems: { text: string; ref: React.RefObject<HTMLDivElement> }[];
 }
 
-const NavLinksDemo: React.FC<HeroProps> = ({ refs }) => {
-  const [activeLink, setActiveLink] = useState<number>(0);
+const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
+  const [activeLink, setActiveLink] = useState<number>(-1);
   const navRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseEnter = useCallback((index: number) => {
@@ -86,56 +77,19 @@ const NavLinksDemo: React.FC<HeroProps> = ({ refs }) => {
   }, []);
 
   return (
-    <div ref={navRef} className="nav-links">
-      <nav className="absolute bottom-0 left-0 mb-2 ml-[2.4rem] flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
-        <NavLink
-          text="Machines"
-          index={0}
-          activeLink={activeLink}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
-          handleClick={handleClick(refs.homeMachineRef)}
-        />
-        <NavLink
-          text="About Us"
-          index={1}
-          activeLink={activeLink}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
-          handleClick={handleClick(refs.aboutUsRef)}
-        />
-        <NavLink
-          text="News"
-          index={2}
-          activeLink={activeLink}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
-          handleClick={handleClick(refs.newsFeatureRef)}
-        />
-        <NavLink
-          text="Brands"
-          index={3}
-          activeLink={activeLink}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
-          handleClick={handleClick(refs.knowMoreRef)}
-        />
-        <NavLink
-          text="Clientele"
-          index={4}
-          activeLink={activeLink}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
-          handleClick={handleClick(refs.infiniteCardsRef)}
-        />
-        <NavLink
-          text="Testimonials"
-          index={5}
-          activeLink={activeLink}
-          handleMouseEnter={handleMouseEnter}
-          handleMouseLeave={handleMouseLeave}
-          handleClick={handleClick(refs.homeTestimonialRef)}
-        />
+    <div ref={navRef} className="sticky bg-[#f2f2f2] z-30 top-14">
+      <nav className="left-0 mb-[4rem] -mt-12 ml-[2.4rem] flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+        {navItems.map((item, index) => (
+          <NavLink
+            key={index}
+            text={item.text}
+            index={index}
+            activeLink={activeLink}
+            handleMouseEnter={handleMouseEnter}
+            handleMouseLeave={handleMouseLeave}
+            handleClick={handleClick(item.ref)}
+          />
+        ))}
       </nav>
     </div>
   );

@@ -85,8 +85,8 @@ const Modal: React.FC<ModalProps> = ({
               className="rounded-lg object-contain h-[400px]"
             />
             <div className="flex w-[60%] -ml-14 space-x-2 justify-center mt-0">
-              <PositionAwareButton text={"Know Machine"} />
-              <PositionAwareButton text={"Get Qoute"}/>
+              <PositionAwareButton text={"Know Machine"} icon={true} />
+              <PositionAwareButton text={"Get a Quote"} icon={true} />
             </div>
           </motion.div>
           <motion.div

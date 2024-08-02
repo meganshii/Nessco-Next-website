@@ -77,7 +77,7 @@ export const InfiniteMovingCards = ({
   return (
     <div
       ref={containerRef}
-      className={cn("scroller relative max-w-7xl overflow-hidden", className)}
+      className={cn("scroller  relative max-w-6xl overflow-hidden", className)}
     >
       <ul
         ref={scrollerRef}

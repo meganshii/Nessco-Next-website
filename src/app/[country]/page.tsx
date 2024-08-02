@@ -21,8 +21,17 @@ export default function Home() {
   const knowMachineRef = useRef<HTMLDivElement>(null);
   const homeTestimonialRef = useRef<HTMLDivElement>(null);
 
+  const navItems = [
+    { text: "Machines", ref: homeMachineRef },
+    { text: "About Us", ref: aboutUsRef },
+    { text: "News", ref: newsFeatureRef },
+    { text: "Brands", ref: knowMoreRef },
+    { text: "Clientele", ref: infiniteCardsRef },
+    { text: "Testimonials", ref: homeTestimonialRef },
+  ];
+
   return (
-    <main className="bg-[#f2f2f2] h-screen">
+    <main className="bg-[#f2f2f2]">
       <Hero
         refs={{
           heroRef,
@@ -35,44 +44,34 @@ export default function Home() {
           homeTestimonialRef,
         }}
       />
-      <NavLinksDemo
-        refs={{
-          heroRef,
-          aboutUsRef,
-          infiniteCardsRef,
-          knowMoreRef,
-          homeMachineRef,
-          newsFeatureRef,
-          knowMachineRef,
-          homeTestimonialRef,
-        }}
-      />
-
-      <div className="mx-6 mt-32" ref={aboutUsRef}>
-        <AboutUs
-          heading={data.heading}
-          description={data.description}
-          stats={data.stats}
-          cards={data.cards}
-        />
-      </div>
-      <div className="mx-6 mt-32" ref={infiniteCardsRef}>
-        <InfiniteMovingCardsDemo />
-      </div>
-      <div className="mx-6 mt-32" ref={knowMoreRef}>
-        <KnowMore />
-      </div>
-      <div className="mx-6 mt-32" ref={homeMachineRef}>
-        <HomeMachine />
-      </div>
-      <div className="mx-6 mt-32" ref={newsFeatureRef}>
-        <NewsFeature />
-      </div>
-      <div className="mx-6 mt-32" ref={knowMachineRef}>
-        <KnowMachine />
-      </div>
-      <div className="mx-6 mt-32" ref={homeTestimonialRef}>
-        <HomeTestimonial />
+      <NavLinksDemo navItems={navItems} />
+      <div className="h-full">
+        <div className="mx-6 mt-32" ref={aboutUsRef}>
+          <AboutUs
+            heading={data.heading}
+            description={data.description}
+            stats={data.stats}
+            cards={data.cards}
+          />
+        </div>
+        <div className="mx-6 mt-32" ref={infiniteCardsRef}>
+          <InfiniteMovingCardsDemo />
+        </div>
+        <div className="mx-6 mt-32" ref={knowMoreRef}>
+          <KnowMore />
+        </div>
+        <div className="mx-6 mt-32" ref={homeMachineRef}>
+          <HomeMachine />
+        </div>
+        <div className="mx-6 mt-32" ref={newsFeatureRef}>
+          <NewsFeature />
+        </div>
+        <div className="mx-6 mt-32" ref={knowMachineRef}>
+          <KnowMachine />
+        </div>
+        <div className="mx-6 mt-32" ref={homeTestimonialRef}>
+          <HomeTestimonial />
+        </div>
       </div>
     </main>
   );

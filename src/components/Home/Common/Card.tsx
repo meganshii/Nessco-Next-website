@@ -1,11 +1,9 @@
-// Card component (Card.tsx)
-
 "use client";
 
 import Image, { StaticImageData } from "next/image";
 import styles from "../Styles/style.module.css";
 import { useTransform, motion, useScroll } from "framer-motion";
-import {useRef} from "react";
+import { useRef } from "react";
 import { FaIndustry } from "react-icons/fa";
 
 interface CardProps {
@@ -37,15 +35,13 @@ const Card: React.FC<CardProps> = ({
   targetScale,
 }) => {
   const container = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: container,
-    offset: ["start end", "start start"],
-  });
-
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  // const { scrollYProgress } = useScroll({
+  //   target: container,
+  //   offset: ["start end", "start start"],
+  // });
+  //  to scale image on scroll
+  // const imageScale = useTransform(scrollYProgress, [0, 1], [1.05, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
-
-
 
   return (
     <div ref={container} className={styles.cardContainer}>
@@ -53,12 +49,12 @@ const Card: React.FC<CardProps> = ({
         style={{
           backgroundColor: color,
           scale,
-          top: `calc(-1vh + ${i * 12}px)`,
+          top: `calc(2vh + ${i * 1}px)`,
         }}
         className={styles.card}
       >
         <div className={styles.body}>
-          <div className={styles.imageContainer}>
+          <div className={styles.description}>
             <div
               style={{
                 backgroundColor: color,
@@ -71,13 +67,8 @@ const Card: React.FC<CardProps> = ({
                 <div className="text-red-600">{expertiseAbout}</div>
               </div>
             </div>
-            <motion.div className={styles.inner} style={{ scale: imageScale }}>
-              <Image fill src={src} alt="image" />
-            </motion.div>
-          </div>
-          <div className={styles.description}>
-            <h2>{title}</h2>
-            <p>{description}</p>
+            <h2 className="text-center">{title}</h2>
+            <p className="text-justify text-center">{description}</p>
             <span>
               <a href={url} target="_blank" rel="noopener noreferrer">
                 See more
@@ -95,6 +86,37 @@ const Card: React.FC<CardProps> = ({
                 />
               </svg>
             </span>
+          </div>
+          <motion.div className={styles.imageContainer}>
+            <Image fill src={src} alt="image" className={styles.image} />
+          </motion.div>
+          <div className={styles.imageCorner}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              viewBox="0 0 20 20"
+              fill="none"
+              className="svg--ca1"
+            >
+              <path
+                d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
+                fill={color} // Use the color prop here
+              ></path>
+            </svg>
+          </div>
+          <div className={styles.imageCorner_second}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100%"
+              viewBox="0 0 20 20"
+              fill="none"
+              className="svg--ca1"
+            >
+              <path
+                d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
+                fill={color}
+              ></path>
+            </svg>
           </div>
         </div>
       </motion.div>
