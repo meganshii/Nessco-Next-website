@@ -47,7 +47,7 @@ const Card: React.FC<CardProps> = ({
   };
 
   return (
-    <div className="p-1 top-24 px-4 pb-4 bg-white rounded-3xl shadow-md relative">
+    <div className="p-1 top-24 px-4 pb-4 rounded-3xl relative">
       <div className="flex items-center justify-between mb-0">
         <div className="flex items-center">
           <div className="h-20 w-16 flex items-center justify-center">

@@ -12,10 +12,24 @@ import {
   paperbowl,
 } from "../../../public/assets";
 import { FaCircleNotch } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
+import { AppleCardsCarouselDemo } from "./AppleCardsCarouselDemo";
+
+interface CardProps {
+  firstname: string;
+  secondname: string;
+  description: string;
+  image: string;
+  title: string;
+  speed: number;
+  unit: string;
+  icon: string;
+  items: { icon: JSX.Element; text: string }[];
+}
 
 const HomeMachine: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const cards = [
+  const [currentIndex, setCurrentIndex] = useState(0);  const cards = [
     {
       firstname: "Servo Driven",
       secondname: "Paper Cup Machine",
@@ -393,38 +407,35 @@ const HomeMachine: React.FC = () => {
         },
       ],
     },
-    
   ];
+  const filteredCards = 
+    activeStep === 0 ? cards : cards.filter((card) => {
+      if (activeStep === 1) return card.title.includes("Cup");
+      if (activeStep === 2) return card.title.includes("Bowl");
+      if (activeStep === 3) return card.title.includes("Bag");
+      if (activeStep === 4) return card.title.includes("Plate");
+      if (activeStep === 5) return card.title.includes("Straw");
+  });
 
-  const filteredCards =
-    activeStep === 0
-      ? cards
-      : cards.filter((card) => {
-          if (activeStep === 1) return card.title.includes("Cup");
-          if (activeStep === 2) return card.title.includes("Bowl");
-          if (activeStep === 3) return card.title.includes("Bag");
-          if (activeStep === 4) return card.title.includes("Plate");
-          if (activeStep === 5) return card.title.includes("Straw");
-        });
+  const showCards = filteredCards.slice(currentIndex, currentIndex + 10);
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? filteredCards.length - 10 : prev - 10
+    );
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) =>
+      prev + 10 >= filteredCards.length ? 0 : prev + 10
+    );
+  };
 
   return (
-    <div className="container h-full mt-14 mx-2 px-4">
+    <div className=" h-full mt-14 mx-2 px-4">
       <Stepper onStepChange={setActiveStep} />
-      <div className="grid h-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 mt-4">
-        {filteredCards.map((card, index) => (
-          <Card
-            key={index}
-            firstname={card.firstname}
-            secondname={card.secondname}
-            image={card.image}
-            title={card.title}
-            description={card.description}
-            speed={card.speed}
-            unit={card.unit}
-            icon={card.icon}
-            items={card.items}
-          />
-        ))}
+      <div className="h-[90%]">
+        <AppleCardsCarouselDemo/>
       </div>
     </div>
   );

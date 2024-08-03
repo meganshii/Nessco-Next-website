@@ -30,10 +30,10 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
-  border-radius: 24px;
+  border-bottom-left-radius: 24px;
   z-index:100;
-  width: 230px; /* Adjust width as needed */
-  height: 140px; /* Adjust height as needed */
+  width: 230px;
+  height: 140px;
 }
 
 .expertiseText {

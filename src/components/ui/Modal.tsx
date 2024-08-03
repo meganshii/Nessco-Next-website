@@ -9,11 +9,11 @@ import PositionAwareButton from "./PositionAwareButton";
 
 interface ModalProps {
   image: StaticImageData;
-  title: string;
-  firstname: string;
-  secondname: string;
-  description: string;
-  items: Item[];
+  title?: string; // Optional
+  firstname?: string; // Optional
+  secondname?: string; // Optional
+  description?: string; // Optional
+  items?: Item[]; // Optional
   onClose: () => void;
 }
 
@@ -34,11 +34,11 @@ const imageVariants = {
 
 const Modal: React.FC<ModalProps> = ({
   image,
-  title,
-  firstname,
-  secondname,
-  description,
-  items,
+  title = "Default Title", // Provide default values
+  firstname = "John",
+  secondname = "Doe",
+  description = "Default description",
+  items = [], // Default to an empty array
   onClose,
 }) => {
   useEffect(() => {

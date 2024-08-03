@@ -78,7 +78,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
 
   return (
     <div ref={navRef} className="sticky bg-[#f2f2f2] z-30 top-14">
-      <nav className="left-0 mb-[4rem] -mt-12 ml-[2.4rem] flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+      <nav className="left-0 mb-[4rem] -mt-12 ml-[2.5rem] flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
         {navItems.map((item, index) => (
           <NavLink
             key={index}

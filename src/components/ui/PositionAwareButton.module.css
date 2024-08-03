@@ -39,7 +39,7 @@
   }
   
   .btnPosnawr:hover {
-    color: #eee;
+    color: #ffffff;
   }
   
   .btnPosnawr:hover span {
@@ -48,7 +48,7 @@
   }
   
   .btnPosnawr:active {
-    background-color: #483d78;
+    background-color: #ff0000;
   }
   
   .btnPosnawr:hover .icon {

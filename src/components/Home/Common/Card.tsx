@@ -5,6 +5,7 @@ import styles from "../Styles/style.module.css";
 import { useTransform, motion, useScroll } from "framer-motion";
 import { useRef } from "react";
 import { FaIndustry } from "react-icons/fa";
+import Link from "next/link";
 
 interface CardProps {
   i: number;
@@ -68,11 +69,11 @@ const Card: React.FC<CardProps> = ({
               </div>
             </div>
             <h2 className="text-center">{title}</h2>
-            <p className="text-justify text-center">{description}</p>
-            <span>
-              <a href={url} target="_blank" rel="noopener noreferrer">
+            <p className="text-center">{description}</p>
+            <span className="w-full  flex flex-row justify-center items-center">
+              <Link className="text-3xl text-center" href={url} target="_blank" rel="noopener noreferrer">
                 See more
-              </a>
+              </Link>
               <svg
                 width="22"
                 height="12"
