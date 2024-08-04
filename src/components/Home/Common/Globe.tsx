@@ -118,7 +118,7 @@ const Globe: React.FC<GlobeProps> = ({ className, country }) => {
       dark: 0,
       diffuse: 1.2,
       mapSamples: 40000,
-      mapBrightness: 6,
+      mapBrightness:2,
       baseColor: [1, 1, 1],
       markerColor: [1, 0.1, 0.1],
       glowColor: [1, 1, 1],
@@ -182,7 +182,7 @@ const Globe: React.FC<GlobeProps> = ({ className, country }) => {
     <div style={{ position: "relative" }}>
       <canvas
         ref={canvasRef}
-        style={{ width: 600, height: 600, maxWidth: "100%", aspectRatio: 1 }}
+        style={{ width: 1200, height: 1200, maxWidth: "100%", aspectRatio: 1 }}
         className={className}
       />
       {focusedLocation && (
@@ -194,7 +194,7 @@ const Globe: React.FC<GlobeProps> = ({ className, country }) => {
             transform: "translate(-50%, -50%)",
             padding: "20px",
             backgroundColor: "white",
-            color: "black",
+            color: "red",
             borderRadius: "15px",
             boxShadow:
               "12px 12px 24px rgba(0, 0, 0, 0.2), -12px -12px 24px rgba(255, 255, 255, 0.3)",

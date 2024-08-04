@@ -152,7 +152,7 @@ const TestimonialCarousel: React.FC = () => {
             <div className="font-montserrat text-2xl">Satisfied customers</div>
           </div>
         </div>
-        <div className="w-full h-full flex justify-center items-center mt-0">
+        <div className="w-full h-full flex justify-end items-center -mt-24">
           <GlobeDemo/>
         </div>
       </div>
