@@ -7,9 +7,9 @@ import {
   paperbowl,
 } from "../../../../public/assets";
 import { FaCircleNotch } from "react-icons/fa";
-
-export const cards = [
+export const cardsData = [
   {
+    category: "cup",
     firstname: "Servo Driven",
     secondname: "Paper Cup Machine",
     description:
@@ -21,28 +21,29 @@ export const cards = [
     icon: papercup,
     items: [
       {
-        icon:FaCircleNotch,
+        icon: FaCircleNotch,
         className: "text-blue-500 text-3xl",
         text: "High-Speed Synchronized Servos",
       },
       {
         icon: FaCircleNotch,
-        className:"text-green-500 text-3xl" ,
+        className: "text-green-500 text-3xl",
         text: "Advanced Sealing Technology",
       },
       {
         icon: FaCircleNotch,
-        className:"text-yellow-500 text-3xl",
+        className: "text-yellow-500 text-3xl",
         text: "Two-Step Curling Process",
       },
       {
-        icon:FaCircleNotch,
-        className:"text-red-500 text-3xl" ,
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
   },
   {
+    category: "cup",
     firstname: "Paper Bag",
     secondname: "Making Machine",
     description:
@@ -54,28 +55,29 @@ export const cards = [
     icon: paperbowl,
     items: [
       {
-        icon:FaCircleNotch,
+        icon: FaCircleNotch,
         className: "text-blue-500 text-3xl",
         text: "High-Speed Synchronized Servos",
       },
       {
         icon: FaCircleNotch,
-        className:"text-green-500 text-3xl" ,
+        className: "text-green-500 text-3xl",
         text: "Advanced Sealing Technology",
       },
       {
         icon: FaCircleNotch,
-        className:"text-yellow-500 text-3xl",
+        className: "text-yellow-500 text-3xl",
         text: "Two-Step Curling Process",
       },
       {
-        icon:FaCircleNotch,
-        className:"text-red-500 text-3xl" ,
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
   },
   {
+    category: "cup",
     firstname: "Disposable Cup",
     secondname: "Making Machine",
     description:
@@ -93,22 +95,23 @@ export const cards = [
       },
       {
         icon: FaCircleNotch,
-        className:"text-green-500 text-3xl" ,
+        className: "text-green-500 text-3xl",
         text: "Advanced Sealing Technology",
       },
       {
         icon: FaCircleNotch,
-        className:"text-yellow-500 text-3xl",
+        className: "text-yellow-500 text-3xl",
         text: "Two-Step Curling Process",
       },
       {
-        icon:FaCircleNotch,
-        className:"text-red-500 text-3xl" ,
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
   },
   {
+    category: "cup",
     firstname: "Paper Plate",
     secondname: "Making Machine",
     description:
@@ -119,29 +122,30 @@ export const cards = [
     unit: "PCS/MIN",
     icon: paperbag1,
     items: [
-        {
-          icon: FaCircleNotch,
-          className: "text-blue-500 text-3xl",
-          text: "High-Speed Synchronized Servos",
-        },
-        {
-          icon: FaCircleNotch,
-          className:"text-green-500 text-3xl" ,
-          text: "Advanced Sealing Technology",
-        },
-        {
-          icon: FaCircleNotch,
-          className:"text-yellow-500 text-3xl",
-          text: "Two-Step Curling Process",
-        },
-        {
-          icon:FaCircleNotch,
-          className:"text-red-500 text-3xl" ,
-          text: "Comprehensive Control System with PLC + HMI",
-        },
-      ],
+      {
+        icon: FaCircleNotch,
+        className: "text-blue-500 text-3xl",
+        text: "High-Speed Synchronized Servos",
+      },
+      {
+        icon: FaCircleNotch,
+        className: "text-green-500 text-3xl",
+        text: "Advanced Sealing Technology",
+      },
+      {
+        icon: FaCircleNotch,
+        className: "text-yellow-500 text-3xl",
+        text: "Two-Step Curling Process",
+      },
+      {
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
+        text: "Comprehensive Control System with PLC + HMI",
+      },
+    ],
   },
   {
+    category: "cup",
     firstname: "Paper Plate",
     secondname: "Making Machine",
     description:
@@ -151,7 +155,7 @@ export const cards = [
     speed: 170,
     unit: "PCS/MIN",
     icon: paperbag1,
-   items: [
+    items: [
       {
         icon: FaCircleNotch,
         className: "text-blue-500 text-3xl",
@@ -159,22 +163,23 @@ export const cards = [
       },
       {
         icon: FaCircleNotch,
-        className:"text-green-500 text-3xl" ,
+        className: "text-green-500 text-3xl",
         text: "Advanced Sealing Technology",
       },
       {
         icon: FaCircleNotch,
-        className:"text-yellow-500 text-3xl",
+        className: "text-yellow-500 text-3xl",
         text: "Two-Step Curling Process",
       },
       {
-        icon:FaCircleNotch,
-        className:"text-red-500 text-3xl" ,
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
   },
   {
+    category: "cup",
     firstname: "Paper Plate",
     secondname: "Making Machine",
     description:
@@ -184,7 +189,7 @@ export const cards = [
     speed: 170,
     unit: "PCS/MIN",
     icon: paperbag1,
-   items: [
+    items: [
       {
         icon: FaCircleNotch,
         className: "text-blue-500 text-3xl",
@@ -192,22 +197,23 @@ export const cards = [
       },
       {
         icon: FaCircleNotch,
-        className:"text-green-500 text-3xl" ,
+        className: "text-green-500 text-3xl",
         text: "Advanced Sealing Technology",
       },
       {
         icon: FaCircleNotch,
-        className:"text-yellow-500 text-3xl",
+        className: "text-yellow-500 text-3xl",
         text: "Two-Step Curling Process",
       },
       {
-        icon:FaCircleNotch,
-        className:"text-red-500 text-3xl" ,
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
   },
   {
+    category: "cup",
     firstname: "Paper Plate",
     secondname: "Making Machine",
     description:
@@ -217,7 +223,7 @@ export const cards = [
     speed: 170,
     unit: "PCS/MIN",
     icon: paperbag1,
-   items: [
+    items: [
       {
         icon: FaCircleNotch,
         className: "text-blue-500 text-3xl",
@@ -225,22 +231,23 @@ export const cards = [
       },
       {
         icon: FaCircleNotch,
-        className:"text-green-500 text-3xl" ,
+        className: "text-green-500 text-3xl",
         text: "Advanced Sealing Technology",
       },
       {
         icon: FaCircleNotch,
-        className:"text-yellow-500 text-3xl",
+        className: "text-yellow-500 text-3xl",
         text: "Two-Step Curling Process",
       },
       {
-        icon:FaCircleNotch,
-        className:"text-red-500 text-3xl" ,
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
   },
   {
+    category: "cup",
     firstname: "Paper Bowl ",
     secondname: "Making Machine",
     description:
@@ -250,7 +257,7 @@ export const cards = [
     speed: 170,
     unit: "PCS/MIN",
     icon: paperbag1,
-   items: [
+    items: [
       {
         icon: FaCircleNotch,
         className: "text-blue-500 text-3xl",
@@ -258,22 +265,23 @@ export const cards = [
       },
       {
         icon: FaCircleNotch,
-        className:"text-green-500 text-3xl" ,
+        className: "text-green-500 text-3xl",
         text: "Advanced Sealing Technology",
       },
       {
         icon: FaCircleNotch,
-        className:"text-yellow-500 text-3xl",
+        className: "text-yellow-500 text-3xl",
         text: "Two-Step Curling Process",
       },
       {
-        icon:FaCircleNotch,
-        className:"text-red-500 text-3xl" ,
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
         text: "Comprehensive Control System with PLC + HMI",
       },
     ],
   },
   {
+    category: "cup",
     firstname: "Paper Plate",
     secondname: "Making Machine",
     description:
@@ -284,26 +292,26 @@ export const cards = [
     unit: "PCS/MIN",
     icon: paperbag1,
     items: [
-        {
-          icon: FaCircleNotch,
-          className: "text-blue-500 text-3xl",
-          text: "High-Speed Synchronized Servos",
-        },
-        {
-          icon: FaCircleNotch,
-          className:"text-green-500 text-3xl" ,
-          text: "Advanced Sealing Technology",
-        },
-        {
-          icon: FaCircleNotch,
-          className:"text-yellow-500 text-3xl",
-          text: "Two-Step Curling Process",
-        },
-        {
-          icon:FaCircleNotch,
-          className:"text-red-500 text-3xl" ,
-          text: "Comprehensive Control System with PLC + HMI",
-        },
-      ],
+      {
+        icon: FaCircleNotch,
+        className: "text-blue-500 text-3xl",
+        text: "High-Speed Synchronized Servos",
+      },
+      {
+        icon: FaCircleNotch,
+        className: "text-green-500 text-3xl",
+        text: "Advanced Sealing Technology",
+      },
+      {
+        icon: FaCircleNotch,
+        className: "text-yellow-500 text-3xl",
+        text: "Two-Step Curling Process",
+      },
+      {
+        icon: FaCircleNotch,
+        className: "text-red-500 text-3xl",
+        text: "Comprehensive Control System with PLC + HMI",
+      },
+    ],
   },
 ];

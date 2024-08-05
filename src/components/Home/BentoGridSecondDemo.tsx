@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import iotImage from "../../../public/assets/iotImage.png"
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import {
   IconClipboardCopy,
@@ -7,6 +8,7 @@ import {
   IconSignature,
   IconTableColumn,
 } from "@tabler/icons-react";
+import Image from "next/image";
 
 export function BentoGridSecondDemo() {
   return (
@@ -15,6 +17,7 @@ export function BentoGridSecondDemo() {
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
+            type={item.type}
             title={item.title}
             description={item.description}
             header={item.header}
@@ -23,14 +26,16 @@ export function BentoGridSecondDemo() {
           />
         ))}
       </BentoGrid>
-      <BentoGrid className="w-full mt-4 mx-auto md:auto-rows-[20rem]">
+      <BentoGrid className="w-full mt-4 mx-auto md:auto-rows-[23rem]">
         {items1.map((item, i) => (
           <BentoGridItem
             key={i}
+            type={item.type}
             title={item.title}
             description={item.description}
             header={item.header}
             className={item.className}
+            image={item.image}
             icon={item.icon}
           />
         ))}
@@ -39,40 +44,41 @@ export function BentoGridSecondDemo() {
   );
 }
 const Skeleton = () => (
-  <div className="flex flex-1 w-full h-full min-h-[3rem] rounded-xl   bg-dot-black/[0.2] [mask-image:radial-gradient(ellipse_at_center,white,transparent)]  border border-transparent dark:border-white/[0.2] bg-neutral-100 dark:bg-black"></div>
+  <>
+    <Image src={"https://i.pinimg.com/236x/50/fe/0e/50fe0e9bbb197e039a807785529f598f.jpg"} height={400} width={400} className="object-fill h-32 w-96 rounded-xl" alt={""} />
+  </>
 );
 
 const items = [
-    {
-      title: "The Dawn of Innovation",
-      description: "Explore the birth of groundbreaking ideas and inventions.",
-      header: <Skeleton />,
-      className: "md:col-span-2",
-      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-    },
-    {
-      title: "The Digital Revolution",
-      description: "Dive into the transformative power of technology.",
-      header: <Skeleton />,
-      className: "md:col-span-1",
-      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-    }
-  ];
-  const items1 = [
-    {
-      title: "The Dawn of Innovation",
-      description: "Explore the birth of groundbreaking ideas and inventions.",
-      header: <Skeleton />,
-      className: "md:col-span-2",
-      icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
-    },
-    {
-      title: "The Digital Revolution",
-      description: "Dive into the transformative power of technology.",
-      header: <Skeleton />,
-      className: "md:col-span-1",
-      icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
-    },
-   
-  ];
-    
+  {
+    type: "one",
+    title: "Nessco Remote Control",
+    description: "Maintenance System",
+    className: "md:col-span-2",
+    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    type: "two",
+    header: <Skeleton />,
+    className: "md:col-span-1",
+  },
+];
+const items1 = [
+  {
+    type: "three",
+    title: "In our Control Maintenance System, we can customize the IOT reports/data according to customer requirement. We can also do integration with customer ERP i.e. SAP, ORACLE, TCS ion and any other ERP.",
+    description: "Explore the birth of groundbreaking ideas and inventions.",
+    className: "md:col-span-2",
+    image:iotImage,
+    icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
+  },
+  {
+    type: "four",
+    title: "The Digital Revolution",
+    description: "Dive into the transformative power of technology.",
+    header:<Skeleton />,
+    className: "md:col-span-1",
+    image:iotImage,
+    icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
+  },
+];
