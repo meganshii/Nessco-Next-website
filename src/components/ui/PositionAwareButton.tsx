@@ -60,7 +60,7 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
       {icon && (
         <IoIosArrowDropright
           className={styles.icon}
-          style={{ color: isHovered ? hoveredIconColor : iconColor }}
+          style={{ }}
         />
       )}
       <span></span>

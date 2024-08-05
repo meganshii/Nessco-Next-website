@@ -1,4 +1,6 @@
 import { cn } from "@/lib/utils";
+import PositionAwareButton from "./PositionAwareButton";
+import Image, { StaticImageData } from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -10,7 +12,7 @@ export const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid md:auto-rows-[8rem] grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto ",
+        "grid grid-cols-1 md:grid-cols-3 gap-4 max-w-7xl mx-auto",
         className
       )}
     >
@@ -21,34 +23,95 @@ export const BentoGrid = ({
 
 export const BentoGridItem = ({
   className,
+  type,
   title,
   description,
   header,
   icon,
+  image,
 }: {
   className?: string;
+  type?: string;
   title?: string | React.ReactNode;
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
+  image?: string | StaticImageData; // Updated type
 }) => {
   return (
-    <div
-      className={cn(
-        "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
-        className
+    <>
+      {type === "one" && (
+        <div
+          className={cn(
+            "rounded-xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-0",
+            className
+          )}
+        >
+          <div className="top-0 text-red-500 mt-4 text-5xl font-poppins text-justify font-bold">
+            {title}
+            <p className="text-[#483d78]"> {description}</p>
+          </div>
+        </div>
       )}
-    >
-      {header}
-      <div className="group-hover/bento:translate-x-2 transition duration-200">
-        {icon}
-        <div className="font-sans font-bold text-neutral-600 dark:text-neutral-200 mb-2 mt-2">
-          {title}
+      {type === "two" && (
+        <div
+          className={cn(
+            "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col",
+            className
+          )}
+        >
+          <div className="">{header}</div>
         </div>
-        <div className="font-sans font-normal text-neutral-600 text-xs dark:text-neutral-300">
-          {description}
+      )}
+      {type === "three" && (
+        <div
+          className={cn(
+            "row-span-1 rounded-xl w-full md:w-[90%] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+            className
+          )}
+        >
+          <div className="w-full md:w-[90%]">
+            <div className="font-poppins text-justify px-8 font-bold text-xl text-black dark:text-neutral-200 mb-2 mt-2">
+              {title}
+            </div>
+            <div className="font-poppins font-normal text-neutral-600 text-xs dark:text-neutral-300">
+              <div className="grid grid-cols-2 gap-y-4">
+                <div>
+                  <ul className="list-disc text-lg pl-5 ml-8 space-y-2">
+                    <li>Monitor Production Reports</li>
+                    <li>Production Target Analysis</li>
+                    <li>Production Setup Data</li>
+                    <li>Machine Alarm Monitoring</li>
+                  </ul>
+                </div>
+                <div>
+                  <ul className="list-disc text-lg pl-0 space-y-2">
+                    <li>Monitor Machine Efficiency</li>
+                    <li>Machine Problem Analysis</li>
+                    <li>Machine Element Monitoring</li>
+                    <li>Machine Performance Overview</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="w-36 ml-10 bottom-0 py-4">
+              <PositionAwareButton text={"Get Details"} icon={true} />
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+      {type === "four" && (
+        <div
+          className={cn(
+            "row-span-1 rounded-xl group/bento hover:shadow-xl -ml-20 transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 md:col-span-3",
+            className
+          )}
+        >
+          {image && (
+            <Image src={image} height={600} width={800} alt={"image"} />
+          )}
+        </div>
+      )}
+    </>
   );
 };

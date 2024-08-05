@@ -66,8 +66,8 @@ export default function Home() {
           <HomeMachine />
         </div>
         <div className="mx-6 mt-32" ref={iotRef}>
-        <h4 className="text-xl text-center lg:text-2xl font-montserrat lg:leading-tight font-bold text-black dark:text-white">
-          Iot <span className="text-red-500">System</span>
+        <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
+          Iot <span className="text-red-500 font-bold">System</span>
         </h4>
           <BentoGridSecondDemo/>
         </div>

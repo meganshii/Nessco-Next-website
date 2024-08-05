@@ -132,7 +132,7 @@ const NewsFeature: React.FC = () => {
               alt={newscardcontent[0].title}
               height={100}
               width={100}
-              className="w-full h-[127%] rounded-3xl"
+              className="w-full h-[124%] rounded-3xl"
             />
             <div
               className="absolute top-0 right-0 m-2"
@@ -141,7 +141,7 @@ const NewsFeature: React.FC = () => {
               <GrAddCircle size={30} className="text-white" />
             </div>
             <h2
-              className="absolute left-5 -bottom-16
+              className="absolute left-5 -bottom-6
             text-3xl font-montserrat text-white font-bold transition-transform transform group-hover:-translate-y-10 duration-300"
             >
               {newscardcontent[0].title}
@@ -177,7 +177,7 @@ const NewsFeature: React.FC = () => {
           </div>
           <div className="relative">
             <div className="absolute flex items-end  w-[100%] rounded-3xl p-4">
-              <Carousel />
+              <Carousel type={"newsFeature"}/>
             </div>
           </div>
         </div>
