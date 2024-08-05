@@ -26,6 +26,10 @@ import PCM110WithPLC from "./nav_machine/PCM110WithPLC.png"
 import paperLunchBoxMachine from "./nav_machine/PaperLunchBoxMachine.png"
 import BookServiceImage from "./nav_support/BookService.png"
 import BgMapImage from "./nav_support/BgMapImage.png"
+//Solutions_Page1
+import Trees from "./Solutions_Page1/Trees.png"
+import Butterfly from "./Solutions_Page1/Butterfly.png"
+import Grass from "./Solutions_Page1/Grass.png"
 export {
   paperplate2,
   papercup,
@@ -51,5 +55,10 @@ export {
   paperStrawMachine,
   BookServiceImage,
   paperLunchBoxMachine,
-  BgMapImage
+  BgMapImage,
+  //Solution_Page1
+  Butterfly,
+  Trees,
+  Grass,
+
 };
