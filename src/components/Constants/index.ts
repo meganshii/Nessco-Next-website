@@ -32,6 +32,8 @@ import HomeAbout1 from "../../../public/assets/HomeAbout1.png";
 import HomeAbout2 from "../../../public/assets/HomeAbout2.jpg";
 import HomeAbout3 from "../../../public/assets/HomeAbout3.png";
 import { StaticImageData } from "next/image";
+import KnowMore from "../../../public/assets/KnowMore1.png"
+import KnowMore1 from "../../../public/assets/KnowMore2.png"
 import NewsFeatureMachine from "../../../public/assets/NewsFeatureMachine.jpg"
 import NewsFeatureBanner from "../../../public/assets/NewsFeatureBanner.jpg"
 import NewsFeatureBanner2 from "../../../public/assets/NewsFeatureBanner2.jpg"
@@ -341,16 +343,19 @@ export const Items: item[] = [
 ];
 export const newscardcontent = [
   {
-    image:NewsFeatureMachine,
+    image:KnowMore,
     title: "Revolutionary Speed Unveiled",
+    description:"Discover the latest advancements in machine speed that are setting new industry benchmarks. Witness how cutting-edge technology is reshaping performance standards."
   },
   {
     image: NewsFeatureBanner,
     title: "Excellence Showcased at DRUPA",
+    description:"Experience the pinnacle of innovation as top-tier machines are displayed at DRUPA. See how our solutions are leading the charge in print and packaging technology."
   },
   {
-    image:NewsFeatureBanner2,
+    image:KnowMore1,
     title: "Excellence Showcased at FOOMA",
+    description:"Explore groundbreaking machine innovations highlighted at FOOMA. See how our latest developments are making waves in the food manufacturing sector."
   },
 ];
 

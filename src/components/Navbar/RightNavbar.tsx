@@ -59,7 +59,7 @@ const RightNavbar: React.FC = memo(() => {
   return (
     <div className={`w-full max-w-screen-2xl lg:w-1/5 justify-center relative  top-0 right-0 ${hoveredItem ? "rounded-t-lg" : "rounded-lg"}`}>
       <div className="flex items-center gap-4 justify-center h-14 px-4">
-        <span onMouseEnter={handleMouseLeave} className={`w-full h-10 z-30 hidden xl:flex justify-end items-center gap-3 ${hoveredItem ? "text-black" : "text-black"}`}>
+        <span onMouseEnter={handleMouseLeave} className={`w-full h-10 z-30 hidden lg:flex justify-end items-center gap-3 ${hoveredItem ? "text-black" : "text-black"}`}>
           <CountryLayout
           />
           <SearchBarLayout
@@ -90,7 +90,7 @@ const RightNavbar: React.FC = memo(() => {
             setAccountOpen={setAccountOpen}
           />
         </span>
-        <div className="flex xl:hidden rounded-3xl px-4 mx-6 justify-between items-center w-full">
+        <div className="flex lg:hidden rounded-3xl px-4 mx-6 justify-between items-center w-full">
           <Link href="/" onMouseEnter={handleMouseLeave} className="z-30 h-10 rounded-2xl flex pr-2 items-center">
             <Image className="z-30 h-6 w-auto" src={Logo} alt="Logo" width={100} height={100} />
           </Link>

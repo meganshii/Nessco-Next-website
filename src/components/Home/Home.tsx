@@ -81,11 +81,9 @@ const Hero: React.FC = () => {
       }
     };
   }, []);
-
   const { scrollY } = useScroll();
   const videoWidth = useTransform(scrollY, [0, 300], ["100%", "150%"]);
   const videoX = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
-
   return (
     <div className="relative h-screen max-w-screen-2xl flex flex-col items-center overflow-hidden min-h-screen w-full">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">

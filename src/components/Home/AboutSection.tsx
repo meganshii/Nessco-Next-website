@@ -29,11 +29,11 @@ const AboutUs: React.FC<AboutUsProps> = ({
   cards,
 }) => {
   return (
-    <div className="flex mt-12 md:space-y-14 h-screen max-w-screen-2xl mx-auto font-montserrat flex-col items-center">
+    <div className="flex mt-12 md:space-y-14 h-screen max-w-screen-2xl mx-auto flex-col items-center">
       <motion.div className="text-center w-full max-w-6xl">
         <h1 className="text-2xl text-[#483d78]">
           About{" "}
-          <span className="text-red-500 font-poppins poppins-extrabold">
+          <span className="text-red-500 font-black">
             US
           </span>
         </h1>

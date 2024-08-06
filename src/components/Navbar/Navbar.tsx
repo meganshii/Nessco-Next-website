@@ -146,18 +146,7 @@ function Navbar({ className }: { className?: string }) {
               type="Resources"
             />
           </MenuItem>
-          <MenuItem
-            setActive={setActive}
-            active={active}
-            item="Video"
-            setPosition={function (position: {
-              left: number;
-              width: number;
-              opacity: number;
-            }): void {
-              throw new Error("Function not implemented.");
-            }}
-          ></MenuItem>
+         
         </Menu>
       </div>
       <div className="w-1/5 mr-8 flex items-center justify-end">

@@ -1,11 +1,9 @@
-// app/layout.tsx (or your specific layout file)
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-// import Navbar, { NavbarDemo } from '@/components/Navbar/Navbar';
-import "@fontsource/montserrat"; // Defaults to weight 400
+import "@fontsource/montserrat";
 import NavbarDemo from "@/components/Navbar/Navbar";
-import "@fontsource/alex-brush"; // Defaults to weight 400
+import "@fontsource/alex-brush";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {

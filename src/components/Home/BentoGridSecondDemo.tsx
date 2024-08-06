@@ -1,19 +1,12 @@
-import { cn } from "@/lib/utils";
 import React from "react";
-import iotImage from "../../../public/assets/iotImage.png"
+import iotImage from "../../../public/assets/iotImage.png";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
-import {
-  IconClipboardCopy,
-  IconFileBroken,
-  IconSignature,
-  IconTableColumn,
-} from "@tabler/icons-react";
-import Image from "next/image";
+import { IconClipboardCopy, IconFileBroken } from "@tabler/icons-react";
 
 export function BentoGridSecondDemo() {
   return (
     <>
-      <BentoGrid className="w-full mt-6 mx-auto md:auto-rows-[10rem]">
+      <BentoGrid className="w-full mt-6 mx-auto md:auto-rows-[25vh]">
         {items.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -26,7 +19,7 @@ export function BentoGridSecondDemo() {
           />
         ))}
       </BentoGrid>
-      <BentoGrid className="w-full mt-4 mx-auto md:auto-rows-[23rem]">
+      <BentoGrid className="w-full mt-4 mx-auto md:auto-rows-[55vh]">
         {items1.map((item, i) => (
           <BentoGridItem
             key={i}
@@ -45,7 +38,19 @@ export function BentoGridSecondDemo() {
 }
 const Skeleton = () => (
   <>
-    <Image src={"https://i.pinimg.com/236x/50/fe/0e/50fe0e9bbb197e039a807785529f598f.jpg"} height={400} width={400} className="object-fill h-32 w-96 rounded-xl" alt={""} />
+    <video
+      id="background-video"
+      className="object-fill h-[23vh] w-[25.5rem] rounded-3xl"
+      autoPlay
+      loop
+      muted
+      height={400}
+      width={400}
+      playsInline
+      preload="metadata"
+    >
+      <source src="video/iotvideo.mp4" type="video/mp4" />
+    </video>
   </>
 );
 
@@ -66,19 +71,20 @@ const items = [
 const items1 = [
   {
     type: "three",
-    title: "In our Control Maintenance System, we can customize the IOT reports/data according to customer requirement. We can also do integration with customer ERP i.e. SAP, ORACLE, TCS ion and any other ERP.",
+    title:
+      "In our Control Maintenance System, we can customize the IOT reports/data according to customer requirement. We can also do integration with customer ERP i.e. SAP, ORACLE, TCS ion and any other ERP.",
     description: "Explore the birth of groundbreaking ideas and inventions.",
     className: "md:col-span-2",
-    image:iotImage,
+    image: iotImage,
     icon: <IconClipboardCopy className="h-4 w-4 text-neutral-500" />,
   },
   {
     type: "four",
     title: "The Digital Revolution",
     description: "Dive into the transformative power of technology.",
-    header:<Skeleton />,
+    header: <Skeleton />,
     className: "md:col-span-1",
-    image:iotImage,
+    image: iotImage,
     icon: <IconFileBroken className="h-4 w-4 text-neutral-500" />,
   },
 ];

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 import PositionAwareButton from "./PositionAwareButton";
 import Image, { StaticImageData } from "next/image";
-
+import { GlareCard } from "./glare-card";
 export const BentoGrid = ({
   className,
   children,
@@ -43,7 +43,7 @@ export const BentoGridItem = ({
       {type === "one" && (
         <div
           className={cn(
-            "rounded-xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-0",
+            "rounded-3xl hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-0",
             className
           )}
         >
@@ -56,17 +56,19 @@ export const BentoGridItem = ({
       {type === "two" && (
         <div
           className={cn(
-            "row-span-1 rounded-xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col",
+            "row-span-1 rounded-3xl group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-1 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col",
             className
           )}
         >
+          <GlareCard className="flex flex-col bg-transparent items-center justify-center">
           <div className="">{header}</div>
+          </GlareCard>
         </div>
       )}
       {type === "three" && (
         <div
           className={cn(
-            "row-span-1 rounded-xl w-full md:w-[90%] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
+            "row-span-1 rounded-3xl w-full md:w-[90%] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4",
             className
           )}
         >
@@ -103,13 +105,21 @@ export const BentoGridItem = ({
       {type === "four" && (
         <div
           className={cn(
-            "row-span-1 rounded-xl group/bento hover:shadow-xl -ml-20 transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 md:col-span-3",
+            "row-span-1 rounded-3xl group/bento hover:shadow-xl -ml-20 transition duration-200 shadow-input dark:shadow-none p-4 dark:bg-black dark:border-white/[0.2] bg-white border border-transparent justify-between flex flex-col space-y-4 md:col-span-3",
             className
           )}
         >
-          {image && (
-            <Image src={image} height={600} width={800} alt={"image"} />
-          )}
+          <GlareCard className="flex flex-col bg-transparent items-center justify-center">
+            {image && (
+              <Image
+                src={image}
+                className=""
+                height={600}
+                width={800}
+                alt={"image"}
+              />
+            )}
+          </GlareCard>
         </div>
       )}
     </>

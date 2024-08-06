@@ -1,15 +1,14 @@
 import React from "react";
 import { ParallaxScrollDemo } from "./ParallaxScrollDemo";
-import Carousel from "./Common/Carousel";
+import VideoCarousel from "./Common/VideoCarousel";
 const HomeTestimonial: React.FC = () => {
   return (
     <div className="flex flex-row py-4 h-screen z-20 max-w-7xl mx-auto relative  overflow-hidden">
-      {/* left component */}
       <div className="px-2 w-1/3 flex flex-col">
         <h6 className="text-3xl text-red-500 ml-6 lg:text-2xl font-montserrat lg:leading-tight font-bold">
           Testimonials
         </h6>
-        <h2 className="text-5xl font-bold ml-4 mt-28">Don't Just Take</h2>
+        <h2 className="text-5xl font-bold ml-4 mt-20">Don't Just Take</h2>
         <h2 className="text-5xl font-bold ml-4 mt-6">
           Our
           <span className="relative ml-1 px-5 ">
@@ -17,10 +16,11 @@ const HomeTestimonial: React.FC = () => {
             <span className="relative text-black">Word for it</span>
           </span>
         </h2>
-        <h4 className="text-center">Read what our clients have to say</h4>
-        <Carousel/>
+        <h4 className="mt-20 text-xl text-center">
+          Read what our clients have to say
+        </h4>
+        <VideoCarousel />
       </div>
-      {/* right component */}
       <div className="w-2/3 relative h-full">
         <ParallaxScrollDemo />
       </div>

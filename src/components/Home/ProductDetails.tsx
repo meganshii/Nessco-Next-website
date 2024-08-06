@@ -31,7 +31,7 @@ const KnowMachine: React.FC = () => {
         {cardContents.map((content, index) => (
           <div
             key={index}
-            className="relative bg-white rounded-3xl shadow-lg overflow-hidden w-[35%] h-[32rem] ml-0 group"
+            className="relative bg-white  rounded-3xl shadow-lg overflow-hidden w-[35%] h-[32rem] ml-0 group"
           >
             <Image
               src={content.image}
@@ -44,8 +44,8 @@ const KnowMachine: React.FC = () => {
             >
               <GrAddCircle size={30} className="text-white" />
             </div>
-            <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black flex items-center justify-start p-4 group-hover:justify-center transition-all duration-300">
-              <h2 className="text-2xl group-hover:mb-[52rem] font-bold group-hover:top-0 group-hover:text-center group-hover:text-4xl transition-all text-white">
+            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent  flex items-center justify-start p-4 group-hover:justify-center transition-all duration-300">
+              <h2 className="text-2xl -mb-[28rem] group-hover:mb-[10rem] font-bold group-hover:top-0 group-hover:text-center group-hover:text-4xl transition-all text-white">
                 {content.title}
               </h2>
             </div>

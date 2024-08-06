@@ -117,16 +117,16 @@ const NewsFeature: React.FC = () => {
   };
 
   return (
-    <div className="p-4 mx-1 h-screen">
+    <div className="p-4 h-screen">
       <div className="text-center">
         <h1 className="text-3xl font-montserrat">
-          <span className="text-[#483d73]">Featured</span>{" "}
+          <span className="text-[#483d73]">Featured</span>
           <span className="text-red-600">News</span>
         </h1>
       </div>
-      <div className="flex mt-4 h-[80vh]">
+      <div className="flex mt-4 h-full">
         <div className="relative w-[36%] ml-2">
-          <div className="relative group h-full">
+          <div className="relative group h-[83vh]">
             <Image
               src={newscardcontent[0].image.src}
               alt={newscardcontent[0].title}
@@ -138,24 +138,23 @@ const NewsFeature: React.FC = () => {
               className="absolute top-0 right-0 m-2"
               onClick={() => handleOpenModal(0)}
             >
-              <GrAddCircle size={30} className="text-white" />
+              <GrAddCircle size={30} className="text-black z-40" />
             </div>
-            <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
-            <h2
-              className="absolute left-5 bottom-6
-              text-3xl font-montserrat text-white font-bold transition-transform transform group-hover:-translate-y-10 duration-300"
-            >
-              {newscardcontent[0].title}
-            </h2>
+            <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
+            <div className="absolute bottom-0 left-0 w-full p-5">
+              <h2 className="text-3xl font-montserrat text-white font-bold -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+                {newscardcontent[0].title}
+              </h2>
+              <p className="mt-2 text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+                {newscardcontent[0].description}
+              </p>
+            </div>
           </div>
         </div>
         <div className="w-[64%] flex flex-col">
-          <div className="flex  ml-6 h-2/3 space-x-6">
+          <div className="flex ml-6 h-[62%] space-x-6">
             {newscardcontent.slice(1, 3).map((content, index) => (
-              <div
-                key={index + 1}
-                className="relative flex-1"
-              >
+              <div key={index + 1} className="relative flex-1">
                 <div className="relative group h-full">
                   <Image
                     src={content.image.src}
@@ -168,18 +167,23 @@ const NewsFeature: React.FC = () => {
                     className="absolute top-0 right-0 m-2"
                     onClick={() => handleOpenModal(index + 1)}
                   >
-                    <GrAddCircle className="text-white text-3xl" />
+                    <GrAddCircle className="text-black z-40 text-3xl" />
                   </div>
-                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
-                  <h2 className="absolute bottom-6 left-5 text-xl font-bold text-white transition-transform transform group-hover:-translate-y-5 duration-300">
-                    {content.title}
-                  </h2>
+                  <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
+                  <div className="absolute bottom-0 left-0 w-full p-5">
+                    <h2 className="text-2xl font-bold text-white -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+                      {content.title}
+                    </h2>
+                    <p className="mt-2 text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+                      {content.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
-          <div className="flex-grow pt-4 flex ">
-            <div className="w-full px-4">
+          <div className="flex-grow pt-4 flex">
+            <div className="w-full ml-6">
               <FeatureCaraousel type="newsFeature" />
             </div>
           </div>
@@ -199,5 +203,4 @@ const NewsFeature: React.FC = () => {
     </div>
   );
 };
-
 export default NewsFeature;

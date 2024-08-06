@@ -44,7 +44,7 @@ export const ParallaxScroll = ({
     let tl: gsap.core.Timeline;
 
     if (container) {
-      tl = gsap.timeline({ repeat: -1, yoyo: true, paused: true });
+      tl = gsap.timeline({ repeat: -1, paused: true });
       tl.to(container, {
         scrollTo: { y: container.scrollHeight - container.clientHeight },
         duration: 40, // Slower duration
@@ -82,6 +82,50 @@ export const ParallaxScroll = ({
     }
   }, []);
 
+  const renderCard = (
+    el: any,
+    translate: any,
+    keyPrefix: string,
+    idx: number
+  ) => (
+    <motion.div
+      style={{ y: translate }}
+      key={`${keyPrefix}-${idx}`}
+      className="card"
+    >
+      <div className="p-4 bg-white border-2 border-blue-500 border-gradient-b from-blue-500 to-transparent rounded-3xl shadow-md">
+        <div className="flex flex-col ">
+          <div className="flex flex-row justify-between">
+            <Image
+              src={el.src}
+              className="h-12 w-12 rounded-full object-cover"
+              height="48"
+              width="48"
+              alt={el.username}
+            />
+            <div className="flex justify-end mt-0">
+              <img
+                src={el.flag}
+                alt={`${el.country} flag`}
+                className="w-8 h-8"
+              />
+            </div>
+          </div>
+          <p className="text-center text-4xl">❝</p>
+          <p className="-mt-4 text-gray-700 text-center">{el.quote}</p>
+          <div className="ml-2 mt-4 flex flex-row justify-start items-start">
+            <div className="relative mt-2 h-10 w-1 bg-[#483d78]"></div>
+            <div className="flex ml-2 flex-col">
+              <h3 className="text-lg font-bold">{el.username}</h3>
+              <p className="text-sm text-gray-500">{el.profile}</p>
+              {/* <p className="text-sm text-gray-500">{el.country}</p> */}
+            </div>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+
   return (
     <div
       className={`h-[40rem] removescrollablesidebar w-full overflow-y-hidden ${className}`}
@@ -90,106 +134,19 @@ export const ParallaxScroll = ({
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-5xl mx-auto gap-10 py-0 px-10">
         <div className="grid gap-10">
-          {firstPart.map((el, idx) => (
-            <motion.div
-              style={{ y: translateFirst }}
-              key={"grid-1" + idx}
-              className="card"
-            >
-              <div className="p-6 bg-white rounded-lg shadow-md">
-                <div className="flex items-center">
-                  <Image
-                    src={el.src}
-                    className="h-12 w-12 rounded-full object-cover"
-                    height="48"
-                    width="48"
-                    alt={el.username}
-                  />
-                  <div className="ml-4">
-                    <h3 className="text-lg font-bold">{el.username}</h3>
-                    <p className="text-sm text-gray-500">{el.profile}</p>
-                    <p className="text-sm text-gray-500">{el.country}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-gray-700">{el.quote}</p>
-                <div className="flex justify-end mt-4">
-                  <img
-                    src={el.flag}
-                    alt={`${el.country} flag`}
-                    className="w-8 h-8"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          {firstPart.map((el, idx) =>
+            renderCard(el, translateFirst, "grid-1", idx)
+          )}
         </div>
         <div className="grid gap-10">
-          {secondPart.map((el, idx) => (
-            <motion.div
-              style={{ y: translateSecond }}
-              key={"grid-2" + idx}
-              className="card"
-            >
-              <div className="p-6 bg-white rounded-lg shadow-md">
-                <div className="flex items-center">
-                  <Image
-                    src={el.src}
-                    className="h-12 w-12 rounded-full object-cover"
-                    height="48"
-                    width="48"
-                    alt={el.username}
-                  />
-                  <div className="ml-4">
-                    <h3 className="text-lg font-bold">{el.username}</h3>
-                    <p className="text-sm text-gray-500">{el.profile}</p>
-                    <p className="text-sm text-gray-500">{el.country}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-gray-700">{el.quote}</p>
-                <div className="flex justify-end mt-4">
-                  <img
-                    src={el.flag}
-                    alt={`${el.country} flag`}
-                    className="w-8 h-8"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          {secondPart.map((el, idx) =>
+            renderCard(el, translateSecond, "grid-2", idx)
+          )}
         </div>
         <div className="grid gap-10">
-          {thirdPart.map((el, idx) => (
-            <motion.div
-              style={{ y: translateThird }}
-              key={"grid-3" + idx}
-              className="card"
-            >
-              <div className="p-6 bg-white rounded-lg shadow-md">
-                <div className="flex items-center">
-                  <Image
-                    src={el.src}
-                    className="h-12 w-12 rounded-full object-cover"
-                    height="48"
-                    width="48"
-                    alt={el.username}
-                  />
-                  <div className="ml-4">
-                    <h3 className="text-lg font-bold">{el.username}</h3>
-                    <p className="text-sm text-gray-500">{el.profile}</p>
-                    <p className="text-sm text-gray-500">{el.country}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-gray-700">{el.quote}</p>
-                <div className="flex justify-end mt-4">
-                  <img
-                    src={el.flag}
-                    alt={`${el.country} flag`}
-                    className="w-8 h-8"
-                  />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          {thirdPart.map((el, idx) =>
+            renderCard(el, translateThird, "grid-3", idx)
+          )}
         </div>
       </div>
     </div>

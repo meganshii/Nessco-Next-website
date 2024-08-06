@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import styles from "../Styles/FeatureCaraousel.module.css";
 import Image from "next/image";
+import { BlurImage } from "@/components/ui/BlurImage";
 
 interface FeatureCaraouselProps {
   type?: string;
@@ -56,22 +57,22 @@ const FeatureCaraousel = ({ type }: FeatureCaraouselProps) => {
           } ${currentIndex === (index + 1) % items.length ? styles.next : ""}`}
         >
           <div className={styles.icon}>
-            <Image
+            <BlurImage
               src={item.icon}
-              className="h-28 w-full rounded-2xl"
+              className="h-28 w-full py-1 rounded-3xl"
               height={200}
               width={200}
               alt={"image"}
             />
           </div>
           <div className={styles.content}>
-            <div className="py-2 flex flex-col">
+            <div className="pt-0 flex flex-col">
               {type === "newsFeature" && (
-                <h1 className="text-2xl text-black  text-justify font-bold">
+                <h1 className="text-2xl text-black  -mt-8 text-justify font-bold">
                   {item.heading}
                 </h1>
               )}
-              <h2 className="font-montserrat mt-1 text-sm">{item.title}</h2>
+              <h2 className="font-montserrat mt-0 text-sm">{item.title}</h2>
             </div>
           </div>
         </div>
