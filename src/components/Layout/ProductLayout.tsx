@@ -96,7 +96,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-[98vw] max-w-screen-2xl z-30 md:h-full p-6  rounded-xl flex flex-col justify-center items-center font-medium"
+      className="w-[98vw] max-w-screen-2xl z-30 md:h-[85vh] p-6  rounded-xl flex flex-col justify-center items-center font-medium"
     >
       <div className="w-full flex flex-col md:flex-row rounded-lg overflow-hidden">
         <div className="flex h-full justify-center items-center w-full md:w-3/4 relative">

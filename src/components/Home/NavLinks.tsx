@@ -23,7 +23,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
     <Link
       href="#"
       scroll={false}
-      className={`text-black hover:font-bold custome-scale-90 ${
+      className={`text-black pt-2 hover:font-bold custome-scale-90 ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
@@ -56,6 +56,40 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   const handleClick = (ref: React.RefObject<HTMLDivElement>) => () => {
     ref.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  useEffect(() => {
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = navItems.findIndex((item) => item.ref.current === entry.target);
+          console.log(`Intersecting section: ${entry.target.id}, index: ${index}`);
+          setActiveLink(index);
+        }
+      });
+    };
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    navItems.forEach((item) => {
+      if (item.ref.current) {
+        console.log(`Observing section: ${item.ref.current.id}`);
+        observer.observe(item.ref.current);
+      }
+    });
+
+    return () => {
+      navItems.forEach((item) => {
+        if (item.ref.current) {
+          observer.unobserve(item.ref.current);
+        }
+      });
+    };
+  }, [navItems]);
 
   useEffect(() => {
     const handleScroll = () => {

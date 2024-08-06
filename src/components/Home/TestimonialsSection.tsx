@@ -1,5 +1,6 @@
 import React from "react";
 import { ParallaxScrollDemo } from "./ParallaxScrollDemo";
+import Carousel from "./Common/Carousel";
 const HomeTestimonial: React.FC = () => {
   return (
     <div className="flex flex-row py-4 h-screen z-20 max-w-7xl mx-auto relative  overflow-hidden">
@@ -16,6 +17,8 @@ const HomeTestimonial: React.FC = () => {
             <span className="relative text-black">Word for it</span>
           </span>
         </h2>
+        <h4 className="text-center">Read what our clients have to say</h4>
+        <Carousel/>
       </div>
       {/* right component */}
       <div className="w-2/3 relative h-full">

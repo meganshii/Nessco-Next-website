@@ -13,7 +13,6 @@ import NavLinksDemo from "@/components/Home/NavLinks";
 import { BentoGridSecondDemo } from "@/components/Home/BentoGridSecondDemo";
 
 export default function Home() {
-  const heroRef = useRef<HTMLDivElement>(null);
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const infiniteCardsRef = useRef<HTMLDivElement>(null);
   const knowMoreRef = useRef<HTMLDivElement>(null);
@@ -21,34 +20,24 @@ export default function Home() {
   const newsFeatureRef = useRef<HTMLDivElement>(null);
   const knowMachineRef = useRef<HTMLDivElement>(null);
   const homeTestimonialRef = useRef<HTMLDivElement>(null);
-  const iotRef =useRef<HTMLDivElement>(null);
+  const iotRef = useRef<HTMLDivElement>(null);
+
   const navItems = [
-    { text: "Machines", ref: homeMachineRef },
     { text: "About Us", ref: aboutUsRef },
-    {text:"Iot",ref:iotRef},
-    { text: "News", ref: newsFeatureRef },
-    { text: "Brands", ref: knowMoreRef },
     { text: "Clientele", ref: infiniteCardsRef },
+    { text: "knowMore", ref: knowMoreRef },
+    { text: "Machines", ref: homeMachineRef },
+    { text: "Iot", ref: iotRef },
+    { text: "News", ref: newsFeatureRef },
     { text: "Testimonials", ref: homeTestimonialRef },
   ];
 
   return (
     <main className="bg-[#f2f2f2]">
-      <Hero
-        refs={{
-          heroRef,
-          aboutUsRef,
-          infiniteCardsRef,
-          knowMoreRef,
-          homeMachineRef,
-          newsFeatureRef,
-          knowMachineRef,
-          homeTestimonialRef,
-        }}
-      />
+      <Hero />
       <NavLinksDemo navItems={navItems} />
       <div className="h-full">
-        <div className="mx-4 mt-32" ref={aboutUsRef}>
+        <div id="aboutUs" className="mx-4 mt-32" ref={aboutUsRef}>
           <AboutUs
             heading={data.heading}
             description={data.description}
@@ -56,31 +45,28 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
-        <div className="mx-4 mt-32" ref={infiniteCardsRef}>
+        <div id="clientele" className="mx-4 mt-32" ref={infiniteCardsRef}>
           <InfiniteMovingCardsDemo />
         </div>
-        <div className="mx-4 mt-32" ref={knowMoreRef}>
+        <div id="knowMore" className="mx-4 mt-32" ref={knowMoreRef}>
           <KnowMore />
         </div>
-        <div className="mx-4 mt-32" ref={homeMachineRef}>
+        <div id="machines" className="mx-4 mt-32" ref={homeMachineRef}>
           <HomeMachine />
         </div>
-        <div className="mx-6 mt-32" ref={iotRef}>
-        <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
-          Iot <span className="text-red-500 font-bold">System</span>
-        </h4>
-          <BentoGridSecondDemo/>
+        <div id="iot" className="mx-6 mt-32" ref={iotRef}>
+          <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
+            Iot <span className="text-red-500 font-bold">System</span>
+          </h4>
+          <BentoGridSecondDemo />
         </div>
-        <div className="mx-4 mt-32" ref={newsFeatureRef}>
+        <div id="news" className="mx-4 mt-32" ref={newsFeatureRef}>
           <NewsFeature />
         </div>
-        <div className="mx-4 mt-32" ref={knowMachineRef}>
+        <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
           <KnowMachine />
         </div>
-        <div className="mx-4 mt-32" ref={homeTestimonialRef}>
-        <h4 className="text-3xl text-center lg:text-5xl font-montserrat lg:leading-tight font-bold text-black dark:text-white">
-          Testimonials
-        </h4>
+        <div id="testimonials" className="mx-4 mt-32" ref={homeTestimonialRef}>
           <HomeTestimonial />
         </div>
       </div>

@@ -101,9 +101,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { GrAddCircle } from "react-icons/gr";
-import Carousel from "../Home/Common/Carousel";
 import { newscardcontent } from "../Constants";
 import Modal from "../ui/Modal";
+import FeatureCaraousel from "./Common/FeatureCaraousel";
 
 const NewsFeature: React.FC = () => {
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
@@ -117,22 +117,22 @@ const NewsFeature: React.FC = () => {
   };
 
   return (
-    <div className="p-4 mt-32">
-      <div className="text-center mt-10">
+    <div className="p-4 mx-1 h-screen">
+      <div className="text-center">
         <h1 className="text-3xl font-montserrat">
           <span className="text-[#483d73]">Featured</span>{" "}
           <span className="text-red-600">News</span>
         </h1>
       </div>
-      <div className="flex mt-5 h-3/4">
-        <div className="relative w-1/3  ml-2">
-          <div className="relative group h-[100%]">
+      <div className="flex mt-4 h-[80vh]">
+        <div className="relative w-[36%] ml-2">
+          <div className="relative group h-full">
             <Image
               src={newscardcontent[0].image.src}
               alt={newscardcontent[0].title}
-              height={100}
-              width={100}
-              className="w-full h-[124%] rounded-3xl"
+              layout="fill"
+              objectFit="cover"
+              className="w-full h-full rounded-3xl"
             />
             <div
               className="absolute top-0 right-0 m-2"
@@ -140,26 +140,29 @@ const NewsFeature: React.FC = () => {
             >
               <GrAddCircle size={30} className="text-white" />
             </div>
+            <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
             <h2
-              className="absolute left-5 -bottom-6
-            text-3xl font-montserrat text-white font-bold transition-transform transform group-hover:-translate-y-10 duration-300"
+              className="absolute left-5 bottom-6
+              text-3xl font-montserrat text-white font-bold transition-transform transform group-hover:-translate-y-10 duration-300"
             >
               {newscardcontent[0].title}
             </h2>
           </div>
         </div>
-        <div className="w-2/3 flex flex-col">
-          <div className="flex mb-4 ml-6">
-            {newscardcontent.slice(1).map((content, index) => (
+        <div className="w-[64%] flex flex-col">
+          <div className="flex  ml-6 h-2/3 space-x-6">
+            {newscardcontent.slice(1, 3).map((content, index) => (
               <div
                 key={index + 1}
-                className={`relative ${index === 0 ? "w-1/2" : "w-1/2 ml-6"}`}
+                className="relative flex-1"
               >
                 <div className="relative group h-full">
-                  <img
+                  <Image
                     src={content.image.src}
                     alt={content.title}
-                    className="w-[120%] h-[100%] rounded-3xl"
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full rounded-3xl"
                   />
                   <div
                     className="absolute top-0 right-0 m-2"
@@ -167,17 +170,17 @@ const NewsFeature: React.FC = () => {
                   >
                     <GrAddCircle className="text-white text-3xl" />
                   </div>
-                  {/* <div className="absolute bottom-20 left-0  w-[120%] h-[80%] bg-gradient-to-t from-black opacity-70 transition-opacity duration-300 rounded-b-3xl"> */}
-                  <h2 className="absolute bottom-24 left-5 text-xl font-bold text-white transition-transform transform group-hover:-translate-y-5 duration-300">
+                  <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
+                  <h2 className="absolute bottom-6 left-5 text-xl font-bold text-white transition-transform transform group-hover:-translate-y-5 duration-300">
                     {content.title}
                   </h2>
                 </div>
               </div>
             ))}
           </div>
-          <div className="relative">
-            <div className="absolute flex items-end  w-[100%] rounded-3xl p-4">
-              <Carousel type={"newsFeature"}/>
+          <div className="flex-grow pt-4 flex ">
+            <div className="w-full px-4">
+              <FeatureCaraousel type="newsFeature" />
             </div>
           </div>
         </div>

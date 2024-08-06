@@ -42,20 +42,8 @@ const NavLink: React.FC<NavLinkProps> = memo(
 
 NavLink.displayName = "NavLink";
 
-interface HeroProps {
-  refs: {
-    heroRef: React.RefObject<HTMLDivElement>;
-    aboutUsRef: React.RefObject<HTMLDivElement>;
-    infiniteCardsRef: React.RefObject<HTMLDivElement>;
-    knowMoreRef: React.RefObject<HTMLDivElement>;
-    homeMachineRef: React.RefObject<HTMLDivElement>;
-    newsFeatureRef: React.RefObject<HTMLDivElement>;
-    knowMachineRef: React.RefObject<HTMLDivElement>;
-    homeTestimonialRef: React.RefObject<HTMLDivElement>;
-  };
-}
 
-const Hero: React.FC<HeroProps> = ({ refs }) => {
+const Hero: React.FC = () => {
   const [activeLink, setActiveLink] = useState<number>(0);
   const [isVideoLoaded, setIsVideoLoaded] = useState<boolean>(false);
   const videoRef = useRef<HTMLDivElement | null>(null);

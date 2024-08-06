@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import styles from "../Styles/Carousel.module.css";
+import styles from "../Styles/FeatureCaraousel.module.css";
 import Image from "next/image";
 
-interface CarouselProps {
+interface FeatureCaraouselProps {
   type?: string;
 }
 
-const Carousel = ({ type }: CarouselProps) => {
+const FeatureCaraousel = ({ type }: FeatureCaraouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const items = [
     {
@@ -47,7 +47,7 @@ const Carousel = ({ type }: CarouselProps) => {
   }, [items.length]);
 
   return (
-    <div className={styles.carousel}>
+    <div className={styles.FeatureCaraousel}>
       {items.map((item, index) => (
         <div
           key={item.id}
@@ -65,9 +65,9 @@ const Carousel = ({ type }: CarouselProps) => {
             />
           </div>
           <div className={styles.content}>
-            <div className="flex flex-col">
+            <div className="py-2 flex flex-col">
               {type === "newsFeature" && (
-                <h1 className="text-2xl text-black -mt-2 text-justify font-bold">
+                <h1 className="text-2xl text-black  text-justify font-bold">
                   {item.heading}
                 </h1>
               )}
@@ -92,4 +92,4 @@ const Carousel = ({ type }: CarouselProps) => {
   );
 };
 
-export default Carousel;
+export default FeatureCaraousel;
