@@ -153,7 +153,7 @@ const TestimonialCarousel: React.FC = () => {
           </div>
         </div>
         <div className="w-full h-full flex justify-end items-center -mt-24">
-          <GlobeDemo/>
+          <GlobeDemo />
         </div>
       </div>
     </div>

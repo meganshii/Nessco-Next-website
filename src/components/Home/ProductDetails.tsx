@@ -39,7 +39,7 @@ const KnowMachine: React.FC = () => {
               className="h-full w-full scale-100 group"
             />
             <div
-              className="absolute top-0 right-0 m-2"
+              className="absolute cursor-pointer top-0 right-0 m-2 z-20"
               onClick={() => handleOpenModal(index)}
             >
               <GrAddCircle size={30} className="text-white" />

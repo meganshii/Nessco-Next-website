@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { SlArrowRight } from 'react-icons/sl';
-import Image, { StaticImageData } from 'next/image';
-import { item, Item } from '../Constants/index';
-import styles  from './application.module.css'
+import React, { useState } from "react";
+import { SlArrowRight } from "react-icons/sl";
+import Image, { StaticImageData } from "next/image";
+import { item, Item } from "../Constants/index";
+import styles from "./application.module.css";
 
-const Application: React.FC<{ onHover: (item: Item) => void; items: Item[] }> = ({ onHover, items }) => {
+const Application: React.FC<{
+  onHover: (item: Item) => void;
+  items: Item[];
+}> = ({ onHover, items }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const handleMouseEnter = (index: number, item: Item) => {
@@ -17,7 +20,7 @@ const Application: React.FC<{ onHover: (item: Item) => void; items: Item[] }> = 
   };
 
   return (
-    <div className="grid grid-cols-6 gap-4 p-3 rounded ml-5">
+    <div className="grid grid-cols-6 gap-4 h-[85vh] p-3 rounded ml-5">
       {items.map((item, index) => (
         <div
           key={index}
@@ -25,27 +28,27 @@ const Application: React.FC<{ onHover: (item: Item) => void; items: Item[] }> = 
           onMouseEnter={() => handleMouseEnter(index, item)}
           onMouseLeave={handleMouseLeave}
         >
-           <a
-            href={`/application/${item.name.toLowerCase().replace(/ /g, '-')}`}
+          <a
+            href={`/application/${item.name.toLowerCase().replace(/ /g, "-")}`}
             className="relative block w-full h-full"
           >
-          <Image
-            src={item.src.src}
-            alt={item.alt}
-            height={100}
-            width={100}
-            className={`object-cover min-w-full min-h-full transition-transform duration-300 ease-in-out rounded-b-md rounded-t-md ${
-              hoveredIndex === index ? 'transform translate-y-[-20%]' : ''
-            }`}
-          />
-          <p
-            onMouseEnter={() => onHover(item)}
-            className={`absolute bottom-0 w-full text-white text-sm text-center transition-opacity duration-300 ease-in-out ${
-              hoveredIndex === index ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            {item.name}
-          </p>
+            <Image
+              src={item.src.src}
+              alt={item.alt}
+              height={100}
+              width={100}
+              className={`object-cover min-w-full min-h-full transition-transform duration-300 ease-in-out rounded-b-md rounded-t-md ${
+                hoveredIndex === index ? "transform translate-y-[-20%]" : ""
+              }`}
+            />
+            <p
+              onMouseEnter={() => onHover(item)}
+              className={`absolute bottom-0 w-full text-white text-sm text-center transition-opacity duration-300 ease-in-out ${
+                hoveredIndex === index ? "opacity-100" : "opacity-0"
+              }`}
+            >
+              {item.name}
+            </p>
           </a>
         </div>
       ))}
@@ -77,19 +80,19 @@ const ApplicationPage: React.FC = () => {
             ></div>
             <div className="relative z-10 p-4 -mt-14">
               <h2 className="text-6xl font-montserrat font-extrabold text-[#483d73]">
-                {hoveredItem.name.split(' ')[0]}
+                {hoveredItem.name.split(" ")[0]}
               </h2>
               <h2 className="text-6xl font-montserrat font-extrabold text-red-600">
-                {hoveredItem.name.split(' ')[1]}
+                {hoveredItem.name.split(" ")[1]}
               </h2>
               <p className="text-lg mt-3 text-[#483d73]">
                 {hoveredItem.description}
               </p>
             </div>
-            <div className={styles.container}> 
-              <button className={styles.button}> 
+            <div className={styles.container}>
+              <button className={styles.button}>
                 Explore More
-                <SlArrowRight className={styles.icon} /> 
+                <SlArrowRight className={styles.icon} />
               </button>
             </div>
           </div>

@@ -49,7 +49,7 @@ const Solution: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex pb-8 justify-center items-start w-[98vw] max-w-screen-2xl">
+    <div className="flex pb-8 justify-center items-start w-[98vw] h-full  max-w-screen-2xl">
       <div className="rounded-b-5xl  h-4/5 w-full relative">
         <div className="flex">
           <div className="p-8 relative w-9/12">

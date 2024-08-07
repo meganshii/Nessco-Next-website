@@ -96,7 +96,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-[98vw] max-w-screen-2xl z-30 md:h-[85vh] p-6  rounded-xl flex flex-col justify-center items-center font-medium"
+      className="w-[98vw] max-w-screen-2xl z-30 md:h-[80vh] p-4  rounded-xl flex flex-col  font-medium"
     >
       <div className="w-full flex flex-col md:flex-row rounded-lg overflow-hidden">
         <div className="flex h-full justify-center items-center w-full md:w-3/4 relative">
@@ -187,11 +187,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
         </div>
-        <div className="w-full mt-2 md:w-1/4 pl-4 space-y-2 border-l border-gray-300 relative">
+        <div className="w-full mt-2 md:w-1/4 pl-4 space-y-2 border-l overflow-y-auto border-gray-300 relative">
           {sidebarIndex > 0 && (
             <button
               onClick={handleSidebarPrev}
-              className="absolute top-0 left-1/2 text-4xl transform -translate-x-1/2 p-0  text-black hover:scale-90 transition-transform duration-200"
+              className="absolute top-0 left-1/2 text-4xl transform  -translate-x-1/2 p-0  text-black hover:scale-90 transition-transform duration-200"
             >
               <MdKeyboardArrowUp />
             </button>
@@ -227,15 +227,15 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
               </div>
             ))}
           </div>
-          {sidebarIndex + 6 < SidebarLinks.length && (
-            <button
-              onClick={handleSidebarNext}
-              className="absolute bottom-0 left-1/2 transform text-4xl -translate-x-1/2 p-0 text-black hover:scale-90 transition-transform duration-200"
-            >
-              <MdKeyboardArrowDown />
-            </button>
-          )}
         </div>
+        {sidebarIndex + 6 < SidebarLinks.length && (
+          <button
+            onClick={handleSidebarNext}
+            className="absolute bottom-0 right-[8rem]   text-4xl  p-0 text-black hover:scale-90"
+          >
+            <MdKeyboardArrowDown className="-mt-10" />
+          </button>
+        )}
       </div>
     </div>
   );

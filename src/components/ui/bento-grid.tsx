@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import PositionAwareButton from "./PositionAwareButton";
 import Image, { StaticImageData } from "next/image";
 import { GlareCard } from "./glare-card";
+import { GlowingStarsBackgroundCard } from "./glowing-stars";
 export const BentoGrid = ({
   className,
   children,
@@ -61,7 +62,7 @@ export const BentoGridItem = ({
           )}
         >
           <GlareCard className="flex flex-col bg-transparent items-center justify-center">
-          <div className="">{header}</div>
+            <div className="">{header}</div>
           </GlareCard>
         </div>
       )}
@@ -109,7 +110,7 @@ export const BentoGridItem = ({
             className
           )}
         >
-          <GlareCard className="flex flex-col bg-transparent items-center justify-center">
+          <GlowingStarsBackgroundCard>
             {image && (
               <Image
                 src={image}
@@ -119,7 +120,7 @@ export const BentoGridItem = ({
                 alt={"image"}
               />
             )}
-          </GlareCard>
+          </GlowingStarsBackgroundCard>
         </div>
       )}
     </>

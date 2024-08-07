@@ -11,6 +11,7 @@ import HomeTestimonial from "@/components/Home/TestimonialsSection";
 import { data } from "@/components/Constants/Navbar/about-data";
 import NavLinksDemo from "@/components/Home/NavLinks";
 import { BentoGridSecondDemo } from "@/components/Home/BentoGridSecondDemo";
+import VideoCarousel from "@/components/Home/Common/VideoCarousel";
 
 export default function Home() {
   const aboutUsRef = useRef<HTMLDivElement>(null);

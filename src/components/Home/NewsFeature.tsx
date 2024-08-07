@@ -117,11 +117,11 @@ const NewsFeature: React.FC = () => {
   };
 
   return (
-    <div className="p-4 h-screen">
+    <div className="p-4 h-screen relative">
       <div className="text-center">
         <h1 className="text-3xl font-montserrat">
           <span className="text-[#483d73]">Featured</span>
-          <span className="text-red-600">News</span>
+          <span className="text-red-600"> News</span>
         </h1>
       </div>
       <div className="flex mt-4 h-full">
@@ -135,10 +135,10 @@ const NewsFeature: React.FC = () => {
               className="w-full h-full rounded-3xl"
             />
             <div
-              className="absolute top-0 right-0 m-2"
+              className="absolute top-0 right-0 m-2 cursor-pointer z-20"
               onClick={() => handleOpenModal(0)}
             >
-              <GrAddCircle size={30} className="text-black z-40" />
+              <GrAddCircle size={30} className="text-black" />
             </div>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
             <div className="absolute bottom-0 left-0 w-full p-5">
@@ -164,10 +164,10 @@ const NewsFeature: React.FC = () => {
                     className="w-full h-full rounded-3xl"
                   />
                   <div
-                    className="absolute top-0 right-0 m-2"
+                    className="absolute top-0 right-0 m-2 cursor-pointer z-20"
                     onClick={() => handleOpenModal(index + 1)}
                   >
-                    <GrAddCircle className="text-black z-40 text-3xl" />
+                    <GrAddCircle className="text-black text-3xl" />
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-full p-5">
@@ -203,4 +203,5 @@ const NewsFeature: React.FC = () => {
     </div>
   );
 };
+
 export default NewsFeature;

@@ -135,30 +135,14 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
       ) : (
         <>
-          {items.length >= 10 && (
-            <div className="">
-              <div className="relative mt-12 w-full">
-                <div className="flex justify-end gap-2 mr-10">
-                  <button
-                    className="relative z-20 h-10 w-10 rounded-full bg-gray-00 flex items-center justify-center disabled:opacity-50"
-                    onClick={scrollLeft}
-                    disabled={!canScrollLeft}
-                  >
-                    <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
-                  </button>
-                  <button
-                    className="relative z-20 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
-                    onClick={scrollRight}
-                    disabled={!canScrollRight}
-                  >
-                    <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
-                  </button>
-                </div>
-                <div
-                  className="flex w-full overflow-x-scroll overscroll-x-auto py-10 md:py-4  scroll-smooth [scrollbar-width:none]"
-                  ref={carouselRef}
-                  onScroll={checkScrollability}
-                >
+          <div
+            className="flex  w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
+            ref={carouselRef}
+            onScroll={checkScrollability}
+          >
+            {items.length >= 10 && (
+              <div className="">
+                <div className="relative mt-12 w-full">
                   <div
                     className={cn(
                       "absolute right-0  z-10 h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
@@ -195,13 +179,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     ))}
                   </div>
                 </div>
-              </div>
-              <div className="relative w-full">
-                <div
-                  className="flex  w-full overflow-x-scroll overscroll-x-auto py-4 md:py-4 scroll-smooth [scrollbar-width:none]"
-                  ref={carouselRef}
-                  onScroll={checkScrollability}
-                >
+                <div className="relative w-full">
                   <div
                     className={cn(
                       "absolute right-0  z-20 h-auto  w-[5%] overflow-hidden bg-gradient-to-l"
@@ -240,7 +218,11 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                       ))}
                   </div>
                 </div>
-                <div className="flex justify-end gap-2 mr-10">
+               
+              </div>
+            )}
+          </div>
+          <div className="flex justify-end gap-2 mr-10">
                   <button
                     className="relative z-20 h-10 w-10 rounded-full bg-gray-100 flex items-center justify-center disabled:opacity-50"
                     onClick={scrollLeft}
@@ -256,9 +238,6 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
                   </button>
                 </div>
-              </div>
-            </div>
-          )}
         </>
       )}
     </CarouselContext.Provider>

@@ -45,7 +45,7 @@ const SearchBarLayout: FC<SearchBarLayoutProps> = ({
   return (
     <div
       ref={searchRef}
-      className="relative max-w-screen-2xl flex justify-center text-left"
+      className="relative  flex justify-center text-left"
     >
       <div className="flex items-center justify-center space-x-4">
         < TfiSearch
@@ -59,7 +59,7 @@ const SearchBarLayout: FC<SearchBarLayoutProps> = ({
         </div>
       )}
       {openSearch && (
-        <div className="absolute -ml-[48rem] mr-28 max-w-screen-2xl flex justify-start items-start  top-10 w-[98vw] mx-auto">
+        <div className="absolute -ml-[43rem] mr-28 max-w-screen-2xl flex justify-start items-start  top-10 w-[98vw] mx-auto">
           <div className="bg-white w-full h-[60vh] p-4 rounded-xl shadow-lg">
             <form className="flex justify-start w-1/2 items-center mx-auto space-x-1">
               <button

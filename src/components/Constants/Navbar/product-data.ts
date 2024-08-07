@@ -1,12 +1,4 @@
-import {
-    FaLeaf,
-    FaProjectDiagram,
-    FaLightbulb,
-    FaRecycle,
-  } from "react-icons/fa";
-  import { AiOutlineProduct } from 'react-icons/ai';
-  import { LiaToolsSolid } from 'react-icons/lia';
-  import { IoBarChartOutline } from 'react-icons/io5';
+
   import {
     papercup,
     paperplate2,
@@ -14,10 +6,7 @@ import {
     paperlid,
     paperstraw,
     paperbag1,
-    missionImage,
-    companyImage,
-    strengthImage,
-    pinkCityImage,
+
     paperBowlMachineImage,
     paperBagMachineImage,
     paperPlateMachineImage,
@@ -399,26 +388,7 @@ import {
       related_product:
         "Curabitur blandit tempus porttitor. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.",
     },
-    {
-      name: "Paper Bag Machine1",
-      image: "paperBagMachineImage",
-      mimage: paperBagMachineImage,
-  
-      category: "Paper Bag Machine, All Products",
-      icon: "paperbag1",
-      introduction:
-        "The Paper Bag Machine1 is designed for automated production of paper bags, offering efficiency and reliability.",
-      parameters: "Voltage: 240V, Power: 2200W",
-      application:
-        "Suitable for producing various sizes and styles of paper bags, including grocery bags and gift bags.",
-      product_description:
-        "This machine features a robust structure and advanced folding mechanisms, ensuring precise bag formation and strength.",
-      technical_specification: "Material: Stainless steel, Weight: 900kg",
-      optional_add_ons:
-        "Handle attachment unit available as an optional accessory.",
-      faqs: "Q: What types of paper can this machine use? A: It is compatible with kraft paper and cardboard materials.",
-      related_product: "Paper Bag Machine new, Paper Bag Machine new2",
-    },
+    
     {
       name: "Paper Flexo Machine2",
       image: "paperFlexoMachineImage",

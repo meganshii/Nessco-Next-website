@@ -16,9 +16,7 @@
     background: rgb(255, 255, 255);
     border-radius:16px;
     overflow: hidden;
-    transform: translateX(-50%) scale(0);
     opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
     z-index: 1;
   }
   .card.next {

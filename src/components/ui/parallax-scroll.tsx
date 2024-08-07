@@ -132,18 +132,18 @@ export const ParallaxScroll = ({
       ref={containerRef}
       style={{ overflowX: "hidden" }} // Hide horizontal scrollbar
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-5xl mx-auto gap-10 py-0 px-10">
-        <div className="grid gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-5xl mx-auto gap-2 py-0 px-2">
+        <div className="grid gap-6">
           {firstPart.map((el, idx) =>
             renderCard(el, translateFirst, "grid-1", idx)
           )}
         </div>
-        <div className="grid gap-10">
+        <div className="grid gap-6">
           {secondPart.map((el, idx) =>
             renderCard(el, translateSecond, "grid-2", idx)
           )}
         </div>
-        <div className="grid gap-10">
+        <div className="grid gap-6">
           {thirdPart.map((el, idx) =>
             renderCard(el, translateThird, "grid-3", idx)
           )}
