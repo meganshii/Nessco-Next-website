@@ -57,9 +57,9 @@ const Solution: React.FC = () => {
               <Image
                 src={selectedItem.img.src}
                 alt={selectedItem.name}
-                height={100}
-                width={100}
-                className="absolute -right-9 rounded-lg w-72 h-72 object-cover"
+                height={400}
+                width={400}
+                className="absolute -right-9 rounded-lg w-80 h-80 object-cover"
               />
             </div>
             <div className="relative z-10 w-4/5">
@@ -70,7 +70,7 @@ const Solution: React.FC = () => {
                 {selectedItem.name.split(" ").slice(1).join(" ")}
               </h2>
               <div className="w-3/4">
-                <p className="text-sm text-black mt-4 font-montserrat w-auto">
+                <p className="text-base text-black mt-4 font-montserrat w-auto">
                   {selectedItem.description}
                 </p>
               </div>
@@ -102,7 +102,7 @@ const Solution: React.FC = () => {
 
             <div
               ref={listRef}
-              className={`space-y-3 h-72 overflow-y-auto ${styles.hideScrollbar} -ml-2 mt-4`}
+              className={`space-y-2 h-72 overflow-y-auto ${styles.hideScrollbar} -ml-2 mt-4`}
             >
               {Items.map((item, index) => (
                 <p
@@ -110,7 +110,7 @@ const Solution: React.FC = () => {
                   ref={(el) => {
                     itemRefs.current[index] = el;
                   }} // Update ref assignment
-                  className={`p-2 ${
+                  className={`p-2 break-words space-x-4 text-lg font-montserrat ${
                     selectedItem.id === item.id || hoveredItem === item.id
                       ? "text-[#483d73] font-bold"
                       : "text-black"

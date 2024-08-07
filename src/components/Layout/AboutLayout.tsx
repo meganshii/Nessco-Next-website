@@ -75,7 +75,7 @@ const AboutLayout = () => {
                 width={240}
                 height={240}
               />
-              <p className="mt-2 text-center font-montserrat text-black hover:text-[#483d78] hover:font-bold text-sm transform hover:scale-90 transition-transform duration-300">
+              <p className="mt-2 text-center font-montserrat text-black hover:text-[#483d78] hover:font-bold text-base transform hover:scale-90 transition-transform duration-300">
                 {item.title}
               </p>
             </Link>

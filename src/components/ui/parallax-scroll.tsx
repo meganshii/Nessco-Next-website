@@ -1,5 +1,5 @@
 "use client";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform, easeOut } from "framer-motion";
 import { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -8,28 +8,29 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-export const ParallaxScroll = ({
-  images,
-  className,
-}: {
-  images: {
-    src: string;
-    username: string;
-    profile: string;
-    country: string;
-    quote: string;
-    flag: string;
-  }[];
+interface ImageData {
+  src: string;
+  username: string;
+  profile: string;
+  country: string;
+  quote: string;
+  flag: string;
+}
+
+interface ParallaxScrollProps {
+  images: ImageData[];
   className?: string;
-}) => {
+}
+
+export const ParallaxScroll: React.FC<ParallaxScrollProps> = ({ images, className }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     container: containerRef,
   });
 
-  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200]);
-  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200]);
-  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -200]);
+  const translateFirst = useTransform(scrollYProgress, [0, 1], [0, -200], { ease: easeOut });
+  const translateSecond = useTransform(scrollYProgress, [0, 1], [0, 200], { ease: easeOut });
+  const translateThird = useTransform(scrollYProgress, [0, 1], [0, -200], { ease: easeOut });
 
   const third = Math.ceil(images.length / 3);
 
@@ -40,19 +41,15 @@ export const ParallaxScroll = ({
   useEffect(() => {
     const container = containerRef.current;
 
-    let observer: IntersectionObserver;
-    let tl: gsap.core.Timeline;
-
     if (container) {
-      tl = gsap.timeline({ repeat: -1, paused: true });
+      const tl = gsap.timeline({ repeat: -1, paused: true });
       tl.to(container, {
         scrollTo: { y: container.scrollHeight - container.clientHeight },
-        duration: 40, // Slower duration
+        duration: 40,
         ease: "linear",
-      }).to(container, {
-        scrollTo: { y: 0 },
-        duration: 40, // Slower duration
-        ease: "linear",
+        onComplete: () => {
+          container.scrollTop = 1;
+        },
       });
 
       const handleMouseEnter = () => tl.pause();
@@ -61,29 +58,18 @@ export const ParallaxScroll = ({
       container.addEventListener("mouseenter", handleMouseEnter, true);
       container.addEventListener("mouseleave", handleMouseLeave, true);
 
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            tl.resume();
-          } else {
-            tl.pause();
-          }
-        },
-        { threshold: 0.1 }
-      );
-
-      observer.observe(container);
+      tl.play();
 
       return () => {
         container.removeEventListener("mouseenter", handleMouseEnter, true);
         container.removeEventListener("mouseleave", handleMouseLeave, true);
-        observer.disconnect();
+        tl.kill();
       };
     }
   }, []);
 
   const renderCard = (
-    el: any,
+    el: ImageData,
     translate: any,
     keyPrefix: string,
     idx: number
@@ -93,32 +79,33 @@ export const ParallaxScroll = ({
       key={`${keyPrefix}-${idx}`}
       className="card"
     >
-      <div className="p-4 bg-white border-2 border-blue-500 border-gradient-b from-blue-500 to-transparent rounded-3xl shadow-md">
-        <div className="flex flex-col ">
-          <div className="flex flex-row justify-between">
-            <Image
-              src={el.src}
-              className="h-12 w-12 rounded-full object-cover"
-              height="48"
-              width="48"
-              alt={el.username}
-            />
-            <div className="flex justify-end mt-0">
-              <img
-                src={el.flag}
-                alt={`${el.country} flag`}
-                className="w-8 h-8"
+      <div className="p-1 rounded-3xl border-2 bg-gradient-to-t from-blue-500 to-transparent">
+        <div className="p-4 h-[18rem] w-[16rem] bg-white rounded-3xl">
+          <div className="flex flex-col">
+            <div className="flex flex-row justify-between">
+              <Image
+                src={el.src}
+                className="h-12 w-12 rounded-full object-cover"
+                height="48"
+                width="48"
+                alt={el.username}
               />
+              <div className="flex justify-end mr-2 mt-0">
+                <img
+                  src={el.flag}
+                  alt={`${el.country} flag`}
+                  className="w-8 h-8"
+                />
+              </div>
             </div>
-          </div>
-          <p className="text-center text-4xl">❝</p>
-          <p className="-mt-4 text-gray-700 text-center">{el.quote}</p>
-          <div className="ml-2 mt-4 flex flex-row justify-start items-start">
-            <div className="relative mt-2 h-10 w-1 bg-[#483d78]"></div>
-            <div className="flex ml-2 flex-col">
-              <h3 className="text-lg font-bold">{el.username}</h3>
-              <p className="text-sm text-gray-500">{el.profile}</p>
-              {/* <p className="text-sm text-gray-500">{el.country}</p> */}
+            <p className="text-center text-4xl">❝</p>
+            <p className="text-gray-700 mt-4 text-center">{el.quote}</p>
+            <div className="ml-2 mt-4 flex flex-row justify-start items-start">
+              <div className="relative mt-12 h-10 w-1 bg-[#483d78]"></div>
+              <div className="flex ml-2 mt-10 flex-col">
+                <h3 className="text-lg font-bold">{el.username}</h3>
+                <p className="text-sm text-gray-500">{el.profile}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -128,22 +115,22 @@ export const ParallaxScroll = ({
 
   return (
     <div
-      className={`h-[40rem] removescrollablesidebar w-full overflow-y-hidden ${className}`}
+      className={`h-[60rem] removescrollablesidebar w-full overflow-y-hidden ${className}`}
       ref={containerRef}
       style={{ overflowX: "hidden" }} // Hide horizontal scrollbar
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start max-w-5xl mx-auto gap-2 py-0 px-2">
-        <div className="grid gap-6">
+      <div className="grid ml-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-start">
+        <div className="grid gap-2">
           {firstPart.map((el, idx) =>
             renderCard(el, translateFirst, "grid-1", idx)
           )}
         </div>
-        <div className="grid gap-6">
+        <div className="grid gap-2">
           {secondPart.map((el, idx) =>
             renderCard(el, translateSecond, "grid-2", idx)
           )}
         </div>
-        <div className="grid gap-6">
+        <div className="grid gap-2">
           {thirdPart.map((el, idx) =>
             renderCard(el, translateThird, "grid-3", idx)
           )}

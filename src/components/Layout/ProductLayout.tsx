@@ -11,7 +11,6 @@ import {
   MdKeyboardArrowDown,
   MdKeyboardArrowUp,
 } from "react-icons/md";
-import Link from "next/link";
 import PositionAwareButton from "../ui/PositionAwareButton";
 
 interface ProductLayoutProps {
@@ -96,10 +95,10 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="w-[98vw] max-w-screen-2xl z-30 md:h-[80vh] p-4  rounded-xl flex flex-col  font-medium"
+      className="w-[98vw] max-w-screen-2xl z-30 md:h-[80vh] p-4 rounded-xl flex flex-col items-center justify-center font-medium"
     >
       <div className="w-full flex flex-col md:flex-row rounded-lg overflow-hidden">
-        <div className="flex h-full justify-center items-center w-full md:w-3/4 relative">
+        <div className="flex h-[75vh] justify-center items-center w-full md:w-[72%] relative">
           {filteredMachines.length > 6 && (
             <button
               onClick={handlePrev}
@@ -128,7 +127,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                     <Image
                       src={machine.image}
                       alt={machine.name}
-                      className={`object-contain transform hover:scale-90 transition-transform duration-200 rounded-lg relative z-10 h-32 w-full `}
+                      className={`object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full `}
                       width={200}
                       height={150}
                     />
@@ -158,7 +157,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       <Image
                         src={machine.image}
                         alt={machine.name}
-                        className={`relative z-10 h-auto w-full`}
+                        className={`relative rounded-3xl z-10 h-auto w-full`}
                         width={200}
                         height={150}
                       />
@@ -187,16 +186,16 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
         </div>
-        <div className="w-full mt-2 md:w-1/4 pl-4 space-y-2 border-l overflow-y-auto border-gray-300 relative">
+        <div className="w-full mt-0 md:w-[25%] pl-4 space-y-2 border-l overflow-y-hidden border-gray-300 relative">
           {sidebarIndex > 0 && (
             <button
               onClick={handleSidebarPrev}
-              className="absolute top-0 left-1/2 text-4xl transform  -translate-x-1/2 p-0  text-black hover:scale-90 transition-transform duration-200"
+              className="absolute top-0 left-1/2 text-4xl transform -translate-x-1/2 p-0 text-black"
             >
               <MdKeyboardArrowUp />
             </button>
           )}
-          <div className="pt-6 space-y-6">
+          <div className="mt-4 h-[70vh] space-y-6">
             {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map((link) => (
               <div
                 key={link.name}
@@ -204,40 +203,37 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                   setHoveredCategory(link.name);
                   setCurrentIndex(0);
                 }}
-                className={`flex items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
+                className={`flex mt-[2.8rem] items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
                   hoveredCategory === link.name
-                    ? "font-montserrat text-[#483d73]"
-                    : "font-montserrat text-[#483d73]"
+                    ? "font-montserrat text-[#483d78] font-bold"
+                    : "font-montserrat text-black"
                 }`}
               >
-                <div
-                  className={`flex items-center bg-fixed object-contain bg-no-repeat  justify-center cursor-pointer}`}
-                >
+                <div className="flex items-center justify-center cursor-pointer">
                   <Image
-                    className="rounded-full h-6 w-6 transform hover:scale-90 transition-transform duration-300 bg-transparent"
+                    className="rounded-full h-6 w-6 transform hover:scale-80 transition-transform duration-300 bg-transparent"
                     src={link.icon}
                     alt="machine icon"
                   />
                 </div>
-                <span
-                  className={`transform hover:scale-80 transition-transform duration-100`}
-                >
+                <span className="break-words  transform hover:scale-80 transition-transform duration-100">
                   {link.name}
                 </span>
               </div>
             ))}
           </div>
+          {sidebarIndex + 6 < SidebarLinks.length && (
+            <button
+              onClick={handleSidebarNext}
+              className="absolute bottom-0 left-1/2 text-4xl p-0 text-black"
+            >
+              <MdKeyboardArrowDown />
+            </button>
+          )}
         </div>
-        {sidebarIndex + 6 < SidebarLinks.length && (
-          <button
-            onClick={handleSidebarNext}
-            className="absolute bottom-0 right-[8rem]   text-4xl  p-0 text-black hover:scale-90"
-          >
-            <MdKeyboardArrowDown className="-mt-10" />
-          </button>
-        )}
       </div>
     </div>
   );
 };
+
 export default ProductLayout;

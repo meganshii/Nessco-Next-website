@@ -54,7 +54,7 @@ const ProfileLayout: React.FC<ProfileLayoutProps> = ({
   return (
     <div
       ref={profileRef}
-      className="relative max-w-screen-2xl flex"
+      className="relative max-w-screen-2xl flex items-center justify-normal "
     >
       <svg
         onClick={toggleProfile}

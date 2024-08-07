@@ -66,7 +66,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
         {isContactFormVisible && (
           <motion.div
             ref={contactRef}
-            className="fixed top-16 right-0 z-50 mr-12 mt-0 w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px]"
+            className="fixed top-14 right-0 z-50 mr-12 mt-0 w-[200px] md:w-[300px] lg:w-[400px] xl:w-[500px]"
             initial={{ y: "-100%", height: 0, opacity: 0 }}
             animate={{ y: 0, height: "35rem", opacity: 1 }}
             exit={{ y: "-100%", height: 0, opacity: 0 }}

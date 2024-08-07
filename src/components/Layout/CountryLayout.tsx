@@ -374,7 +374,7 @@ const CountryLayout: React.FC = () => {
       </div>
       {isFlagOpen && (
         <div
-          className="absolute right-[-10.5rem] mt-2 w-64 bg-white rounded-3xl shadow-lg border border-gray-300 ring-1 ring-black ring-opacity-5"
+          className="absolute right-[-10.5rem] mt-2 w-64 bg-white rounded-2xl shadow-lg border border-gray-300 ring-1 ring-black ring-opacity-5"
           role="menu"
           aria-orientation="vertical"
           aria-labelledby="menu-button"

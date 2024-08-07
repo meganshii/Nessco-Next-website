@@ -143,7 +143,7 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="wrapper rounded-lg bg-white w-[98vw] max-w-screen-2xl mx-auto relative h-auto flex items-center justify-center p-14"
+      className="wrapper rounded-lg w-[98vw] max-w-screen-2xl mx-auto relative h-auto flex items-center justify-center p-14"
     >
       <button
         onClick={() => handleArrowClick("left")}
@@ -217,7 +217,7 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
       </ul>
       <button
         onClick={() => handleArrowClick("right")}
-        className="absolute right-0 z-10 p-0 text-4xl mr-8 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
+        className="absolute right-0 z-10 p-0 text-4xl mr-4 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
       >
         <span className="relative z-10">
           <MdKeyboardArrowRight />

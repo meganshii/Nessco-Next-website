@@ -1,23 +1,14 @@
-import {
-  FaLeaf,
-  FaProjectDiagram,
-  FaLightbulb,
-  FaRecycle,
-} from "react-icons/fa";
-import { AiOutlineProduct } from 'react-icons/ai';
-import { LiaToolsSolid } from 'react-icons/lia';
-import { IoBarChartOutline } from 'react-icons/io5';
+
+import { AiOutlineProduct } from "react-icons/ai";
+import { LiaToolsSolid } from "react-icons/lia";
+import { IoBarChartOutline } from "react-icons/io5";
 import {
   papercup,
-  paperplate2,
   paperbowl,
   paperlid,
-  paperstraw,
-  paperbag1,
+
   missionImage,
-  companyImage,
-  strengthImage,
-  pinkCityImage,
+
   paperBowlMachineImage,
   paperBagMachineImage,
   paperPlateMachineImage,
@@ -25,21 +16,20 @@ import {
   fullyAutomaticBagMachineImage,
   PCM110WithPLC,
   paperStrawMachine,
-  BookServiceImage,
-  paperLunchBoxMachine,
+    paperLunchBoxMachine,
 } from "../../../public/assets";
 import HomeAbout1 from "../../../public/assets/HomeAbout1.png";
 import HomeAbout2 from "../../../public/assets/HomeAbout2.jpg";
 import HomeAbout3 from "../../../public/assets/HomeAbout3.png";
 import { StaticImageData } from "next/image";
-import KnowMore from "../../../public/assets/KnowMore1.png"
-import KnowMore1 from "../../../public/assets/KnowMore2.png"
-import NewsFeatureMachine from "../../../public/assets/NewsFeatureMachine.jpg"
-import NewsFeatureBanner from "../../../public/assets/NewsFeatureBanner.jpg"
-import NewsFeatureBanner2 from "../../../public/assets/NewsFeatureBanner2.jpg"
-import teamunity from "../../../public/assets/teamunity.avif"
-import productbox from "../../../public/assets/productbox.avif"
-import factory from "../../../public/assets/factory.avif"
+import KnowMore from "../../../public/assets/KnowMore1.png";
+import KnowMore1 from "../../../public/assets/KnowMore2.png";
+import NewsFeatureMachine from "../../../public/assets/NewsFeatureMachine.jpg";
+import NewsFeatureBanner from "../../../public/assets/NewsFeatureBanner.jpg";
+import NewsFeatureBanner2 from "../../../public/assets/NewsFeatureBanner2.jpg";
+import teamunity from "../../../public/assets/teamunity.avif";
+import productbox from "../../../public/assets/productbox.avif";
+import factory from "../../../public/assets/factory.avif";
 interface Images {
   paperBowlMachineImage: StaticImageData;
   paperBagMachineImage: StaticImageData;
@@ -61,9 +51,6 @@ export const images: Images = {
   paperStrawMachine: paperStrawMachine,
   paperLunchBoxMachine: paperLunchBoxMachine,
 };
-
-
-
 
 export interface Item {
   src: StaticImageData;
@@ -280,7 +267,7 @@ export const Items: item[] = [
   {
     id: 1,
     name: "All Solutions",
-    img: paperBagMachineImage,
+    img: KnowMore,
     description:
       "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs. Invest in advanced technology for sustainable, high-volume output.",
   },
@@ -339,23 +326,25 @@ export const Items: item[] = [
     description:
       "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs. Invest in advanced technology for sustainable, high-volume output.",
   },
-  // Add more items as needed
 ];
 export const newscardcontent = [
   {
-    image:KnowMore,
+    image: KnowMore,
     title: "Revolutionary Speed Unveiled",
-    description:"Discover the latest advancements in machine speed that are setting new industry benchmarks. Witness how cutting-edge technology is reshaping performance standards."
+    description:
+      "Discover the latest advancements in machine speed that are setting new industry benchmarks. Witness how cutting-edge technology is reshaping performance standards.",
   },
   {
     image: NewsFeatureBanner,
     title: "Excellence Showcased at DRUPA",
-    description:"Experience the pinnacle of innovation as top-tier machines are displayed at DRUPA. See how our solutions are leading the charge in print and packaging technology."
+    description:
+      "Experience the pinnacle of innovation as top-tier machines are displayed at DRUPA. See how our solutions are leading the charge in print and packaging technology.",
   },
   {
-    image:KnowMore1,
+    image: KnowMore1,
     title: "Excellence Showcased at FOOMA",
-    description:"Explore groundbreaking machine innovations highlighted at FOOMA. See how our latest developments are making waves in the food manufacturing sector."
+    description:
+      "Explore groundbreaking machine innovations highlighted at FOOMA. See how our latest developments are making waves in the food manufacturing sector.",
   },
 ];
 
@@ -372,18 +361,18 @@ interface CardContent {
 
 export const cardContents: CardContent[] = [
   {
-    title: 'Know Your Product',
-    image:productbox,
+    title: "Know Your Product",
+    image: productbox,
     icon: AiOutlineProduct,
   },
   {
-    title: 'Know Your Machine',
-    image:factory,
+    title: "Know Your Machine",
+    image: factory,
     icon: LiaToolsSolid,
   },
   {
-    title: 'Know Your Business',
-    image:teamunity,
+    title: "Know Your Business",
+    image: teamunity,
     icon: IoBarChartOutline,
   },
 ];

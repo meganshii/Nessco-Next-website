@@ -2,7 +2,7 @@ import React from "react";
 import iotImage from "../../../public/assets/iotImage.png";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { IconClipboardCopy, IconFileBroken } from "@tabler/icons-react";
-
+import IotImageFourth from "../../../public/assets/IotImageFourth.png"
 export function BentoGridSecondDemo() {
   return (
     <>

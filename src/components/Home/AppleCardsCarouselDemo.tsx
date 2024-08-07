@@ -81,7 +81,7 @@ const DummyContent: React.FC<DummyContentProps> = ({
                   alt={title}
                   width={600}
                   height={400}
-                  className="rounded-lg object-contain h-[400px]"
+                  className="rounded-2xl object-contain h-[400px]"
                 />
                 <div className="flex w-[60%] -ml-14 space-x-2 justify-center mt-0">
                   {buttons.map((button, index) => (
@@ -135,10 +135,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Cup Machine"
@@ -147,7 +159,8 @@ export const cardsData: CardData[] = [
     category: "cup",
     firstname: "Paper",
     secondname: "Cup Machine",
-    description: "Experience unparalleled efficiency with our Paper Cup Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Cup Machine...",
     image: image,
     title: "Paper Cup Machine",
     speed: 100,
@@ -170,10 +183,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Bowl Machine"
@@ -182,7 +207,8 @@ export const cardsData: CardData[] = [
     category: "bowl",
     firstname: "Paper",
     secondname: "Bowl Machine",
-    description: "Experience unparalleled efficiency with our Paper Bowl Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Bowl Machine...",
     image: image,
     title: "Paper Bowl Machine",
     speed: 120,
@@ -205,10 +231,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Die"
         secondname="Cutting Machine"
@@ -217,7 +255,8 @@ export const cardsData: CardData[] = [
     category: "cutting",
     firstname: "Die",
     secondname: "Cutting Machine",
-    description: "Experience unparalleled efficiency with our Die Cutting Machine...",
+    description:
+      "Experience unparalleled efficiency with our Die Cutting Machine...",
     image: image,
     title: "Die Cutting Machine",
     speed: 150,
@@ -240,10 +279,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Flexo"
         secondname="Printing Machine"
@@ -252,7 +303,8 @@ export const cardsData: CardData[] = [
     category: "printing",
     firstname: "Flexo",
     secondname: "Printing Machine",
-    description: "Experience unparalleled efficiency with our Flexo Printing Machine...",
+    description:
+      "Experience unparalleled efficiency with our Flexo Printing Machine...",
     image: image,
     title: "Flexo Printing Machine",
     speed: 160,
@@ -275,10 +327,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Slitting"
         secondname="Machine"
@@ -287,7 +351,8 @@ export const cardsData: CardData[] = [
     category: "slitting",
     firstname: "Slitting",
     secondname: "Machine",
-    description: "Experience unparalleled efficiency with our Slitting Machine...",
+    description:
+      "Experience unparalleled efficiency with our Slitting Machine...",
     image: image,
     title: "Slitting Machine",
     speed: 140,
@@ -310,10 +375,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Coating"
         secondname="Machine"
@@ -322,7 +399,8 @@ export const cardsData: CardData[] = [
     category: "coating",
     firstname: "Coating",
     secondname: "Machine",
-    description: "Experience unparalleled efficiency with our Coating Machine...",
+    description:
+      "Experience unparalleled efficiency with our Coating Machine...",
     image: image,
     title: "Coating Machine",
     speed: 180,
@@ -345,10 +423,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Bucket Machine"
@@ -357,7 +447,8 @@ export const cardsData: CardData[] = [
     category: "bucket",
     firstname: "Paper",
     secondname: "Bucket Machine",
-    description: "Experience unparalleled efficiency with our Paper Bucket Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Bucket Machine...",
     image: image,
     title: "Paper Bucket Machine",
     speed: 190,
@@ -380,10 +471,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Lid Machine"
@@ -392,7 +495,8 @@ export const cardsData: CardData[] = [
     category: "lid",
     firstname: "Paper",
     secondname: "Lid Machine",
-    description: "Experience unparalleled efficiency with our Paper Lid Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Lid Machine...",
     image: image,
     title: "Paper Lid Machine",
     speed: 110,
@@ -415,10 +519,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Insulated"
         secondname="Cup Machine"
@@ -427,7 +543,8 @@ export const cardsData: CardData[] = [
     category: "cup",
     firstname: "Insulated",
     secondname: "Cup Machine",
-    description: "Experience unparalleled efficiency with our Insulated Cup Machine...",
+    description:
+      "Experience unparalleled efficiency with our Insulated Cup Machine...",
     image: image,
     title: "Insulated Cup Machine",
     speed: 130,
@@ -450,10 +567,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Sleeve"
         secondname="Making Machine"
@@ -462,7 +591,8 @@ export const cardsData: CardData[] = [
     category: "sleeve",
     firstname: "Sleeve",
     secondname: "Making Machine",
-    description: "Experience unparalleled efficiency with our Sleeve Making Machine...",
+    description:
+      "Experience unparalleled efficiency with our Sleeve Making Machine...",
     image: image,
     title: "Sleeve Making Machine",
     speed: 125,
@@ -485,10 +615,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Corrugation"
         secondname="Machine"
@@ -497,7 +639,8 @@ export const cardsData: CardData[] = [
     category: "corrugation",
     firstname: "Corrugation",
     secondname: "Machine",
-    description: "Experience unparalleled efficiency with our Corrugation Machine...",
+    description:
+      "Experience unparalleled efficiency with our Corrugation Machine...",
     image: image,
     title: "Corrugation Machine",
     speed: 135,
@@ -520,10 +663,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper Handle"
         secondname="Cup Machine"
@@ -532,7 +687,8 @@ export const cardsData: CardData[] = [
     category: "cup",
     firstname: "Paper Handle",
     secondname: "Cup Machine",
-    description: "Experience unparalleled efficiency with our Paper Handle Cup Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Handle Cup Machine...",
     image: image,
     title: "Paper Handle Cup Machine",
     speed: 145,
@@ -555,10 +711,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Bag Machine"
@@ -567,7 +735,8 @@ export const cardsData: CardData[] = [
     category: "bag",
     firstname: "Paper",
     secondname: "Bag Machine",
-    description: "Experience unparalleled efficiency with our Paper Bag Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Bag Machine...",
     image: image,
     title: "Paper Bag Machine",
     speed: 150,
@@ -590,10 +759,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Straw Machine"
@@ -602,7 +783,8 @@ export const cardsData: CardData[] = [
     category: "straw",
     firstname: "Paper",
     secondname: "Straw Machine",
-    description: "Experience unparalleled efficiency with our Paper Straw Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Straw Machine...",
     image: image,
     title: "Paper Straw Machine",
     speed: 160,
@@ -625,10 +807,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Cutlery Machine"
@@ -637,7 +831,8 @@ export const cardsData: CardData[] = [
     category: "cutlery",
     firstname: "Paper",
     secondname: "Cutlery Machine",
-    description: "Experience unparalleled efficiency with our Paper Cutlery Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Cutlery Machine...",
     image: image,
     title: "Paper Cutlery Machine",
     speed: 165,
@@ -660,10 +855,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Plastic"
         secondname="Lid Machine"
@@ -672,7 +879,8 @@ export const cardsData: CardData[] = [
     category: "lid",
     firstname: "Plastic",
     secondname: "Lid Machine",
-    description: "Experience unparalleled efficiency with our Plastic Lid Machine...",
+    description:
+      "Experience unparalleled efficiency with our Plastic Lid Machine...",
     image: image,
     title: "Plastic Lid Machine",
     speed: 170,
@@ -695,10 +903,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Forming Machine"
@@ -707,7 +927,8 @@ export const cardsData: CardData[] = [
     category: "forming",
     firstname: "Paper",
     secondname: "Forming Machine",
-    description: "Experience unparalleled efficiency with our Paper Forming Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Forming Machine...",
     image: image,
     title: "Paper Forming Machine",
     speed: 175,
@@ -730,10 +951,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Lunch"
         secondname="Box Machine"
@@ -742,7 +975,8 @@ export const cardsData: CardData[] = [
     category: "box",
     firstname: "Lunch",
     secondname: "Box Machine",
-    description: "Experience unparalleled efficiency with our Lunch Box Machine...",
+    description:
+      "Experience unparalleled efficiency with our Lunch Box Machine...",
     image: image,
     title: "Lunch Box Machine",
     speed: 180,
@@ -765,10 +999,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Paper"
         secondname="Plate Machine"
@@ -777,7 +1023,8 @@ export const cardsData: CardData[] = [
     category: "plate",
     firstname: "Paper",
     secondname: "Plate Machine",
-    description: "Experience unparalleled efficiency with our Paper Plate Machine...",
+    description:
+      "Experience unparalleled efficiency with our Paper Plate Machine...",
     image: image,
     title: "Paper Plate Machine",
     speed: 185,
@@ -800,10 +1047,22 @@ export const cardsData: CardData[] = [
           { text: "Get a Quote", icon: true },
         ]}
         items={[
-          { className: "text-blue-500 text-3xl", text: "High-Speed Synchronized Servos" },
-          { className: "text-green-500 text-3xl", text: "Advanced Sealing Technology" },
-          { className: "text-yellow-500 text-3xl", text: "Two-Step Curling Process" },
-          { className: "text-red-500 text-3xl", text: "Comprehensive Control System with PLC + HMI" },
+          {
+            className: "text-blue-500 text-3xl",
+            text: "High-Speed Synchronized Servos",
+          },
+          {
+            className: "text-green-500 text-3xl",
+            text: "Advanced Sealing Technology",
+          },
+          {
+            className: "text-yellow-500 text-3xl",
+            text: "Two-Step Curling Process",
+          },
+          {
+            className: "text-red-500 text-3xl",
+            text: "Comprehensive Control System with PLC + HMI",
+          },
         ]}
         firstname="Carton"
         secondname="Erecting Machine"
@@ -812,7 +1071,8 @@ export const cardsData: CardData[] = [
     category: "carton",
     firstname: "Carton",
     secondname: "Erecting Machine",
-    description: "Experience unparalleled efficiency with our Carton Erecting Machine...",
+    description:
+      "Experience unparalleled efficiency with our Carton Erecting Machine...",
     image: image,
     title: "Carton Erecting Machine",
     speed: 200,

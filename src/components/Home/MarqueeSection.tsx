@@ -45,7 +45,7 @@ export default function InfiniteMovingCardsDemo() {
             />
           </div>
         </div>
-        <div className="flex items-center space-x-4 mt-0 pt-0">
+        <div className="flex items-center space-x-4 mt-4 pt-0">
           <span className="text-2xl  font-montserrat whitespace-nowrap">
             Partner Brands
           </span>

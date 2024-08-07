@@ -52,7 +52,7 @@ export default function Home() {
         <div id="knowMore" className="mx-4 mt-32" ref={knowMoreRef}>
           <KnowMore />
         </div>
-        <div id="machines" className="mx-4 mt-32" ref={homeMachineRef}>
+        <div id="machines" className=" mt-32" ref={homeMachineRef}>
           <HomeMachine />
         </div>
         <div id="iot" className="mx-6 mt-32" ref={iotRef}>

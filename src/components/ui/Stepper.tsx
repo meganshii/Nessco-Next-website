@@ -28,7 +28,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({ onStepCh
 
   return (
     <div className="sticky bg-[#f2f2f2] top-14 left-0 w-full z-30">
-      <div className="flex items-center justify-center py-2 relative max-w-2xl mx-auto">
+      <div className="flex items-center justify-center w-full py-2 relative mx-auto">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <motion.div
