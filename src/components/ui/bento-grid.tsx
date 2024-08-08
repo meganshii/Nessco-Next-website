@@ -3,6 +3,7 @@ import PositionAwareButton from "./PositionAwareButton";
 import Image, { StaticImageData } from "next/image";
 import { GlareCard } from "./glare-card";
 import { GlowingStarsBackgroundCard } from "./glowing-stars";
+import { HeroHighlight } from "./hero-highlight";
 export const BentoGrid = ({
   className,
   children,
@@ -110,7 +111,7 @@ export const BentoGridItem = ({
             className
           )}
         >
-          <GlowingStarsBackgroundCard>
+          <HeroHighlight>
             {image && (
               <Image
                 src={image}
@@ -120,7 +121,7 @@ export const BentoGridItem = ({
                 alt={"image"}
               />
             )}
-          </GlowingStarsBackgroundCard>
+          </HeroHighlight>
         </div>
       )}
     </>

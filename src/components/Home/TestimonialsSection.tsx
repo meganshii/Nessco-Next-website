@@ -1,9 +1,10 @@
 import React from "react";
 import { ParallaxScrollDemo } from "./ParallaxScrollDemo";
 import VideoCarousel from "./Common/VideoCarousel";
+
 const HomeTestimonial: React.FC = () => {
   return (
-    <div className="flex flex-row py-4 h-screen z-20 max-w-7xl mx-auto relative  overflow-hidden">
+    <div className="flex flex-row py-4 h-screen z-20 max-w-7xl mx-auto relative overflow-hidden">
       <div className="px-2 w-1/3 flex flex-col">
         <h6 className="text-3xl text-red-500 ml-6 lg:text-2xl font-montserrat lg:leading-tight font-bold">
           Testimonials
