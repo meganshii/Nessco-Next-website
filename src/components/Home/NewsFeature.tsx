@@ -2,7 +2,7 @@
 
 // import React, { useState } from "react";
 // import Image from "next/image";
-// import { GrAddCircle } from "react-icons/gr";
+// import { FaCirclePlus } from "react-icons/gr";
 // import Carousel from "./Common/Carousel";
 // import { newscardcontent } from "../Constants/index";
 // import Modal from "../ui/Modal";
@@ -39,7 +39,7 @@
 //             className="absolute top-2 right-2 z-50 p-2 rounded-full cursor-pointer"
 //             onClick={() => handleOpenModal(0)}
 //           >
-//             <GrAddCircle size={30} className="text-white" />
+//             <FaCirclePlus size={30} className="text-white" />
 //           </div>
 //           <h2 className="absolute bottom-28 w-full transition-transform transform group-hover:-translate-y-5 duration-300 text-2xl text-white font-bold text-center py-2">
 //             {newscardcontent[0].title}
@@ -64,7 +64,7 @@
 //                     className="absolute top-0 right-0 m-2"
 //                     onClick={() => handleOpenModal(index + 1)}
 //                   >
-//                     <GrAddCircle className="text-white text-3xl" />
+//                     <FaCirclePlus className="text-white text-3xl" />
 //                   </div>
 //                   <h2 className="absolute bottom-24 left-5 text-xl font-bold text-white transition-transform transform group-hover:-translate-y-5 duration-300">
 //                     {content.title}
@@ -100,7 +100,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { GrAddCircle } from "react-icons/gr";
+import { FaCirclePlus } from "react-icons/fa6";
 import { newscardcontent } from "../Constants";
 import Modal from "../ui/Modal";
 import FeatureCaraousel from "./Common/FeatureCaraousel";
@@ -138,14 +138,14 @@ const NewsFeature: React.FC = () => {
               className="absolute top-0 right-0 m-2 cursor-pointer z-20"
               onClick={() => handleOpenModal(0)}
             >
-              <GrAddCircle size={30} className="text-black" />
+              <FaCirclePlus size={30} className="text-gray-400 " />
             </div>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
             <div className="absolute bottom-0 left-0 w-full p-5">
-              <h2 className="text-3xl font-montserrat text-white font-bold -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+              <h2 className="text-xl font-montserrat text-white font-bold -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
                 {newscardcontent[0].title}
               </h2>
-              <p className="mt-2 text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+              <p className="mt-2 text-base text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
                 {newscardcontent[0].description}
               </p>
             </div>
@@ -167,14 +167,14 @@ const NewsFeature: React.FC = () => {
                     className="absolute top-0 right-0 m-2 cursor-pointer z-20"
                     onClick={() => handleOpenModal(index + 1)}
                   >
-                    <GrAddCircle className="text-black text-3xl" />
+                    <FaCirclePlus className="text-black text-3xl" />
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-full p-5">
-                    <h2 className="text-2xl font-bold text-white -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+                    <h2 className="text-xl font-bold text-white -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
                       {content.title}
                     </h2>
-                    <p className="mt-2 text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
+                    <p className="mt-2 text-white text-base opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
                       {content.description}
                     </p>
                   </div>

@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import styles from "../Styles/FeatureCaraousel.module.css";
-import Image from "next/image";
 import { BlurImage } from "@/components/ui/BlurImage";
 
 interface FeatureCaraouselProps {
@@ -68,11 +67,11 @@ const FeatureCaraousel = ({ type }: FeatureCaraouselProps) => {
           <div className={styles.content}>
             <div className="pt-0 flex flex-col">
               {type === "newsFeature" && (
-                <h1 className="text-2xl text-black  -mt-8 text-justify font-bold">
+                <h1 className="text-xl text-black text-justify font-bold">
                   {item.heading}
                 </h1>
               )}
-              <h2 className="font-montserrat mt-0 text-sm">{item.title}</h2>
+              <h2 className="font-montserrat bottom-0  text-base leading-5">{item.title}</h2>
             </div>
           </div>
         </div>

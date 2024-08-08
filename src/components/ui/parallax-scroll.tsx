@@ -107,7 +107,7 @@ export const ParallaxScroll: React.FC<ParallaxScrollProps> = ({
             </div>
             <p className="text-center text-4xl">❝</p>
             <p className="text-gray-700 mt-4 text-center">{el.quote}</p>
-            <div className="ml-2 mt-4 flex flex-row justify-start items-start">
+            <div className="ml-2 mt-2 flex flex-row justify-start items-start">
               <div className="relative mt-10 h-10 w-1 bg-[#483d78]"></div>
               <div className="flex ml-2 mt-8 flex-col">
                 <h3 className="text-lg font-bold">{el.username}</h3>

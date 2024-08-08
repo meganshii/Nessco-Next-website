@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import AboutLayout from "../Layout/AboutLayout";
@@ -23,15 +23,30 @@ export default function NavbarDemo() {
 }
 
 function Navbar({ className }: { className?: string }) {
+  const [scrolling, setScrolling] = useState(false);
   const [active, setActive] = useState<string | null>(null);
-  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <div
       className={cn(
         "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-50 transition-transform duration-300",
-        "translate-y-0 bg-[#f2f2f2] ",
-        className
+        "translate-y-0",
+        className,
+        "transition-all duration-500 ease-in-out", // Smooth transition
+        scrolling ? "bg-white/70 backdrop-blur-xl" : "bg-transparent backdrop-blur-0" // Adjust blur and background color on scroll
       )}
     >
       <div className="w-1/5 ml-8 flex justify-start items-center">
@@ -54,13 +69,7 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item="About"
-            setPosition={function (position: {
-              left: number;
-              width: number;
-              opacity: number;
-            }): void {
-              throw new Error("Function not implemented.");
-            }}
+            setPosition={() => {}}
           >
             <AboutLayout />
           </MenuItem>
@@ -68,13 +77,7 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item="Products"
-            setPosition={function (position: {
-              left: number;
-              width: number;
-              opacity: number;
-            }): void {
-              throw new Error("Function not implemented.");
-            }}
+            setPosition={() => {}}
           >
             <ProductLayout
               setHoveredItem={() => {}}
@@ -86,13 +89,7 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item="Application"
-            setPosition={function (position: {
-              left: number;
-              width: number;
-              opacity: number;
-            }): void {
-              throw new Error("Function not implemented.");
-            }}
+            setPosition={() => {}}
           >
             <ApplicationPage />
           </MenuItem>
@@ -100,13 +97,7 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item="Solution"
-            setPosition={function (position: {
-              left: number;
-              width: number;
-              opacity: number;
-            }): void {
-              throw new Error("Function not implemented.");
-            }}
+            setPosition={() => {}}
           >
             <SolutionLayout />
           </MenuItem>
@@ -114,13 +105,7 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item="Support"
-            setPosition={function (position: {
-              left: number;
-              width: number;
-              opacity: number;
-            }): void {
-              throw new Error("Function not implemented.");
-            }}
+            setPosition={() => {}}
           >
             <SupportLayout
               setHoveredItem={() => {}}
@@ -132,13 +117,7 @@ function Navbar({ className }: { className?: string }) {
             setActive={setActive}
             active={active}
             item="Resources"
-            setPosition={function (position: {
-              left: number;
-              width: number;
-              opacity: number;
-            }): void {
-              throw new Error("Function not implemented.");
-            }}
+            setPosition={() => {}}
           >
             <SupportLayout
               setHoveredItem={() => {}}
@@ -146,7 +125,6 @@ function Navbar({ className }: { className?: string }) {
               type="Resources"
             />
           </MenuItem>
-         
         </Menu>
       </div>
       <div className="w-1/5 mr-8 flex items-center justify-end">

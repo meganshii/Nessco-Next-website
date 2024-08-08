@@ -49,12 +49,6 @@
 .expertiseContainer svg {
   margin-right: 0px;
 }
-
-.card h2 {
-  margin: 0px;
-  font-size: 28px;
-}
-
 .card .body {
   display: flex;
   height: 100%;
@@ -70,14 +64,9 @@
   justify-content: center;
 }
 
-.card .body .description p {
-  font-size: 16px;
-}
 
-.card .body .description p::first-letter {
-  font-size: 28px;
-  font-family: 'Title';
-}
+
+
 
 .card .body .description span {
   display: flex;
@@ -86,7 +75,6 @@
 }
 
 .card .body .description span a {
-  font-size: 12px;
   text-decoration: underline;
   cursor: pointer;
 }

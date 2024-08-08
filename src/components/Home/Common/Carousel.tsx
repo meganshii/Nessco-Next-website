@@ -71,7 +71,7 @@ const Carousel = ({ type }: CarouselProps) => {
                   {item.heading}
                 </h1>
               )}
-              <h2 className="font-montserrat mt-1 text-sm">{item.title}</h2>
+              <h2 className="font-montserrat mt-1 text-base">{item.title}</h2>
             </div>
           </div>
         </div>

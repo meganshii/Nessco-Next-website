@@ -23,7 +23,7 @@ const NavLink: React.FC<NavLinkProps> = memo(
     <Link
       href="#"
       scroll={false}
-      className={`text-black pt-2 hover:font-bold custome-scale-90 ${
+      className={`text-black ml-[2.5rem] pt-2 hover:font-bold custome-scale-90 ${
         activeLink === index ? "border-b-2 border-red-600" : ""
       }`}
       onMouseEnter={() => handleMouseEnter(index)}
@@ -43,6 +43,7 @@ interface NavLinksDemoProps {
 
 const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   const [activeLink, setActiveLink] = useState<number>(-1);
+  const [isBlurred, setIsBlurred] = useState(false);
   const navRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseEnter = useCallback((index: number) => {
@@ -62,7 +63,6 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const index = navItems.findIndex((item) => item.ref.current === entry.target);
-          console.log(`Intersecting section: ${entry.target.id}, index: ${index}`);
           setActiveLink(index);
         }
       });
@@ -77,7 +77,6 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     navItems.forEach((item) => {
       if (item.ref.current) {
-        console.log(`Observing section: ${item.ref.current.id}`);
         observer.observe(item.ref.current);
       }
     });
@@ -95,15 +94,14 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     const handleScroll = () => {
       if (navRef.current) {
         const navTop = navRef.current.getBoundingClientRect().top;
-        if (navTop <= 0) {
-          navRef.current.classList.add("sticky-nav");
-        } else {
-          navRef.current.classList.remove("sticky-nav");
-        }
+        setIsBlurred(navTop <= 14);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
+
+    // Initial check
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -111,8 +109,13 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   }, []);
 
   return (
-    <div ref={navRef} className="sticky bg-white z-30 top-14">
-      <nav className="left-0 mb-[4rem] -mt-8 ml-[2.5rem] flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+    <div
+      ref={navRef}
+      className={`sticky top-14 z-30 transition-all duration-300 ${
+        isBlurred ? "bg-white/70 backdrop-blur-xl" : "bg-white/70 backdrop-blur-xl"
+      }`}
+    >
+      <nav className="left-0 mb-[4rem] border-b-[0.5px] -mt-8 flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
         {navItems.map((item, index) => (
           <NavLink
             key={index}

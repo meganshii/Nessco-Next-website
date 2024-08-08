@@ -64,14 +64,21 @@ const Card: React.FC<CardProps> = ({
             >
               <FaIndustry className={`${styles.icon} text-black`} size={24} />
               <div className={styles.expertiseText}>
-                <div className="">{expertiseExperience}</div>
-                <div className="text-red-600">{expertiseAbout}</div>
+                <div className="font-poppins">{expertiseExperience}</div>
+                <div className="text-red-600 font-poppins">
+                  {expertiseAbout}
+                </div>
               </div>
             </div>
-            <h2 className="text-center">{title}</h2>
-            <p className="text-center">{description}</p>
-            <span className="w-full  flex flex-row justify-center items-center">
-              <Link className="text-3xl text-center" href={url} target="_blank" rel="noopener noreferrer">
+            <h2 className="text-center text-xl font-semibold font-poppins">{title}</h2>
+            <p className=" mt-6 text-base font-poppins">{description}</p>
+            <span className="w-full mt-4  flex flex-row justify-center items-center">
+              <Link
+                className="text-xl font-poppins text-center"
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 See more
               </Link>
               <svg

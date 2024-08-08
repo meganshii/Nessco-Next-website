@@ -4,7 +4,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import Card from "./Common/FeatureCard";
-import { GrAddCircle } from "react-icons/gr";
+import { FaCirclePlus } from "react-icons/fa6";
 import { cardContents } from "../Constants";
 
 const KnowMachine: React.FC = () => {
@@ -40,10 +40,10 @@ const KnowMachine: React.FC = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div
-              className="absolute cursor-pointer top-0 right-0 m-2 z-20"
+              className="absolute cursor-pointer top-0 right-0 m-4 z-20"
               onClick={() => handleOpenModal(index)}
             >
-              <GrAddCircle size={30} className="text-white" />
+              <FaCirclePlus size={30} className="text-gray-900" />
             </div>
             <div className="absolute bottom-0 left-0 w-full h-full flex items-center justify-start p-4 group-hover:justify-center transition-all duration-300">
               <h2 className="text-2xl -mb-[28rem] group-hover:mb-[10rem] font-bold group-hover:top-0 group-hover:text-center group-hover:text-4xl transition-all text-white">

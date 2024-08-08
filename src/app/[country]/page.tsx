@@ -69,10 +69,11 @@ export default function Home() {
         </div>
         <div
           id="testimonials"
-          className="mt-32 bg-[#f2f2f2] bg-gradient-to-l from-[#f2f2f2] via-purple-100 to-transparent"
+          className="relative mt-20 bg-gradient-to-l  via-purple-200 to-transparent h-screen overflow-hidden"
           ref={homeTestimonialRef}
         >
-          <div className="mx-8">
+          <div className="absolute"></div>
+          <div className="relative mx-8 z-20">
             <HomeTestimonial />
           </div>
         </div>

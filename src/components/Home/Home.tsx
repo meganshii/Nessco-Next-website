@@ -119,6 +119,7 @@ const Hero: React.FC = () => {
               text={"Get a Quote"}
               icon={true}
               bgColor="white"
+              width="155px"
             />
           </div>
         </div>

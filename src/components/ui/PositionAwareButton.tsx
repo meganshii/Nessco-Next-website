@@ -11,6 +11,7 @@ interface PositionAwareButtonProps {
   bgColor?: string; // Optional prop for background color
   hoveredTextColor?: string; // Optional prop for hovered text color
   hoveredIconColor?: string; // Optional prop for hovered icon color
+  width?:string;
 }
 
 const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
@@ -20,7 +21,8 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
   iconColor = "#000",
   bgColor = "transparent",
   hoveredTextColor = "#fff",
-  hoveredIconColor = "#fff"
+  hoveredIconColor = "#fff",
+  width="150px"
 }) => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -53,7 +55,7 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
       onMouseLeave={handleMouseLeave}
       style={{
         color: isHovered ? hoveredTextColor : textColor,
-        backgroundColor: bgColor,
+        backgroundColor: bgColor,width:width
       }}
     >
       {text}

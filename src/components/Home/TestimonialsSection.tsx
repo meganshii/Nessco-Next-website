@@ -1,7 +1,8 @@
 import React from "react";
 import { ParallaxScrollDemo } from "./ParallaxScrollDemo";
 import VideoCarousel from "./Common/VideoCarousel";
-
+import { HeroHighlight, Highlight } from "../ui/hero-highlight";
+import { InfiniteMovingCardsDemo } from "../HeroSection";
 const HomeTestimonial: React.FC = () => {
   return (
     <div className="flex flex-row py-4 h-screen z-20 max-w-7xl mx-auto relative overflow-hidden">
@@ -12,18 +13,21 @@ const HomeTestimonial: React.FC = () => {
         <h2 className="text-5xl font-bold ml-4 mt-20">Don't Just Take</h2>
         <h2 className="text-5xl font-bold ml-4 mt-6">
           Our
-          <span className="relative ml-1 px-5 ">
-            <span className="absolute rounded-2xl inset-0 bg-gradient-to-r from-[#ffffff] to-[#8d7d9b] -z-10" />
-            <span className="relative text-black">Word for it</span>
+          <span className="relative ml-1 ">
+            <span className="absolute rounded-2xl inset-0" />
+            <Highlight className="text-black dark:text-white">
+              Word for it
+            </Highlight>
           </span>
         </h2>
-        <h4 className="mt-20 text-xl text-center">
-          Read what our clients have to say
+        <h4 className="mt-20 text-lg text-center font-poppins">
+        See What Our Clients Are Saying About Us
         </h4>
         <VideoCarousel />
       </div>
       <div className="w-2/3 relative h-full">
-        <ParallaxScrollDemo />
+        {/* <ParallaxScrollDemo /> */}
+        <InfiniteMovingCardsDemo/>
       </div>
     </div>
   );

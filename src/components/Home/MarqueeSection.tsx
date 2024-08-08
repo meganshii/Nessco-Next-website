@@ -31,42 +31,45 @@ const partnerBrands = [
 export default function InfiniteMovingCardsDemo() {
   return (
     <div className="h-auto ml-6 flex flex-col relative overflow-hidden mt-0 pt-0">
-      <motion.div className="flex flex-col mt-0 pt-0">
-        <div className="flex space-x-4 mt-0 pt-0">
-          <span className="text-2xl  mr-14 mt-[1.18rem] font-montserrat whitespace-nowrap">
+      <motion.div className="flex flex-row">
+        <div className="flex w-[15%] flex-col">
+          <div className="text-xl mt-8 font-poppins whitespace-nowrap">
             Trusted By
-          </span>
-          <div className="flex-grow">
-            <InfiniteMovingCards
-              items={trustedBrands}
-              direction="right"
-              speed="slow"
-              className="w-full"
-            />
+          </div>
+          <div className="text-xl mt-14  font-poppins whitespace-nowrap">
+            Partner Brands
           </div>
         </div>
-        <div className="flex items-center space-x-4 mt-4 pt-0">
-          <span className="text-2xl  font-montserrat whitespace-nowrap">
-            Partner Brands
-          </span>
-          <div className="flex-grow">
-            <InfiniteMovingCards
-              items={partnerBrands}
-              direction="left"
-              speed="slow"
-              className="w-full"
-            />
+        <div className="w-[83%] mr-4 bg-white">
+          <div className="">
+            <div className="flex-grow ">
+              <InfiniteMovingCards
+                items={trustedBrands}
+                direction="left"
+                speed="slow"
+                className="w-full"
+              />
+            </div>
+          </div>
+          <div className="">
+            <div className="flex-grow ">
+              <InfiniteMovingCards
+                items={trustedBrands}
+                direction="right"
+                speed="slow"
+                className="w-full"
+              />
+            </div>
           </div>
         </div>
       </motion.div>
       <motion.div className="flex flex-col items-center mt-28 text-center">
-        <p className="text-xl mx-4 w-[62%] font-montserrat leading-8">
+        <p className="text-xl mx-4 w-[62%] font-poppins leading-8">
           Empowering sustainable packaging with advanced paper-based solutions.
           Our innovative machines drive global CO2 reduction, paving the way for
           a greener earth and elevating your packaging capabilities.
         </p>
       </motion.div>
-      
     </div>
   );
 }

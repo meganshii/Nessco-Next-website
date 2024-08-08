@@ -2,7 +2,6 @@ import { cn } from "@/lib/utils";
 import PositionAwareButton from "./PositionAwareButton";
 import Image, { StaticImageData } from "next/image";
 import { GlareCard } from "./glare-card";
-import { GlowingStarsBackgroundCard } from "./glowing-stars";
 import { HeroHighlight } from "./hero-highlight";
 export const BentoGrid = ({
   className,
@@ -75,13 +74,13 @@ export const BentoGridItem = ({
           )}
         >
           <div className="w-full md:w-[90%]">
-            <div className="font-poppins text-justify px-8 font-bold text-xl text-black dark:text-neutral-200 mb-2 mt-2">
+            <div className="font-poppins text-justify px-8 font-semibold text-lg text-black dark:text-neutral-200 mb-2 mt-2">
               {title}
             </div>
             <div className="font-poppins font-normal text-neutral-600 text-xs dark:text-neutral-300">
               <div className="grid grid-cols-2 gap-y-4">
                 <div>
-                  <ul className="list-disc text-lg pl-5 ml-8 space-y-2">
+                  <ul className="list-disc text-base pl-5 ml-8 space-y-2">
                     <li>Monitor Production Reports</li>
                     <li>Production Target Analysis</li>
                     <li>Production Setup Data</li>
@@ -89,7 +88,7 @@ export const BentoGridItem = ({
                   </ul>
                 </div>
                 <div>
-                  <ul className="list-disc text-lg pl-0 space-y-2">
+                  <ul className="list-disc text-base pl-0 space-y-2">
                     <li>Monitor Machine Efficiency</li>
                     <li>Machine Problem Analysis</li>
                     <li>Machine Element Monitoring</li>
