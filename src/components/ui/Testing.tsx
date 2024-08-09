@@ -140,7 +140,7 @@ export const Testing = ({
                   <div className="flex text-base flex-row justify-start items-center">
                      <div className="h-10 w-1 bg-[#483d78]"></div>
                     <div className="flex ml-2 flex-col">
-                      <h3 className="text-base font-bold">{el.username}</h3>
+                      <h3 className="text-sm ">{el.username}</h3>
                       <p className="text-sm text-gray-500">{el.profile}</p>
                     </div>
                   </div>

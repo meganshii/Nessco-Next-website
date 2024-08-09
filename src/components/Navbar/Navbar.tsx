@@ -45,8 +45,8 @@ function Navbar({ className }: { className?: string }) {
         "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-50 transition-transform duration-300",
         "translate-y-0",
         className,
-        "transition-all duration-500 ease-in-out", // Smooth transition
-        scrolling ? "bg-white/70 backdrop-blur-xl" : "bg-transparent backdrop-blur-0" // Adjust blur and background color on scroll
+        "transition-all duration-500 ease-in-out", //  transition
+        scrolling ? "bg-[#f2f2f2]/70 backdrop-blur-xl" : "bg-transparent backdrop-blur-0" // Adjust blur and background color on scroll
       )}
     >
       <div className="w-1/5 ml-8 flex justify-start items-center">

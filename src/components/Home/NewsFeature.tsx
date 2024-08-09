@@ -142,7 +142,7 @@ const NewsFeature: React.FC = () => {
             </div>
             <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
             <div className="absolute bottom-0 left-0 w-full p-5">
-              <h2 className="text-xl font-montserrat text-white font-bold -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+              <h2 className="text-2xl font-montserrat text-white font-bold -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
                 {newscardcontent[0].title}
               </h2>
               <p className="mt-2 text-base text-white opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">
@@ -171,7 +171,7 @@ const NewsFeature: React.FC = () => {
                   </div>
                   <div className="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-black to-transparent rounded-b-3xl"></div>
                   <div className="absolute bottom-0 left-0 w-full p-5">
-                    <h2 className="text-xl font-bold text-white -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
+                    <h2 className="text-2xl font-bold text-white -mb-20 transition-transform transform group-hover:-translate-y-20 duration-300">
                       {content.title}
                     </h2>
                     <p className="mt-2 text-white text-base opacity-0 transition-opacity group-hover:opacity-100 group-hover:translate-y-[-10px] duration-300">

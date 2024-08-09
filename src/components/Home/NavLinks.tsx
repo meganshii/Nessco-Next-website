@@ -43,7 +43,8 @@ interface NavLinksDemoProps {
 
 const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   const [activeLink, setActiveLink] = useState<number>(-1);
-  const [isBlurred, setIsBlurred] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
   const navRef = useRef<HTMLDivElement | null>(null);
 
   const handleMouseEnter = useCallback((index: number) => {
@@ -62,7 +63,9 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          const index = navItems.findIndex((item) => item.ref.current === entry.target);
+          const index = navItems.findIndex(
+            (item) => item.ref.current === entry.target
+          );
           setActiveLink(index);
         }
       });
@@ -74,7 +77,10 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
       threshold: 0.5,
     };
 
-    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions
+    );
     navItems.forEach((item) => {
       if (item.ref.current) {
         observer.observe(item.ref.current);
@@ -92,27 +98,25 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (navRef.current) {
-        const navTop = navRef.current.getBoundingClientRect().top;
-        setIsBlurred(navTop <= 14);
+      const navTop = navRef.current?.getBoundingClientRect().top || 0;
+      
+      // Check if the nav is sticky (top of viewport)
+      if (navTop <= 14) {
+        setScrolling(true);
+      } else {
+        setScrolling(false);
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    // Initial check
-    handleScroll();
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <div
       ref={navRef}
       className={`sticky top-14 z-30 transition-all duration-300 ${
-        isBlurred ? "bg-white/70 backdrop-blur-xl" : "bg-white/70 backdrop-blur-xl"
+        scrolling ? "bg-[#f2f2f2]/70 backdrop-blur-xl" : "bg-[#f2f2f2]/70 backdrop-blur-xl"
       }`}
     >
       <nav className="left-0 mb-[4rem] border-b-[0.5px] -mt-8 flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
