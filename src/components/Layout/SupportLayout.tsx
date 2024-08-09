@@ -8,6 +8,7 @@ import { BgMapImage } from "../../../public/assets";
 import { gsap } from "gsap";
 import Image, { StaticImageData } from "next/image";
 import "./Layout.css";
+import PositionAwareButton from "../ui/PositionAwareButton";
 
 interface SupportItem {
   title: string;
@@ -224,15 +225,8 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
         </span>
       </button>
       {type === "Resources" && (
-        <div className="absolute bottom-2 mt-16 right-28 pt-30 transition-all">
-          <div className="btn-common border-2 border-[#483d78] rounded-xl">
-            <span className="text-14 pl-2">Explore All Resources</span>
-            <button className="btn-icon bg-[#483d78] rounded-full">
-              <span>
-                <MdKeyboardArrowRight className="text-white" />
-              </span>
-            </button>
-          </div>
+        <div className="absolute bottom-2 mt-16 right-24 pt-30 transition-all">
+          <PositionAwareButton text={"Explore All Resources"} width="235px" icon/>
         </div>
       )}
     </div>

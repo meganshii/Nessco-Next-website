@@ -71,7 +71,7 @@ const Card: React.FC<CardProps> = ({
               </div>
             </div>
             <h2 className="text-center text-xl font-semibold font-poppins">{title}</h2>
-            <p className=" mt-6 text-base font-poppins">{description}</p>
+            <p className=" mt-6 text-base text-center font-poppins">{description}</p>
             <span className="w-full mt-4  flex flex-row justify-center items-center">
               <Link
                 className="text-xl font-poppins text-center"

@@ -9,7 +9,9 @@ import {
   FaStarHalf,
 } from "react-icons/fa";
 
-const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({ onStepChange }) => {
+const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
+  onStepChange,
+}) => {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = [
@@ -27,7 +29,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({ onStepCh
   };
 
   return (
-    <div className="sticky bg-white/70 backdrop-blur-xl top-14 left-0 w-full z-30">
+    <div className="sticky bg-[#f2f2f2]/70 backdrop-blur-xl top-14 left-0 w-full z-30">
       <div className="flex items-center justify-center w-full py-2 relative mx-auto">
         {steps.map((step, index) => (
           <React.Fragment key={index}>
@@ -35,7 +37,7 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({ onStepCh
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className={`flex flex-col items-center relative cursor-pointer ${
-                index === activeStep ? "text-gray-500" : "text-gray-500"
+                index === activeStep ? "text-black" : "text-black"
               }`}
               onClick={() => handleClick(index)}
             >

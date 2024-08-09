@@ -376,3 +376,36 @@ export const cardContents: CardContent[] = [
     icon: IoBarChartOutline,
   },
 ];
+export const CARDS_DATA = [
+  {
+    title: "Know Your Product",
+    icon: AiOutlineProduct,
+    animationSpeed: 5.1,
+    containerClassName: "bg-emerald-900",
+    colors: undefined,
+    dotSize: undefined,
+    image: productbox,
+  },
+  {
+    title: "Know Your Machine",
+    icon: LiaToolsSolid,
+    animationSpeed: 3,
+    containerClassName: "bg-black",
+    colors: [
+      [236, 72, 153],
+      [232, 121, 249],
+    ],
+    dotSize: 2,
+    image: factory,
+  },
+  {
+    title: "Know Your Business",
+    icon:IoBarChartOutline,
+    animationSpeed: 3,
+    containerClassName: "bg-sky-600",
+    colors: [[125, 211, 252]],
+    dotSize: undefined,
+    image: teamunity,
+
+  },
+];

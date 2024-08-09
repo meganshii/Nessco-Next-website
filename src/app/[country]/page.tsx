@@ -7,6 +7,7 @@ import KnowMore from "@/components/Home/LearnMoreSection";
 import HomeMachine from "@/components/Home/ProductShowcase";
 import NewsFeature from "@/components/Home/NewsFeature";
 import KnowMachine from "@/components/Home/ProductDetails";
+import {CanvasRevealEffectDemo} from "@/components/Home/CanvasRevealEffectDemo";
 import HomeTestimonial from "@/components/Home/TestimonialsSection";
 import { data } from "@/components/Constants/Navbar/about-data";
 import NavLinksDemo from "@/components/Home/NavLinks";
@@ -65,7 +66,8 @@ export default function Home() {
           <NewsFeature />
         </div>
         <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
-          <KnowMachine />
+           <CanvasRevealEffectDemo/>
+          {/* <KnowMachine /> */}
         </div>
         <div
           id="testimonials"

@@ -40,8 +40,8 @@ export default function InfiniteMovingCardsDemo() {
             Partner Brands
           </div>
         </div>
-        <div className="w-[83%] mr-4 bg-white">
-          <div className="">
+        <div className="w-[85%] ml-44 mask-gradient-marquee">
+          <div className="bg-white">
             <div className="flex-grow ">
               <InfiniteMovingCards
                 items={trustedBrands}
@@ -51,7 +51,7 @@ export default function InfiniteMovingCardsDemo() {
               />
             </div>
           </div>
-          <div className="">
+          <div className="bg-white mt-2">
             <div className="flex-grow ">
               <InfiniteMovingCards
                 items={trustedBrands}

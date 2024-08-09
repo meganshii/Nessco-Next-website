@@ -3,13 +3,28 @@ import { useRouter } from 'next/router';
 
 const HomePage = () => {
   const router = useRouter();
-  const defaultCountry = 'in';
 
   useEffect(() => {
-    router.push(`/${defaultCountry}`);
+    const fetchCountryInfo = async () => {
+      try {
+        const response = await fetch("https://ipapi.co/json/");
+        const data = await response.json();
+        const countryCode = data.country_code.toLowerCase();
+        const languageCode = data.languages.split(',')[0].toLowerCase();
+        console.log(response);
+        router.push(`/${countryCode}`);
+      } catch (error) {
+        console.error("Error fetching country info:", error);
+        const defaultCountry = 'in';
+        const defaultLanguage = 'en';
+        router.push(`/${defaultCountry}/${defaultLanguage}`);
+      }
+    };
+
+    fetchCountryInfo();
   }, [router]);
 
-  return null; // Render nothing since the user will be redirected
+  return null;
 };
 
 export default HomePage;

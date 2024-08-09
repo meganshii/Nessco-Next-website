@@ -3,6 +3,7 @@ import { Items, item } from "../Constants/index"; // Adjust the path as necessar
 import { SlArrowRight, SlArrowDown, SlArrowUp } from "react-icons/sl";
 import styles from "../Layout/solution.module.css"; // Adjust the path as necessary
 import Image from "next/image";
+import PositionAwareButton from "../ui/PositionAwareButton";
 
 const Solution: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<item>(Items[0]);
@@ -77,16 +78,7 @@ const Solution: React.FC = () => {
             </div>
 
             <div className={styles.buttonContainer}>
-              <div className="gap-2 flex flex-row">
-                <button className={styles.customButton}>
-                  Know More
-                  <SlArrowRight className={styles.customIcon} />
-                </button>
-                <button className={styles.customButton}>
-                  Know More
-                  <SlArrowRight className={styles.customIcon} />
-                </button>
-              </div>
+              <PositionAwareButton text={"Know More"} icon width="155px" />
             </div>
           </div>
           <div className="border-r border-gray-400 p-4 mb-7 mt-5"></div>

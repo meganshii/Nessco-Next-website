@@ -3,6 +3,7 @@ import { SlArrowRight } from "react-icons/sl";
 import Image from "next/image";
 import { item, Item } from "../Constants/index";
 import styles from "./application.module.css";
+import PositionAwareButton from "../ui/PositionAwareButton";
 
 const Application: React.FC<{
   onHover: (item: Item) => void;
@@ -90,10 +91,7 @@ const ApplicationPage: React.FC = () => {
               </p>
             </div>
             <div className={styles.container}>
-              <button className={styles.button}>
-                Explore More
-                <SlArrowRight className={styles.icon} />
-              </button>
+             <PositionAwareButton text={"Explore More"} icon width="170px"/>
             </div>
           </div>
         </div>

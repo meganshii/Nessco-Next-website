@@ -316,14 +316,14 @@ export const Card = ({
         className=" h-80 rounded-3xl bg-white  w-48 md:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
         <div className="relative h-full w-full">
-          <div className="absolute flex bg-white h-20 w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-3xl">
+          <div className="absolute flex bg-white h-20 w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
             <div className="">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="100%"
                 viewBox="0 0 20 20"
                 fill="none"
-                className="h-6 w-6 -ml-6 mt-2 "
+                className="h-4 w-4 -ml-4 mt-2 "
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -348,7 +348,7 @@ export const Card = ({
                 width="100%"
                 viewBox="0 0 20 20"
                 fill="none"
-                className="h-6 w-6 mt-20 mr-6"
+                className="h-4 w-4 mt-20 mr-6"
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -362,7 +362,7 @@ export const Card = ({
             src={card.image}
             alt={card.title}
             fill
-            className="object-cover rounded-[2.2rem] p-2 absolute z-10 inset-0"
+            className="object-cover rounded-[1.5rem] p-2 absolute z-10 inset-0"
           />
 
           <div className="absolute left-0 right-0 bottom-0 z-40 p-4">

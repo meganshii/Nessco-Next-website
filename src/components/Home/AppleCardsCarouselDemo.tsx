@@ -89,6 +89,7 @@ const DummyContent: React.FC<DummyContentProps> = ({
                       key={index}
                       text={button.text}
                       icon={button.icon}
+                      width="170px"
                     />
                   ))}
                 </div>

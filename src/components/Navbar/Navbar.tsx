@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import AboutLayout from "../Layout/AboutLayout";
@@ -35,8 +35,8 @@ function Navbar({ className }: { className?: string }) {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -46,7 +46,9 @@ function Navbar({ className }: { className?: string }) {
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out", //  transition
-        scrolling ? "bg-[#f2f2f2]/70 backdrop-blur-xl" : "bg-transparent backdrop-blur-0" // Adjust blur and background color on scroll
+        scrolling
+          ? "bg-[#f2f2f2]/70 backdrop-blur-xl"
+          : "bg-[#f2f2f2]/70 backdrop-blur-xl" // Adjust blur and background color on scroll
       )}
     >
       <div className="w-1/5 ml-8 flex justify-start items-center">

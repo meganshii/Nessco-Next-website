@@ -57,15 +57,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   };
 
   const handleSidebarNext = () => {
-    setSidebarIndex((prevIndex) =>
-      prevIndex + 6 < SidebarLinks.length ? prevIndex + 6 : prevIndex
-    );
+    setSidebarIndex((prevIndex) => prevIndex + 1);
   };
 
   const handleSidebarPrev = () => {
-    setSidebarIndex((prevIndex) =>
-      prevIndex - 6 >= 0 ? prevIndex - 6 : prevIndex
-    );
+    setSidebarIndex((prevIndex) => prevIndex - 1);
   };
 
   const handleMouseLeave = useCallback(() => {
@@ -190,7 +186,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           {sidebarIndex > 0 && (
             <button
               onClick={handleSidebarPrev}
-              className="absolute top-0 left-1/2 text-4xl transform -translate-x-1/2 p-0 text-black"
+              className="absolute top-0 left-1/2 ml-4 text-4xl transform -translate-x-1/2 p-0 text-black"
             >
               <MdKeyboardArrowUp />
             </button>

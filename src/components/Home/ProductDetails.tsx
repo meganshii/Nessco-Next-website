@@ -6,24 +6,22 @@ import React, { useState } from "react";
 import Card from "./Common/FeatureCard";
 import { FaCirclePlus } from "react-icons/fa6";
 import { cardContents } from "../Constants";
+import Modal from "../ui/Modal";
 
 const KnowMachine: React.FC = () => {
   const [openModals, setOpenModals] = useState<boolean[]>(
     new Array(cardContents.length).fill(false)
   );
 
+  const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
+
   const handleOpenModal = (index: number) => {
-    const newOpenModals = [...openModals];
-    newOpenModals[index] = true;
-    setOpenModals(newOpenModals);
+    setOpenModalIndex(index);
   };
 
-  const handleCloseModal = (index: number) => {
-    const newOpenModals = [...openModals];
-    newOpenModals[index] = false;
-    setOpenModals(newOpenModals);
+  const handleCloseModal = () => {
+    setOpenModalIndex(null);
   };
-
   return (
     <div className="p-6 mt-40 h-screen">
       <div className="text-center"></div>
@@ -45,8 +43,8 @@ const KnowMachine: React.FC = () => {
             >
               <FaCirclePlus size={30} className="text-gray-900" />
             </div>
-            <div className="absolute bottom-0 left-0 w-full h-full flex items-center justify-start p-4 group-hover:justify-center transition-all duration-300">
-              <h2 className="text-2xl -mb-[28rem] group-hover:mb-[10rem] font-bold group-hover:top-0 group-hover:text-center group-hover:text-4xl transition-all text-white">
+            <div className="absolute bg-red-300 bottom-0 left-0 w-full h-full flex items-center justify-start p-4 group-hover:justify-center transition-all duration-300">
+              <h2 className="text-3xl -mb-[28rem] group-hover:mb-[10rem] font-bold group-hover:top-0 group-hover:text-center group-hover:mx-8 group-hover:text-4xl transition-all text-white">
                 {content.title}
               </h2>
             </div>
@@ -56,16 +54,16 @@ const KnowMachine: React.FC = () => {
           </div>
         ))}
       </div>
-      {openModals.map(
-        (isModalOpen, index) =>
-          isModalOpen && (
-            <div
-              key={index}
-              className="fixed inset-0 flex items-center justify-center z-50"
-            >
-              <Card handleCloseModal={() => handleCloseModal(index)} />
-            </div>
-          )
+      {openModalIndex !== null && (
+        <Modal
+          image={cardContents[openModalIndex].image}
+          title={cardContents[openModalIndex].title}
+          firstname="First"
+          secondname="Last"
+          description="This is a description."
+          items={[]}
+          onClose={handleCloseModal}
+        />
       )}
     </div>
   );
