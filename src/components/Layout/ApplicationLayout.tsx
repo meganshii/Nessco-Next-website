@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { SlArrowRight } from "react-icons/sl";
 import Image from "next/image";
 import { item, Item } from "../Constants/index";
 import styles from "./application.module.css";
@@ -25,26 +24,26 @@ const Application: React.FC<{
       {items.map((item, index) => (
         <div
           key={index}
-          className="relative mt-2 h-28 w-28 bg-[#575555]  rounded-lg"
+          className="relative mt-2 h-24 w-32  rounded-lg"
           onMouseEnter={() => handleMouseEnter(index, item)}
           onMouseLeave={handleMouseLeave}
         >
           <a
             href={`/application/${item.name.toLowerCase().replace(/ /g, "-")}`}
-            className="relative h-28 w-28 block"
+            className="relative h-24 w-32 block"
           >
             <Image
-              src={item.src.src}
+              src={item.src}
               alt={item.alt}
-              height={100}
-              width={100}
+              height={400}
+              width={400}
               className={`object-cover w-full h-full transition-transform duration-300 ease-in-out rounded-md ${
                 hoveredIndex === index ? "transform translate-y-[-20%]" : ""
               }`}
             />
             <p
               onMouseEnter={() => onHover(item)}
-              className={`absolute bottom-0 w-full text-white text-sm text-center transition-opacity duration-300 ease-in-out ${
+              className={`absolute bottom-0 w-full text-black text-sm text-center transition-opacity duration-300 ease-in-out ${
                 hoveredIndex === index ? "opacity-100" : "opacity-0"
               }`}
             >
@@ -65,33 +64,34 @@ const ApplicationPage: React.FC = () => {
   };
 
   return (
-    <div className="rounded-3xl w-[98vw] h-[90vh] flex justify-center items-start max-w-screen-2xl">
+    <div className="rounded-3xl w-[98vw] h-[82vh] flex justify-center items-start max-w-screen-2xl">
       <div className="overflow-hidden relative">
         <div className="flex">
-          <div className="w-9/12 p-3">
+          <div className="w-[75%] pt-4">
             <Application onHover={handleHover} items={item} />
           </div>
-          <div className="relative flex items-center">
-            <div className="border-r border-gray-300 h-5/6 absolute transform -translate-x-1/3"></div>
+          <div className="relative -ml-1 flex items-center">
+            <div className="border-l h-5/6 absolute  transform -translate-x-1/3"></div>
           </div>
-          <div className="w-1/4 mt-24 relative">
+          <div className="w-[35%] ml-3 mt-24 relative">
             <div
               className="absolute inset-0 bg-cover bg-center h-40 w-40 mt-32 opacity-10 transition-opacity duration-300 ease-in-out ml-40"
               style={{ backgroundImage: `url(${hoveredItem.bgpic.src})` }}
             ></div>
             <div className="relative z-10 p-4 -mt-14">
               <h2 className="text-6xl font-montserrat font-extrabold text-[#483d73]">
-                {hoveredItem.name.split(" ")[0]}
+                {hoveredItem.name.split(" ")[0]}{" "}
+                
               </h2>
-              <h2 className="text-6xl font-montserrat font-extrabold text-red-600">
-                {hoveredItem.name.split(" ")[1]}
-              </h2>
-              <p className="text-base mt-3 text-[#483d73]">
+              <h3 className="text-6xl text-red-500 font-montserrat font-extrabold">
+                  {hoveredItem.name.split(" ")[1]}
+                </h3>
+              <p className="text-base mt-8 text-justify text-[#483d73]">
                 {hoveredItem.description}
               </p>
             </div>
             <div className={styles.container}>
-             <PositionAwareButton text={"Explore More"} icon width="170px"/>
+              <PositionAwareButton text={"Explore More"} icon width="170px" />
             </div>
           </div>
         </div>

@@ -3,7 +3,6 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import Card from "./Common/FeatureCard";
 import { FaCirclePlus } from "react-icons/fa6";
 import { cardContents } from "../Constants";
 import Modal from "../ui/Modal";
@@ -14,11 +13,9 @@ const KnowMachine: React.FC = () => {
   );
 
   const [openModalIndex, setOpenModalIndex] = useState<number | null>(null);
-
   const handleOpenModal = (index: number) => {
     setOpenModalIndex(index);
   };
-
   const handleCloseModal = () => {
     setOpenModalIndex(null);
   };

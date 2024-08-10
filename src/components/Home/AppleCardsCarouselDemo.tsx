@@ -3,11 +3,23 @@ import Image, { StaticImageData } from "next/image";
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
 import image from "../../../public/assets/image.png";
-import myimage from "../../../public/assets/BgForAbout.png";
 import PositionAwareButton from "../ui/PositionAwareButton";
 import Breadcrumb from "../ui/Breadcrumb";
 import { FaCircleNotch } from "react-icons/fa";
-
+import {
+  papercup,
+  paperbowl,
+  paperlid,
+  paperBowlMachineImage,
+  paperBagMachineImage,
+  paperPlateMachineImage,
+  paperFlexoMachineImage,
+  fullyAutomaticBagMachineImage,
+  PCM110WithPLC,
+  paperStrawMachine,
+    paperLunchBoxMachine,
+    paperCupMachineImage,
+} from "../../../public/assets";
 // Define the type for card data
 interface CardData {
   content: React.ReactNode;
@@ -162,11 +174,11 @@ export const cardsData: CardData[] = [
     secondname: "Cup Machine",
     description:
       "Experience unparalleled efficiency with our Paper Cup Machine...",
-    image: image,
+    image:paperBowlMachineImage,
     title: "Paper Cup Machine",
     speed: 100,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -210,11 +222,11 @@ export const cardsData: CardData[] = [
     secondname: "Bowl Machine",
     description:
       "Experience unparalleled efficiency with our Paper Bowl Machine...",
-    image: image,
+    image:paperBagMachineImage,
     title: "Paper Bowl Machine",
     speed: 120,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -262,7 +274,7 @@ export const cardsData: CardData[] = [
     title: "Die Cutting Machine",
     speed: 150,
     unit: "PCS/MIN",
-    icon: image,
+    icon: papercup,
   },
   {
     content: (
@@ -310,7 +322,7 @@ export const cardsData: CardData[] = [
     title: "Flexo Printing Machine",
     speed: 160,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -358,7 +370,7 @@ export const cardsData: CardData[] = [
     title: "Slitting Machine",
     speed: 140,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -406,7 +418,7 @@ export const cardsData: CardData[] = [
     title: "Coating Machine",
     speed: 180,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -454,7 +466,7 @@ export const cardsData: CardData[] = [
     title: "Paper Bucket Machine",
     speed: 190,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -502,7 +514,7 @@ export const cardsData: CardData[] = [
     title: "Paper Lid Machine",
     speed: 110,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -550,7 +562,7 @@ export const cardsData: CardData[] = [
     title: "Insulated Cup Machine",
     speed: 130,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -598,7 +610,7 @@ export const cardsData: CardData[] = [
     title: "Sleeve Making Machine",
     speed: 125,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -646,7 +658,7 @@ export const cardsData: CardData[] = [
     title: "Corrugation Machine",
     speed: 135,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -694,7 +706,7 @@ export const cardsData: CardData[] = [
     title: "Paper Handle Cup Machine",
     speed: 145,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -742,7 +754,7 @@ export const cardsData: CardData[] = [
     title: "Paper Bag Machine",
     speed: 150,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -790,7 +802,7 @@ export const cardsData: CardData[] = [
     title: "Paper Straw Machine",
     speed: 160,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -838,7 +850,7 @@ export const cardsData: CardData[] = [
     title: "Paper Cutlery Machine",
     speed: 165,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -886,7 +898,7 @@ export const cardsData: CardData[] = [
     title: "Plastic Lid Machine",
     speed: 170,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -934,7 +946,7 @@ export const cardsData: CardData[] = [
     title: "Paper Forming Machine",
     speed: 175,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -982,7 +994,7 @@ export const cardsData: CardData[] = [
     title: "Lunch Box Machine",
     speed: 180,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -1030,7 +1042,7 @@ export const cardsData: CardData[] = [
     title: "Paper Plate Machine",
     speed: 185,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
   {
     content: (
@@ -1078,6 +1090,6 @@ export const cardsData: CardData[] = [
     title: "Carton Erecting Machine",
     speed: 200,
     unit: "PCS/MIN",
-    icon: image,
+    icon:paperbowl
   },
 ];

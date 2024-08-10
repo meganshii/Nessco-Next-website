@@ -24,6 +24,7 @@ interface CarouselProps {
 type Card = {
   image: StaticImageData;
   title: string;
+  icon: StaticImageData;
   category: string;
   content?: React.ReactNode;
 };
@@ -332,7 +333,7 @@ export const Card = ({
               </svg>
             </div>
             <div className="h-20 w-16 flex items-center justify-center">
-              <Image src={card.image} alt="icon" height={50} width={50} />
+              <BlurImage src={card.icon} alt="icon" height={100} width={100} />
             </div>
             <div className="flex items-center justify-center">
               <div className="relative h-10 w-10 -mr-6 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
@@ -362,13 +363,13 @@ export const Card = ({
             src={card.image}
             alt={card.title}
             fill
-            className="object-cover rounded-[1.5rem] p-2 absolute z-10 inset-0"
+            className="object-contain rounded-[1.5rem] p-2 absolute z-10 inset-0"
           />
 
           <div className="absolute left-0 right-0 bottom-0 z-40 p-4">
             <motion.p
               layoutId={layout ? `category-${card.category}` : undefined}
-              className="text-white text-sm md:text-base font-medium font-sans text-left"
+              className="text-black text-sm md:text-base font-medium font-sans text-left"
             >
               {card.category}
             </motion.p>

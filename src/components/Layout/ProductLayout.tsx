@@ -12,6 +12,7 @@ import {
   MdKeyboardArrowUp,
 } from "react-icons/md";
 import PositionAwareButton from "../ui/PositionAwareButton";
+import { BlurImage } from "../ui/BlurImage";
 
 interface ProductLayoutProps {
   setHoveredItem: (item: string | null) => void;
@@ -150,7 +151,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       onMouseEnter={() => setHoveredImageIndex(index)}
                       onMouseLeave={() => setHoveredImageIndex(null)}
                     >
-                      <Image
+                      <BlurImage
                         src={machine.image}
                         alt={machine.name}
                         className={`relative rounded-3xl z-10 h-auto w-full`}
@@ -206,7 +207,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                 }`}
               >
                 <div className="flex items-center justify-center cursor-pointer">
-                  <Image
+                  <BlurImage
                     className="rounded-full h-6 w-6 transform hover:scale-80 transition-transform duration-300 bg-transparent"
                     src={link.icon}
                     alt="machine icon"

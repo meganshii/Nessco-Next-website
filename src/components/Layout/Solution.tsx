@@ -32,11 +32,11 @@ const Solution: React.FC = () => {
   };
 
   return (
-    <div className="flex pb-8 justify-center items-start w-[98vw] h-full max-w-screen-2xl">
+    <div className="flex pb-2 justify-center items-start w-[98vw] h-full max-w-screen-2xl">
       <div className="rounded-b-5xl h-4/5 w-full relative">
         <div className="flex">
           <div className="p-8 relative w-9/12">
-            <div className="relative ml-10">
+            <div className="relative ml-8">
               <Image
                 src={selectedItem.img.src}
                 alt={selectedItem.name}
@@ -74,21 +74,25 @@ const Solution: React.FC = () => {
               />
             </div>
 
-            <div className={`space-y-2 h-72 overflow-hidden ${styles.hideScrollbar} -ml-2 mt-4`}>
-              {Items.slice(sidebarIndex, sidebarIndex + 6).map((item, index) => (
-                <div
-                  key={item.id}
-                  className={`p-2 break-words space-x-4 text-lg font-montserrat transition-transform duration-300 ${
-                    selectedItem.id === item.id || hoveredItem === item.id
-                      ? "text-[#483d73] font-bold"
-                      : "text-black"
-                  } hover:text-[#483d73] hover:font-bold`}
-                  onMouseEnter={() => handleItemHover(item)}
-                  onMouseLeave={handleItemLeave}
-                >
-                  {item.name}
-                </div>
-              ))}
+            <div
+              className={`space-y-2 h-72 overflow-hidden ${styles.hideScrollbar} -ml-2 mt-4`}
+            >
+              {Items.slice(sidebarIndex, sidebarIndex + 6).map(
+                (item, index) => (
+                  <div
+                    key={item.id}
+                    className={`p-2 break-words space-x-4 text-lg font-montserrat transition-transform duration-300 ${
+                      selectedItem.id === item.id || hoveredItem === item.id
+                        ? "text-[#483d73] font-bold"
+                        : "text-black"
+                    } hover:text-[#483d73] hover:font-bold`}
+                    onMouseEnter={() => handleItemHover(item)}
+                    onMouseLeave={handleItemLeave}
+                  >
+                    {item.name}
+                  </div>
+                )
+              )}
             </div>
 
             <div className="mt-8">

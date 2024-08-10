@@ -47,7 +47,7 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
-        <div id="clientele" className="mx-4 mt-32" ref={infiniteCardsRef}>
+        <div id="clientele" className="mx-4 mt-36" ref={infiniteCardsRef}>
           <InfiniteMovingCardsDemo />
         </div>
         <div id="knowMore" className="mx-4 mt-32" ref={knowMoreRef}>

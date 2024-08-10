@@ -144,7 +144,7 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="wrapper rounded-lg w-[98vw]  max-w-screen-2xl mx-auto relative h-[45vh] flex items-center justify-center px-14"
+      className="wrapper rounded-lg w-[98vw]  max-w-screen-2xl mx-auto relative h-[45vh] flex items-center justify-center "
     >
       <button
         onClick={() => handleArrowClick("left")}
@@ -154,10 +154,10 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
           <MdKeyboardArrowLeft />
         </span>
       </button>
-      <ul className="carousel mask-gradient-marquee " ref={carouselRef}>
+      <ul className="carousel mask-gradient-support" ref={carouselRef}>
         {supporItem.map((card, index) => (
           <li
-            className="ml-4 flex flex-col   h-full items-center justify-center"
+            className="ml-4 flex flex-col h-full items-center justify-center"
             key={`original-${index}`}
           >
             <div
@@ -225,8 +225,12 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
         </span>
       </button>
       {type === "Resources" && (
-        <div className="absolute bottom-2 mt-16 right-10 pt-30 transition-all">
-          <PositionAwareButton text={"Explore All Resources"} width="235px" icon/>
+        <div className="absolute bottom-2 mt-36  z-30 right-20 pt-30 transition-all">
+          <PositionAwareButton
+            text={"Explore All Resources"}
+            width="235px"
+            icon
+          />
         </div>
       )}
     </div>

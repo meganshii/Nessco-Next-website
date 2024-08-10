@@ -56,16 +56,16 @@ const AboutLayout = () => {
   return (
     <div
       ref={containerRef}
-      className="flex w-[98vw] p-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl  h-full "
+      className="flex w-[98vw] p-2 px-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl  h-full "
     >
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 w-full max-w-screen-lg">
+      <div className="grid -ml-2 grid-cols-2 justify-start md:grid-cols-4 w-[80vw]">
         {titlesWithImages.map((item, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="flex flex-col items-center mt-4"
+            className="flex flex-col justify-start items-center mt-4"
           >
             <Link href={`/${item.title}`} passHref>
               <Image
@@ -82,8 +82,8 @@ const AboutLayout = () => {
           </motion.div>
         ))}
       </div>
-      <div className="ml-4 w-2 h-72 border-l border-gray-300"></div>
-      <div className="ml-4 md:w-[15%] min-h-full flex flex-col justify-between">
+      <div className="ml-2 w-2 h-72 border-l border-gray-300"></div>
+      <div className="ml-4 md:w-[18vw] min-h-full flex flex-col justify-between">
         <motion.div
           ref={carouselRef}
           initial={{ y: "100%", scale: 0.5, opacity: 0 }}

@@ -65,7 +65,7 @@ function Navbar({ className }: { className?: string }) {
           />
         </Link>
       </div>
-      <div className="w-3/5 flex items-center justify-center">
+      <div className="w-3/5 hidden xl:flex  items-center justify-center">
         <Menu>
           <MenuItem
             setActive={setActive}
@@ -129,7 +129,7 @@ function Navbar({ className }: { className?: string }) {
           </MenuItem>
         </Menu>
       </div>
-      <div className="w-1/5 mr-12 flex items-center justify-end">
+      <div className="w-1/5 hidden xl:flex mr-12 items-center justify-end">
         <RightNavbar />
       </div>
     </div>

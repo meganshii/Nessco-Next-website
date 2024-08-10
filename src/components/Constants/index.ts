@@ -6,9 +6,6 @@ import {
   papercup,
   paperbowl,
   paperlid,
-
-  missionImage,
-
   paperBowlMachineImage,
   paperBagMachineImage,
   paperPlateMachineImage,
@@ -18,15 +15,11 @@ import {
   paperStrawMachine,
     paperLunchBoxMachine,
 } from "../../../public/assets";
-import HomeAbout1 from "../../../public/assets/HomeAbout1.png";
-import HomeAbout2 from "../../../public/assets/HomeAbout2.jpg";
-import HomeAbout3 from "../../../public/assets/HomeAbout3.png";
+
 import { StaticImageData } from "next/image";
 import KnowMore from "../../../public/assets/KnowMore1.png";
 import KnowMore1 from "../../../public/assets/KnowMore2.png";
-import NewsFeatureMachine from "../../../public/assets/NewsFeatureMachine.jpg";
 import NewsFeatureBanner from "../../../public/assets/NewsFeatureBanner.jpg";
-import NewsFeatureBanner2 from "../../../public/assets/NewsFeatureBanner2.jpg";
 import teamunity from "../../../public/assets/teamunity.avif";
 import productbox from "../../../public/assets/productbox.avif";
 import factory from "../../../public/assets/factory.avif";
@@ -53,7 +46,7 @@ export const images: Images = {
 };
 
 export interface Item {
-  src: StaticImageData;
+  src: string | StaticImageData;
   alt: string;
   name: string;
   description: string;
@@ -62,7 +55,7 @@ export interface Item {
 
 export const item: Item[] = [
   {
-    src: missionImage,
+    src:paperbowl,
     alt: "Cups",
     name: "Paper Bowl",
     description:
@@ -70,7 +63,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src:"https://i.pinimg.com/564x/f6/4a/e0/f64ae07dac3856af2eab7cc4377fe316.jpg",
     alt: "Item 2",
     name: "Paper Cups",
     description:
@@ -78,7 +71,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/48/5d/c4/485dc4b8ff2f0cc046124e4ca7ac2353.jpg",
     alt: "Item 3",
     name: "Paper Bag",
     description:
@@ -86,47 +79,47 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
     alt: "Item 2",
-    name: "Paper Cups",
+    name: "Paper Spoon",
     description:
       "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for be",
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/4b/15/60/4b1560c84ec801ebd70b01ac50e2a8b0.jpg",
     alt: "Cups",
-    name: "Paper Bowl",
+    name: "Paper lid",
     description:
       "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/36/24/fa/3624fa6c472029bc35861f90d7443583.jpg",
     alt: "Item 5",
-    name: "Paper Spoon",
+    name: "Paper Cup",
     description:
       "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for bevrages and food indeustry",
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/70/51/9f7051df7290097a7b9442fd3b25a533.jpg",
     alt: "Item 6",
-    name: "Paper Glass",
+    name: "Paper Straw",
     description:
       "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage",
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/70/51/9f7051df7290097a7b9442fd3b25a533.jpg",
     alt: "Item 4",
-    name: "Paper Bucket",
+    name: "Paper Cutlry",
     description:
       "Ppaer cups are disposable containers made from the paper and often lined with pplatic or wax to prevent liuquid leakage.theu are widely used for be",
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/70/51/9f7051df7290097a7b9442fd3b25a533.jpg",
     alt: "Cups",
     name: "Paper Bag",
     description:
@@ -134,7 +127,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/70/51/9f7051df7290097a7b9442fd3b25a533.jpg",
     alt: "Item 3",
     name: "Paper Bowl",
     description:
@@ -142,7 +135,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/70/51/9f7051df7290097a7b9442fd3b25a533.jpg",
     alt: "Item 5",
     name: "Paper Bag",
     description:
@@ -150,7 +143,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/70/51/9f7051df7290097a7b9442fd3b25a533.jpg",
     alt: "Item 4",
     name: "Paper Spoon",
     description:
@@ -158,7 +151,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
     alt: "Item 3",
     name: "Paper Bag",
     description:
@@ -166,7 +159,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
     alt: "Item 2",
     name: "Paper Cup",
     description:
@@ -174,7 +167,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
     alt: "Cups",
     name: "Paper Bowl",
     description:
@@ -182,7 +175,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
     alt: "Item 2",
     name: "Paper Cup",
     description:
@@ -190,7 +183,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
     alt: "Item 3",
     name: "Paper Plate",
     description:
@@ -198,7 +191,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/564x/6e/97/7a/6e977a19857185cfb86e197fd88c7a73.jpg",
     alt: "Cups",
     name: "Paper Bag",
     description:
@@ -206,7 +199,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/88/92/9f889264d2b4404ebc43d0acd897e36c.jpg",
     alt: "Item 3",
     name: "Paper Cup",
     description:
@@ -214,7 +207,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/88/92/9f889264d2b4404ebc43d0acd897e36c.jpg",
     alt: "Item 4",
     name: "Paper Spoon",
     description:
@@ -222,7 +215,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/88/92/9f889264d2b4404ebc43d0acd897e36c.jpg",
     alt: "Cups",
     name: "Paper Bag",
     description:
@@ -230,7 +223,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/88/92/9f889264d2b4404ebc43d0acd897e36c.jpg",
     alt: "Item 2",
     name: "Paper Glass",
     description:
@@ -238,7 +231,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/88/92/9f889264d2b4404ebc43d0acd897e36c.jpg",
     alt: "Item 3",
     name: "Paper Bag",
     description:
@@ -246,7 +239,7 @@ export const item: Item[] = [
     bgpic: paperBagMachineImage,
   },
   {
-    src: missionImage,
+    src: "https://i.pinimg.com/236x/9f/88/92/9f889264d2b4404ebc43d0acd897e36c.jpg",
     alt: "Item 4",
     name: "Paper Spoon",
     description:
@@ -295,7 +288,7 @@ export const Items: item[] = [
   {
     id: 5,
     name: "Paper Straw Plant Setup",
-    img: missionImage,
+    img:paperStrawMachine,
     description:
       "Set up your paper cup plant with our high-speed machines for efficient, eco-friendly production. Enjoy rapid manufacturing with reduced energy consumption and operational costs. Invest in advanced technology for sustainable, high-volume output.",
   },

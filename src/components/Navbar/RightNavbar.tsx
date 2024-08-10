@@ -103,29 +103,7 @@ const RightNavbar: React.FC = memo(() => {
             setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
           />
         </span>
-        <div className="flex lg:hidden rounded-3xl justify-between items-center w-full">
-          <Link href="/" onMouseEnter={handleMouseLeave} className="z-30 h-10 rounded-2xl flex items-center">
-            <Image className="z-30 h-6 w-auto" src={Logo} alt="Logo" width={100} height={100} />
-          </Link>
-          <div className="flex items-center">
-            <ProfileLayout
-              profileOpen={visibilityState.profileOpen}
-              setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
-              setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
-              setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
-              setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
-            />
-            <span className="text-2xl cursor-pointer" onClick={toggleMenu}>
-              {menuState.open ? <FiX /> : <FiMenu />}
-            </span>
-          </div>
-        </div>
       </div>
-      {menuState.open && (
-        <div className="fixed bg-white w-full top-20 overflow-y-auto bottom-0 py-20 transition-transform duration-300 transform translate-x-0">
-          {/* Additional content can go here */}
-        </div>
-      )}
     </div>
   );
 });
