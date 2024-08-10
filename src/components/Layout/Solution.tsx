@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Items, item } from "../Constants/index"; // Adjust the path as necessary
-import { SlArrowRight, SlArrowDown, SlArrowUp } from "react-icons/sl";
+import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import styles from "../Layout/solution.module.css"; // Adjust the path as necessary
 import Image from "next/image";
 import PositionAwareButton from "../ui/PositionAwareButton";
@@ -8,50 +8,32 @@ import PositionAwareButton from "../ui/PositionAwareButton";
 const Solution: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<item>(Items[0]);
   const [hoveredItem, setHoveredItem] = useState<number | null>(null);
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const listRef = useRef<HTMLDivElement | null>(null);
-  const itemRefs = useRef<(HTMLParagraphElement | null)[]>([]);
-
-  const handleScroll = () => {
-    if (listRef.current && listRef.current.scrollTop > 0) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
-    }
-  };
+  const [sidebarIndex, setSidebarIndex] = useState(0);
 
   const handleItemHover = (item: item) => {
     setHoveredItem(item.id);
     setSelectedItem(item);
   };
 
-  const handleScrollUp = () => {
-    if (listRef.current) {
-      listRef.current.scrollTop -= 50; // Adjust scroll amount as needed
-    }
-  };
-
-  const handleScrollDown = () => {
-    if (listRef.current) {
-      listRef.current.scrollTop += 50; // Adjust scroll amount as needed
-    }
-  };
-
   const handleItemLeave = () => {
     setHoveredItem(null);
   };
 
-  useEffect(() => {
-    const currentRef = listRef.current;
-    if (currentRef) {
-      currentRef.addEventListener("scroll", handleScroll);
-      return () => currentRef.removeEventListener("scroll", handleScroll);
+  const handleScrollUp = () => {
+    if (sidebarIndex > 0) {
+      setSidebarIndex((prevIndex) => prevIndex - 1);
     }
-  }, []);
+  };
+
+  const handleScrollDown = () => {
+    if (sidebarIndex + 5 < Items.length) {
+      setSidebarIndex((prevIndex) => prevIndex + 1);
+    }
+  };
 
   return (
-    <div className="flex pb-8 justify-center items-start w-[98vw] h-full  max-w-screen-2xl">
-      <div className="rounded-b-5xl  h-4/5 w-full relative">
+    <div className="flex pb-8 justify-center items-start w-[98vw] h-full max-w-screen-2xl">
+      <div className="rounded-b-5xl h-4/5 w-full relative">
         <div className="flex">
           <div className="p-8 relative w-9/12">
             <div className="relative ml-10">
@@ -86,23 +68,17 @@ const Solution: React.FC = () => {
             <div className="relative text-black">
               <SlArrowUp
                 className={`${styles.arrowUp} ${
-                  isScrolled ? "visible" : "invisible"
+                  sidebarIndex > 0 ? "visible" : "invisible"
                 }`}
                 onClick={handleScrollUp}
               />
             </div>
 
-            <div
-              ref={listRef}
-              className={`space-y-2 h-72 overflow-y-auto ${styles.hideScrollbar} -ml-2 mt-4`}
-            >
-              {Items.map((item, index) => (
-                <p
+            <div className={`space-y-2 h-72 overflow-hidden ${styles.hideScrollbar} -ml-2 mt-4`}>
+              {Items.slice(sidebarIndex, sidebarIndex + 6).map((item, index) => (
+                <div
                   key={item.id}
-                  ref={(el) => {
-                    itemRefs.current[index] = el;
-                  }} // Update ref assignment
-                  className={`p-2 break-words space-x-4 text-lg font-montserrat ${
+                  className={`p-2 break-words space-x-4 text-lg font-montserrat transition-transform duration-300 ${
                     selectedItem.id === item.id || hoveredItem === item.id
                       ? "text-[#483d73] font-bold"
                       : "text-black"
@@ -111,12 +87,15 @@ const Solution: React.FC = () => {
                   onMouseLeave={handleItemLeave}
                 >
                   {item.name}
-                </p>
+                </div>
               ))}
             </div>
+
             <div className="mt-8">
               <SlArrowDown
-                className={`${styles.arrowDown} text-[#483d73]`}
+                className={`${styles.arrowDown} ${
+                  sidebarIndex + 6 < Items.length ? "visible" : "invisible"
+                } text-[#483d73]`}
                 onClick={handleScrollDown}
               />
             </div>

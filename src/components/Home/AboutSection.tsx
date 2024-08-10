@@ -51,7 +51,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
             <h2 className="text-3xl font-extrabold text-[#483d73]">
               {stats.machinesSold}
             </h2>
-            <p className="text-lg font-poppins">Machines Sold</p>
+            <p className="text-base font-poppins">Machines Sold</p>
           </div>
           <p className="font-poppins text-base ml-12 py-4 text-center ml-18 w-[60%] leading-6">
             {description}
@@ -60,12 +60,12 @@ const AboutUs: React.FC<AboutUsProps> = ({
             <h2 className="text-3xl font-extrabold text-[#483d73] -mt-3">
               {stats.readyStockMachines}
             </h2>
-            <p className="text-lg font-poppins">Ready Stock Machines</p>
+            <p className="text-base font-poppins">Ready Stock Machines</p>
           </div>
         </div>
         <Link
           href="/products"
-          className="text-[#483d73] font-poppins text-xl mt-0 mr-18 inline-flex items-center underline-offset-3 underline"
+          className="text-[#483d73] font-poppins text-base mt-0 mr-18 inline-flex items-center underline-offset-3 underline"
         >
           Read more
           <svg
@@ -110,7 +110,7 @@ const AboutUs: React.FC<AboutUsProps> = ({
                 <div className="absolute bottom-0 left-0 p-4 flex items-center justify-between w-full">
                   <a
                     href={card.link}
-                    className="text-white font-extrabold text-md"
+                    className="text-white text-base"
                   >
                     {card.title}
                   </a>

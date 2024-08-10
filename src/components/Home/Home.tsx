@@ -85,7 +85,7 @@ const Hero: React.FC = () => {
     <div className="relative h-screen max-w-screen-2xl flex flex-col items-center overflow-hidden min-h-screen w-full">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <motion.div
-          className="md:mt-[3rem] h-[calc(100vh-150px)] flex justify-center items-center sm:h-[calc(100vh-270px)] rounded-xl"
+          className="md:mt-[3rem] h-[calc(100vh-150px)] flex justify-center items-center sm:h-[calc(100vh-250px)] rounded-xl"
           ref={videoRef}
           style={{ width: videoWidth, x: videoX, originX: 0.5 }}
         >
@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
             </div>
           )}
         </motion.div>
-        <div className="absolute px-8 h-full text-white w-full flex flex-col justify-end items-start bottom-0 left-8 sm:bottom-5 sm:left-10 md:bottom-20 md:left-20">
+        <div className="absolute px-8 h-full text-white w-full flex flex-col justify-end items-start bottom-0 left-8 sm:bottom-5 sm:left-10 md:bottom-10 md:left-20">
           <div className="mb-4">
             {" "}
             <PositionAwareButton

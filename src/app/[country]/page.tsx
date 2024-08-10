@@ -67,7 +67,6 @@ export default function Home() {
         </div>
         <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
            <CanvasRevealEffectDemo/>
-          {/* <KnowMachine /> */}
         </div>
         <div
           id="testimonials"

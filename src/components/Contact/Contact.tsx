@@ -57,7 +57,7 @@ const ContactForm: React.FC<ContactFormProps> = ({
     <div>
       <button
         type="button"
-        className="cursor-pointer font-poppins text-16 font-thin rounded-full p-0 pl-4 pr-4 text-white bg-[#483d78]"
+        className="cursor-pointer font-poppins text-16 font-thin rounded-full px-2 text-white bg-[#483d78]"
         onClick={toggleContactForm}
       >
         Contact

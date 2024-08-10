@@ -73,7 +73,7 @@ export const MenuItem = ({
   return (
     <div
       ref={ref}
-      className="z-10 cursor-pointer px-3 font-montserrat py-2 text-white  md:px-3 md:py-1 md:text-base "
+      className="z-10 cursor-pointer px-3 font-montserrat py-2 text-white  md:py-1 md:text-base "
     >
       <motion.p className="text-black font-poppins text-16">
         {item}

@@ -12,35 +12,45 @@ import Logo from "../../../public/assets/Logo.png";
 import { VscAccount } from "react-icons/vsc";
 
 const RightNavbar: React.FC = memo(() => {
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const [heading, setHeading] = useState<string | null>("");
-  const [open, setOpen] = useState(false);
-  const [isFlagOpen, setIsFlagOpen] = useState(false);
-  const [profileOpen, setProfileOpen] = useState(false);
-  const [isContactFormVisible, setContactFormVisible] = useState(false);
-  const [openSearch, setOpenSearch] = useState(false);
-  const [accountOpen, setAccountOpen] = useState(false);
+  const [menuState, setMenuState] = useState({
+    open: false,
+    hoveredItem: null as string | null,
+    heading: "",
+  });
+
+  const [visibilityState, setVisibilityState] = useState({
+    isFlagOpen: false,
+    profileOpen: false,
+    openSearch: false,
+    accountOpen: false,
+    isContactFormVisible: false,
+  });
+
   const [isVisible, setIsVisible] = useState(true);
   const accountRef = useRef<HTMLDivElement | null>(null);
 
-  const toggleMenu = useCallback(() => setOpen((prev) => !prev), []);
-
-  const handleMouseLeave = useCallback(() => {
-    setHoveredItem(null);
-    setHeading("");
-    setIsVisible(true);
+  const toggleMenu = useCallback(() => {
+    setMenuState((prev) => ({ ...prev, open: !prev.open }));
   }, []);
 
+  const handleMouseLeave = useCallback(() => {
+    setMenuState({ ...menuState, hoveredItem: null, heading: "" });
+    setIsVisible(true);
+  }, [menuState]);
+
   const handleAccount = useCallback(() => {
-    setIsFlagOpen(false);
-    setProfileOpen(false);
-    setOpenSearch(false);
-    setAccountOpen((prev) => !prev);
+    setVisibilityState((prev) => ({
+      ...prev,
+      isFlagOpen: false,
+      profileOpen: false,
+      openSearch: false,
+      accountOpen: !prev.accountOpen,
+    }));
   }, []);
 
   const handleClickOutside = useCallback((event: MouseEvent) => {
     if (accountRef.current && !accountRef.current.contains(event.target as Node)) {
-      setAccountOpen(false);
+      setVisibilityState((prev) => ({ ...prev, accountOpen: false }));
     }
   }, []);
 
@@ -52,64 +62,67 @@ const RightNavbar: React.FC = memo(() => {
   }, [handleClickOutside]);
 
   useEffect(() => {
-    console.log("Visibility updated:", { isFlagOpen, openSearch, profileOpen, accountOpen });
+    const { isFlagOpen, openSearch, profileOpen, accountOpen } = visibilityState;
     setIsVisible(!(isFlagOpen || openSearch || profileOpen || accountOpen));
-  }, [isFlagOpen, openSearch, profileOpen, accountOpen]);
+  }, [visibilityState]);
 
   return (
-    <div className={`w-full max-w-screen-2xl lg:w-1/5 justify-center relative  top-0 right-0 ${hoveredItem ? "rounded-t-lg" : "rounded-lg"}`}>
-      <div className="flex items-center gap-4 justify-center h-14 px-4">
-        <span onMouseEnter={handleMouseLeave} className={`w-full h-10 z-30 hidden lg:flex justify-end items-center gap-3 ${hoveredItem ? "text-black" : "text-black"}`}>
-          <CountryLayout
-          />
+    <div className={`w-full max-w-screen-2xl justify-center relative top-0 ${menuState.hoveredItem ? "rounded-t-lg" : "rounded-lg"}`}>
+      <div className="flex items-center gap-2 justify-center h-14">
+        <span onMouseEnter={handleMouseLeave} className="w-full h-10 z-30 hidden lg:flex items-center gap-3 text-black">
+          <CountryLayout />
           <SearchBarLayout
-            setIsFlagOpen={setIsFlagOpen}
-            openSearch={openSearch}
-            setOpenSearch={setOpenSearch}
-            setProfileOpen={setProfileOpen}
-            setAccountOpen={setAccountOpen}
+            setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
+            openSearch={visibilityState.openSearch}
+            setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
+            setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
+            setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
           />
           <ProfileLayout
-            profileOpen={profileOpen}
-            setIsFlagOpen={setIsFlagOpen}
-            setOpenSearch={setOpenSearch}
-            setProfileOpen={setProfileOpen}
-            setAccountOpen={setAccountOpen}
+            profileOpen={visibilityState.profileOpen}
+            setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
+            setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
+            setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
+            setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
           />
           <div className="relative">
             <VscAccount onClick={handleAccount} className="text-18 cursor-pointer" />
-            {accountOpen && <div ref={accountRef}><AccountLayout /></div>}
+            {visibilityState.accountOpen && (
+              <div ref={accountRef}>
+                <AccountLayout />
+              </div>
+            )}
           </div>
           <ContactForm
-            isContactFormVisible={isContactFormVisible}
-            setContactFormVisible={setContactFormVisible}
+            isContactFormVisible={visibilityState.isContactFormVisible}
+            setContactFormVisible={(value) => setVisibilityState((prev) => ({ ...prev, isContactFormVisible: value }))}
             isVisible={isVisible}
-            setIsFlagOpen={setIsFlagOpen}
-            setOpenSearch={setOpenSearch}
-            setProfileOpen={setProfileOpen}
-            setAccountOpen={setAccountOpen}
+            setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
+            setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
+            setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
+            setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
           />
         </span>
-        <div className="flex lg:hidden rounded-3xl px-4 mx-6 justify-between items-center w-full">
-          <Link href="/" onMouseEnter={handleMouseLeave} className="z-30 h-10 rounded-2xl flex pr-2 items-center">
+        <div className="flex lg:hidden rounded-3xl justify-between items-center w-full">
+          <Link href="/" onMouseEnter={handleMouseLeave} className="z-30 h-10 rounded-2xl flex items-center">
             <Image className="z-30 h-6 w-auto" src={Logo} alt="Logo" width={100} height={100} />
           </Link>
           <div className="flex items-center">
             <ProfileLayout
-              profileOpen={profileOpen}
-              setIsFlagOpen={setIsFlagOpen}
-              setOpenSearch={setOpenSearch}
-              setProfileOpen={setProfileOpen}
-              setAccountOpen={setAccountOpen}
+              profileOpen={visibilityState.profileOpen}
+              setIsFlagOpen={(value) => setVisibilityState((prev) => ({ ...prev, isFlagOpen: value }))}
+              setOpenSearch={(value) => setVisibilityState((prev) => ({ ...prev, openSearch: value }))}
+              setProfileOpen={(value) => setVisibilityState((prev) => ({ ...prev, profileOpen: value }))}
+              setAccountOpen={(value) => setVisibilityState((prev) => ({ ...prev, accountOpen: value }))}
             />
-            <span className="text-2xl pr-4 cursor-pointer" onClick={toggleMenu}>
-              {open ? <FiX /> : <FiMenu />}
+            <span className="text-2xl cursor-pointer" onClick={toggleMenu}>
+              {menuState.open ? <FiX /> : <FiMenu />}
             </span>
           </div>
         </div>
       </div>
-      {open && (
-        <div className={`fixed bg-white w-full top-20 overflow-y-auto bottom-0 py-20 transition-transform duration-300 transform ${open ? "translate-x-0" : "translate-x-full"}`}>
+      {menuState.open && (
+        <div className="fixed bg-white w-full top-20 overflow-y-auto bottom-0 py-20 transition-transform duration-300 transform translate-x-0">
           {/* Additional content can go here */}
         </div>
       )}

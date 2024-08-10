@@ -144,25 +144,25 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
   return (
     <div
       ref={containerRef}
-      className="wrapper rounded-lg w-[98vw] max-w-screen-2xl mx-auto relative h-auto flex items-center justify-center p-14"
+      className="wrapper rounded-lg w-[98vw]  max-w-screen-2xl mx-auto relative h-[45vh] flex items-center justify-center px-14"
     >
       <button
         onClick={() => handleArrowClick("left")}
         className="absolute z-10 left-0 p-0 text-4xl ml-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
       >
-        <span className="relative z-10 custom-scale">
+        <span className="relative z-30 custom-scale">
           <MdKeyboardArrowLeft />
         </span>
       </button>
-      <ul className="carousel" ref={carouselRef}>
+      <ul className="carousel mask-gradient-marquee " ref={carouselRef}>
         {supporItem.map((card, index) => (
           <li
-            className="ml-4 flex flex-col items-center justify-center"
+            className="ml-4 flex flex-col   h-full items-center justify-center"
             key={`original-${index}`}
           >
             <div
               style={backgroundImageStyle}
-              className="card relative custom-scale-80 "
+              className="card relative  custom-scale-80 "
               draggable
               onDragStart={handleDragStart}
               onDragOver={handleDragOver}
@@ -218,14 +218,14 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
       </ul>
       <button
         onClick={() => handleArrowClick("right")}
-        className="absolute right-0 z-10 p-0 text-4xl mr-4 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
+        className="absolute right-0 z-30 p-0 text-4xl mr-2 h-10 w-10 border-2 rounded-full overflow-hidden bg-white text-black transition-all before:absolute before:bottom-0 before:right-0 before:top-0 before:z-0 before:w-0 before:bg-black before:transition-all before:duration-75 hover:text-white hover:before:left-0 hover:before:w-full"
       >
-        <span className="relative z-10">
+        <span className="relative z-30">
           <MdKeyboardArrowRight />
         </span>
       </button>
       {type === "Resources" && (
-        <div className="absolute bottom-2 mt-16 right-24 pt-30 transition-all">
+        <div className="absolute bottom-2 mt-16 right-10 pt-30 transition-all">
           <PositionAwareButton text={"Explore All Resources"} width="235px" icon/>
         </div>
       )}

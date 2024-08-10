@@ -16,23 +16,19 @@ import { Menu, MenuItem } from "./nav-menue";
 
 export default function NavbarDemo() {
   return (
-    <div className="relative max-w-screen-2xl flex items-center justify-center">
-      <Navbar className="top-0" />
+    <div className="pt-[80px] max-w-screen-2xl mx-auto"> {/* Adjust top padding to offset the fixed navbar */}
+      <Navbar />
     </div>
   );
 }
 
-function Navbar({ className }: { className?: string }) {
+function Navbar() {
   const [scrolling, setScrolling] = useState(false);
   const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setScrolling(true);
-      } else {
-        setScrolling(false);
-      }
+      setScrolling(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -42,13 +38,10 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-50 transition-transform duration-300",
-        "translate-y-0",
-        className,
-        "transition-all duration-500 ease-in-out", //  transition
+        "fixed top-0 left-0 right-0 z-50 flex items-center justify-center w-full transition-all duration-300 ease-in-out",
         scrolling
           ? "bg-[#f2f2f2]/70 backdrop-blur-xl"
-          : "bg-[#f2f2f2]/70 backdrop-blur-xl" // Adjust blur and background color on scroll
+          : "bg-[#f2f2f2]/70 backdrop-blur-xl"
       )}
     >
       <div className="w-1/5 ml-[1.4rem] flex justify-start items-center">
@@ -59,8 +52,8 @@ function Navbar({ className }: { className?: string }) {
           <Image
             src={Logo}
             alt="Logo"
-            width={400}
-            height={400}
+            width={50}
+            height={50}
             className="h-[1.4rem] w-full"
           />
         </Link>
