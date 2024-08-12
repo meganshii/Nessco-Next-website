@@ -48,7 +48,7 @@ const Application: React.FC<{
         >
           <a
             href={`/application/${item.name.toLowerCase().replace(/ /g, "-")}`}
-            className="relative h-24 w-32 block"
+            className="relative bg-slate-400 rounded-md h-24 w-32 block"
           >
             <Image
               src={item.src}

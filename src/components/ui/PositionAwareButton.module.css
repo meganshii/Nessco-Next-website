@@ -23,6 +23,9 @@
     font-size: 2rem;
     transition: transform 0.3s ease-in-out;
   }
+  .iconhover {
+   background-color: wheat;
+  }
   
   .btnPosnawr span {
     position: absolute;
@@ -48,7 +51,7 @@
   }
   
   .btnPosnawr:active {
-    background-color: #ff0000;
+    background-color: #ffffff;
   }
   
   .btnPosnawr:hover .icon {

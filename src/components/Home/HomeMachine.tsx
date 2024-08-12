@@ -2,8 +2,8 @@
 
 import React, { useState } from "react";
 import Stepper from "../ui/Stepper";
-import { AppleCardsCarouselDemo } from "./AppleCardsCarouselDemo";
-import { cardsData } from "./AppleCardsCarouselDemo";
+import { HomeMachineCarousel } from "./Common/HomeMachineCarousel";
+import { cardsData } from "./Common/HomeMachineCarousel";
 
 const HomeMachine: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -25,7 +25,7 @@ const HomeMachine: React.FC = () => {
     <div className="h-full mt-14 ">
       <Stepper onStepChange={setActiveStep} />
       <div className="h-[90%] mx-2 px-4">
-        <AppleCardsCarouselDemo filteredCardsData={filteredCardsData} />
+        <HomeMachineCarousel filteredCardsData={filteredCardsData} />
       </div>
     </div>
   );

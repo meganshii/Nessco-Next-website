@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useCallback, memo, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Carousel from "./Common/Carousel";
+import Carousel from "./Common/HomeCarousel";
 import Link from "next/link";
 import PositionAwareButton from "../ui/PositionAwareButton";
 
@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="flex my-8 mx-14 flex-col md:flex-row px-10 w-full">
+      <div className="flex my-4 mx-14 flex-col md:flex-row px-10 w-full">
         <div className="w-full md:w-2/5 mx-1 flex flex-col mb-4 md:mb-2">
           <p className="text-2xl mx-4 md:text-2xl lg:text-4xl font-poppins font-thin">
             FOOD PACKING MACHINES
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
         <div className="w-full px-4 md:w-3/5">
-          <Carousel />
+          <Carousel/>
         </div>
       </div>
     </div>

@@ -2,16 +2,15 @@
 import React, { useRef } from "react";
 import Hero from "@/components/Home/Home";
 import AboutUs from "@/components/Home/AboutSection";
-import InfiniteMovingCardsDemo from "@/components/Home/MarqueeSection";
-import KnowMore from "@/components/Home/LearnMoreSection";
-import HomeMachine from "@/components/Home/ProductShowcase";
+import MarqueeSection from "@/components/Home/MarqueeSection";
+import KnowMore from "@/components/Home/KnowMore";
+import HomeMachine from "@/components/Home/HomeMachine";
 import NewsFeature from "@/components/Home/NewsFeature";
 import { CanvasRevealEffectDemo } from "@/components/Home/CanvasRevealEffectDemo";
 import HomeTestimonial from "@/components/Home/TestimonialsSection";
 import { data } from "@/components/Constants/Navbar/about-data";
 import NavLinksDemo from "@/components/Home/NavLinks";
-import { BentoGridSecondDemo } from "@/components/Home/BentoGridSecondDemo";
-import { SwipeCarousel } from "@/components/Home/slider";
+import { IotSection } from "@/components/Home/IotSection";
 
 export default function Home() {
   const aboutUsRef = useRef<HTMLDivElement>(null);
@@ -47,10 +46,10 @@ export default function Home() {
           />
         </div>
         <div id="clientele" className="mx-4  m-48" ref={infiniteCardsRef}>
-          <InfiniteMovingCardsDemo />
+          <MarqueeSection />
         </div>
         <div id="knowMore" className="mx-4" ref={knowMoreRef}>
-        <KnowMore />
+          <KnowMore/>
         </div>
         <div id="machines" className="mt-32" ref={homeMachineRef}>
           <HomeMachine />
@@ -59,7 +58,7 @@ export default function Home() {
           <h4 className="text-xl text-center lg:text-2xl font-poppins lg:leading-tight text-black dark:text-white">
             IoT <span className="text-red-500 font-bold">System</span>
           </h4>
-          <BentoGridSecondDemo />
+          <IotSection />
         </div>
         <div id="news" className="mx-4 mt-32" ref={newsFeatureRef}>
           <NewsFeature />

@@ -28,7 +28,7 @@ const partnerBrands = [
   { src: "/assets/client-logos/telegraph.png", alt: "Telegraph" },
 ];
 
-export default function InfiniteMovingCardsDemo() {
+export default function MarqueeSection() {
   return (
     <div className="h-auto ml-6 flex flex-col relative overflow-hidden  pt-0">
       <motion.div className="flex flex-row">

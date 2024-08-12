@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
-
+import "../Styles/slider.css"
 const videos: string[] = [
   "/video/bg.mp4",
   "/video/Homebg.mp4",
@@ -122,15 +122,21 @@ type DotsProps = {
 
 const Dots: React.FC<DotsProps> = ({ videoIndex, setVideoIndex }) => {
   return (
-    <div className="mt-4 flex w-full justify-center gap-2">
+    <div className="indicators absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
       {videos.map((_, idx) => (
         <button
           key={idx}
           onClick={() => setVideoIndex(idx)}
-          className={`h-2 w-2 rounded-full transition-colors ${
-            idx === videoIndex ? "bg-neutral-50" : "bg-neutral-500"
+          className={`indicator relative block h-1.5 rounded-full transition-all duration-300 ease-in-out overflow-hidden ${
+            idx === videoIndex ? "active w-10" : "w-1.5 bg-neutral-500"
           }`}
-        />
+        >
+          <span
+            className={`progress absolute top-0 left-0 h-full w-full bg-neutral-50 transform scale-x-0 transform-origin-left ${
+              idx === videoIndex ? "animate-progress" : ""
+            }`}
+          ></span>
+        </button>
       ))}
     </div>
   );

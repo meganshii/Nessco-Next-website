@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { FaIndustry } from "react-icons/fa";
 import Link from "next/link";
 
-interface CardProps {
+interface KnowMoreCardProps {
   i: number;
   title: string;
   description: string;
@@ -22,7 +22,7 @@ interface CardProps {
   targetScale: number;
 }
 
-const Card: React.FC<CardProps> = ({
+const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
   i,
   title,
   description,
@@ -45,14 +45,14 @@ const Card: React.FC<CardProps> = ({
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className={`${styles.cardContainer} -mt-[5rem]`}>
+    <div ref={container} className={`${styles.KnowMoreCardContainer} -mt-[5rem]`}>
       <motion.div
         style={{
           backgroundColor: color,
           scale,
           top: `calc(2vh + ${i * 1}px)`,
         }}
-        className={styles.card}
+        className={styles.KnowMoreCard}
       >
         <div className={styles.body}>
           <div className={styles.description}>
@@ -64,14 +64,20 @@ const Card: React.FC<CardProps> = ({
             >
               <FaIndustry className={`${styles.icon} text-white`} size={24} />
               <div className={styles.expertiseText}>
-                <div className="font-poppins text-white">{expertiseExperience}</div>
+                <div className="font-poppins text-white">
+                  {expertiseExperience}
+                </div>
                 <div className="text-red-600 font-semibold font-poppins">
                   {expertiseAbout}
                 </div>
               </div>
             </div>
-            <h2 className="text-center text-xl font-semibold text-white font-poppins">{title}</h2>
-            <p className=" mt-6 text-base text-white text-center font-poppins">{description}</p>
+            <h2 className="text-center text-xl font-semibold text-white font-poppins">
+              {title}
+            </h2>
+            <p className=" mt-6 text-base text-white text-center font-poppins">
+              {description}
+            </p>
             <span className="w-full mt-4  flex flex-row justify-center items-center">
               <Link
                 className="text-base text-white font-poppins text-center"
@@ -132,4 +138,4 @@ const Card: React.FC<CardProps> = ({
   );
 };
 
-export default Card;
+export default KnowMoreCard;

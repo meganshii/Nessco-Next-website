@@ -10,24 +10,24 @@ interface PositionAwareButtonProps {
   iconColor?: string; // Optional prop for icon color
   bgColor?: string; // Optional prop for background color
   hoveredTextColor?: string; // Optional prop for hovered text color
-  hoveredIconColor?: string; // Optional prop for hovered icon color
-  width?:string;
+  width?: string;
 }
 
 const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
   text,
   icon = false,
   textColor = "#000",
-  iconColor = "#000",
+  iconColor = "#000", // Keep the icon color black
   bgColor = "transparent",
   hoveredTextColor = "#fff",
-  hoveredIconColor = "#fff",
-  width="150px"
+  width = "150px",
 }) => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+  const handleMouseMove = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
+  ) => {
     if (buttonRef.current) {
       const span = buttonRef.current.querySelector("span");
       if (span) {
@@ -55,14 +55,19 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
       onMouseLeave={handleMouseLeave}
       style={{
         color: isHovered ? hoveredTextColor : textColor,
-        backgroundColor: bgColor,width:width
+        backgroundColor: isHovered ? "white" : bgColor,
+        width: width,
       }}
     >
       {text}
       {icon && (
         <IoIosArrowDropright
           className={styles.icon}
-          style={{ }}
+          style={{
+            color: iconColor,
+            backgroundColor: isHovered ? "white" : "transparent",
+            borderRadius: "100%", 
+          }}
         />
       )}
       <span></span>

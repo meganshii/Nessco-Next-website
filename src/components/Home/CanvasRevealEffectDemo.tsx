@@ -63,7 +63,7 @@ const Card = ({
         className="absolute cursor-pointer top-0 right-0 m-4 z-20"
         onClick={() => handleOpenModal(index)}
       >
-        <FaCirclePlus size={30} className="text-gray-900" />
+        <FaCirclePlus size={30} className="text-[#483d78] bg-white rounded-full" />
       </div>
       
       <AnimatePresence>

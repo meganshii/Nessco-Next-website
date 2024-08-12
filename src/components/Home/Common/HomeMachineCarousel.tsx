@@ -1,10 +1,10 @@
 "use client";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
-import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import image from "../../../public/assets/image.png";
-import PositionAwareButton from "../ui/PositionAwareButton";
-import Breadcrumb from "../ui/Breadcrumb";
+import { Carousel, Card } from "@/components/ui/HomeMachine-cards-carousel";
+import image from "../../../../public/assets/image.png";
+import PositionAwareButton from "../../ui/PositionAwareButton";
+import Breadcrumb from "../../ui/Breadcrumb";
 import { FaCircleNotch } from "react-icons/fa";
 import {
   papercup,
@@ -19,7 +19,7 @@ import {
   paperStrawMachine,
   paperLunchBoxMachine,
   paperCupMachineImage,
-} from "../../../public/assets";
+} from "../../../../public/assets";
 // Define the type for card data
 interface CardData {
   content: React.ReactNode;
@@ -34,13 +34,13 @@ interface CardData {
   icon: StaticImageData;
 }
 
-interface AppleCardsCarouselDemoProps {
+interface HomeMachineCarouselProps {
   filteredCardsData: CardData[];
 }
 
-export function AppleCardsCarouselDemo({
+export function HomeMachineCarousel({
   filteredCardsData,
-}: AppleCardsCarouselDemoProps) {
+}: HomeMachineCarouselProps) {
   const cards = filteredCardsData.map((card: CardData, index: number) => (
     <Card key={card.title} card={card} index={index} />
   ));

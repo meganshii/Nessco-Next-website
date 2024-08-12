@@ -66,11 +66,6 @@ const Carousel = ({ type }: CarouselProps) => {
           </div>
           <div className={styles.content}>
             <div className="flex flex-col">
-              {type === "newsFeature" && (
-                <h1 className="text-2xl text-black -mt-2 text-justify font-bold">
-                  {item.heading}
-                </h1>
-              )}
               <h2 className="font-montserrat mt-1 text-base">{item.title}</h2>
             </div>
           </div>
