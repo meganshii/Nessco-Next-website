@@ -98,7 +98,7 @@ export const BentoGridItem = ({
               </div>
             </div>
             <div className="w-36 ml-10 bottom-0 py-4">
-              <PositionAwareButton text={"Get Details"} icon={true} />
+              <PositionAwareButton text={"Get Details"} width="150px" icon={true} />
             </div>
           </div>
         </div>

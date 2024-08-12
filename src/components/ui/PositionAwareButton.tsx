@@ -5,22 +5,60 @@ import styles from "./PositionAwareButton.module.css";
 
 interface PositionAwareButtonProps {
   text: string;
-  icon?: boolean; // Optional prop to show/hide icon
-  textColor?: string; // Optional prop for text color
-  iconColor?: string; // Optional prop for icon color
-  bgColor?: string; // Optional prop for background color
-  hoveredTextColor?: string; // Optional prop for hovered text color
+  icon?: boolean;
+  textColor?: string;
+  iconColor?: string;
+  bgColor?: string;
+  hoveredTextColor?: string;
   width?: string;
+  height?: string;
+  padding?: string;
+  margin?: string;
+  borderRadius?: string;
+  fontSize?: string;
+  fontWeight?: string;
+  borderColor?: string;
+  borderWidth?: string;
+  boxShadow?: string;
+  hoverBoxShadow?: string;
+  transitionDuration?: string;
+
+  // Icon-specific props
+  iconSize?: string;
+  iconMargin?: string;
+  iconPadding?: string;
+  iconBorderRadius?: string;
+  iconBoxShadow?: string;
+  iconHoverBoxShadow?: string;
 }
 
 const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
   text,
   icon = false,
   textColor = "#000",
-  iconColor = "#000", // Keep the icon color black
+  iconColor = "#000",
   bgColor = "transparent",
   hoveredTextColor = "#fff",
-  width = "150px",
+  width = "170px",
+  height = "40px",
+  padding = "0px 0px",
+  margin = "0px",
+  borderRadius = "100px",
+  fontSize = "16px",
+  fontWeight = "bold",
+  borderColor = "black",
+  borderWidth = "1px",
+  boxShadow = "none",
+  hoverBoxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)",
+  transitionDuration = "0.3s",
+
+  // Icon-specific props
+  iconSize = "32px",
+  iconMargin = "0 0 0 10px",
+  iconPadding = "0",
+  iconBorderRadius = "100%",
+  iconBoxShadow = "none",
+  iconHoverBoxShadow = "0 4px 10px rgba(0, 0, 0, 0.1)",
 }) => {
   const buttonRef = useRef<HTMLAnchorElement>(null);
   const [isHovered, setIsHovered] = useState(false);
@@ -56,7 +94,24 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
       style={{
         color: isHovered ? hoveredTextColor : textColor,
         backgroundColor: isHovered ? "white" : bgColor,
-        width: width,
+        width,
+        height,
+        padding,
+        margin,
+        borderRadius,
+        fontSize,
+        fontWeight,
+        borderColor,
+        borderWidth,
+        boxShadow: isHovered ? hoverBoxShadow : boxShadow,
+        transition: `all ${transitionDuration} ease-in-out`,
+        position: "relative",
+        overflow: "hidden",
+        display: "inline-flex",
+        alignItems: "center",
+        justifyContent: "center",
+        textDecoration: "none",
+        borderStyle: "solid",
       }}
     >
       {text}
@@ -66,7 +121,12 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
           style={{
             color: iconColor,
             backgroundColor: isHovered ? "white" : "transparent",
-            borderRadius: "100%", 
+            borderRadius: iconBorderRadius,
+            margin: iconMargin,
+            padding: iconPadding,
+            fontSize: iconSize,
+            boxShadow: isHovered ? iconHoverBoxShadow : iconBoxShadow,
+            transition: `all ${transitionDuration} ease-in-out`,
           }}
         />
       )}

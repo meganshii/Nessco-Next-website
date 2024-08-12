@@ -314,9 +314,9 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className=" h-80 rounded-3xl bg-white  w-48 md:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
+        className=" h-80 rounded-3xl bg-white p-2  w-48 md:h-[16rem] md:w-56 overflow-hidden flex flex-col items-start justify-start relative z-10"
       >
-        <div className="relative h-full w-full">
+        <div className="relative p-2 h-full w-full">
           <div className="absolute flex bg-white h-20 w-32  flex-row  top-0 space-x-2 -mr-4 right-0 z-40 rounded-bl-xl">
             <div className="">
               <svg
@@ -336,8 +336,8 @@ export const Card = ({
               <BlurImage src={card.icon} alt="icon" height={100} width={100} />
             </div>
             <div className="flex items-center justify-center">
-              <div className="relative h-10 w-10 -mr-6 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <div className="relative h-10 w-10 -mr-4 flex items-center justify-center border-2 border-[#483d78] rounded-full bg-white">
+                <div className="absolute inset-0 flex  flex-col items-center justify-center">
                   <div className="text-base font-bold text-red-500">70</div>
                   <div className="text-txs -mt-1 text-[#483d78]">PCM/MIN</div>
                 </div>
@@ -363,13 +363,13 @@ export const Card = ({
             src={card.image}
             alt={card.title}
             fill
-            className="object-contain bg-slate-400 bg-gradient-to-t from-black to-transparent rounded-[1.5rem] p-2 absolute z-10 inset-0"
+            className="object-contain border-2 bg-[#f2f2f2]  rounded-[1.5rem] absolute z-10 inset-0"
           />
 
           <div className="absolute left-0 right-0 bottom-0 z-40 p-4">
             <motion.p
               layoutId={layout ? `category-${card.category}` : undefined}
-              className="text-white text-sm md:text-base font-medium font-sans text-left"
+              className="text-black text-sm md:text-base font-medium font-sans text-left"
             >
               {card.title}
             </motion.p>

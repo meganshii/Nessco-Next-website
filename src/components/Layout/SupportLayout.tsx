@@ -241,7 +241,7 @@ const SupportLayout: React.FC<SupportLayoutProps> = ({
         <div className="absolute bottom-6 mt-0 z-30 right-20  transition-all">
           <PositionAwareButton
             text={"Explore All Resources"}
-            width="235px"
+            width="240px"
             icon
           />
         </div>

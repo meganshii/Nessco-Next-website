@@ -1,5 +1,5 @@
 import React from "react";
-import {  Highlight } from "../ui/hero-highlight";
+import { Highlight } from "../ui/hero-highlight";
 import { InfiniteMovingCardsDemo } from "../ui/HeroSection";
 import { SwipeCarousel } from "./Common/slider";
 const HomeTestimonial: React.FC = () => {
@@ -9,7 +9,7 @@ const HomeTestimonial: React.FC = () => {
         <h6 className="text-3xl text-red-500 ml-6 lg:text-2xl font-montserrat lg:leading-tight font-bold">
           Testimonials
         </h6>
-        <h2 className="text-5xl font-bold ml-4 mt-20">Don &apos t Just Take</h2>
+        <h2 className="text-5xl font-bold ml-4 mt-20">Don't Just Take</h2>
         <h2 className="text-5xl font-bold ml-4 mt-6">
           Our
           <span className="relative ml-1 ">
@@ -20,13 +20,13 @@ const HomeTestimonial: React.FC = () => {
           </span>
         </h2>
         <h4 className="mt-20 text-lg text-center font-poppins">
-        See What Our Clients Are Saying About Us
+          See What Our Clients Are Saying About Us
         </h4>
         {/* <VideoCarousel /> */}
-        <SwipeCarousel/>
+        <SwipeCarousel />
       </div>
       <div className="w-2/3 relative h-full">
-        <InfiniteMovingCardsDemo/>
+        <InfiniteMovingCardsDemo />
       </div>
     </div>
   );

@@ -67,7 +67,7 @@ const KnowMoreCard: React.FC<KnowMoreCardProps> = ({
                 <div className="font-poppins text-white">
                   {expertiseExperience}
                 </div>
-                <div className="text-red-600 font-semibold font-poppins">
+                <div className="text-white font-bold font-poppins">
                   {expertiseAbout}
                 </div>
               </div>

@@ -119,7 +119,7 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
         scrolling ? "bg-[#f2f2f2]/70 backdrop-blur-xl" : "bg-[#f2f2f2]/70 backdrop-blur-xl"
       }`}
     >
-      <nav className="left-0 mb-[4rem] border-b-[0.5px] -mt-8 flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
+      <nav className="left-0 mb-[4rem] -mt-10 flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-6 text-black px-1 sm:px-2">
         {navItems.map((item, index) => (
           <NavLink
             key={index}

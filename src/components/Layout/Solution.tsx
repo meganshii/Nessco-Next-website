@@ -113,7 +113,7 @@ const Solution: React.FC = () => {
               className={styles.buttonContainer}
               whileHover={{ scale: 1.05 }}
             >
-              <PositionAwareButton text={"Know More"} icon width="155px" />
+              <PositionAwareButton text={"Know More"} icon width="165px" borderColor="black" borderRadius="100px" />
             </motion.div>
           </div>
           <div className="border-r border-gray-400 p-4 mb-7 mt-5"></div>

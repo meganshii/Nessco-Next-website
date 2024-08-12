@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { motion, useMotionValue } from "framer-motion";
-import "../Styles/slider.css"
-const videos: string[] = [
-  "/video/bg.mp4",
-  "/video/Homebg.mp4",
-  "/video/iotvideo.mp4",
-  "/video/bg.mp4",
-  "/video/Homebg.mp4",
-  "/video/iotvideo.mp4",
-  "/video/bg.mp4",
-  "/video/Homebg.mp4",
-  "/video/iotvideo.mp4",
+import { BsBoxArrowUpRight } from "react-icons/bs";
+import { IoClose } from "react-icons/io5"; // Import close icon
+import "../Styles/slider.css";
+
+const videos: { src: string; youtubeLink: string }[] = [
+  { src: "/video/bg.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
+  { src: "/video/Homebg.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
+  { src: "/video/iotvideo.mp4", youtubeLink: "https://www.youtube.com/embed/UxPkK8gW0hs?rel=0" },
+  // Add more video and link pairs as needed
 ];
 
 const ONE_SECOND = 1000;
@@ -26,6 +24,8 @@ const SPRING_OPTIONS = {
 
 export const SwipeCarousel: React.FC = () => {
   const [videoIndex, setVideoIndex] = useState<number>(0);
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+  const [currentVideoLink, setCurrentVideoLink] = useState<string>("");
 
   const dragX = useMotionValue(0);
 
@@ -34,12 +34,7 @@ export const SwipeCarousel: React.FC = () => {
       const x = dragX.get();
 
       if (x === 0) {
-        setVideoIndex((pv) => {
-          if (pv === videos.length - 1) {
-            return 0;
-          }
-          return pv + 1;
-        });
+        setVideoIndex((pv) => (pv === videos.length - 1 ? 0 : pv + 1));
       }
     }, AUTO_DELAY);
 
@@ -56,62 +51,77 @@ export const SwipeCarousel: React.FC = () => {
     }
   };
 
+  const openModal = (youtubeLink: string) => {
+    setCurrentVideoLink(youtubeLink);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentVideoLink("");
+  };
+
   return (
-    <div className="relative h-full w-auto overflow-hidden  ">
+    <div className="relative h-full w-auto overflow-hidden">
       <motion.div
         drag="x"
         dragConstraints={{
           left: 0,
           right: 0,
         }}
-        style={{
-          x: dragX,
-        }}
-        animate={{
-          translateX: `-${videoIndex * 100}%`,
-        }}
+        style={{ x: dragX }}
+        animate={{ translateX: `-${videoIndex * 100}%` }}
         transition={SPRING_OPTIONS}
         onDragEnd={onDragEnd}
         className="flex cursor-grab items-center active:cursor-grabbing"
       >
-        <Videos videoIndex={videoIndex} />
+        {videos.map((video, idx) => (
+          <motion.div
+            key={idx}
+            style={{ background: "black" }}
+            animate={{ scale: videoIndex === idx ? 0.95 : 0.85 }}
+            transition={SPRING_OPTIONS}
+            className="relative h-full w-full shrink-0 rounded-xl"
+          >
+            <video
+              src={video.src}
+              autoPlay={videoIndex === idx}
+              loop
+              muted
+              className="w-full h-full object-cover rounded-xl"
+            />
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+              <BsBoxArrowUpRight
+                onClick={() => openModal(video.youtubeLink)}
+                className="text-white text-3xl cursor-pointer transition-transform transform hover:scale-110"
+              />
+            </div>
+          </motion.div>
+        ))}
       </motion.div>
 
       <Dots videoIndex={videoIndex} setVideoIndex={setVideoIndex} />
-      {/* <GradientEdges /> */}
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-[9995]">
+          <div className="bg-white rounded-xl overflow-hidden max-w-3xl w-full relative">
+            <button onClick={closeModal} className="absolute top-3 z-50 right-3 text-black p-2">
+              <IoClose size={24} />
+            </button>
+            <div className="relative w-full pt-[56.25%]">
+              <iframe
+                src={currentVideoLink}
+                className="absolute top-0 left-0 w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="YouTube Video"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-  );
-};
-
-type VideosProps = {
-  videoIndex: number;
-};
-
-const Videos: React.FC<VideosProps> = ({ videoIndex }) => {
-  return (
-    <>
-      {videos.map((videoSrc, idx) => (
-        <motion.div
-          key={idx}
-          style={{
-            background: "black",
-          }}
-          animate={{
-            scale: videoIndex === idx ? 0.95 : 0.85,
-          }}
-          transition={SPRING_OPTIONS}
-          className="h-full w-full shrink-0 rounded-xl "
-        >
-          <video
-            src={videoSrc}
-            autoPlay={videoIndex === idx}
-            loop
-            muted
-            className="w-full h-full object-cover rounded-xl"
-          />
-        </motion.div>
-      ))}
-    </>
   );
 };
 
@@ -139,14 +149,5 @@ const Dots: React.FC<DotsProps> = ({ videoIndex, setVideoIndex }) => {
         </button>
       ))}
     </div>
-  );
-};
-
-const GradientEdges: React.FC = () => {
-  return (
-    <>
-      <div className="pointer-events-none absolute bottom-0 left-0 top-0 w-[10vw] max-w-[60px] bg-gradient-to-r from-neutral-950/50 to-neutral-950/0" />
-      <div className="pointer-events-none absolute bottom-0 right-0 top-0 w-[10vw] max-w-[60px] bg-gradient-to-l from-neutral-950/50 to-neutral-950/0" />
-    </>
   );
 };

@@ -125,7 +125,7 @@ const ApplicationPage: React.FC = () => {
               </p>
             </div>
             <div className={styles.container}>
-              <PositionAwareButton text={"Explore More"} icon width="170px" />
+              <PositionAwareButton text={"Explore More"} borderRadius="100px"  iconSize="32px" borderColor="black" icon width="175px" />
             </div>
           </motion.div>
         </div>

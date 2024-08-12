@@ -116,7 +116,7 @@ export const Testing = ({
                 key={el.username + idx}
                 className="p-[0.2rem] rounded-3xl w-[15.5rem] border-[1px] mt-2 bg-gradient-to-t from-purple-500 to-transparent"
               >
-                <div className="p-2 h-[14.2rem] w-[15rem] bg-white rounded-[1.2rem] flex flex-col justify-between">
+                <div className="p-2 h-[14.8rem] w-[15rem] bg-white rounded-[1.2rem] flex flex-col justify-between">
                   <div>
                     <div className="flex flex-row justify-between items-center">
                       <Image
