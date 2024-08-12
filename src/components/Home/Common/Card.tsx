@@ -45,7 +45,7 @@ const Card: React.FC<CardProps> = ({
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className={styles.cardContainer}>
+    <div ref={container} className={`${styles.cardContainer} -mt-[5rem]`}>
       <motion.div
         style={{
           backgroundColor: color,

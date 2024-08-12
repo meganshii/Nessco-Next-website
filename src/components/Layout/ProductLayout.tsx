@@ -1,18 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
-import {
-  Machines,
-  SidebarLinks,
-  images,
-} from "../Constants/Navbar/product-data";
+import { Machines, SidebarLinks, images } from "../Constants/Navbar/product-data";
 import Image, { StaticImageData } from "next/image";
-import {
-  MdKeyboardArrowRight,
-  MdKeyboardArrowLeft,
-  MdKeyboardArrowDown,
-  MdKeyboardArrowUp,
-} from "react-icons/md";
+import { MdKeyboardArrowRight, MdKeyboardArrowLeft, MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import PositionAwareButton from "../ui/PositionAwareButton";
 import { BlurImage } from "../ui/BlurImage";
+import { motion } from "framer-motion";
 
 interface ProductLayoutProps {
   setHoveredItem: (item: string | null) => void;
@@ -29,13 +21,9 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   setHeading,
   setIsVisible,
 }) => {
-  const [hoveredCategory, setHoveredCategory] = useState<string>(
-    SidebarLinks[0].name
-  );
+  const [hoveredCategory, setHoveredCategory] = useState<string>(SidebarLinks[0].name);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(
-    null
-  );
+  const [hoveredImageIndex, setHoveredImageIndex] = useState<number | null>(null);
   const [sidebarIndex, setSidebarIndex] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -51,10 +39,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
   };
 
   const handlePrev = () => {
-    setCurrentIndex(
-      (prevIndex) =>
-        (prevIndex - 1 + filteredMachines.length) % filteredMachines.length
-    );
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + filteredMachines.length) % filteredMachines.length);
   };
 
   const handleSidebarNext = () => {
@@ -89,13 +74,36 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
     setCurrentIndex(0);
   }, [hoveredCategory]);
 
+  const imageVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.05,  // Reduced delay for faster sequence
+        duration: 0.2,    // Reduced duration for quicker animation
+        ease: "easeInOut",
+      },
+    }),
+  };
+
+  const sidebarVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: (i: number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.02,  // Sequential delay for sidebar links
+        duration: 0.2,   // Duration for sidebar link animation
+        ease: "easeOut",
+      },
+    }),
+  };
+
   return (
-    <div
-      ref={containerRef}
-      className="w-[98vw] max-w-screen-2xl z-30 md:h-[80vh] p-4 rounded-xl flex flex-col items-center justify-center font-medium"
-    >
-      <div className="w-full flex flex-col md:flex-row rounded-lg overflow-hidden">
-        <div className="flex h-[75vh] justify-center items-center w-full md:w-[72%] relative">
+    <div ref={containerRef} className="w-[98vw] max-w-screen-2xl z-30 md:h-[78vh] p-0 rounded-xl flex flex-col items-center justify-center font-medium">
+      <div className="w-full  flex flex-col md:flex-row rounded-lg overflow-hidden">
+        <div className="flex  justify-center items-center w-full md:w-[72%] relative">
           {filteredMachines.length > 6 && (
             <button
               onClick={handlePrev}
@@ -108,23 +116,20 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
           <div className="flex flex-wrap pb-8 justify-start overflow-hidden w-full">
             {filteredMachines.length <= 6
               ? filteredMachines.map((machine, index) => (
-                  <div
+                  <motion.div
                     key={`${machine.name}-${index}`}
                     className="text-center relative w-1/3 p-1"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      animationDuration: "1s",
-                      animationFillMode: "both",
-                      animationTimingFunction: "ease-in-out",
-                      animationName: "fadeIn",
-                    }}
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={imageVariants}
                     onMouseEnter={() => setHoveredImageIndex(index)}
                     onMouseLeave={() => setHoveredImageIndex(null)}
                   >
                     <Image
                       src={machine.image}
                       alt={machine.name}
-                      className={`object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full `}
+                      className="object-contain transform hover:scale-90 transition-transform duration-200 rounded-3xl relative z-10 h-32 w-full"
                       width={200}
                       height={150}
                     />
@@ -140,38 +145,40 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                         Book Now
                       </a>
                     </div>
-                  </div>
+                  </motion.div>
                 ))
-              : filteredMachines
-                  .slice(currentIndex, currentIndex + 6)
-                  .map((machine, index) => (
-                    <div
-                      key={`${machine.name}-${index}`}
-                      className="text-center relative w-1/3 p-2"
-                      onMouseEnter={() => setHoveredImageIndex(index)}
-                      onMouseLeave={() => setHoveredImageIndex(null)}
-                    >
-                      <BlurImage
-                        src={machine.image}
-                        alt={machine.name}
-                        className={`relative rounded-3xl z-10 h-auto w-full`}
-                        width={200}
-                        height={150}
-                      />
-                      <h1 className="text-lg text-black font-bold pt-0 relative z-20">
-                        {machine.name}
-                      </h1>
-                      <div className="flex justify-center pt-4 space-x-4 mt-2">
-                        <a
-                          href={`/products/${machine.name}`}
-                          onClick={() => handleMouseLeave()}
-                          className="relative text-white rounded-3xl transform hover:scale-90 transition-transform duration-300 px-8 p-1 z-20"
-                        >
-                          <PositionAwareButton text={"Book Now"} />
-                        </a>
-                      </div>
+              : filteredMachines.slice(currentIndex, currentIndex + 6).map((machine, index) => (
+                  <motion.div
+                    key={`${machine.name}-${index}`}
+                    className="text-center relative w-1/3 p-2"
+                    custom={index}
+                    initial="hidden"
+                    animate="visible"
+                    variants={imageVariants}
+                    onMouseEnter={() => setHoveredImageIndex(index)}
+                    onMouseLeave={() => setHoveredImageIndex(null)}
+                  >
+                    <BlurImage
+                      src={machine.image}
+                      alt={machine.name}
+                      className="relative rounded-3xl z-10 h-auto w-full"
+                      width={200}
+                      height={150}
+                    />
+                    <h1 className="text-lg text-black font-bold pt-0 relative z-20">
+                      {machine.name}
+                    </h1>
+                    <div className="flex justify-center pt-4 space-x-4 mt-2">
+                      <a
+                        href={`/products/${machine.name}`}
+                        onClick={() => handleMouseLeave()}
+                        className="relative text-white rounded-3xl transform hover:scale-90 transition-transform duration-300 px-8 p-1 z-20"
+                      >
+                        <PositionAwareButton text={"Book Now"} />
+                      </a>
                     </div>
-                  ))}
+                  </motion.div>
+                ))}
           </div>
           {filteredMachines.length > 6 && (
             <button
@@ -183,24 +190,28 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
             </button>
           )}
         </div>
-        <div className="w-full mt-0 md:w-[25%] pl-4 space-y-2 border-l overflow-y-hidden border-gray-300 relative">
-          {sidebarIndex > 0 && (
-            <button
-              onClick={handleSidebarPrev}
-              className="absolute top-0 left-1/2 ml-4 text-4xl transform -translate-x-1/2 p-0 text-black"
-            >
-              <MdKeyboardArrowUp />
-            </button>
-          )}
-          <div className="mt-4 h-[70vh] space-y-6">
-            {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map((link) => (
-              <div
+        <div className="w-full mt-0 md:w-[28%] h-[78vh] flex justify-center items-center border-l overflow-y-hidden border-gray-300 relative">
+          <div className="space-y-5">
+            {sidebarIndex > 0 && (
+              <button
+                onClick={handleSidebarPrev}
+                className="absolute top-0 left-1/2 text-4xl transform p-0 text-black"
+              >
+                <MdKeyboardArrowUp />
+              </button>
+            )}
+            {SidebarLinks.slice(sidebarIndex, sidebarIndex + 8).map((link, index) => (
+              <motion.div
                 key={link.name}
+                custom={index}
+                initial="hidden"
+                animate="visible"
+                variants={sidebarVariants}
                 onMouseEnter={() => {
                   setHoveredCategory(link.name);
                   setCurrentIndex(0);
                 }}
-                className={`flex mt-[2.8rem] items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
+                className={`flex items-center space-x-4 text-lg transition-colors duration-300 cursor-pointer ${
                   hoveredCategory === link.name
                     ? "font-montserrat text-[#483d78] font-bold"
                     : "font-montserrat text-black"
@@ -213,20 +224,20 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                     alt="machine icon"
                   />
                 </div>
-                <span className="break-words  transform hover:scale-80 transition-transform duration-100">
+                <span className="break-words text-base transform hover:scale-80 transition-transform duration-100">
                   {link.name}
                 </span>
-              </div>
+              </motion.div>
             ))}
+            {sidebarIndex + 6 < SidebarLinks.length && (
+              <button
+                onClick={handleSidebarNext}
+                className="absolute bottom-0 left-1/2 text-4xl p-0 text-black"
+              >
+                <MdKeyboardArrowDown />
+              </button>
+            )}
           </div>
-          {sidebarIndex + 6 < SidebarLinks.length && (
-            <button
-              onClick={handleSidebarNext}
-              className="absolute bottom-0 left-1/2 text-4xl p-0 text-black"
-            >
-              <MdKeyboardArrowDown />
-            </button>
-          )}
         </div>
       </div>
     </div>

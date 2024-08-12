@@ -6,13 +6,12 @@ import InfiniteMovingCardsDemo from "@/components/Home/MarqueeSection";
 import KnowMore from "@/components/Home/LearnMoreSection";
 import HomeMachine from "@/components/Home/ProductShowcase";
 import NewsFeature from "@/components/Home/NewsFeature";
-import KnowMachine from "@/components/Home/ProductDetails";
-import {CanvasRevealEffectDemo} from "@/components/Home/CanvasRevealEffectDemo";
+import { CanvasRevealEffectDemo } from "@/components/Home/CanvasRevealEffectDemo";
 import HomeTestimonial from "@/components/Home/TestimonialsSection";
 import { data } from "@/components/Constants/Navbar/about-data";
 import NavLinksDemo from "@/components/Home/NavLinks";
 import { BentoGridSecondDemo } from "@/components/Home/BentoGridSecondDemo";
-import VideoCarousel from "@/components/Home/Common/VideoCarousel";
+import { SwipeCarousel } from "@/components/Home/slider";
 
 export default function Home() {
   const aboutUsRef = useRef<HTMLDivElement>(null);
@@ -27,7 +26,7 @@ export default function Home() {
   const navItems = [
     { text: "About Us", ref: aboutUsRef },
     { text: "Clientele", ref: infiniteCardsRef },
-    { text: "Know More", ref: knowMoreRef },
+    { text: "KnowMore", ref: knowMoreRef },
     { text: "Machines", ref: homeMachineRef },
     { text: "IoT", ref: iotRef },
     { text: "News", ref: newsFeatureRef },
@@ -47,11 +46,11 @@ export default function Home() {
             cards={data.cards}
           />
         </div>
-        <div id="clientele" className="mx-4 mt-36" ref={infiniteCardsRef}>
+        <div id="clientele" className="mx-4  m-48" ref={infiniteCardsRef}>
           <InfiniteMovingCardsDemo />
         </div>
-        <div id="knowMore" className="mx-4 mt-32" ref={knowMoreRef}>
-          <KnowMore />
+        <div id="knowMore" className="mx-4" ref={knowMoreRef}>
+        <KnowMore />
         </div>
         <div id="machines" className="mt-32" ref={homeMachineRef}>
           <HomeMachine />
@@ -66,7 +65,7 @@ export default function Home() {
           <NewsFeature />
         </div>
         <div id="knowMachine" className="mx-4 mt-32" ref={knowMachineRef}>
-           <CanvasRevealEffectDemo/>
+          <CanvasRevealEffectDemo />
         </div>
         <div
           id="testimonials"

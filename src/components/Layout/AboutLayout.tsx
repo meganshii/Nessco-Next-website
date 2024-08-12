@@ -1,15 +1,14 @@
 "use client";
 import React, { useRef, useEffect, useState } from "react";
-import { motion, useAnimation } from "framer-motion";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
 import { items, titlesWithImages } from "../Constants/Navbar/about-data";
+import { motion } from "framer-motion";
+import AnimatedContainer from "@/hooks/AnimatedContainer";
 
 const AboutLayout = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-  const controls = useAnimation();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const scrollDown = () => {
@@ -44,20 +43,8 @@ const AboutLayout = () => {
     };
   }, [currentIndex]);
 
-  useEffect(() => {
-    controls.start({
-      y: 0,
-      scale: 1,
-      opacity: 1,
-      transition: { duration: 0.5, staggerChildren: 0.05, ease: "easeOut" },
-    });
-  }, [currentIndex, controls]);
-
   return (
-    <div
-      ref={containerRef}
-      className="flex w-[98vw] p-2 px-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl  h-full "
-    >
+    <div className="flex w-[98vw] p-2 px-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl  h-full ">
       <div className="grid -ml-2 grid-cols-2 justify-start md:grid-cols-4 w-[80vw]">
         {titlesWithImages.map((item, index) => (
           <motion.div
@@ -71,12 +58,12 @@ const AboutLayout = () => {
               <Image
                 src={item.image}
                 alt={item.title}
-                className="bg-gray-600 rounded-2xl cursor-pointer w-58 h-56 object-cover transform hover:scale-80 transition-transform duration-200"
+                className="bg-gray-600 rounded-2xl cursor-pointer w-56 h-56 object-cover transform hover:scale-80 transition-transform duration-200"
                 width={240}
                 height={240}
               />
-              <p className="mt-2 text-center font-montserrat text-black hover:text-[#483d78] hover:font-bold text-base transform hover:scale-90 transition-transform duration-300">
-                {item.title}
+              <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold text-base transform hover:scale-80 transition-transform duration-300">
+                <span>{item.title}</span>
               </p>
             </Link>
           </motion.div>
@@ -84,11 +71,7 @@ const AboutLayout = () => {
       </div>
       <div className="ml-2 w-2 h-72 border-l border-gray-300"></div>
       <div className="ml-4 md:w-[18vw] min-h-full flex flex-col justify-between">
-        <motion.div
-          ref={carouselRef}
-          initial={{ y: "100%", scale: 0.5, opacity: 0 }}
-          animate={controls}
-        >
+        <AnimatedContainer currentIndex={currentIndex}>
           {items.slice(currentIndex, currentIndex + 2).map((item, index) => (
             <Link key={index} href={`/${item.title}`} passHref>
               <div
@@ -110,7 +93,7 @@ const AboutLayout = () => {
               </div>
             </Link>
           ))}
-        </motion.div>
+        </AnimatedContainer>
         <div className="flex w-full justify-center">
           {currentIndex > 0 && (
             <button

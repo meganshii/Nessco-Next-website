@@ -324,7 +324,7 @@ export const Card = ({
                 width="100%"
                 viewBox="0 0 20 20"
                 fill="none"
-                className="h-4 w-4 -ml-4 mt-2 "
+                className="h-4 w-4 -ml-4 mt-0 "
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -349,7 +349,7 @@ export const Card = ({
                 width="100%"
                 viewBox="0 0 20 20"
                 fill="none"
-                className="h-4 w-4 mt-20 mr-6"
+                className="h-4 w-4 mt-20 mr-4"
               >
                 <path
                   d="M20 20C20 8.95431 11.0457 0 0 0H20V20Z"
@@ -363,15 +363,15 @@ export const Card = ({
             src={card.image}
             alt={card.title}
             fill
-            className="object-contain rounded-[1.5rem] p-2 absolute z-10 inset-0"
+            className="object-contain bg-slate-400 bg-gradient-to-t from-black to-transparent rounded-[1.5rem] p-2 absolute z-10 inset-0"
           />
 
           <div className="absolute left-0 right-0 bottom-0 z-40 p-4">
             <motion.p
               layoutId={layout ? `category-${card.category}` : undefined}
-              className="text-black text-sm md:text-base font-medium font-sans text-left"
+              className="text-white text-sm md:text-base font-medium font-sans text-left"
             >
-              {card.category}
+              {card.title}
             </motion.p>
           </div>
         </div>

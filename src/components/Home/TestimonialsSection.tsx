@@ -3,6 +3,7 @@ import { ParallaxScrollDemo } from "./ParallaxScrollDemo";
 import VideoCarousel from "./Common/VideoCarousel";
 import { HeroHighlight, Highlight } from "../ui/hero-highlight";
 import { InfiniteMovingCardsDemo } from "../HeroSection";
+import { SwipeCarousel } from "./slider";
 const HomeTestimonial: React.FC = () => {
   return (
     <div className="flex flex-row py-4 h-screen z-20 max-w-7xl mx-auto relative overflow-hidden">
@@ -23,7 +24,8 @@ const HomeTestimonial: React.FC = () => {
         <h4 className="mt-20 text-lg text-center font-poppins">
         See What Our Clients Are Saying About Us
         </h4>
-        <VideoCarousel />
+        {/* <VideoCarousel /> */}
+        <SwipeCarousel/>
       </div>
       <div className="w-2/3 relative h-full">
         {/* <ParallaxScrollDemo /> */}

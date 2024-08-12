@@ -29,8 +29,11 @@ const Stepper: React.FC<{ onStepChange: (index: number) => void }> = ({
   };
 
   return (
-    <div className="sticky bg-[#f2f2f2]/70 backdrop-blur-xl top-14 left-0 w-full z-30">
-      <div className="flex items-center justify-center w-full py-2 relative mx-auto">
+    <div className="sticky bg-[#f2f2f2]/80 backdrop-blur-xl top-14 left-0 w-full z-30">
+      <div className="relative flex items-center justify-center w-full py-2 mx-auto">
+        {/* Gradient Mask */}
+        <div className="absolute top-0 left-0 w-full h-4 bg-gradient-to-b from-[#f2f2f2]/90 to-transparent z-20 pointer-events-none"></div>
+
         {steps.map((step, index) => (
           <React.Fragment key={index}>
             <motion.div

@@ -31,11 +31,11 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   gap:4px;
-  height:45vh;
   border-radius: 8px;
   scroll-behavior: smooth;
   scrollbar-width: none;
 }
+
 .carousel::-webkit-scrollbar {
   display: none;
 }

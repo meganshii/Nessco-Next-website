@@ -30,7 +30,7 @@ const partnerBrands = [
 
 export default function InfiniteMovingCardsDemo() {
   return (
-    <div className="h-auto ml-6 flex flex-col  relative overflow-hidden  pt-0">
+    <div className="h-auto ml-6 flex flex-col relative overflow-hidden  pt-0">
       <motion.div className="flex flex-row">
         <div className="flex w-[15%] flex-col">
           <div className="text-xl mt-8 font-poppins whitespace-nowrap">
