@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const HomePage = () => {
   const router = useRouter();
@@ -10,13 +10,13 @@ const HomePage = () => {
         const response = await fetch("https://ipapi.co/json/");
         const data = await response.json();
         const countryCode = data.country_code.toLowerCase();
-        const languageCode = data.languages.split(',')[0].toLowerCase();
+        const languageCode = data.languages.split(",")[0].toLowerCase();
         console.log(response);
         router.push(`/${countryCode}`);
       } catch (error) {
         console.error("Error fetching country info:", error);
-        const defaultCountry = 'in';
-        const defaultLanguage = 'en';
+        const defaultCountry = "in";
+        const defaultLanguage = "en";
         router.push(`/${defaultCountry}/${defaultLanguage}`);
       }
     };

@@ -5,7 +5,8 @@ import { navbarItems } from "@/components/Constants/Navbar/navbarData";
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "../../../public/assets/Logo.png";
-import RightNavbar from "./RightNavbar";
+import dynamic from "next/dynamic";
+const RightNavbar = dynamic(() => import("./RightNavbar"), { ssr: false });
 import { Menu, MenuItem } from "./nav-menue";
 
 export default function NavbarDemo() {
@@ -36,7 +37,7 @@ function Navbar({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-50 transition-transform duration-300",
+        "fixed flex w-full max-w-screen-2xl items-center inset-x-0 mx-auto z-[99999] transition-transform duration-300",
         "translate-y-0",
         className,
         "transition-all duration-500 ease-in-out", 

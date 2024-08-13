@@ -1,17 +1,36 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Hero from "@/components/Home/Home";
-import AboutUs from "@/components/Home/AboutSection";
-import MarqueeSection from "@/components/Home/MarqueeSection";
-import KnowMore from "@/components/Home/KnowMore";
-import HomeMachine from "@/components/Home/HomeMachine";
-import NewsFeature from "@/components/Home/NewsFeature";
-import { CanvasRevealEffectDemo } from "@/components/Home/CanvasRevealEffectDemo";
-import HomeTestimonial from "@/components/Home/TestimonialsSection";
-import { data } from "@/components/Constants/Navbar/about-data";
 import NavLinksDemo from "@/components/Home/NavLinks";
-import { IotSection } from "@/components/Home/IotSection";
+import { data } from "@/components/Constants/Navbar/about-data";
 
+const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
+  ssr: false,
+});
+const MarqueeSection = dynamic(
+  () => import("@/components/Home/MarqueeSection"),
+  { ssr: false }
+);
+const KnowMore = dynamic(() => import("@/components/Home/KnowMore"), {
+  ssr: false,
+});
+const HomeMachine = dynamic(() => import("@/components/Home/HomeMachine"), {
+  ssr: false,
+});
+const NewsFeature = dynamic(() => import("@/components/Home/NewsFeature"), {
+  ssr: false,
+});
+const HomeTestimonial = dynamic(
+  () => import("@/components/Home/TestimonialsSection"),
+  { ssr: false }
+);
+const CanvasRevealEffectDemo = dynamic(() =>
+  import("@/components/Home/CanvasRevealEffectDemo").then((mod) => mod.default)
+);
+const IotSection = dynamic(() =>
+  import("@/components/Home/IotSection").then((mod) => mod.default)
+);
 export default function Home() {
   const aboutUsRef = useRef<HTMLDivElement>(null);
   const infiniteCardsRef = useRef<HTMLDivElement>(null);
@@ -31,7 +50,6 @@ export default function Home() {
     { text: "News", ref: newsFeatureRef },
     { text: "Testimonials", ref: homeTestimonialRef },
   ];
-
   return (
     <main className="bg-[#f2f2f2]">
       <Hero />
@@ -43,13 +61,13 @@ export default function Home() {
             description={data.description}
             stats={data.stats}
             cards={data.cards}
-          />
+          />{" "}
         </div>
-        <div id="clientele" className="mx-4  m-48" ref={infiniteCardsRef}>
+        <div id="clientele" className="mx-4 m-48" ref={infiniteCardsRef}>
           <MarqueeSection />
         </div>
         <div id="knowMore" className="mx-4" ref={knowMoreRef}>
-          <KnowMore/>
+          <KnowMore />
         </div>
         <div id="machines" className="mt-32" ref={homeMachineRef}>
           <HomeMachine />
@@ -68,7 +86,7 @@ export default function Home() {
         </div>
         <div
           id="testimonials"
-          className="relative mt-20 bg-gradient-to-l  via-purple-200 to-transparent h-screen overflow-hidden"
+          className="relative mt-20 bg-gradient-to-l via-purple-200 to-transparent h-screen overflow-hidden"
           ref={homeTestimonialRef}
         >
           <div className="absolute"></div>

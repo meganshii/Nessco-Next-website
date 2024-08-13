@@ -164,6 +164,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({
                       className="relative rounded-3xl z-10 h-auto w-full"
                       width={200}
                       height={150}
+                      loading="lazy"
                     />
                     <h1 className="text-lg text-black font-bold pt-0 relative z-20">
                       {machine.name}

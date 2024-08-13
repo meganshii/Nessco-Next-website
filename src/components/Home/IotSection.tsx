@@ -2,7 +2,7 @@ import React from "react";
 import iotImage from "../../../public/assets/iotImage.png";
 import { BentoGrid, BentoGridItem } from "../ui/bento-grid";
 import { IconClipboardCopy, IconFileBroken } from "@tabler/icons-react";
-export function IotSection() {
+export default function IotSection() {
   return (
     <>
       <BentoGrid className="w-full mt-6 mx-auto md:auto-rows-[25vh]">

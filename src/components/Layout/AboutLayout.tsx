@@ -1,35 +1,38 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import Link from "next/link";
+import React, { useRef, useEffect, useState, useCallback } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { items, titlesWithImages } from "../Constants/Navbar/about-data";
 import { motion } from "framer-motion";
 import AnimatedContainer from "@/hooks/AnimatedContainer";
+import { BlurImage } from "../ui/BlurImage";
+
+// Lazy load components
+const IoIosArrowDown = dynamic(() => import("react-icons/io").then(mod => mod.IoIosArrowDown));
+const IoIosArrowUp = dynamic(() => import("react-icons/io").then(mod => mod.IoIosArrowUp));
+const Link = dynamic(() => import("next/link"), { ssr: false });
 
 const AboutLayout = () => {
   const carouselRef = useRef<HTMLDivElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const scrollDown = () => {
-    if (currentIndex < items.length - 2) {
-      setCurrentIndex(currentIndex + 1);
-    }
-  };
+  // Memoized handlers to prevent unnecessary re-renders
+  const scrollDown = useCallback(() => {
+    setCurrentIndex(prev => (prev < items.length - 2 ? prev + 1 : prev));
+  }, [items.length]);
 
-  const scrollUp = () => {
-    if (currentIndex > 0) {
-      setCurrentIndex(currentIndex - 1);
-    }
-  };
+  const scrollUp = useCallback(() => {
+    setCurrentIndex(prev => (prev > 0 ? prev - 1 : prev));
+  }, []);
 
-  const handleWheel = (e: WheelEvent) => {
-    if (e.deltaY > 0) {
-      scrollDown();
-    } else {
-      scrollUp();
-    }
-  };
+  // Debounce the scroll event to reduce redundant calls
+  const handleWheel = useCallback(
+    (e: WheelEvent) => {
+      const isScrollingDown = e.deltaY > 0;
+      isScrollingDown ? scrollDown() : scrollUp();
+    },
+    [scrollDown, scrollUp]
+  );
 
   useEffect(() => {
     const carouselElement = carouselRef.current;
@@ -41,10 +44,10 @@ const AboutLayout = () => {
         carouselElement.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [currentIndex]);
+  }, [handleWheel]);
 
   return (
-    <div className="flex w-[98vw] p-2 px-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl  h-full ">
+    <div className="flex w-[98vw] p-2 px-4 max-w-screen-2xl flex-col md:flex-row items-center justify-center rounded-xl h-full">
       <div className="grid -ml-2 grid-cols-2 justify-start md:grid-cols-4 w-[80vw]">
         {titlesWithImages.map((item, index) => (
           <motion.div
@@ -55,12 +58,14 @@ const AboutLayout = () => {
             className="flex flex-col justify-start items-center mt-4"
           >
             <Link href={`/${item.title}`} passHref>
-              <Image
+              <BlurImage
                 src={item.image}
                 alt={item.title}
                 className="bg-gray-600 rounded-2xl cursor-pointer w-56 h-56 object-cover transform hover:scale-80 transition-transform duration-200"
                 width={240}
                 height={240}
+                priority={index < 4} // Prioritize the first few images
+                loading={index < 4 ? "eager" : "lazy"}
               />
               <p className="mt-2 flex items-center justify-center space-x-2 text-center font-poppins text-black hover:text-[#483d78] hover:font-bold text-base transform hover:scale-80 transition-transform duration-300">
                 <span>{item.title}</span>

@@ -5,7 +5,7 @@ import { CARDS_DATA } from "../Constants/index";
 import Modal from "../ui/Modal";
 import { FaCirclePlus } from "react-icons/fa6";
 
-export function CanvasRevealEffectDemo() {
+export default function CanvasRevealEffectDemo() {
   return (
     <div className="py-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
       {CARDS_DATA.map((card, index) => (
