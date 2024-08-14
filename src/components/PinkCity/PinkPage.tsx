@@ -68,7 +68,7 @@ const PinkPage = () => {
               ref={mandalaRef}
               layout="fill"
               objectFit="cover"
-              className="object-contain z-10 scale-100"
+              className="object-contain z-10 "
             />
           </div>
           <div className="relative w-3/4 xl:w-[53vh] xl:h-[53vh] top-2 right-11">

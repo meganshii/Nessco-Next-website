@@ -76,7 +76,7 @@ const Bird = () => {
         <Image
           src="/assets/pinkcity/bird.svg"
             alt="bird"
-            // ref={svgImageRef}
+            ref={svgImageRef}
           layout="intrinsic" 
           width={508} 
           height={608} 

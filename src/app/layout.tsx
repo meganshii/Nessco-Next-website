@@ -4,6 +4,9 @@ import "./globals.css";
 import "@fontsource/montserrat";
 import NavbarDemo from "@/components/Navbar/Navbar";
 import "@fontsource/alex-brush";
+import Footer from "@/components/Footer/Footer";
+
+
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Nessco India",
@@ -25,6 +28,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <NavbarDemo />
         {children}
+      <Footer/>
       </body>
     </html>
   );
