@@ -1,0 +1,98 @@
+.image-slide-0 {
+    /* Styles for the first image */
+    width: 29rem;
+    height: auto;
+    margin-right: -0.80rem;
+    transform: rotate(-6deg);
+  
+  }
+  
+  .image-slide-1 {
+    /* Styles for the second image */
+    width: 27rem;
+    height: auto;
+    margin-right: -10px;
+    
+  }
+  
+  .image-slide-2 {
+    /* Styles for the third image */
+    width: 26rem;
+    height: auto;
+    margin-right: 1rem;
+   margin-top: 1rem;
+  
+  }
+
+  /* ourstrenght */
+
+  .line-style-0 {
+    left: 18.5rem; /* Alignment for the first line */
+   
+  }
+  
+  .line-style-1 {
+    left: 19.5rem; /* Alignment for the second line */
+   
+  }
+  
+  .line-style-2 {
+    left: 20rem; /* Alignment for the third line */
+   
+  }
+  
+  /* Add more styles for other lines as needed */
+  
+  /* pergarpghcss */
+
+  
+/* ParagraphStyles.module.css */
+.customParagraphStyle0 {
+  margin-left: -1rem;
+  width: 17rem;
+}
+
+.customParagraphStyle1 {
+  margin-left: 1rem;
+  width: 15rem;
+}
+
+.customParagraphStyle2 {
+ margin-left: 1rem;
+ width: 15rem; 
+}
+.customParagraphStyle3 {
+  margin-left: 1rem;
+  width: 18rem;
+ }
+
+
+
+ .iconContainer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  transform: scale(1.6);
+  opacity: 0.3; /* Set initial opacity to very low */
+  transition: opacity 0.3s; 
+}
+
+.iconContainer:hover {
+ opacity: 1;
+}
+
+.icon0 {
+  margin-left: -30px;
+}
+
+.icon1 {
+  
+}
+
+.icon2 {
+ 
+}
+
+.icon3 {
+  
+}
