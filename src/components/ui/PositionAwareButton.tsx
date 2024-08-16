@@ -22,6 +22,8 @@ interface PositionAwareButtonProps {
   boxShadow?: string;
   hoverBoxShadow?: string;
   transitionDuration?: string;
+  marginLeft?:string;
+  marginTop?:string;
 
   // Icon-specific props
   iconSize?: string;
@@ -51,6 +53,8 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
   boxShadow = "none",
   hoverBoxShadow = "0 4px 15px rgba(0, 0, 0, 0.2)",
   transitionDuration = "0.3s",
+  marginLeft='0px',
+  marginTop='0px',
 
   // Icon-specific props
   iconSize = "32px",
@@ -100,6 +104,8 @@ const PositionAwareButton: React.FC<PositionAwareButtonProps> = ({
         margin,
         borderRadius,
         fontSize,
+    marginLeft,
+    marginTop,
         fontWeight,
         borderColor,
         borderWidth,

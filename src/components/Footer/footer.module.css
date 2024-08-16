@@ -21,6 +21,7 @@
     width: 84.5%;
     margin: auto;
     position: relative;
+
   }
   .footerlinks {
     display: flex;
@@ -48,8 +49,9 @@
     display: flex;
     justify-content: space-evenly;
     align-items: flex-start;
-    width: 100%;
-    margin-top: 2rem;
+    width: 90%;
+   margin-top: 1rem;
+   margin-bottom: -0.10rem;
   }
   .footerlistabout {
     width: 33%;

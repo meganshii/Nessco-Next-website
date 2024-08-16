@@ -39,6 +39,7 @@ export default function about ()
         <main className="bg-white">
         <Home />
         <NavLinksDemo navItems={navItems}  />
+        
         <div id='mission and vission' ref={missionRef}>
         <Missionvission/>
         </div>
@@ -51,7 +52,7 @@ export default function about ()
         <OurStrenght/>
         </div>
 
-        <div id='The Pink City' ref={pinkcityRef} className="mb-10 mt-20">
+        <div id='The Pink City' ref={pinkcityRef} className="mb-10 mt-20 z-10">
         <PinkCity/>
         </div>
         <div className="mt-44" id='Sustainability' ref={sustainableRef}>

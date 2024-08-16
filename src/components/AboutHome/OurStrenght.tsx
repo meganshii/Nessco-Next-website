@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { strengthsContent } from '../Constants/About/OurStrenght'; // Adjust path as needed
 import styles from './featureproject.module.css';
+import { GlareCard } from '../ui/glare-card';
 
 const lineClasses = [
   styles["line-style-0"], // Class for the first line
@@ -45,9 +46,14 @@ const OurStrength: FC = () => {
           ))}
         </div>
 
-        <div className=" relative p-3 w-full bottom-0 bg-[#1e1542] text-white text-center font-poppins text-4xl font-bold">
+        {/* <div className=" relative p-3 w-full bottom-0 bg-[#1e1542] text-white text-center font-poppins text-4xl font-bold">
           <h1>Read More</h1>
-        </div>
+        </div> */}
+        <GlareCard 
+        className=' relative p-3 w-full bottom-0 bg-[#1e1542] text-white text-center font-poppins text-4xl font-bold  h-[5rem]'
+        >
+          <p>read more</p>
+        </GlareCard>
       </div>
     </div>
   );

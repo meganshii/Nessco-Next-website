@@ -1,8 +1,8 @@
 // about/constants.js
 
-import cupdis from '../../../../public/assets/coffee-cup.png';
-import userset from '../../../../public/assets/management-consulting.png';
-import sustainable from '../../../../public/assets/save-nature - Copy.png';
+import cupdis from '../../../../public/assets/about/ourcompany/icon1.svg';
+import userset from '../../../../public/assets/about/ourcompany/icon2.svg';
+import sustainable from '../../../../public/assets/about/ourcompany/icon1.svg';
 
 export const sections = [
   {

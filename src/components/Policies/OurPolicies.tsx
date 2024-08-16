@@ -1,4 +1,5 @@
 "use client";
+"use client";
 import React, { useState } from 'react';
 import { BsPlusLg, BsDashLg } from 'react-icons/bs';
 
@@ -25,7 +26,7 @@ const PolicyHeader = () => {
             <div className="border border-gray-400 w-full"></div>
 
             {isExpanded && (
-                <div className="mt-4 ml-[4.5rem] mr-7 p-4 bg-[#f7f7f7] max-h-[300px] overflow-hidden transition-max-height duration-300 ease-in-out">
+                <div className="mt-4 ml-[4.5rem] mr-7 p-4 bg-[#f7f7f7] max-h-[300px] overflow-hidden transition-all duration-300 ease-in-out">
                     <div className="text-[#6f6f6f] max-h-[200px] overflow-y-auto pr-2">
                         <p>
                             Information is provided on an "as is" basis and could include technical, typographical, or other errors. Ford makes no warranties, representations, or guarantees of any kind, express or implied, including but not limited to, accuracy, currency, or completeness, the operation of the Site, the information, materials, content, availability, and products. Ford reserves the right to change product specifications, pricing, and equipment at any time without incurring obligations. Your Ford dealer is the best source of the most up-to-date information on Ford vehicles.
@@ -52,4 +53,5 @@ const PolicyHeader = () => {
 };
 
 export default PolicyHeader;
+
 

@@ -22,6 +22,7 @@ const Subscribe: React.FC = () => {
 
     return (
         <section className={styles.subscribe}>
+              <div className="border border-gray-400 w-full"></div>
             <div className={styles.subsribecontainer}>
                 <div className='rounded-full h-12 w-12 bg-white  '>
                 <TbMailFilled size={32} className='ml-2 mt-2 text-[#483d73] '/>
@@ -43,7 +44,23 @@ const Subscribe: React.FC = () => {
 
                         />
                     </div>
-                    <button type='submit' className={styles.subscribebtn}>Subscribe</button>
+                    <PositionAwareButton
+           
+            marginLeft="60px"
+            iconSize="40px"
+            icon
+            height="47px"
+            padding="10px"
+            width="230px"
+            fontSize="25px"
+            borderRadius="100px"
+            bgColor='white'
+        marginTop='8px'
+        textColor='#483d73'
+            text={"Subscribe"}
+            iconColor='#483d73'
+            borderColor='none'
+          />
                 </form>
             </div>
         </section>

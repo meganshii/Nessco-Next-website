@@ -54,6 +54,7 @@ export default function Home() {
     <main className="bg-[#f2f2f2]">
       <Hero />
       <NavLinksDemo navItems={navItems} />
+      
       <div className="h-full">
         <div id="aboutUs" className="mx-4 mt-32" ref={aboutUsRef}>
           <AboutUs
