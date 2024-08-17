@@ -32,7 +32,7 @@ export const footerData = {
     socialIcons: [
       { src: "/assets/footer/facebook.png", alt: "Facebook" },
       { src: "/assets/footer/twitter.png", alt: "Twitter" },
-      { src: "/assets/footer/youtube.png", alt: "YouTube" },
+      { src: "/assets/footer/youtube.png", alt: "YouTube"},
       { src: "/assets/footer/instagram.png", alt: "Instagram" },
       { src: "/assets/footer/linkedin.png", alt: "LinkedIn" },
     ],

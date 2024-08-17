@@ -33,14 +33,16 @@ const Footer: React.FC = () => {
                             <div className='flex flex-row  w-[35rem] -ml-2'>
                                 {footerData.awards.map((award, index) => (
                                     <p aria-label="Footer Icon" key={index}>
+                                         <a href="https://www.example.com" target="_blank" rel="noopener noreferrer">
                                         <Image
                                             src={award.src}
                                             alt={award.alt}
                                             width={100}  // Adjust the size as needed
                                             height={100} // Adjust the size as needed
                                             style={{ height: '7rem', width: '14rem' }}
-                                            className='scale-125'
+                                            className='scale-125 transform transition-transform duration-300 hover:scale-150'
                                         />
+                                        </a>
                                     </p>
                                 ))}
                             </div>
@@ -109,8 +111,8 @@ const Footer: React.FC = () => {
                                         <Image
                                             src={icon.src}
                                             alt={icon.alt}
-                                            width={70}  // Adjust the size as needed
-                                            height={70} // Adjust the size as needed
+                                            width={80}  // Adjust the size as needed
+                                            height={80} // Adjust the size as needed
                                         />
                                     </p>
                                 ))}
