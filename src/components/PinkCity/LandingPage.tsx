@@ -5,7 +5,7 @@ import { landingPageContent } from '../Constants/pinkcity/LandingPage'
 const LandingPage = () => {
   return (
     <div className="bg-gray-100 flex flex-col items-center h-screen p-6">
-      <div className="relative w-full max-w-screen-xl p-6 top-12 h-[68vh]">
+      <div className="relative w-full  p-6 top-12 h-[68vh]">
         <Image
           src={landingPageContent.backgroundImg}
           alt="Jaipur"

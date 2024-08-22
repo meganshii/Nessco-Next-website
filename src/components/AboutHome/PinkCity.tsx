@@ -42,18 +42,21 @@ const PinkCity = () => {
         ))}
       </div>
 
-      <div className='mt-12'>
-        <div className="relative p-3 w-full bottom-0 text-[#312465] text-center font-poppins text-4xl font-bold">
-          <p>Read More</p>
-        </div>
-        <Image 
-          src="/assets/about/layers.svg" 
-          alt="Overlay Icon" 
-          width={100} 
-          height={50} 
-          className="relative w-[16rem] h[5rem] -mt-44 ml-[32rem] z-10"
-        />
-      </div>
+      <div className="flex flex-col items-center mt-12 relative">
+  <div className="relative p-3 text-[#312465] text-center font-poppins text-4xl font-bold">
+    <p>Read More</p>
+  </div>
+  <div className="relative">
+    <Image 
+      src="/assets/about/layers.svg" 
+      alt="Overlay Icon" 
+      width={100} 
+      height={50} 
+      className="relative w-[16rem] h-auto z-10 -mt-44"
+    />
+  </div>
+</div>
+
     </div>
   );
 };

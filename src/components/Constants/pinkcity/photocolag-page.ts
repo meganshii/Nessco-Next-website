@@ -1,6 +1,6 @@
 export const galleryContent = {
-    topStrokeImg: '/assets/pinkcity/topstyle.svg',
-    bottomStrokeImg: '/assets/pinkcity/bottomlayer.svg',
+    topStrokeImg: '/assets/pinkcity/top.png',
+    bottomStrokeImg: '/assets/pinkcity/bottom.png',
     galleryImages: [
       '/assets/pinkcity/hawamahal.png',
       '/assets/pinkcity/jalmahal.webp',

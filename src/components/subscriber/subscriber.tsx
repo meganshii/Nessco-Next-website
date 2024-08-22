@@ -30,7 +30,7 @@ const Subscribe: React.FC = () => {
                 </div>
                 <form className={`${styles.rightsubscribe} flex`} onSubmit={handleSubmit}>
                     <div className='flex -ml-[39rem] h-[3rem] w-[40rem] bg-white rounded-full items-center p-2 px-5 font-poppins mt-2'>
-                        <h2 className={`${styles.subsribeheading} text-2xl text-[#3a2a79] font-bold`}>
+                        <h2 className={`${styles.subsribeheading} text-xl text-[#3a2a79] font-bold`}>
                             {subscribeData.heading}
                         </h2>
 

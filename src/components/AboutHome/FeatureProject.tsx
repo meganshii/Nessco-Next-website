@@ -16,7 +16,7 @@ const FeatureProject: FC = () => {
       <div className="flex items-center mt-12 space-x-96">
         <h2 className="text-7xl font-bold text-gray-400 ml-14">{selectedMachine.title}</h2>
 
-        <div className="left-10 max-w-sm text-center -mt-10 z-10">
+        <div className="ml-[10rem] max-w-md text-center -mt-10 z-10 ">
           <p className="text-md text-gray-600 ml-16">
             {selectedMachine.description}
           </p>

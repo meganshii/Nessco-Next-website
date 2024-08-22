@@ -15,7 +15,7 @@ const OurStrength: FC = () => {
   const { paragraphs, images, icons } = strengthsContent;
 
   return (
-    <div className="relative max-w-screen-xl mx-auto bg-white h-screen">
+    <div className="relative w-full mx-auto bg-white h-screen">
       <div className="relative">
         <h1 className="text-5xl font-montserrat font-bold text-[#3a2a79] ml-9">Our Strength</h1>
         <div className="flex-1 flex-col p-5 text-center">
@@ -46,14 +46,10 @@ const OurStrength: FC = () => {
           ))}
         </div>
 
-        {/* <div className=" relative p-3 w-full bottom-0 bg-[#1e1542] text-white text-center font-poppins text-4xl font-bold">
+        <div className=" relative p-3 w-full bottom-0 bg-[#1e1542] text-white text-center font-poppins text-4xl font-bold">
           <h1>Read More</h1>
-        </div> */}
-        <GlareCard 
-        className=' relative p-3 w-full bottom-0 bg-[#1e1542] text-white text-center font-poppins text-4xl font-bold  h-[5rem]'
-        >
-          <p>read more</p>
-        </GlareCard>
+        </div>
+       
       </div>
     </div>
   );

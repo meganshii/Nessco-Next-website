@@ -26,20 +26,34 @@
 
   /* ourstrenght */
 
-  .line-style-0 {
-    left: 18.5rem; /* Alignment for the first line */
-   
+  @media (max-width: 768px) {
+    .line-style-0 {
+      left: 40%;
+    }
+  
+    .line-style-1 {
+      left: 30%;
+    }
+  
+    .line-style-2 {
+      left: 35%;
+    }
   }
   
-  .line-style-1 {
-    left: 19.5rem; /* Alignment for the second line */
-   
+  @media (min-width: 769px) and (max-width: 1200px) {
+    .line-style-0 {
+      left: 45%;
+    }
+  
+    .line-style-1 {
+      left: 35%;
+    }
+  
+    .line-style-2 {
+      left: 40%;
+    }
   }
   
-  .line-style-2 {
-    left: 20rem; /* Alignment for the third line */
-   
-  }
   
   /* Add more styles for other lines as needed */
   

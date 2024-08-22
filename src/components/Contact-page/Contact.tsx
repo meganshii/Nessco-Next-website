@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { IoIosArrowDropright } from 'react-icons/io';
+import { IoIosArrowForward } from "react-icons/io";
 import styles from './contact.module.css';
 import { contactContent } from '../Constants/contact/Contact';
 
@@ -156,7 +156,7 @@ const ContactForm: React.FC = () => {
                     value={formData.SingleLine1}
                     onChange={handleChange}
                     placeholder={contactContent.form.placeholders.subject}
-                    className="p-2 border-none rounded-xl bg-[#f5f5f5] placeholder-black"
+                    className="p-2 border-none rounded-xl bg-[#f5f5f5] placeholder-black placeholder-top"
                   />
                 </div>
 
@@ -176,7 +176,9 @@ const ContactForm: React.FC = () => {
                 className="mt-6 text-xl flex items-center text-white py-4 px-9 rounded-xl bg-gradient-to-b from-[#171033] to-[#300675] transition"
               >
                 <p>{contactContent.form.buttonText}</p>
-                <IoIosArrowDropright className="ml-2" style={{ fontSize: '1.5rem' }} />
+             
+                <IoIosArrowForward className="ml-2 text-[#300675] bg-white rounded-full p-1" style={{ fontSize: '1.4rem' }} />
+             
               </button>
             </form>
           </div>

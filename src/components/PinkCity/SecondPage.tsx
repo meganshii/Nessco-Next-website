@@ -37,25 +37,27 @@ const SecondPage = () => {
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100 p-6 mt-10">
       <DashedLineWithImage />
 
-      <div className="relative w-full max-w-screen-xl flex items-center">
+      <div className="relative w-full  flex items-center">
         <div className="flex-1 relative right-5 -top-52 bg-purple-200">
-          <div className="absolute inset-0 flex justify-center items-center w-[40rem] h-[87vh] -top-10">
+          <div className="absolute inset-0 flex justify-center items-center w-[40rem] h-[87vh] md:[h-45vh] md:w-[45vw] xl:top-3 -ml-24 md:-top-20">
             <Image
               src={secondPageContent.mandalaImg}
               alt="Mandala Design"
               height={600}
               width={600}
               ref={mandalaRef}
-              className="object-contain h-[200rem] w-[200rem] mr-56"
+              className="object-contain h-[150%] w-[150%] "
             />
           </div>
-          <div className="absolute z-10 w-3/4 h-auto xl:w-[54vh] xl:h-[56vh] left-16 top-16">
+          <div className="absolute z-10 w-[30vw] h-[30vh]  max:w-[26vw] max:h-[26vh] xl:left-14 mt-28 ">
             <Image
               src={secondPageContent.topImg}
               alt="Jaipur"
-              layout="fill"
-              objectFit="cover"
-              className="shadow-lg rounded-xl w-3/4 h-auto xl:w-[56vh] xl:h-[56vh]"
+              layout="responsive"
+              width={600}
+              height={400}
+              className="shadow-lg rounded-xl w-full object-cover"
+              style={{ aspectRatio: '2 / 2' }}  // Ensure aspect ratio is maintained
             />
           </div>
         </div>

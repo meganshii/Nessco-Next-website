@@ -48,7 +48,7 @@ const Missionvission: React.FC = () => {
   }, [currentSlide, carouselApi]);
 
   return (
-    <div className="relative max-w-screen mx-auto p-8 bg-white h-screen">
+    <div className="relative min-h-screen w-full  p-8 bg-white h-screen">
       <h2 className="text-5xl font-bold text-[#3a2a79] mb-8 mt-10 font-montserrat">
         Mission & Vision
       </h2>

@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Awards: FC = () => {
   return (
-    <div className="relative max-w-screen-xl mx-auto bg-white h-screen">
+    <div className="relative min-h-screen w-full  bg-white h-screen">
       <h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] ml-10 -mt-12">
         Awards
       </h1>
@@ -17,7 +17,7 @@ const Awards: FC = () => {
         </p>
       </div>
 
-      <div className="relative  flex text-white">
+      <div className="relative  flex text-white md:mt-[11rem]">
 
         <div className="flex flex-col items-center z-20 text-white ml-14 transform transition-transform duration-300 hover:scale-110">
           <div className=" flex items-center justify-center font-bold  -mt-[2rem]
@@ -56,7 +56,7 @@ const Awards: FC = () => {
               className="object-cover"  style={{height:"15rem", width:"20rem"}}
             />
           </div>
-          <p className="w-[7rem] text-center font-bold -mt-5 ">Child Labour Free</p>
+          <p className="w-[7rem] text-center font-bold -mt-3 ">Child Labour Free</p>
         </div>
 
         <div className="flex flex-col items-center mt-32 z-20 ml-10 transform transition-transform duration-300 hover:scale-110">
@@ -70,7 +70,7 @@ const Awards: FC = () => {
               className="object-cover" style={{height:"15rem", width:"17rem"}}
             />
           </div>
-          <p className="w-[6rem] text-center font-bold -mt-7 ">Star Export House </p>
+          <p className="w-[6rem] text-center font-bold -mt-3 ">Star Export House </p>
         </div>
 
         <div className="flex flex-col items-center mt-32 ml-7 transform transition-transform duration-300 hover:scale-110 z-20">
@@ -83,7 +83,7 @@ const Awards: FC = () => {
               className="object-cover"  style={{height:"17rem", width:"15rem"}}
             />
           </div>
-          <p className="w-[5rem] text-center font-bold -mt-10 ml-5 ">CE Certified</p>
+          <p className="w-[5rem] text-center font-bold -mt-4 ml-5 ">CE Certified</p>
         </div>
 
         <div className="flex flex-col items-center mt-10 z-20  ml-7 transform transition-transform duration-300 hover:scale-110">
@@ -96,7 +96,7 @@ const Awards: FC = () => {
               className="" style={{height:"18rem", width:"20rem"}}
             />
           </div>
-          <p className="w-[5rem] text-center font-bold -mt-7">Taxpayers Award</p>
+          <p className="w-[5rem] text-center font-bold -mt-6">Taxpayers Award</p>
         </div>
       </div>
 
@@ -106,7 +106,7 @@ const Awards: FC = () => {
           alt="Machine 3"
           width={400}
           height={100}
-          className=" object-cover w-full " style={{height:'42rem'}}
+          className=" object-cover w-full md:h-full " style={{height:'42rem'}}
         />
       </div>
     </div>
