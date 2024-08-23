@@ -113,6 +113,7 @@ const Footer: React.FC = () => {
                                             alt={icon.alt}
                                             width={80}  // Adjust the size as needed
                                             height={80} // Adjust the size as needed
+                                            className={icon.imgclass}
                                         />
                                     </p>
                                 ))}

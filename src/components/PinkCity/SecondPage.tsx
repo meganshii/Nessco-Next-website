@@ -38,29 +38,35 @@ const SecondPage = () => {
       <DashedLineWithImage />
 
       <div className="relative w-full  flex items-center">
-        <div className="flex-1 relative right-5 -top-52 bg-purple-200">
-          <div className="absolute inset-0 flex justify-center items-center w-[40rem] h-[87vh] md:[h-45vh] md:w-[45vw] xl:top-3 -ml-24 md:-top-20">
-            <Image
-              src={secondPageContent.mandalaImg}
-              alt="Mandala Design"
-              height={600}
-              width={600}
-              ref={mandalaRef}
-              className="object-contain h-[150%] w-[150%] "
-            />
-          </div>
-          <div className="absolute z-10 w-[30vw] h-[30vh]  max:w-[26vw] max:h-[26vh] xl:left-14 mt-28 ">
-            <Image
-              src={secondPageContent.topImg}
-              alt="Jaipur"
-              layout="responsive"
-              width={600}
-              height={400}
-              className="shadow-lg rounded-xl w-full object-cover"
-              style={{ aspectRatio: '2 / 2' }}  // Ensure aspect ratio is maintained
-            />
-          </div>
-        </div>
+      <div className="relative flex flex-1 mt-28 h-full">
+
+  <div className="absolute inset-0 flex justify-center items-center w-[40rem] h-[87vh] md:h-[50vh] md:w-[50vw] xl:top-6 -ml-24 md:-top-24">
+    <Image
+      src={secondPageContent.mandalaImg}
+      alt="Mandala Design"
+      height={600}
+      width={600}
+      ref={mandalaRef}
+      className="object-contain h-[160%] w-[160%]"
+    />
+  </div>
+
+
+  <div className="relative flex justify-center items-center w-[30vw] h-[30vh] xl:left-16 ">
+    <div className="absolute z-10 w-full h-full max-w-[26vw] max-h-[26vh]">
+      <Image
+        src={secondPageContent.topImg}
+        alt="Jaipur"
+        layout="responsive"
+        width={600}
+        height={400}
+        className="shadow-lg rounded-xl object-cover"
+        style={{ aspectRatio: '2 / 2' }}  // Adjust aspect ratio if needed
+      />
+    </div>
+  </div>
+</div>
+
 
         <div className="flex-1 relative top-20 right-16 h-full">
           <div className="absolute inset-0 flex justify-end items-start h-full w-[40rem]">

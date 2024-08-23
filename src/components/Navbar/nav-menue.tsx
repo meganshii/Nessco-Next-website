@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export const Menu = ({ children }: { children: React.ReactNode }) => {
   const [active, setActive] = useState<string | null>(null);
@@ -76,7 +77,7 @@ export const MenuItem = ({
       className="z-10 cursor-pointer px-3 font-montserrat py-2 text-white  md:py-1 md:text-base "
     >
       <motion.p className="text-black font-poppins text-16">
-        {item}
+        <Link href={`${item}`}>{item}</Link>
       </motion.p>
       {active === item && (
         <motion.div className="absolute top-[calc(100%_-_1.0rem)] left-3 pt-4">

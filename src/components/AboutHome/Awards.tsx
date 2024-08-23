@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Awards: FC = () => {
   return (
-    <div className="relative min-h-screen w-full  bg-white h-screen">
+    <div className="relative min-h-screen w-full  bg-white h-screen top-5">
       <h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] ml-10 -mt-12">
         Awards
       </h1>
@@ -17,7 +17,7 @@ const Awards: FC = () => {
         </p>
       </div>
 
-      <div className="relative  flex text-white md:mt-[11rem]">
+      <div className=" flex text-white sm:my-[10%] lg:mt-[2%] md:my-[12%] ">
 
         <div className="flex flex-col items-center z-20 text-white ml-14 transform transition-transform duration-300 hover:scale-110">
           <div className=" flex items-center justify-center font-bold  -mt-[2rem]
@@ -100,15 +100,26 @@ const Awards: FC = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-0 w-full h-auto ">
+      {/* <div className="absolute bottom-0 w-full  ">
         <Image
           src="/assets/about/bluelayer.svg"
           alt="Machine 3"
           width={400}
           height={100}
-          className=" object-cover w-full md:h-full " style={{height:'42rem'}}
+          className=" object-cover w-full min-h-full md:h-[46rem] lg:h-[42rem] sm:h-[48rem]"
         />
-      </div>
+      </div> */}
+      <div className="absolute bottom-0 w-full">
+  <Image
+    src="/assets/about/bluelayer.svg"
+    alt="Background Layer"
+    width={400} 
+    height={100}
+    objectFit="cover"
+    className=" object-cover w-full min-h-[40rem] md:min-h-[30rem] lg:min-h-[37rem] sm:min-h-[48rem] h-[90vh]"
+  />
+</div>
+
     </div>
   );
 };

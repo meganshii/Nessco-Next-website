@@ -28,7 +28,7 @@
 
   @media (max-width: 768px) {
     .line-style-0 {
-      left: 40%;
+      left: 45%;
     }
   
     .line-style-1 {
@@ -42,7 +42,7 @@
   
   @media (min-width: 769px) and (max-width: 1200px) {
     .line-style-0 {
-      left: 45%;
+      left: 50%;
     }
   
     .line-style-1 {
@@ -68,16 +68,16 @@
 
 .customParagraphStyle1 {
   margin-left: 1rem;
-  width: 15rem;
+  width: 16rem;
 }
 
 .customParagraphStyle2 {
  margin-left: 1rem;
- width: 15rem; 
+ width: 16rem; 
 }
 .customParagraphStyle3 {
   margin-left: 1rem;
-  width: 18rem;
+  width: 17rem;
  }
 
 

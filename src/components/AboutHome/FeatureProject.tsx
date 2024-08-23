@@ -12,25 +12,28 @@ const FeatureProject: FC = () => {
   return (
     <div className="relative flex flex-col w-full h-screen">
       <h1 className="text-5xl font-bold text-[#33246e] font-montserrat mt-5 ml-[3rem]">Featured Projects</h1>
+      <div className="flex flex-col lg:flex-row items-center mt-12 ">
+  <h2 className="text-5xl sm:text-6xl lg:text-5xl font-bold text-gray-400 lg:ml-14 -mt-10">
+    {selectedMachine.title}
+  </h2>
 
-      <div className="flex items-center mt-12 space-x-96">
-        <h2 className="text-7xl font-bold text-gray-400 ml-14">{selectedMachine.title}</h2>
+  <div className="relative flex justify-center lg:justify-start mt-8 lg:mt-0">
+    <Image
+      src={selectedMachine.mainImage}
+      alt={selectedMachine.title}
+      width={400}
+      height={400}
+      className="object-cover z-20 h-[18rem] sm:h-[20rem] lg:h-[21rem] w-[22rem] sm:w-[24rem] lg:w-[25rem]  ml-32"
+    />
+  </div>
 
-        <div className="ml-[10rem] max-w-md text-center -mt-10 z-10 ">
-          <p className="text-md text-gray-600 ml-16">
-            {selectedMachine.description}
-          </p>
-        </div>
-      </div>
-      <div className="relative z-10">
-        <Image
-          src={selectedMachine.mainImage}
-          alt={selectedMachine.title}
-          width={400}
-          height={400}
-          className="object-cover z-20 h-[21rem] w-[25rem] ml-[28rem] -mt-48"
-        />
-      </div>
+  <div className="ml-0 sm:ml-[2rem] md:ml-[4rem] lg:ml-[4rem] max-w-sm text-center lg:text-left lg:-mt-12 z-10">
+    <p className="text-sm text-gray-600 lg:ml-0">
+      {selectedMachine.description}
+    </p>
+  </div>
+</div>
+
 
       {/* Horizontal Line */}
       <div className="relative w-full h-1 bg-[#3a2a79] -mt-32">

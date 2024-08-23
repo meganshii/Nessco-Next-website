@@ -47,7 +47,7 @@ const Home: React.FC = () => {
   const videoX = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
 
   return (
-    <div className="relative h-screen  flex flex-col items-center min-h-screen w-full top-3">
+    <div className="relative h-screen  flex flex-col items-center min-h-screen w-full top-3 overflow-hidden">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
         <motion.div
           className="md:mt-[3rem] h-[calc(100vh-150px)] flex justify-center items-center sm:h-[calc(100vh-120px)] rounded-xl"

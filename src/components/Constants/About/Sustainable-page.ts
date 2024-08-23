@@ -1,5 +1,7 @@
 // about/sustainableConstants.ts
 
+import { Span } from "next/dist/trace";
+
 export const sustainableContent = {
     heading: "The Future is",
     highlight: "Sustainable",

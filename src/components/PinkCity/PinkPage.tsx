@@ -65,7 +65,7 @@ const PinkPage = () => {
 
         {/* Right Section */}
         <div className="flex-1 flex justify-center items-center relative h-[60vh] md:h-[80vh] lg:h-[92vh]">
-          <div className="absolute inset-0 flex justify-center items-center w-[80vw] h-[80vw] md:w-[60vw] md:h-[60vw] lg:w-[50vw] lg:h-[50vw]">
+          <div className="absolute inset-0 flex justify-center items-center w-[45vw] h-[45vw]  ml-12 ">
             <Image
               src={pinkPageContent.mandalaImg}
               alt="Mandala Design"
@@ -75,7 +75,7 @@ const PinkPage = () => {
               className="object-contain z-10"
             />
           </div>
-          <div className="relative w-[40vw] h-[40vw] md:w-[30vw] md:h-[30vw] lg:w-[27vw] lg:h-[27vw] top-10 md:right-3">
+          <div className="relative w-[40vw] h-[40vw] md:w-[30vw] md:h-[30vw] lg:w-[27vw] lg:h-[27vw] top-8 md:-right-7 md:-top-0">
             <Image
               src={pinkPageContent.hawamahalImg}
               alt="Jaipur"

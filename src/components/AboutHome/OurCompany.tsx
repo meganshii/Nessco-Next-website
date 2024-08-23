@@ -12,7 +12,7 @@ const OurCompany: FC = () => {
       {/* Gradient overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#171033] to-[#300675] opacity-60 z-[-1]"></div>
 
-      <h1 className="text-5xl font-bold font-montserrat z-10 mt-10 -ml-[60rem]">{companyContent.title}</h1>
+      <h1 className="text-5xl font-bold font-montserrat z-10 mt-10 -ml-[53rem]">{companyContent.title}</h1>
 
       <div className="flex flex-col md:flex-row items-center w-full max-w-6xl mt-12">
         <div className="bg-white rounded-2xl p-5 shadow-lg w-full md:w-3/5 h-[55vh] z-10 -mt-5 -ml-20">

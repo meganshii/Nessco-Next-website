@@ -2,7 +2,6 @@ import Image from 'next/image';
 import { FC } from 'react';
 import { strengthsContent } from '../Constants/About/OurStrenght'; // Adjust path as needed
 import styles from './featureproject.module.css';
-import { GlareCard } from '../ui/glare-card';
 
 const lineClasses = [
   styles["line-style-0"], // Class for the first line
@@ -15,41 +14,48 @@ const OurStrength: FC = () => {
   const { paragraphs, images, icons } = strengthsContent;
 
   return (
-    <div className="relative w-full mx-auto bg-white h-screen">
-      <div className="relative">
-        <h1 className="text-5xl font-montserrat font-bold text-[#3a2a79] ml-9">Our Strength</h1>
-        <div className="flex-1 flex-col p-5 text-center">
-          <div className="flex flex-row space-x-5 w-full justify-between relative">
-            {paragraphs.map((paragraph, index) => (
-              <div key={index} className="p-4 flex flex-col items-center relative top-5">
-                {index < paragraphs.length - 1 && (
-                  <div className={`absolute top-1 left-[19rem] h-[15rem] border-r-2 border-[#000088] ${lineClasses[index]}`} />
-                )}
-                <p className={styles[`customParagraphStyle${index}`]}>
-                  <span className="text-[#3a2a79] font-bold">{paragraph.title}:</span> {paragraph.content}
-                </p>
-                <div className={`${styles.iconContainer} ${styles[`icon${index}`]}`}>
-                  <Image src={icons[index]} alt={`Icon ${index + 1}`} width={60} height={60} />
-                </div>
+    <div className="relative w-full mx-auto bg-white min-h-screen">
+      <div className="relative max-w-screen-xl mx-auto ">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-[#3a2a79] my-8 ml-10">
+          Our Strength
+        </h1>
+
+        {/* Container for Paragraphs and Images */}
+        <div className="flex flex-col space-y-16 md:space-y-0 md:flex-row md:space-x-8 items-center justify-between">
+          {paragraphs.map((paragraph, index) => (
+            <div key={index} className="relative flex flex-col items-center text-center">
+              {/* Line between Paragraph and Image */}
+              {index < paragraphs.length - 1 && (
+                <div
+                  className={`absolute top-0 left-[105%] transform -translate-x-1/2 h-[17.1rem] border-r-2 border-[#000088] ${lineClasses[index]}`}
+                />
+              )}
+
+              {/* Paragraph */}
+              <p className={`${styles[`customParagraphStyle${index}`]} text-lg`}>
+                <span className="text-[#3a2a79] font-bold">{paragraph.title}:</span> {paragraph.content}
+              </p>
+
+              {/* Icon */}
+              <div className="mt-4">
+                <Image src={icons[index]} alt={`Icon ${index + 1}`} width={70} height={70} className='opacity-50' />
               </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="relative justify-center left-0 w-full border-t-2 border-[#000088] -mt-2" />
-
-        <div className="flex flex-wrap mb-3">
-          {images.map((image, index) => (
-            <div key={index} className="w-full md:w-1/4 p-2 flex justify-center transform transition-transform duration-300 hover:scale-105">
-              <Image src={image.src} alt={image.alt} width={300} height={200} className="object-cover rounded-2xl" />
+              {/* Image */}
+              <div className="mt-4 transform transition-transform duration-300 hover:scale-105 p-1">
+                <Image src={images[index].src} alt={images[index].alt} width={300} height={200} className="object-cover rounded-2xl" />
+              </div>
             </div>
           ))}
         </div>
 
-        <div className=" relative p-3 w-full bottom-0 bg-[#1e1542] text-white text-center font-poppins text-4xl font-bold">
+        {/* Horizontal Line */}
+        <div className="-mt-48 w-full border-t-2 border-[#000088]" />
+
+        {/* Read More Section */}
+        <div className="mt-52 p-6 bg-[#1e1542] text-white text-center font-poppins text-2xl md:text-4xl font-bold">
           <h1>Read More</h1>
         </div>
-       
       </div>
     </div>
   );

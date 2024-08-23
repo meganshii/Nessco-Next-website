@@ -34,6 +34,15 @@ const Branches: React.FC = () => {
                                 <p className="text-black w-[10rem] text-lg font-poppins mt-6 ml-8">
                                     {branch.address}
                                 </p>
+                                <Image 
+                                    src={branch.image}
+                                    width={80} 
+                                    height={80} 
+                                    className={branch.imageClass}
+                                    alt="image" 
+                                    
+                                />
+
                             </div>
                         ))}
                     </div>
