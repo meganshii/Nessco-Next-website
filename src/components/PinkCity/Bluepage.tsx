@@ -10,7 +10,7 @@ const Bluepage = () => {
   const bgSvgRef = useRef<HTMLDivElement | null>(null);
 
   return (
-    <div className="relative w-full h-screen bg-gray-100 mt-10 p-5">
+    <div className="relative w-full h-screen bg-gray-100 mt-10 p-5 overflow-hidden">
       <div className="absolute inset-0 h-full w-full">
         <Image
           src={bluePageContent.backgroundSvg}
@@ -20,7 +20,7 @@ const Bluepage = () => {
           className={styles.animateBackground}
         />
       </div>
-      <div className="relative z-10 w-[94%] top-28 h-[73vh] left-12">
+      <div className="relative z-10 w-[94%] top-24 h-[73vh] left-12">
         <video
           className="w-full object-fill h-full rounded-2xl"
           autoPlay

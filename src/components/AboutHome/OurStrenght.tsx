@@ -14,7 +14,7 @@ const OurStrength: FC = () => {
   const { paragraphs, images, icons } = strengthsContent;
 
   return (
-    <div className="relative w-full mx-auto bg-white min-h-screen">
+    <div className="relative w-full  bg-white min-h-screen">
       <div className="relative max-w-screen-xl mx-auto ">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-[#3a2a79] my-8 ml-10">
           Our Strength

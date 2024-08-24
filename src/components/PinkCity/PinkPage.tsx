@@ -40,17 +40,17 @@ const PinkPage = () => {
       <div className="relative w-full h-full flex items-center justify-center">
         
         {/* Left Section */}
-        <div className="flex-1 flex flex-col justify-center items-center relative top-16 h-full z-20 p-4 md:p-16">
-          <div className="absolute inset-0 flex justify-center items-start">
+        <div className=" flex flex-col justify-center items-center relative mt-10 h-full z-20 p-4 md:p-16 w-2/4 ">
+          <div className="absolute inset-0 flex justify-center items-start w-full top-10">
             <Image
               src={pinkPageContent.strokeImg}
               alt="Stroke"
               layout="fill"
-              objectFit="cover"
-              className="object-contain opacity-35"
+            
+              className="object-contain opacity-35 " 
             />
           </div>
-          <div className="relative z-10 text-justify">
+          <div className="relative z-10 text-justify top-3">
             <p className="text-gray-700 text-md font-montserrat">
               {pinkPageContent.description.split(' ').map((word, index) => (
                 word === 'ivory' || word === 'machines' ? (
@@ -64,7 +64,7 @@ const PinkPage = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 flex justify-center items-center relative h-[60vh] md:h-[80vh] lg:h-[92vh]">
+        <div className="flex-1 flex justify-center items-center relative h-[90vh]">
           <div className="absolute inset-0 flex justify-center items-center w-[45vw] h-[45vw]  ml-12 ">
             <Image
               src={pinkPageContent.mandalaImg}
@@ -72,10 +72,9 @@ const PinkPage = () => {
               ref={mandalaRef}
               layout="fill"
               objectFit="cover"
-              className="object-contain z-10"
+              className="object-contain z-10 " style={{marginTop:'-1%'}}
             />
-          </div>
-          <div className="relative w-[40vw] h-[40vw] md:w-[30vw] md:h-[30vw] lg:w-[27vw] lg:h-[27vw] top-8 md:-right-7 md:-top-0">
+           <div className="relative w-[24vw] h-[24vw] right-7 top-2">
             <Image
               src={pinkPageContent.hawamahalImg}
               alt="Jaipur"
@@ -84,6 +83,9 @@ const PinkPage = () => {
               className="rounded-full"
             />
           </div>
+
+          </div>
+         
         </div>
       </div>
     </div>
