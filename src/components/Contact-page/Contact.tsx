@@ -128,7 +128,7 @@ const ContactForm: React.FC = () => {
                     value={formData.SingleLine}
                     onChange={handleChange}
                     placeholder={contactContent.form.placeholders.name}
-                    className="p-2 border-none rounded-xl h-[5rem] bg-[#f5f5f5] placeholder-black"
+                    className="p-2  border-none rounded-xl h-[5rem] bg-[#f5f5f5] placeholder-black "
                   />
                   <input
                     type="text"
