@@ -21,6 +21,10 @@ export default function about() {
 <SustainableD/>
 <OurStoryD/>
 <Founders/>
+{/* <OurHistory/> */}
+<section id="our-story" className="relative z-20">
+        <Grid/>
+      </section> 
 <TeamPage/> 
 
 

@@ -124,9 +124,9 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
             </footer>
-            <div className={`${styles.footerrights}`}>
+            <div className={`${styles.footerrights} `}>
                 <div className={styles.footercontainerx}>
-                    <p className={styles.footerright}>{footerData.copyright}</p>
+                    <p className={`${styles.footerright} -ml-8`}>{footerData.copyright}</p>
                     <Link href="/privacy-policy/" passHref>
                         <p className={styles.footerright}>{footerData.privacyPolicy}</p>
                     </Link>

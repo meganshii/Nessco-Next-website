@@ -10,10 +10,11 @@ export default function pinkcity () {
     return (
         <main className="bg-gray-100">
        <LandingPage/>
-       <SecondPage/>
+        <SecondPage/>
+        {/*
        <Bluepage/>
       <PinkPage/>
-      <Photocolag/>
+      <Photocolag/> */}
         </main>
     )
 

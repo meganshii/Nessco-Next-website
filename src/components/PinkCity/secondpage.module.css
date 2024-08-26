@@ -79,18 +79,18 @@
 
   /* pinkciyt */
 
-  @keyframes scalesUp {
+  @keyframes scalesUpdesign {
     0% {
-      transform: scale(0.5);
+      transform: scale(1);
     }
     50% {
-      transform: scale(0.6);
+      transform: scale(1.05);
     }
     100% {
-      transform: scale(0.5);
+      transform: scale(1);
     }
   }
   
   .scales-up {
-    animation: scaleUp 10s ease-in-out;
+    animation: scalesUpdesign 10s ease-in-out;
   }

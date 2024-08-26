@@ -56,7 +56,7 @@ export const Carousel = () => {
         onClick={handleNext}
       />
 
-      <div ref={carouselRef} className="flex whitespace-nowrap gap-5 transition-transform duration-500">
+      <div ref={carouselRef} className="flex whitespace-nowrap gap-5 transition-transform duration-1000">
         {imagesWithDupes.map((image, index) => (
           <Image
             key={index}
@@ -64,7 +64,7 @@ export const Carousel = () => {
             alt={image.alt}
             width={350} // Set width to 0 to make it responsive
             height={350} // Set height to 0 to make it responsive
-            className="inline-block rounded-2xl w-[80vw] h-[50vh] object-cover transition-transform duration-500 ease-in-out"
+            className="inline-block rounded-2xl w-[80vw] h-[50vh] object-cover transition-transform duration-1000 ease-in-out"
           />
         ))}
       </div>

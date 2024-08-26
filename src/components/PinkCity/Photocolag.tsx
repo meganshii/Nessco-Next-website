@@ -17,8 +17,8 @@ const Gallery = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 ">
         {galleryContent.galleryImages.map((src, index) => (
-          <div key={index} className="relative h-56 rounded-2xl overflow-hidden ">
-            <Image src={src} alt={`Gallery image ${index + 1}`} layout="fill" objectFit="cover" className='transform transition-transform duration-300 hover:scale-150'/>
+          <div key={index} className="relative h-56 rounded-2xl overflow-hidden transform transition-transform duration-500 hover:scale-105">
+            <Image src={src} alt={`Gallery image ${index + 1}`} layout="fill" objectFit="cover" className=''/>
           </div>
         ))}
       </div>
