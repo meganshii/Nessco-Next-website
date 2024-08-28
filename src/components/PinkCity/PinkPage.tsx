@@ -34,14 +34,14 @@ const PinkPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100 mt-32 w-screen relative">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative">
       {pinkPageContent.birdComponent && <Bird />}
       
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative w-full h-full lg:flex lg:flex-row flex flex-row-reverse items-center justify-center">
         
         {/* Left Section */}
-        <div className=" flex flex-col justify-center items-center relative mt-10 h-full z-20 p-4 md:p-16 w-2/4 ">
-          <div className="absolute inset-0 flex justify-center items-start w-full top-10">
+        <div className=" flex flex-col justify-center items-center relative lg:mt-10 lg:h-full lg:z-20 lg:p-4  lg:w-2/4 w-full h-full -top-[35rem] lg:top-0  lg:right-0 right-10">
+          <div className="absolute inset-0 flex justify-center items-start lg:w-full lg:top-10">
             <Image
               src={pinkPageContent.strokeImg}
               alt="Stroke"
@@ -50,8 +50,8 @@ const PinkPage = () => {
               className="object-contain opacity-35 " 
             />
           </div>
-          <div className="relative z-10 text-justify top-3">
-            <p className="text-gray-700 text-md font-montserrat">
+          <div className="relative z-10 text-justify lg:top-3">
+            <p className="text-gray-700 lg:text-md font-montserrat">
               {pinkPageContent.description.split(' ').map((word, index) => (
                 word === 'ivory' || word === 'machines' ? (
                   <span key={index} className="text-[#bd6165]">{word} </span>
@@ -64,8 +64,8 @@ const PinkPage = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 flex justify-center items-center relative h-[90vh]">
-          <div className="absolute inset-0 flex justify-center items-center w-[45vw] h-[45vw]  ml-12 ">
+        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0 px-5 lg:top-0 ">
+          <div className="absolute inset-0 flex justify-center items-center lg:w-[45vw] lg:h-[45vw]  lg:ml-12  w-[100vw] h-[100vw] ">
             <Image
               src={pinkPageContent.mandalaImg}
               alt="Mandala Design"
@@ -74,7 +74,7 @@ const PinkPage = () => {
               objectFit="cover"
               className="object-contain z-10 " style={{marginTop:'-1%'}}
             />
-           <div className="relative w-[24vw] h-[24vw] right-7 top-2">
+           <div className="relative lg:w-[24vw] lg:h-[24vw] lg:right-7 lg:top-2 w-[50vw] h-[25vh] right-6">
             <Image
               src={pinkPageContent.hawamahalImg}
               alt="Jaipur"

@@ -34,12 +34,12 @@ const SecondPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center lg:h-screen h-screen bg-gray-100 p-6 mt-10   ">
+    <div className="flex flex-col items-center justify-center lg:h-screen h-screen bg-gray-100 p-6 mt-44   ">
       <DashedLineWithImage />
 
       <div className="relative w-full  flex items-center ">
-        <div className="relative flex w-2/5 h-full lg:mt-0 -mt-[25rem] ">
-          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-5  lg:-left-5  lg:w-[40vw] h-[50vh] w-[95vw]">
+        <div className="relative flex w-2/5 h-full lg:-mt-0 -mt-[60rem] ">
+          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-5  lg:-left-5  lg:w-[40vw] h-[50vh] w-[95vw] left-5 -top-20">
             <Image
               src={secondPageContent.mandalaImg}
               alt="Mandala Design"
@@ -79,7 +79,7 @@ const SecondPage = () => {
           </div> */}
         </div>
 
-        <div className="flex-1 relative top-20 lg:right-16 h-full w-3/4 lg:mt-0 -mt-[5rem] lg:ml-0 -ml-[10rem] ">
+        <div className="flex-1 relative -top-64 lg:top-5 lg:right-16 h-full w-3/4 lg:mt-10  lg:ml-0 -ml-[10rem] ">
           <div className="absolute inset-0 flex justify-end items-start lg:h-full lg:w-[50rem] h-[55vh] w-[100vw]  ">
             <Image
               src={secondPageContent.strokeImg}
@@ -90,7 +90,7 @@ const SecondPage = () => {
             />
           </div>
 
-          <div className="relative z-10 lg:top-8 w-[100vw] text-justify lg:w-[60vw] top-40">
+          <div className="relative z-10 lg:top-8 w-[100vw] text-justify lg:w-[60vw] top-40 lg:p-0 px-5">
             <p className="text-gray-700 lg:text-lg text-sm lg:p-20 text-center  font-montserrat">
               {secondPageContent.description}
             </p>

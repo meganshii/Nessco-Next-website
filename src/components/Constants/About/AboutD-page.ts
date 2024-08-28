@@ -1,8 +1,11 @@
 // Constants/aboutd.ts
 
 export const aboutData = {
-  videoSrc: '/assets/about/AboutUs.mp4',
+  videoSrc: '/assets/about/ourcompany/companybg.mp4',
   mainHeading: 'Our Company',
+  icon:'/assets/about/ourcompany/2.svg',
+  peragraph:'At Nessco India, we design innovative, high-quality paper cup machines that enable efficient, eco-friendly production. Our mission is to lead in sustainable manufacturing and set new standards for environmentally responsible packaging solutions.',
+  mobile:'Begins & Ends with customer smile',
   iconData: [
     {
       src: '/assets/about/ourcompany/icon1.svg',
@@ -10,7 +13,7 @@ export const aboutData = {
       text: 'Food Packaging Machinery',
       width: 177,
       height: 177,
-      marginLeft: '-1rem',
+      marginLeft: '-21em',
       textWidth: '10rem',
     },
     {
@@ -29,7 +32,7 @@ export const aboutData = {
       width: 177,
       height: 177,
       marginLeft: '-1rem',
-      textWidth: '11rem',
+      textWidth: '10rem',
     },
   ],
 };

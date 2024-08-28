@@ -24,7 +24,7 @@ const SustainableD = () => {
             alt="Background Image"
             layout="fit"
             objectFit="cover"
-            className='w-[76rem] left-10 h-screen '     />
+            className='lg:w-[76rem] lg:left-10 lg:h-screen w-[90vw] h-full '     />
           {/* <div className="absolute inset-0 bg-black opacity-85"></div> */}
           <div className={`${style.gradientoverlay}`}>
             <div className={`${style.gradientleft}`}></div>
