@@ -15,16 +15,16 @@ const SustainableD = () => {
 
   return (
     <>
-      <div className="relative h-full bg-black px-8 py-16">
+      <div className="relative h-full bg-black lg:px-8 lg:py-16">
        
         <div className={`${style.imagecontainer} ` }>
-        <div className="absolute   ">
+        <div className="absolute w-screen  ">
           <Image 
             src={bg} 
             alt="Background Image"
             layout="fit"
             objectFit="cover"
-            className='lg:w-[76rem] lg:left-10 lg:h-screen w-[90vw] h-full '     />
+            className='lg:w-[76rem] lg:left-11 lg:h-screen w-[90vw] h-full lg:ml-0  '     />
           {/* <div className="absolute inset-0 bg-black opacity-85"></div> */}
           <div className={`${style.gradientoverlay}`}>
             <div className={`${style.gradientleft}`}></div>
@@ -34,7 +34,7 @@ const SustainableD = () => {
         </div>
        
 
-        <div className="relative  flex flex-col items-center justify-center text-center text-white min-h-screen">
+        <div className="relative  flex flex-col items-center justify-center text-center text-white min-h-screen lg:top-0 top-5">
           <h1 className="text-5xl font-montserrat font-bold ">
             {heading} <span className="text-green-500">{highlight}</span>
           </h1>

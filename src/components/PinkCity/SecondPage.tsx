@@ -39,7 +39,7 @@ const SecondPage = () => {
 
       <div className="relative w-full  flex items-center ">
         <div className="relative flex w-2/5 h-full lg:-mt-0 -mt-[60rem] ">
-          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-5  lg:-left-5  lg:w-[40vw] h-[50vh] w-[95vw] left-5 -top-20">
+          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-5  lg:-left-5  lg:w-[40vw] h-[50vh] w-[95vw] left-3 -top-20">
             <Image
               src={secondPageContent.mandalaImg}
               alt="Mandala Design"

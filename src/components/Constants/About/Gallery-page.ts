@@ -1,16 +1,16 @@
 // constants/imageData.ts
 
 export const images = [
-    { src: '/assets/about/oldmen.webp', alt: 'Image 1', style: 'top-36 left-[35%] w-[10%] h-[20%]' },
-    { src: '/assets/about/oldwomen.jpg', alt: 'Image 2', style: 'top-[35%] left-[87%] w-[6%] h-[12%]' },
-    { src: '/assets/about/palace.jpeg', alt: 'Image 3', style: 'top-[58%] left-2 w-[7%] h-[11%]' },
-    { src: '/assets/about/wheel.jpg', alt: 'Image 4', style: 'top-[30%] left-16 w-[20%] h-[25%]' },
-    { src: '/assets/about/palace.jpeg', alt: 'Image 5', style: 'top-[50%] left-[22%] w-[28%] h-[36%] image-scale-up' },
-    { src: '/assets/about/oldwomen.jpg', alt: 'Image 6', style: 'top-[70%] left-[8%] w-[6%] h-[19%]' },
-    { src: '/assets/about/palace.jpeg', alt: 'Image 7', style: 'top-[57%] left-[56%] w-[15%] h-[15%] image-translate-up' },
-    { src: '/assets/about/wheel.jpg', alt: 'Image 8', style: 'top-[75%] left-[68%] w-[7%] h-[12%]' },
-    { src: '/assets/about/banner3.jpg', alt: 'Image 9', style: 'w-[26%] h-[23%] left-[55%] top-40' },
-    { src: '/assets/about/palace2.webp', alt: 'Image 10', style: 'top-[55%] left-[83%] w-[13%] h-[25%] image-translate-up' },
+    { src: '/assets/about/oldmen.webp', alt: 'Image 1', style: 'lg:top-36 top-36 lg:left-[35%] left-[15%] lg:w-[10%] lg:h-[20%] h-[13%] w-[23%]' },
+    { src: '/assets/about/oldwomen.jpg', alt: 'Image 2', style: 'lg:top-[35%] top-[37%] lg:left-[87%] left-[80%] lg:w-[6%] lg:h-[12%] h-[11%] w-[16%]' },
+    { src: '/assets/about/palace.jpeg', alt: 'Image 3', style: 'lg:visible invisible  lg:top-[58%] top-[52%] left-2 lg:w-[7%] w-[25%] h-[11%]' },
+    { src: '/assets/about/wheel.jpg', alt: 'Image 4', style: 'lg:top-[30%] top-[34%] lf:left-16 left-2 lg:w-[20%] lg:h-[25%] h-[13%] w-[45%]' },
+    { src: '/assets/about/palace.jpeg', alt: 'Image 5', style: ' lg:top-[50%] top-[50%] lg:left-[24%] left-[4%] lg:w-[28%] lg:h-[36%] h-[25%] w-[50%] image-scale-up' },
+    { src: '/assets/about/oldwomen.jpg', alt: 'Image 6', style: '  lg:top-[70%] top-[79%] lg:left-[8%] left-[10%] lg:w-[6%] lg:h-[19%] w-[19%] h-[11%]' },
+    { src: '/assets/about/palace.jpeg', alt: 'Image 7', style: '  lg:top-[57%] top-[75%] left-[56%] lg:w-[15%] lg:h-[15%] w-[33%] h-[12%] image-translate-up' },
+    { src: '/assets/about/wheel.jpg', alt: 'Image 8', style: 'lg:top-[75%] lg:left-[68%] lg:w-[7%] lg:h-[12%] h-[7%] w-[15%] top-[82%] left-[37%]' },
+    { src: '/assets/about/banner3.jpg', alt: 'Image 9', style: 'lg:w-[26%] lg:h-[23%] w-[50%] h-[15%] lg:left-[55%] left-[45%] lg:top-40 top-36' },
+    { src: '/assets/about/palace2.webp', alt: 'Image 10', style: 'top-[55%] lg:left-[83%] left-[70%] lg:w-[13%] lg:h-[25%] h-[16%] w-[26%] image-translate-up' },
     // Add more images with appropriate styles as necessary
   ];
   

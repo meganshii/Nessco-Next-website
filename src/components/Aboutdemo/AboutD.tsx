@@ -63,9 +63,9 @@ const Home: React.FC = () => {
   const videoX = useTransform(scrollY, [0, 300], ["0%", "-25%"]);
 
   return (
-    <div className="relative h-screen  flex flex-col items-center overflow-hidden min-h-screen w-full top-6">
+    <div className="relative lg:h-screen h-screen flex flex-col items-center overflow-hidden  w-full top-5">
 
-     <div className=" relative lg:-left-[21.5rem] lg:top-20 lg:text-7xl text-5xl  lg:w-[40vw] w-[60vw] text-center lg:text-center font-poppins text-white z-10  top-[29rem] ">
+     <div className=" relative lg:-left-[21.5rem] lg:top-20 lg:text-7xl text-5xl  lg:w-[40vw] w-[60vw] text-center lg:text-center font-poppins text-white z-10 top-[50%] ">
   <span className="font-bold">{aboutData.mainHeading.split(' ')[0][0]}</span>
   {aboutData.mainHeading.split(' ')[0].slice(1)}{' '}
   <span className="lg:text-red-500 text-white">
@@ -73,14 +73,14 @@ const Home: React.FC = () => {
     {aboutData.mainHeading.split(' ')[1].slice(1)}
   </span>
 </div>
-      <div className="relative p-4 md:p-2 lg:px-12 w-full flex-wrap lg:-top-2 -top-20">
+      <div className="relative p-4  lg:px-12 w-full flex-wrap lg:-top-2 -top-14">
         <motion.div
-          className="md:mt-[3rem] h-[calc(100vh-150px)] flex justify-center items-center sm:h-[calc(100vh-120px)] rounded-xl"
+          className="md:mt-[3rem] lg:h-[calc(100vh-150px)] flex justify-center items-center  rounded-xl"
           ref={videoRef}
           style={{ width: videoWidth, x: videoX, originX: 0.5 }}
         >
           {isVideoLoaded ? (
-            <div className="relative w-full lg:h-[66vh] h-full">
+            <div className="relative w-full lg:h-[66vh] h-[70vh]">
               <video
                 id="background-video"
                 className="w-full h-full object-cover rounded-xl"
@@ -102,20 +102,20 @@ const Home: React.FC = () => {
           )}
         </motion.div>
       </div>
-      <div className=" w-[10vw] h-[10vh]  ">
+      
       <Image 
       src='/assets/about/ourcompany/company.svg'
       alt='icon'
       layout="fill"
       objectFit="cover"
-      className=" lg:scale-75 scale-75 absolute lg:mt-7 -mt-52 justify-center items-center "/>
-      </div>
+      className=" lg:scale-75 scale-75 absolute lg:mt-16  items-center -mt-64 "/>
+    
 
       <p className="lg:visible invisible   absolute bottom-20 text-center w-[36vw] text-white left-20 font-poppins "> {aboutData.peragraph}</p>
-      <p className="lg:invisible visible absolute bottom-44 text-center w-[35vw] text-white items-center  font-poppins  "> {aboutData.mobile}</p>
+      <p className="lg:invisible visible absolute bottom-52 text-center w-[35vw] text-white items-center  font-poppins  "> {aboutData.mobile}</p>
 
       {isMobile && (
-          <div className= "bg-white mt-[1rem] w-[8rem] h-[2rem] rounded-[1rem] absolute flex items-center bottom-32">
+          <div className= "bg-white  w-[8rem] h-[2rem] rounded-[1rem] absolute flex items-center bottom-44 ">
             <button className="text-black text-[0.8rem] absolute left-[1rem]">
             get a quote 
             </button>

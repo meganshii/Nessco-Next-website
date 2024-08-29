@@ -65,7 +65,7 @@ const OurStoryD = () => {
       <Head>
         <title>{title}</title>
       </Head>
-      <div className="relative min-h-screen text-white px-4 mb-36 mt-20">
+      <div className="relative min-h-screen text-white px-4 mb-36 lg:mt-20 -mt-24">
       
         <div className="relative z-10 flex flex-col items-center justify-center h-screen text-center">
           <h1 className="text-5xl font-montserrat text-white mt-20">

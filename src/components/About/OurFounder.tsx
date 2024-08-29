@@ -6,6 +6,7 @@ import { GrAddCircle } from 'react-icons/gr';
 import { ImCross } from 'react-icons/im';
 import styles from './about.module.css';
 import { founders } from '../Constants/About/OurFounders-page'; // Import the dynamic content
+import { FaQuoteLeft } from 'react-icons/fa';
 
 interface FounderProps {
   name: string;
@@ -21,11 +22,11 @@ interface CardProps {
 }
 
 const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ name, title, imageSrc, linkedInUrl, description, onOpenModal }) => (
-  <div className={styles.card}>
+  <div className={`${styles.card} lg:w-[35%] w-full mb-8 flex lg:flex-col  `}>
     {/* Image container */}
-    <div className={styles.imageContainer}>
+    <div className={`${styles.imageContainer} w-full h-[16vh] lg:h-[36vh] lg:w-[30vw]`}>
       <Image
-        className={styles.image}
+        className='transform 0.3 ease-in-out lg:w-[79%] lg:rounded-t-lg w-[34vw] rounded-lg lg:rounded-none '
         src={imageSrc}
         alt={name}
         width={300}
@@ -36,7 +37,7 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
 
     {/* Content */}
     <div className={styles.content}>
-      <h3 className={`${styles.nameTitle} mt-5`}>
+      <h3 className={`${styles.nameTitle}  lg:mt-20 mt-2  relative right-7 lg:right-0`}>
         {name}
         <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className={styles.linkedinIcon}>
         <Image
@@ -49,10 +50,12 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
 
         </a>
       </h3>
-      <p className='pb-3'>{title}</p>
+      <p className='pb-3 relative right-7 lg:right-0'>{title}</p>
+      <FaQuoteLeft className='lg:invisible visible left-7 relative'/>
+      <p className='lg:invisible visible relative right-7'>“The work we do reflect who we are”</p>
 
       {/* Hidden box for description */}
-      <div className={styles.descriptionContainer}>
+      <div className={`${styles.descriptionContainer} lg:visible invisible`}>
         <h3 className='font-bold font-montserrat text-lg mt-1'>{name}</h3>
         <p className='font-montserrat mb-3'>{title}</p>
         <p className="text-black font-montserrat leading-5">{description}</p>
@@ -63,7 +66,7 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
 
 const Card: React.FC<CardProps> = ({ handleCloseModal, founderData }) => {
   return (
-    <div className="p-1 top-6 bg-white h-[88%] w-[95%] rounded-xl shadow-md relative bottom-5 text-black">
+    <div className="p-1 top-6 bg-white h-[88%] w-[95%] rounded-xl shadow-md relative bottom-5 text-black ">
       
       {/* Display founder data */}
       <div className="p-4">
@@ -94,7 +97,7 @@ const Founders = () => {
       <h2 className="text-center text-5xl font-montserrat mb-8 mt-28">
         Our Founders
       </h2>
-      <div className="flex justify-center space-x-8 w-5/6 ml-28">
+      <div className="lg:flex justify-center lg:space-x-8 lg:w-5/6 lg:ml-28  w-[90vw] mx-5 lg:mx-0">
         {founders.map((founder, index) => (
           <FounderCard
             key={index}
