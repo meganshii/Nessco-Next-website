@@ -34,13 +34,13 @@ const PinkPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative lg:top-[15rem]">
       {pinkPageContent.birdComponent && <Bird />}
       
       <div className="relative w-full h-full lg:flex lg:flex-row flex flex-row-reverse items-center justify-center">
         
         {/* Left Section */}
-        <div className=" flex flex-col justify-center items-center relative lg:mt-10 lg:h-full lg:z-20 lg:p-4  lg:w-2/4 w-full h-full -top-[35rem] lg:top-0  lg:right-0 right-10">
+        <div className=" flex flex-col justify-center items-center relative lg:mt-10 lg:h-full lg:z-20 lg:p-4  lg:w-2/4 w-full h-full -top-[35rem] lg:-top-14  lg:right-0 right-10">
           <div className="absolute inset-0 flex justify-center items-start lg:w-full lg:top-10">
             <Image
               src={pinkPageContent.strokeImg}

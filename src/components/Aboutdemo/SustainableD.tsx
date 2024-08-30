@@ -15,7 +15,7 @@ const SustainableD = () => {
 
   return (
     <>
-      <div className="relative h-full bg-black lg:px-8 lg:py-16">
+      <div className="relative h-full bg-black lg:px-8 lg:py-16 overflow-hidden">
        
         <div className={`${style.imagecontainer} ` }>
         <div className="absolute w-screen  ">

@@ -3,7 +3,7 @@
 export const aboutData = {
   videoSrc: '/assets/about/ourcompany/companybg.mp4',
   mainHeading: 'Our Company',
-  icon:'/assets/about/ourcompany/2.svg',
+  icon:'/assets/about/ourcompany/company2.svg',
   peragraph:'At Nessco India, we design innovative, high-quality paper cup machines that enable efficient, eco-friendly production. Our mission is to lead in sustainable manufacturing and set new standards for environmentally responsible packaging solutions.',
   mobile:'Begins & Ends with customer smile',
   iconData: [

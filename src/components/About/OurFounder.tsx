@@ -24,9 +24,9 @@ interface CardProps {
 const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ name, title, imageSrc, linkedInUrl, description, onOpenModal }) => (
   <div className={`${styles.card} lg:w-[35%] w-full mb-8 flex lg:flex-col  `}>
     {/* Image container */}
-    <div className={`${styles.imageContainer} w-full h-[16vh] lg:h-[36vh] lg:w-[30vw]`}>
+    <div className={`${styles.imageContainer} w-full h-[16vh] lg:h-[36vh] lg:w-[30vw] py-1`}>
       <Image
-        className='transform 0.3 ease-in-out lg:w-[79%] lg:rounded-t-lg w-[34vw] rounded-lg lg:rounded-none '
+        className='transform 0.3 ease-in-out lg:w-[79%] lg:rounded-t-lg w-[33vw] rounded-lg lg:rounded-none '
         src={imageSrc}
         alt={name}
         width={300}
@@ -36,8 +36,8 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
     </div>
 
     {/* Content */}
-    <div className={styles.content}>
-      <h3 className={`${styles.nameTitle}  lg:mt-20 mt-2  relative right-7 lg:right-0`}>
+    <div className="relative justify-center ">
+      <h3 className={`${styles.nameTitle}  lg:mt-20 mt-2    lg:right-0`}>
         {name}
         <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className={styles.linkedinIcon}>
         <Image
@@ -50,9 +50,9 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
 
         </a>
       </h3>
-      <p className='pb-3 relative right-7 lg:right-0'>{title}</p>
-      <FaQuoteLeft className='lg:invisible visible left-7 relative'/>
-      <p className='lg:invisible visible relative right-7'>“The work we do reflect who we are”</p>
+      <p className='pb-3   lg:right-0'>{title}</p>
+      <FaQuoteLeft className='lg:invisible visible ml-14 '/>
+      <p className='lg:invisible visible  '>“The work we do reflect who we are”</p>
 
       {/* Hidden box for description */}
       <div className={`${styles.descriptionContainer} lg:visible invisible`}>

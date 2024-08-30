@@ -12,8 +12,8 @@ const Grid = () => {
         <div className="border border-gray-400 mt-16 col-span-2 -mr-10"></div>
         <div className="border border-gray-400 mt-16 ml-10 lg:-mr-[47%] -mr-[4rem]"></div>
       </div>
-      <h1 className='relative lg:text-6xl text-5xl z-30 lg:top-80 top-80 lg:ml-20  font-poppins justify-center text-center flex flex-col text-white font-bold'>Gallery</h1>
-      <button className="relative z-30 bg-black font-poppins lg:top-80 top-80 text-white px-2 py-2 text-lg rounded-2xl ml-[49%] mt-2 hover:text-black hover:bg-white">
+      <h1 className='relative lg:text-6xl text-5xl z-30 lg:top-72 top-[23.5rem] lg:ml-20  font-poppins justify-center text-center flex flex-col text-white font-bold'>Gallery</h1>
+      <button className="relative z-30 bg-black font-poppins lg:top-72 top-[24rem] text-white px-2 py-2 text-lg rounded-2xl ml-[38%] lg:ml-[49%] mt-2 hover:text-black hover:bg-white">
         View Gallery
       </button>
       {images.map((img, idx) => (

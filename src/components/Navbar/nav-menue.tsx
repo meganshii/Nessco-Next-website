@@ -5,15 +5,15 @@ import Link from "next/link";
 
 export const Menu = ({ children }: { children: React.ReactNode }) => {
   const [active, setActive] = useState<string | null>(null);
-  const [position, setPosition] = useState({ left: 0, width: 0, opacity: 0 });
+  const [position, setPosition] = useState({ left:500, width: 0, opacity: 0 });
 
   return (
     <nav
       onMouseLeave={() => {
         setActive(null);
-        setPosition({ left: 0, width: 0, opacity: 0 });
+        setPosition({ left: 400, width: 0, opacity: 0 });
       }}
-      className="mx-auto px-4 flex w-fit rounded-full border-1 bg-white"
+      className="mx-auto px-4 flex w-fit rounded-full border-1"
     >
       {React.Children.map(children, (child) =>
         React.cloneElement(child as React.ReactElement<any>, {
@@ -76,17 +76,17 @@ export const MenuItem = ({
       ref={ref}
       className="z-10 cursor-pointer px-3 font-montserrat py-2 text-white  md:py-1 md:text-base "
     >
-      <motion.p className="text-black font-poppins text-16">
-        <Link href={`${item}`}>{item}</Link>
-      </motion.p>
+      <p  className="text-black font-poppins text-16">
+        {item}
+      </p>
       {active === item && (
-        <motion.div className="absolute top-[calc(100%_-_1.0rem)] left-3 pt-4">
+        <motion.div className="absolute  top-[calc(100%_-_1.0rem)] left-0 pt-4">
           <motion.div
             transition={{ duration: 0.3 }}
             layoutId="active"
-            className="bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
+            className="bg-white dark:bg-black overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl"
           >
-            <motion.div layout className="w-max h-full p-0">
+            <motion.div layout className="w-screen mx-auto h-full p-0">
               {children}
             </motion.div>
           </motion.div>
@@ -110,7 +110,7 @@ const Cursor = ({
       }}
       transition={{
         type: "spring",
-        stiffness: 1000, // Higher stiffness for faster transition
+        stiffness: 1000, 
         damping: 50, // Lower damping for less resistance
       }}
       className="absolute z-0 h-6 rounded-full bg-[#eaeaea] md:h-6 mt-[0.25rem]"

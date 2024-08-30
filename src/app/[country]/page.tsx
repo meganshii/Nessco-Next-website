@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 import Hero from "@/components/Home/Home";
 import NavLinksDemo from "@/components/Home/NavLinks";
 import { data } from "@/components/Constants/Navbar/about-data";
+import ContactIcons from "@/components/Contact/ContactIcon";
 
 const AboutUs = dynamic(() => import("@/components/Home/AboutSection"), {
   ssr: false,
@@ -52,7 +53,9 @@ export default function Home() {
   ];
   return (
     <main className="bg-[#f2f2f2]">
-      <Hero />
+      <div className="mx-2 mt-[4.5rem] lg:mt-4 lg:mx-0">
+        <Hero />
+      </div>
       <NavLinksDemo navItems={navItems} />
       
       <div className="h-full">

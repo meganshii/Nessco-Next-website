@@ -53,55 +53,71 @@
 // export default LandingPage;
 
 
-
 import Image from 'next/image';
 import { landingPageContent } from '../Constants/pinkcity/LandingPage'
 
 const LandingPage = () => {
   return (
-    <div className="bg-gray-100 flex flex-col items-center lg:h-screen lg:p-6  h-screen p-3 mx-1 lg:mt-0 mt-16 ">
-      <div className="relative lg:w-full  lg:p-6 lg:top-12 lg:h-[68vh] h-[100vh]  w-[95vw]   ">
+    <div className="bg-gray-100 flex flex-col  p-4  min-h-screen lg:p-6 lg:h-screen ">
+      {/* Background Image Container */}
+      <div className="relative w-full lg:h-[70vh] h-[75vh] lg:mt-10 mt-16 lg:left-0  bg-red-200">
         <Image
           src={landingPageContent.backgroundImg}
           alt="Jaipur"
           layout="fill"
           objectFit="cover"
-          className="lg:rounded-2xl h-full w-full rounded-lg"
+          objectPosition="right center"
+          className="rounded-lg lg:rounded-2xl"
         />
-              <div className="absolute bottom-0  left-0 w-[96vw] h-80 bg-gradient-to-t from-black to-transparent rounded-b-xl lg:invisible"></div>  
-
+        {/* Gradient Overlay */}
+        <div className="absolute bottom-0 left-0 w-full h-[30rem] bg-gradient-to-t from-black to-transparent rounded-b-lg lg:invisible"></div>
       </div>
-          <h2 className='lg:text-9xl text-7xl font-alexBrush relative text-white lg:-mt-52 -mt-64 lg:-ml-[70%] -ml-[5%]'>Jaipur</h2>
 
-      <div className="w-full lg:max-w-screen-xl flex flex-col items-center relative lg:mt-20 lg:-mb-0 -mb-7 mt-20 ">
-        <div className="flex justify-left lg:bottom-0 absolute lg:left-0 lg:-ml-20 lg:-mb-7 -ml-56 lg:mt-0 -mt-20 invisible lg:visible  ">
-          <Image 
+      {/* Title */}
+      <h2 className="font-alexBrush text-white text-8xl lg:text-9xl relative -mt-64 lg:-mt-52  lg:-ml-[70%]">
+        Jaipur
+      </h2>
+
+      {/* Content Section */}
+      <div className="w-full lg:max-w-screen-xl flex flex-col items-center mt-20 lg:mt-7 relative">
+        {/* Corner Image */}
+        <div className="absolute lg:left-0 lg:bottom-0 lg:visible invisible -ml-56 lg:-ml-20 lg:-mb-7 lg:mt-0 -mt-20">
+          <Image
             src={landingPageContent.cornerLayerImg}
             alt="Stroke"
             width={300}
             height={300}
           />
         </div>
-        <div className="lg:flex  flex flex-col lg:flex-row lg:w-full items-center ml-5   ">
-          <div className=" relative flex-1 text-center lg:ml-5 lg:mt-9 lg:top-0 -top-16  ">
-            <p className="lg:text-black lg:text-sm text-xs lg:w-[30vw] w-[40vh] lg:p-0  font-montserrat text-white">
+
+        {/* Description and Sticker Section */}
+        <div className="flex flex-col lg:flex-row items-center w-full lg:w-full">
+          {/* Description */}
+          <div className="flex-1 text-center lg:ml-5 lg:mt-9 -mt-16 ml-4">
+            <p className="text-white lg:text-black font-montserrat lg:text-sm text-sm lg:w-[30vw] w-[90vw] ">
               {landingPageContent.description}
             </p>
           </div>
-          <div className=" relative flex-shrink-0 z-10 lg:-mt-24 -top-3 lg:top-0 lg:mr-64 ">
-            <div className="text-white lg:h-full lg:w-full h-[30vh] w-[30vw] lg:-ml-0 lg:mt-0 -ml-3   ">
+
+          {/* Sticker Image */}
+          <div className="relative flex-shrink-0 lg:-mt-24 lg:top-0 top-3 lg:mr-64">
+            <div className="lg:w-full lg:h-full h-[30vh] w-[30vw]  lg:ml-0 lg:mt-0">
               <Image
                 src={landingPageContent.stickerImg}
                 alt="The Pink City"
                 width={420}
                 height={180}
-      
               />
             </div>
           </div>
-          <div className="flex text-center lg:mt-9 mt-14 lg:-ml-  w-screen lg:w-[10vw]">
-            <h2 className="lg:text-5xl font-poppins text-xl lg:mt-0 -mt-64 lg:-ml-72   w-screen ">
-              {landingPageContent.title} <span className="font-alexBrush lg:text-8xl text-3xl text-red-800 lg:ml-0 ml-28 ">{landingPageContent.subtitle}</span>
+
+          {/* Title & Subtitle */}
+          <div className="flex flex-col text-center lg:-mt-24 mt-20  lg:w-[10vw] lg:h-0 h-10  ">
+            <h2 className="font-poppins text-xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[30vw] lg:-ml-[18rem]  -ml-3">
+              {landingPageContent.title}{' '}
+              <span className="font-alexBrush text-red-800 text-3xl lg:text-8xl lg:ml-0 ml-24">
+                {landingPageContent.subtitle}
+              </span>
             </h2>
           </div>
         </div>
@@ -111,6 +127,7 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
 
 
 

@@ -75,7 +75,7 @@ const OurStoryD = () => {
           <div className="mb-10 max-w-4xl mx-auto mt-6">
             {paragraphs}
           </div>
-          <div className="flex justify-center w-full h-auto mt-14 ">
+          <div className="flex justify-center w-full h-auto mt-14 overflow-x-clip">
             <div
               ref={imageRef}
               className={styles.scaleup}

@@ -34,7 +34,7 @@ const SecondPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center lg:h-screen h-screen bg-gray-100 p-6 mt-44   ">
+    <div className="flex flex-col items-center justify-center lg:h-screen h-screen bg-gray-100 p-6 mt-44 w-full  ">
       <DashedLineWithImage />
 
       <div className="relative w-full  flex items-center ">

@@ -5,6 +5,7 @@ import "@fontsource/montserrat";
 import NavbarDemo from "@/components/Navbar/Navbar";
 import "@fontsource/alex-brush";
 import Footer from "@/components/Footer/Footer";
+import ContactIcons from "@/components/Contact/ContactIcon";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -27,6 +28,8 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <NavbarDemo />
+        <ContactIcons/>
+
         {children}
       <Footer/>
       </body>
