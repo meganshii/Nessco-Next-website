@@ -60,7 +60,7 @@ const LandingPage = () => {
   return (
     <div className="bg-gray-100 flex flex-col  p-4  min-h-screen lg:p-6 lg:h-screen ">
       {/* Background Image Container */}
-      <div className="relative w-full lg:h-[70vh] h-[75vh] lg:mt-10 mt-16 lg:left-0  bg-red-200">
+      <div className="relative w-full lg:h-[70vh] h-[65vh] lg:mt-10 mt-16 lg:left-0  ">
         <Image
           src={landingPageContent.backgroundImg}
           alt="Jaipur"
@@ -74,7 +74,7 @@ const LandingPage = () => {
       </div>
 
       {/* Title */}
-      <h2 className="font-alexBrush text-white text-8xl lg:text-9xl relative -mt-64 lg:-mt-52  lg:-ml-[70%]">
+      <h2 className=" lg:relative lg:-top-10 lg:left-12 left-16 font-alexBrush text-white text-8xl lg:text-9xl absolute top-80 lg:-mt-52">
         Jaipur
       </h2>
 
@@ -93,14 +93,14 @@ const LandingPage = () => {
         {/* Description and Sticker Section */}
         <div className="flex flex-col lg:flex-row items-center w-full lg:w-full">
           {/* Description */}
-          <div className="flex-1 text-center lg:ml-5 lg:mt-9 -mt-16 ml-4">
-            <p className="text-white lg:text-black font-montserrat lg:text-sm text-sm lg:w-[30vw] w-[90vw] ">
+          <div className="flex-1 text-center lg:ml-5 lg:mt-9 absolute -top-56 lg:relative lg:top-0">
+            <p className="text-white lg:text-black font-montserrat lg:text-sm text-sm lg:w-[30vw] w-[80vw] ">
               {landingPageContent.description}
             </p>
           </div>
 
           {/* Sticker Image */}
-          <div className="relative flex-shrink-0 lg:-mt-24 lg:top-0 top-3 lg:mr-64">
+          <div className="absolute lg:relative bottom-28 flex-shrink-0 lg:-mt-24 lg:top-0  lg:mr-72">
             <div className="lg:w-full lg:h-full h-[30vh] w-[30vw]  lg:ml-0 lg:mt-0">
               <Image
                 src={landingPageContent.stickerImg}
@@ -112,14 +112,15 @@ const LandingPage = () => {
           </div>
 
           {/* Title & Subtitle */}
-          <div className="flex flex-col text-center lg:-mt-24 mt-20  lg:w-[10vw] lg:h-0 h-10  ">
-            <h2 className="font-poppins text-xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[30vw] lg:-ml-[18rem]  -ml-3">
+          <div className="flex flex-col text-center lg:-mt-24 mt-44  lg:w-[10vw] lg:h-0 h-10  ">
+            <h2 className="font-poppins text-xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[30vw] lg:-ml-[18rem]  -ml-1">
               {landingPageContent.title}{' '}
-              <span className="font-alexBrush text-red-800 text-3xl lg:text-8xl lg:ml-0 ml-24">
+              <span className="font-alexBrush text-red-800 text-3xl lg:text-8xl lg:ml-0 ml-28">
                 {landingPageContent.subtitle}
               </span>
             </h2>
           </div>
+
         </div>
       </div>
     </div>

@@ -40,7 +40,7 @@ const PinkPage = () => {
       <div className="relative w-full h-full lg:flex lg:flex-row flex flex-row-reverse items-center justify-center">
         
         {/* Left Section */}
-        <div className=" flex flex-col justify-center items-center relative lg:mt-10 lg:h-full lg:z-20 lg:p-4  lg:w-2/4 w-full h-full -top-[35rem] lg:-top-14  lg:right-0 right-10">
+        <div className=" flex flex-col justify-center items-center relative lg:mt-10 lg:h-full lg:z-20 lg:p-4  lg:w-2/4 w-full h-[30vh] -top-[37rem] lg:-top-14  lg:right-0 right-8  ">
           <div className="absolute inset-0 flex justify-center items-start lg:w-full lg:top-10">
             <Image
               src={pinkPageContent.strokeImg}
@@ -64,17 +64,17 @@ const PinkPage = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0 px-5 lg:top-0 ">
-          <div className="absolute inset-0 flex justify-center items-center lg:w-[45vw] lg:h-[45vw]  lg:ml-12  w-[100vw] h-[100vw] ">
+        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0  lg:top-0 ">
+          <div className="absolute inset-0 flex justify-center items-center lg:w-[45vw] lg:h-[45vw]  lg:ml-12  w-[95vw] -ml-6 h-[95vw]  overflow-clip">
             <Image
               src={pinkPageContent.mandalaImg}
               alt="Mandala Design"
               ref={mandalaRef}
               layout="fill"
               objectFit="cover"
-              className="object-contain z-10 " style={{marginTop:'-1%'}}
+              className="object-contain z-10  "  style={{marginTop:'-1%',marginLeft:'4%'}}
             />
-           <div className="relative lg:w-[24vw] lg:h-[24vw] lg:right-7 lg:top-2 w-[50vw] h-[25vh] right-6">
+           <div className="relative lg:w-[24vw] lg:h-[24vw] lg:right-7 lg:top-2 w-[50vw] h-[25vh] right-2 top-1">
             <Image
               src={pinkPageContent.hawamahalImg}
               alt="Jaipur"

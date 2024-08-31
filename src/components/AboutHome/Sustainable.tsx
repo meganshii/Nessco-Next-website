@@ -7,8 +7,8 @@ const SustainableLayout: FC = () => {
 
   return (
     <div className="relative max-w-screen-xl mx-auto bg-white h-screen">
-      <h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] ml-10">Sustainability</h1>
-      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-screen -mt-20">
+      <h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] absolute left-4">Sustainability</h1>
+      <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-screen  ">
         {/* Left Side: Image */}
         <div className="w-full lg:w-1/2 p-4 h-[31rem] ml-10">
           <Image 

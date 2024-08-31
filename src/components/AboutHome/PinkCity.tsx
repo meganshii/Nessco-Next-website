@@ -5,9 +5,9 @@ import { galleryfour } from '../Constants/About/pinkcity-homepage';
 const PinkCity = () => {
   return (
     <div className="relative mx-auto max-h-screen bg-white w-screen">
-      <h1 className="text-5xl font-bold text-left mb-10 font-montserrat text-[#312465] ml-10">The Pink City</h1>
+      <h1 className="text-5xl font-bold text-left relative top-5 font-montserrat text-[#312465] ml-10">The Pink City</h1>
       
-      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-6 mb-5 p-5 mr-2">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-6 mb-5 p-5 mr-2 mt-5">
         {galleryfour.galleryImages.map((item, index) => (
           <div key={index} className="relative" style={{ height: '58vh', width: 'calc(100vw / 4 - 1.25rem)' }}>
             <div className="group relative h-full w-full overflow-hidden rounded-2xl">

@@ -16,18 +16,18 @@ const OurStrength: FC = () => {
   return (
     <div className="relative w-full  bg-white min-h-screen">
       <div className="relative max-w-screen-xl mx-auto ">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-[#3a2a79] my-8 ml-10">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-[#3a2a79] top-5 absolute ml-8">
           Our Strength
         </h1>
 
         {/* Container for Paragraphs and Images */}
-        <div className="flex flex-col space-y-16 md:space-y-0 md:flex-row md:space-x-8 items-center justify-between">
+        <div className="flex flex-col  md:space-y-0 md:flex-row md:space-x-8 items-center justify-between relative top-28">
           {paragraphs.map((paragraph, index) => (
             <div key={index} className="relative flex flex-col items-center text-center">
               {/* Line between Paragraph and Image */}
               {index < paragraphs.length - 1 && (
                 <div
-                  className={`absolute top-0 left-[105%] transform -translate-x-1/2 h-[17.1rem] border-r-2 border-[#000088] ${lineClasses[index]}`}
+                  className={`absolute top-0 left-[105%] transform -translate-x-1/2 h-[17.3rem] border-r-2 border-[#000088] ${lineClasses[index]}`}
                 />
               )}
 
@@ -50,7 +50,7 @@ const OurStrength: FC = () => {
         </div>
 
         {/* Horizontal Line */}
-        <div className="-mt-48 w-full border-t-2 border-[#000088]" />
+        <div className="-mt-20 w-full border-t-2 border-[#000088]" />
 
         {/* Read More Section */}
         <div className="mt-52 p-6 bg-[#1e1542] text-white text-center font-poppins text-2xl md:text-4xl font-bold">

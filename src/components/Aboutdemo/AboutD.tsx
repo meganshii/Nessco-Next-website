@@ -255,7 +255,7 @@ const Home: React.FC = () => {
       width={1000} // Define width and height to maintain aspect ratio
       height={1000}
       objectFit="cover"
-      className="lg:scale-80 scale-100 bg-yellow-300  "
+      className="lg:scale-80 scale-100 bg-yellow-300   " style={{marginTop:''}}
     />
   </div>
 

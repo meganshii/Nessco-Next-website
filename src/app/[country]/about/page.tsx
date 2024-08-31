@@ -10,6 +10,7 @@ import PinkCity from "@/components/AboutHome/PinkCity";
 import SustainableLayout from "@/components/AboutHome/Sustainable";
 import FeatureProject from "@/components/AboutHome/FeatureProject";
 import Awards from "@/components/AboutHome/Awards";
+import Homenew from "@/components/AboutHome/Homenew";
 
 
 export default function about ()
@@ -36,33 +37,34 @@ export default function about ()
 
 
     return(
-        <main className="bg-white">
-        <Home />
+        <main className="bg-[#f5f5f5]">
+        {/* <Home /> */}
+        <Homenew/>
         <NavLinksDemo navItems={navItems}  />
         
-        <div id='mission and vission' ref={missionRef}>
+        <div id='mission and vission' className="mt-28" ref={missionRef}>
         <Missionvission/>
         </div>
  
-        <div  id='Our Company' ref={ourcompanyRef}>
+        <div  id='Our Company' className="mt-28" ref={ourcompanyRef}>
         <OurCompany/>
         </div>
 
-        <div id='Our Strenght' ref={ourstrenghtRef} className="mt-32">
+        <div id='Our Strenght' ref={ourstrenghtRef} className="mt-28">
         <OurStrenght/>
         </div>
 
-        <div id='The Pink City' ref={pinkcityRef} className="mb-10 mt-20 z-10">
+        <div id='The Pink City' ref={pinkcityRef} className="mb-10 mt-28 z-10">
         <PinkCity/>
         </div>
-        <div className="mt-44" id='Sustainability' ref={sustainableRef}>
+        <div className="mt-28" id='Sustainability' ref={sustainableRef}>
         <SustainableLayout/>
         </div>
 
-        <div className="mt-44" id='Featured Projects' ref={featureprojectRef}>
+        <div className="mt-28" id='Featured Projects' ref={featureprojectRef}>
         <FeatureProject/>
         </div>
-        <div className="mt-44" id='OurAwards' ref={awardRef}>
+        <div className="mt-32" id='OurAwards' ref={awardRef}>
        <Awards/>
         </div>
     

@@ -39,19 +39,19 @@ const SecondPage = () => {
 
       <div className="relative w-full  flex items-center ">
         <div className="relative flex w-2/5 h-full lg:-mt-0 -mt-[60rem] ">
-          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-5  lg:-left-5  lg:w-[40vw] h-[50vh] w-[95vw] left-3 -top-20">
+          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-5  lg:-left-5  lg:w-[40vw] h-[50vh] w-[91vw]  -top-20 ">
             <Image
               src={secondPageContent.mandalaImg}
               alt="Mandala Design"
               layout="fill"
               objectFit="cover"
               ref={mandalaRef}
-              className="object-contain  " style={{left:'-12%'}}
+              className="object-contain  " style={{left:'-11%'}}
             />
 
 
             
-          <div className="relative flex justify-center items-center w-[57vw] h-[29vh] lg:-left-8 lg:w-[23vw] lg:h-[42vh] -left-5 lg:mt-0 -3t-2">
+          <div className="relative flex justify-center items-center w-[57vw] h-[29vh] lg:-left-8 lg:w-[23vw] lg:h-[42vh] -left-5 lg:mt-0 bg-red-500">
            
               <Image
                 src={secondPageContent.topImg}
@@ -79,8 +79,8 @@ const SecondPage = () => {
           </div> */}
         </div>
 
-        <div className="flex-1 relative -top-64 lg:top-5 lg:right-16 h-full w-3/4 lg:mt-10  lg:ml-0 -ml-[10rem] ">
-          <div className="absolute inset-0 flex justify-end items-start lg:h-full lg:w-[50rem] h-[55vh] w-[100vw]  ">
+        <div className="flex-1 relative -top-64 lg:top-5 lg:right-16 h-full w-3/4 lg:mt-10  lg:ml-0 -ml-[10rem]  ">
+          <div className="absolute inset-0 flex justify-end items-start lg:h-full lg:w-[50rem] h-[55vh] w-[98vw]   ">
             <Image
               src={secondPageContent.strokeImg}
               alt="Stroke"
@@ -90,7 +90,7 @@ const SecondPage = () => {
             />
           </div>
 
-          <div className="relative z-10 lg:top-8 w-[100vw] text-justify lg:w-[60vw] top-40 lg:p-0 px-5">
+          <div className="relative z-10 lg:top-8 w-[90vw] text-justify lg:w-[60vw] top-40 lg:p-0 px-5">
             <p className="text-gray-700 lg:text-lg text-sm lg:p-20 text-center  font-montserrat">
               {secondPageContent.description}
             </p>

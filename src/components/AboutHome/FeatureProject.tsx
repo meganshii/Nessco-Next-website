@@ -10,8 +10,8 @@ const FeatureProject: FC = () => {
   };
 
   return (
-    <div className="relative flex flex-col w-full h-screen">
-      <h1 className="text-5xl font-bold text-[#33246e] font-montserrat mt-5 ml-[3rem]">Featured Projects</h1>
+    <div className="relative flex flex-col w-full h-[130vh] bg-white ">
+      <h1 className="text-5xl font-bold text-[#33246e] font-montserrat mt-5 ml-[2rem]">Featured Projects</h1>
       <div className="flex flex-col lg:flex-row items-center mt-12 ">
   <h2 className="text-5xl sm:text-6xl lg:text-5xl font-bold text-gray-400 lg:ml-14 -mt-10">
     {selectedMachine.title}
