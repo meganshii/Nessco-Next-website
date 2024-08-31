@@ -47,7 +47,6 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
             height={20}
             className="inline-block"
           />
-
         </a>
       </h3>
       <p className='pb-3   lg:right-0'>{title}</p>

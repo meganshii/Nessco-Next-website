@@ -34,7 +34,7 @@ const PinkPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative lg:top-[15rem]">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative lg:top-[15rem] overflow-hidden">
       {pinkPageContent.birdComponent && <Bird />}
       
       <div className="relative w-full h-full lg:flex lg:flex-row flex flex-row-reverse items-center justify-center">
@@ -64,7 +64,7 @@ const PinkPage = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0  lg:top-0 ">
+        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0  lg:top-0 overflow-clip">
           <div className="absolute inset-0 flex justify-center items-center lg:w-[45vw] lg:h-[45vw]  lg:ml-12  w-[95vw] -ml-6 h-[95vw]  overflow-clip">
             <Image
               src={pinkPageContent.mandalaImg}

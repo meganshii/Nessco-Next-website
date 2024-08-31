@@ -113,9 +113,9 @@ const LandingPage = () => {
 
           {/* Title & Subtitle */}
           <div className="flex flex-col text-center lg:-mt-24 mt-44  lg:w-[10vw] lg:h-0 h-10  ">
-            <h2 className="font-poppins text-xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[30vw] lg:-ml-[18rem]  -ml-1">
+            <h2 className="font-poppins text-xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[30vw] lg:-ml-[18rem] w-full bg-red-200">
               {landingPageContent.title}{' '}
-              <span className="font-alexBrush text-red-800 text-3xl lg:text-8xl lg:ml-0 ml-28">
+              <span className="font-alexBrush text-red-800 text-3xl lg:text-8xl lg:ml-0 ml-24">
                 {landingPageContent.subtitle}
               </span>
             </h2>
