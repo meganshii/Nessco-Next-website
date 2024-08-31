@@ -50,7 +50,7 @@ export default function TeamPage() {
           Meet The <span className="text-rose-500">Team </span>
         </h1>
       </div>
-      <div className="relative text-white flex flex-col items-center  h-full lg:top-52  top-[23rem] ">
+      <div className="relative text-white flex flex-col items-center  h-full lg:top-44  top-[23rem] ">
         <h1 className="lg:text-4xl text-3xl font-poppins lg:mt-[24rem]  ">
           &quot;Build with Unity &amp; Trust&quot;
         </h1>

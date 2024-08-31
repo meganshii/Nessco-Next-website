@@ -72,7 +72,7 @@ const PinkPage = () => {
               ref={mandalaRef}
               layout="fill"
               objectFit="cover"
-              className="object-contain z-10  "  style={{marginTop:'-1%',marginLeft:'4%'}}
+              className="object-contain z-10  "  style={{marginTop:'-1%'}} 
             />
            <div className="relative lg:w-[24vw] lg:h-[24vw] lg:right-7 lg:top-2 w-[50vw] h-[25vh] right-2 top-1">
             <Image

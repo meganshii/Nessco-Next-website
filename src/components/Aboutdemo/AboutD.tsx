@@ -247,7 +247,7 @@ const Home: React.FC = () => {
         </motion.div>
       </div>
 
-      <div className=" absolute lg:w-[75%] w-[75%] lg:h-[30vh] h-auto top-32  bg-red-300 lg:-top-20 ">
+      <div className=" absolute lg:w-[75%] w-[75%] lg:h-[30vh] h-auto top-32 lg:top-16">
     <Image
       src="/assets/about/ourcompany/company.svg"
       alt="icon"
@@ -255,7 +255,7 @@ const Home: React.FC = () => {
       width={1000} // Define width and height to maintain aspect ratio
       height={1000}
       objectFit="cover"
-      className="lg:scale-80 scale-100 bg-yellow-300   " style={{marginTop:''}}
+      className="lg:scale-80 scale-100   " style={{marginTop:''}}
     />
   </div>
 
