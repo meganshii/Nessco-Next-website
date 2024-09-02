@@ -15,13 +15,13 @@ const OurStrength: FC = () => {
 
   return (
     <div className="relative w-full  bg-white min-h-screen">
-      <div className="relative max-w-screen-xl mx-auto ">
+      <div className="relative w-full ">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-montserrat font-bold text-[#3a2a79] top-5 absolute ml-8">
           Our Strength
         </h1>
 
         {/* Container for Paragraphs and Images */}
-        <div className="flex flex-col  md:space-y-0 md:flex-row md:space-x-8 items-center justify-between relative top-28">
+        <div className="flex flex-col lg:space-y-0 lg:flex-row lg:space-x-8 items-center justify-between relative top-28">
           {paragraphs.map((paragraph, index) => (
             <div key={index} className="relative flex flex-col items-center text-center">
               {/* Line between Paragraph and Image */}

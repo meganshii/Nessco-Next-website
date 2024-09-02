@@ -24,20 +24,20 @@ interface CardProps {
 const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ name, title, imageSrc, linkedInUrl, description, onOpenModal }) => (
   <div className={`${styles.card} lg:w-[35%] w-full mb-8 flex lg:flex-col  `}>
     {/* Image container */}
-    <div className={`${styles.imageContainer} w-full h-[16vh] lg:h-[36vh] lg:w-[30vw] py-1`}>
+    <div className={`${styles.imageContainer} w-full h-full lg:h-[36vh] lg:w-[30vw] p-1`}>
       <Image
-        className='transform 0.3 ease-in-out lg:w-[79%] lg:rounded-t-lg w-[33vw] rounded-lg lg:rounded-none '
+        className='transform 0.3 ease-in-out lg:w-[79%] lg:rounded-t-lg  rounded-lg lg:rounded-none '
         src={imageSrc}
         alt={name}
-        width={300}
+        width={400}
         height={400}
       />
     
     </div>
 
     {/* Content */}
-    <div className="relative justify-center ">
-      <h3 className={`${styles.nameTitle}  lg:mt-20 mt-2    lg:right-0`}>
+    <div className="relative justify-center p-1 ">
+      <h3 className={`${styles.nameTitle}  lg:mt-20 mt-2   lg:right-0`}>
         {name}
         <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className={styles.linkedinIcon}>
         <Image
@@ -56,7 +56,16 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
       {/* Hidden box for description */}
       <div className={`${styles.descriptionContainer} lg:visible invisible`}>
         <h3 className='font-bold font-montserrat text-lg mt-1'>{name}</h3>
-        <p className='font-montserrat mb-3'>{title}</p>
+        <p className='font-montserrat '>{title}</p>
+        <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" className="">
+        <Image
+            src="/assets/about/linkedin.png"
+            alt="LinkedIn"
+            width={20}
+            height={20}
+            className="inline-block mb-3"
+          />
+        </a>
         <p className="text-black font-montserrat leading-5">{description}</p>
       </div>
     </div>

@@ -13,22 +13,22 @@ const FeatureProject: FC = () => {
     <div className="relative flex flex-col w-full h-[130vh] bg-white ">
       <h1 className="text-5xl font-bold text-[#33246e] font-montserrat mt-5 ml-[2rem]">Featured Projects</h1>
       <div className="flex flex-col lg:flex-row items-center mt-12 ">
-  <h2 className="text-5xl sm:text-6xl lg:text-5xl font-bold text-gray-400 lg:ml-14 -mt-10">
+  <h2 className="text-5xl sm:text-6xl lg:text-5xl font-bold text-gray-400 lg:ml -mt-10 relative left-6">
     {selectedMachine.title}
   </h2>
 
-  <div className="relative flex justify-center lg:justify-start mt-8 lg:mt-0">
+  <div className="relative flex justify-center mt-8 lg:mt-0">
     <Image
       src={selectedMachine.mainImage}
       alt={selectedMachine.title}
       width={400}
       height={400}
-      className="object-cover z-20 h-[18rem] sm:h-[20rem] lg:h-[21rem] w-[22rem] sm:w-[24rem] lg:w-[25rem]  ml-32"
+      className="object-cover z-20 h-[18rem] sm:h-[20rem] lg:h-[21rem] w-[22rem] sm:w-[24rem] lg:w-[25rem]  ml-[15vw]"
     />
   </div>
 
-  <div className="ml-0 sm:ml-[2rem] md:ml-[4rem] lg:ml-[4rem] max-w-sm text-center lg:text-left lg:-mt-12 z-10">
-    <p className="text-sm text-gray-600 lg:ml-0">
+  <div className=" w-[35vw] z-10 p-5 justify-text text-center relative -top-4  right-3">
+    <p className="text-sm text-gray-600">
       {selectedMachine.description}
     </p>
   </div>
@@ -59,7 +59,7 @@ const FeatureProject: FC = () => {
         </div>
       </div>
 
-      <button className="mt-[18rem] ml-[37rem] px-5 py-2 items-center justify-center text-center bg-gradient-to-b from-[#171033] to-[#300675] text-white rounded-md z-10 w-[8rem]">
+      <button className="mt-[20rem] ml-[34rem] px-5 py-2 items-center justify-center text-center bg-gradient-to-b from-[#171033] to-[#300675] text-white rounded-md z-10 w-[8rem]">
         Read More
       </button>
     </div>

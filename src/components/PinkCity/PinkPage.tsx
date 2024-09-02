@@ -12,6 +12,7 @@ import { pinkPageContent } from '../Constants/pinkcity/Pink-page';
 
 const PinkPage = () => {
   const mandalaRef = useRef<HTMLDivElement | null>(null);
+  
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -34,7 +35,7 @@ const PinkPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative lg:top-[15rem] overflow-hidden">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative lg:top-[15rem] ">
       {pinkPageContent.birdComponent && <Bird />}
       
       <div className="relative w-full h-full lg:flex lg:flex-row flex flex-row-reverse items-center justify-center">
@@ -64,17 +65,17 @@ const PinkPage = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0  lg:top-0 overflow-clip">
-          <div className="absolute inset-0 flex justify-center items-center lg:w-[45vw] lg:h-[45vw]  lg:ml-12  w-[95vw] -ml-6 h-[95vw]  overflow-clip">
+        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0  lg:top-0">
+          <div className="absolute inset-0 flex justify-center items-center lg:w-[50vw] lg:h-[50vw]   w-[97vw] -ml-6 h-[95vw]  lg:scale-75  overflow-hidden ">
             <Image
               src={pinkPageContent.mandalaImg}
               alt="Mandala Design"
               ref={mandalaRef}
               layout="fill"
               objectFit="cover"
-              className="object-contain z-10  "  style={{marginTop:'-1%'}} 
+              className="object-contain z-10   "  style={{marginTop:'-1%',marginLeft:'6%'}} 
             />
-           <div className="relative lg:w-[24vw] lg:h-[24vw] lg:right-7 lg:top-2 w-[50vw] h-[25vh] right-2 top-1">
+           <div className="relative lg:w-[27vw] lg:h-[27vw] lg:left-2 lg:top-2 w-[50vw] h-[25vh]  top-1">
             <Image
               src={pinkPageContent.hawamahalImg}
               alt="Jaipur"

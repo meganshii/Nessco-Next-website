@@ -58,9 +58,9 @@ import { landingPageContent } from '../Constants/pinkcity/LandingPage'
 
 const LandingPage = () => {
   return (
-    <div className="bg-gray-100 flex flex-col  p-4  min-h-screen lg:p-6 lg:h-screen ">
+    <div className="bg-gray-100 flex flex-col p-5  min-h-screen lg:p-6 lg:h-screen ">
       {/* Background Image Container */}
-      <div className="relative w-full lg:h-[70vh] h-[65vh] lg:mt-10 mt-16 lg:left-0  ">
+      <div className="relative w-full lg:h-[70vh]  lg:mt-10 mt-16 lg:left-0 h-[80vh] ">
         <Image
           src={landingPageContent.backgroundImg}
           alt="Jaipur"
@@ -74,9 +74,11 @@ const LandingPage = () => {
       </div>
 
       {/* Title */}
-      <h2 className=" lg:relative lg:-top-10 lg:left-12 left-16 font-alexBrush text-white text-8xl lg:text-9xl absolute top-80 lg:-mt-52">
+      <div className='w-full absolute top-[58vh] justify-center text-center right-0 lg:relative lg:-top-10 lg:w-0  lg:-mt-52'>
+      <h2 className="  lg:left-12  font-alexBrush text-white text-8xl lg:text-9xl ">
         Jaipur
       </h2>
+      </div>
 
       {/* Content Section */}
       <div className="w-full lg:max-w-screen-xl flex flex-col items-center mt-20 lg:mt-7 relative">
@@ -100,8 +102,8 @@ const LandingPage = () => {
           </div>
 
           {/* Sticker Image */}
-          <div className="absolute lg:relative bottom-28 flex-shrink-0 lg:-mt-24 lg:top-0  lg:mr-72">
-            <div className="lg:w-full lg:h-full h-[30vh] w-[30vw]  lg:ml-0 lg:mt-0">
+          <div className="absolute lg:relative bottom-6 flex-shrink-0 lg:-mt-24 lg:top-0  lg:mr-72 p-36 lg:p-0">
+            <div className="lg:w-full lg:h-full h-full w-full lg:ml-0 lg:mt-0">
               <Image
                 src={landingPageContent.stickerImg}
                 alt="The Pink City"
@@ -112,10 +114,10 @@ const LandingPage = () => {
           </div>
 
           {/* Title & Subtitle */}
-          <div className="flex flex-col text-center lg:-mt-24 mt-44  lg:w-[10vw] lg:h-0 h-10  ">
-            <h2 className="font-poppins text-xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[30vw] lg:-ml-[18rem] w-full bg-red-200">
+          <div className="flex-1 flex-row lg:-mt-24 mt-44  lg:w-[10vw] lg:h-0 h-10 w-full">
+            <h2 className="font-poppins text-2xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[20vw] lg:-ml-[18rem] h-[6vh] w-full flex justify-between text-left ">
               {landingPageContent.title}{' '}
-              <span className="font-alexBrush text-red-800 text-3xl lg:text-8xl lg:ml-0 ml-24">
+              <span className="font-alexBrush text-red-800 text-4xl lg:text-8xl lg:ml-0  relative lg:left-0 text-right  ">
                 {landingPageContent.subtitle}
               </span>
             </h2>

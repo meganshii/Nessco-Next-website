@@ -6,7 +6,7 @@ const SustainableLayout: FC = () => {
   const data = sustainableData[0]; // Assuming there's only one item in the array
 
   return (
-    <div className="relative max-w-screen-xl mx-auto bg-white h-screen">
+    <div className="relative w-full mx-auto bg-white h-screen">
       <h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] absolute left-4">Sustainability</h1>
       <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between h-screen  ">
         {/* Left Side: Image */}

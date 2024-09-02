@@ -25,8 +25,8 @@ const Home: React.FC = () => {
 
         gsap.to(triggerElement, {
           backgroundColor: "#ffffff",
-          filter: "invert(100%)", 
-          height: "13vh",
+        
+          height: "14vh",
           paddingLeft: "1vw",
           scrollTrigger: {
             trigger: triggerElement,
@@ -50,7 +50,7 @@ const Home: React.FC = () => {
 
         gsap.to(".text-element span", {
           color: "#ededed",
-          filter: "invert(100%)", 
+        
           fontWeight: "600",
           scrollTrigger: {
             trigger: ".trigger",
@@ -63,7 +63,7 @@ const Home: React.FC = () => {
 
         gsap.to(".text-element .lg\\:text-\\[\\#e12d2c\\]", {
           color: "#ededed",
-          filter: "invert(100%)", 
+  
           fontWeight: "600",
           scrollTrigger: {
             trigger: ".trigger",
@@ -148,7 +148,7 @@ const Home: React.FC = () => {
   return (
     <div className="relative lg:h-screen flex flex-col items-center overflow-hidden min-h-screen w-full lg:top-3 top-[4vh] ">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
-        <div className="trigger lg:fixed lg:-top-[3vh] absolute z-30 lg:mt-[7vh] lg:w-full w-[13rem] lg:text-left text-center pl-[4vw] lg:left-0 lg:h-[18.5vh] left-[20vw] bottom-[20vh]">
+        <div className="trigger lg:fixed lg:-top-[3vh] absolute z-30 lg:mt-[7vh] lg:w-full lg:text-left text-center  lg:left-0 lg:h-[18.5vh]  bottom-[25vh]">
           <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[1vw] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[5.6vh] font-medium">
             <span className="lg:text-[#9e9c9c] text-white">
               <span className="lg:font-semibold">
@@ -208,7 +208,7 @@ const Home: React.FC = () => {
             alt="Content"
             className="w-[10vw] absolute -left-[1vw] -top-[3vw] hidden lg:block"
           />
-          <p className="lg:static absolute bottom-[6vh] lg:w-[95%] lg:mx-[1rem] mx-[1rem] lg:text-[0.9rem] text-[0.7rem] font-poppins text-center">
+          <p className="lg:static absolute bottom-[10vh] lg:w-[95%] lg:mx-[1rem] mx-[1rem] lg:text-[0.9rem] text-[0.7rem] font-poppins text-center">
             {isMobile
               ? getFirst20Words(Page1Data.description)
               : Page1Data.description}
@@ -246,7 +246,7 @@ const Home: React.FC = () => {
 
         {/* Conditionally render this div only on mobile */}
         {isMobile && (
-          <div className="bg-white mt-[1rem] w-[8rem] h-[2rem] rounded-[1rem] relative flex items-center">
+          <div className="bg-white w-[8rem] h-[2rem] rounded-[1rem] relative flex items-center">
             <button className="text-black text-[0.8rem] absolute left-[1rem]">
               {Page1Data.getaQuote}
             </button>

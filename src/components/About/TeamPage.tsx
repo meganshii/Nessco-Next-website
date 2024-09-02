@@ -35,12 +35,12 @@ export default function TeamPage() {
 
   return (
     <div
-      className="relative h-screen w-screen overflow-hidden lg:top-0 top-10"
+      className="relative h-screen w-screen overflow-hidden lg:top-0 top-10 "
       ref={containerRef}
     >
       <video
         ref={videoRef}
-        className="absolute lg:top-0 top-28 left-0 lg:w-full lg:h-4/5 mt-8 object-cover w-full "
+        className="absolute lg:top-0 top-28 left-0 lg:w-full lg:h-[80vh] mt-8 object-cover w-full "
         src="/assets/about/team.mp4"
         muted
         playsInline
@@ -50,12 +50,13 @@ export default function TeamPage() {
           Meet The <span className="text-rose-500">Team </span>
         </h1>
       </div>
-      <div className="relative text-white flex flex-col items-center  h-full lg:top-44  top-[23rem] ">
-        <h1 className="lg:text-4xl text-3xl font-poppins lg:mt-[24rem]  ">
+      <div className="absolute lg:bottom-0 bottom-48 items text-center text-white lg:space-y-7 ">
+        <h1 className="lg:text-4xl text-3xl font-poppins text-white  ">
           &quot;Build with Unity &amp; Trust&quot;
         </h1>
         <p className="text-center font-poppins px-5 mt-5 lg:invisible  ">At our company, the team is built on the foundations of unity and trust, creating a cohesive and supportive work environment. Each member brings unique skills and perspectives, contributing to a culture where collaboration and mutual respect are paramount. </p>
-      </div>
+        </div>
+     
     </div>
   );
 }
