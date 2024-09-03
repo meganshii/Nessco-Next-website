@@ -5,7 +5,7 @@ import { companyContent } from '../Constants/About/ourcompany/comapny-page'; // 
 
 const OurCompany: FC = () => {
   return (
-    <div className="relative min-h-[90vh] h-[90vh] bg-white text-white flex flex-col items-center">
+    <div className="relative h-[90vh] bg-white text-white flex flex-col items-center">
       {/* Background image */}
       <div className="absolute inset-0">
   <Image
@@ -32,18 +32,20 @@ const OurCompany: FC = () => {
       {/* Gradient overlay */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[#171033] to-[#300675] opacity-60 z-[-1]"></div> */}
 
-      <h1 className="text-5xl font-bold font-montserrat z-10  absolute left-8 text-[#3a2a79] top-[3vh]">{companyContent.title}</h1>
+      <h1 className="text-5xl font-bold font-poppins z-10  absolute left-8 text-[#3a2a79] top-[5vh]">{companyContent.title}</h1>
 
-      <div className="flex flex-col md:flex-row items-center w-full max-w-6xl relative top-[11vh] ">
-        <div className="bg-gray-200 rounded-2xl p-5 shadow-lg w-full md:w-3/5 h-[55vh]  -mt-5 -ml-20 ">
+      <div className="flex flex-col items-center w-full absolute top-[15vh] bg-green-400 ">
+
+        <div className="bg-gray-200 bg-opacity-45 rounded-2xl p-3 shadow-lg  w-[50%] absolute -left-5 ">
           <Carousel />
+       
         </div>
 
-        <div className="md:ml-16 p-5 flex-1 font-montserrat text-lg text-center text-black">
+        <div className=" p-5 flex-1 font-poppins text-lg text-center text-black  w-[45%] items-end justify-end absolute right-14 ">
           <p className="mt-5">
             {companyContent.description}
           </p>
-          <button className="text-black py-2 px-4 font-bold underline decoration-3-white">Read More</button>
+          <button className="text-black py-2 px-4 font-bold underline decoration-3-white font-poppins">Read More</button>
         </div>
       </div>
     </div>

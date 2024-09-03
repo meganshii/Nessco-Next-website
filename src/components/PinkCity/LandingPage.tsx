@@ -74,8 +74,8 @@ const LandingPage = () => {
       </div>
 
       {/* Title */}
-      <div className='w-full absolute top-[58vh] justify-center text-center right-0 lg:relative lg:-top-10 lg:w-0  lg:-mt-52'>
-      <h2 className="  lg:left-12  font-alexBrush text-white text-8xl lg:text-9xl ">
+      <div className='w-full absolute top-[58vh] justify-center text-center right-0 lg:relative lg:-top-10 lg:w-0  lg:-mt-52 lg:left-12'>
+      <h2 className="    font-alexBrush text-white text-8xl lg:text-9xl ">
         Jaipur
       </h2>
       </div>
@@ -102,7 +102,7 @@ const LandingPage = () => {
           </div>
 
           {/* Sticker Image */}
-          <div className="absolute lg:relative bottom-6 flex-shrink-0 lg:-mt-24 lg:top-0  lg:mr-72 p-36 lg:p-0">
+          <div className="absolute lg:relative bottom-24 flex-shrink-0 lg:-mt-24 lg:top-0  lg:mr-72 p-32 lg:p-0">
             <div className="lg:w-full lg:h-full h-full w-full lg:ml-0 lg:mt-0">
               <Image
                 src={landingPageContent.stickerImg}
@@ -114,10 +114,10 @@ const LandingPage = () => {
           </div>
 
           {/* Title & Subtitle */}
-          <div className="flex-1 flex-row lg:-mt-24 mt-44  lg:w-[10vw] lg:h-0 h-10 w-full">
-            <h2 className="font-poppins text-2xl lg:text-5xl lg:mt-0 -mt-64 lg:w-[20vw] lg:-ml-[18rem] h-[6vh] w-full flex justify-between text-left ">
+          <div className="flex-1 flex-row lg:-mt-24 mt-44  lg:w-[10vw] lg:h-0 h-10 w-full ">
+            <h2 className="font-poppins text-xl lg:text-5xl lg:mt-0 -mt-64 lg:-ml-[18rem] h-[6vh] w-full flex justify-between lg:text-center text-left lg:flex-col lg:w-[30vw] ">
               {landingPageContent.title}{' '}
-              <span className="font-alexBrush text-red-800 text-4xl lg:text-8xl lg:ml-0  relative lg:left-0 text-right  ">
+              <span className="font-alexBrush text-red-800 text-3xl lg:text-8xl lg:ml-0  relative lg:left-0 text-right  ">
                 {landingPageContent.subtitle}
               </span>
             </h2>

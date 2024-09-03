@@ -4,10 +4,10 @@ import Image from 'next/image';
 import { galleryfour } from '../Constants/About/pinkcity-homepage';
 const PinkCity = () => {
   return (
-    <div className="relative mx-auto max-h-screen bg-white w-screen">
-      <h1 className="text-5xl font-bold text-left relative top-5 font-montserrat text-[#312465] ml-10">The Pink City</h1>
+    <div className="relative mx-auto h-[90vh] bg-white w-screen">
+      <h1 className="text-5xl font-bold text-left relative top-[5vh] font-poppins text-[#312465] ml-10">The Pink City</h1>
       
-      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-6 mb-5 p-5 mr-2 mt-5">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-6 mb-5 p-6 mr-2 mt-[5vh]">
         {galleryfour.galleryImages.map((item, index) => (
           <div key={index} className="relative" style={{ height: '58vh', width: 'calc(100vw / 4 - 1.25rem)' }}>
             <div className="group relative h-full w-full overflow-hidden rounded-2xl">
@@ -27,7 +27,7 @@ const PinkCity = () => {
                   height={50} 
                   className="w-[16rem] h[5rem] -mt-28"
                 />
-                <p className="text-white -mt-20 text-sm font-bold w-[15rem] text-center">{item.paragraph}</p>
+                <p className="text-white -mt-20 text-sm font-bold w-[15rem] text-center font-poppins">{item.paragraph}</p>
                 <Image 
                   src="/assets/about/bottomlayer.svg" 
                   alt="Overlay Icon" 
@@ -35,7 +35,7 @@ const PinkCity = () => {
                   height={50} 
                   className="w-[16rem] h[5rem] -mt-36"
                 />
-                <p className='text-white font-montserrat underline decoration-white -mt-16'>Read More</p>
+                <p className='text-white font-poppins underline decoration-white -mt-16'>Read More</p>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@ const PinkCity = () => {
       </div>
 
       <div className="flex flex-col items-center mt-12 relative">
-  <div className="relative p-3 text-[#312465] text-center font-poppins text-4xl font-bold">
+  <div className="relative p-2 text-[#312465] text-center font-poppins text-xl font-bold -top-11">
     <p>Read More</p>
   </div>
   <div className="relative">
@@ -52,7 +52,7 @@ const PinkCity = () => {
       alt="Overlay Icon" 
       width={100} 
       height={50} 
-      className="relative w-[16rem] h-auto z-10 -mt-44"
+      className="relative w-[12rem] h-auto z-10 -mt-44"
     />
   </div>
 </div>

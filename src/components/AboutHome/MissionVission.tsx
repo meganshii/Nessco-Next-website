@@ -48,8 +48,8 @@ const Missionvission: React.FC = () => {
   }, [currentSlide, carouselApi]);
 
   return (
-    <div className="relative w-full  p-8 bg-white h-[85vh] overflow-hidden">
-      <h2 className="text-5xl font-bold text-[#3a2a79] mb-8 mt-10 font-montserrat">
+    <div className="relative w-full  p-8 bg-white h-[90vh] overflow-hidden">
+      <h2 className="text-5xl font-bold text-[#3a2a79] mb-8 top-[10] font-poppins">
         Mission & Vision
       </h2>
       <Carousel className="w-full max-w-screen-md" setApi={setCarouselApi}>
@@ -60,7 +60,7 @@ const Missionvission: React.FC = () => {
                 <Card>
                   <CardContent className="flex aspect-square items-center justify-center p-6">
                     <div className="flex flex-col mb-[20rem]">
-                      <h3 className="text-4xl font-montserrat font-bold text-left -mt-[4rem] ml-3">
+                      <h3 className="text-4xl font-poppins font-bold text-left -mt-[4rem] ml-3">
                         {slide.title}
                       </h3>
                       <div className="flex items-center justify-center space-x-20 mr-10 mt-11 ">
@@ -72,7 +72,7 @@ const Missionvission: React.FC = () => {
                             style={{ height: '15rem', width: '15rem' }}
                           />
                         </div>
-                        <p className="text-lg text-center w-[26rem] font-montserrat mb-5">
+                        <p className="text-lg text-center w-[26rem] font-poppins mb-5">
                           {slide.description}
                         </p>
                       </div>

@@ -37,9 +37,10 @@ const SecondPage = () => {
     <div className="flex flex-col items-center justify-center lg:h-screen h-screen bg-gray-100 p-6 mt-44 w-full  ">
       <DashedLineWithImage />
 
-      <div className="relative w-full  flex items-center ">
-        <div className="relative flex w-2/5 h-full lg:-mt-0 -mt-[60rem] ">
-          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-3  lg:-left-5  lg:w-[40vw] h-[50vh] w-[91vw]  -top-20 ">
+      <div className="relative w-full  flex items-center  ">
+
+        <div className="relative flex lg:w-2/5 h-full lg:-mt-0 -mt-[60rem] ">
+          <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-3  lg:-left-5  lg:w-[40vw] h-[50vh] w-[91vw]  -top-20  ">
             <Image
               src={secondPageContent.mandalaImg}
               alt="Mandala Design"
@@ -64,23 +65,10 @@ const SecondPage = () => {
             
           </div>
           </div>
-
-          {/* <div className="relative flex justify-center items-center w-[25vw] h-[45vh] left-28 top-20">
-           
-              <Image
-                src={secondPageContent.topImg}
-                alt="Jaipur"
-                layout="fill"
-                objectFit="cover"
-                className="shadow-lg rounded-xl object-cover "
-                style={{ aspectRatio: "2 / 2" }} // Adjust aspect ratio if needed
-              />
-            
-          </div> */}
         </div>
 
-        <div className="flex-1 relative -top-64 lg:top-12 lg:right-16 h-full w-3/4 lg:mt-10  lg:ml-0 -ml-[10rem] items-center justify-center ">
-          <div className="absolute inset-0 flex justify-end items-start lg:h-full lg:w-[50rem] h-[55vh] w-[98vw]   ">
+        <div className="flex-1 relative -top-[35vh] lg:top-12 lg:right-16 h-full lg:w-3/4  lg:mt-10  lg:ml-0  items-center justify-center ">
+          <div className="absolute inset-0 flex justify-end items-start lg:h-full lg:w-[50rem] h-[55vh] w-[97vw]">
             <Image
               src={secondPageContent.strokeImg}
               alt="Stroke"
@@ -90,8 +78,8 @@ const SecondPage = () => {
             />
           </div>
 
-          <div className="relative z-10 lg:top-8 w-full text-justify lg:w-[60vw] top-40 lg:p-0  px-4 ">
-            <p className="text-gray-700 lg:text-lg text-sm lg:p-20 text-center  font-montserrat ml-5 lg:ml-0">
+          <div className="relative z-10 lg:top-8 w-full text-justify lg:w-[60vw] lg:p-0 top-36 ">
+            <p className="text-gray-700 lg:text-lg text-sm lg:p-20 text-center  font-montserrat  lg:ml-0">
               {secondPageContent.description}
             </p>
           </div>

@@ -35,13 +35,13 @@ const PinkPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative lg:top-[15rem] ">
+    <div className="flex flex-col items-center justify-center h-screen bg-gray-100  w-screen relative lg:top-[15rem] -top-[10vh]">
       {pinkPageContent.birdComponent && <Bird />}
       
       <div className="relative w-full h-full lg:flex lg:flex-row flex flex-row-reverse items-center justify-center">
         
         {/* Left Section */}
-        <div className=" flex flex-col justify-center items-center relative lg:mt-10 lg:h-full lg:z-20 lg:p-4  lg:w-2/4 w-full h-[30vh] -top-[37rem] lg:-top-14  lg:right-0 right-8  ">
+        <div className=" flex flex-col justify-center items-center relative lg:mt-10 lg:h-full lg:z-20 lg:p-4 lg:left-5 lg:w-2/4 w-full h-[30vh] -top-[41rem] lg:-top-14  lg:right-0 right-8  ">
           <div className="absolute inset-0 flex justify-center items-start lg:w-full lg:top-10">
             <Image
               src={pinkPageContent.strokeImg}
@@ -65,8 +65,8 @@ const PinkPage = () => {
         </div>
 
         {/* Right Section */}
-        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-7 -top-[63rem] lg:left-0  lg:top-0">
-          <div className="absolute inset-0 flex justify-center items-center lg:w-[50vw] lg:h-[50vw]   w-[97vw] -ml-6 h-[95vw]  lg:scale-75  overflow-hidden ">
+        <div className="flex-1 flex justify-center items-center relative lg:h-[90vh] h-[40vh] lg:-mt-44 mx-5 -top-[63rem] lg:left-0  lg:top-0">
+          <div className="absolute inset-0 flex justify-center items-center lg:w-[50vw] lg:h-[50vw]   w-[98vw] -ml-6 h-[95vw]  lg:scale-75  overflow-hidden ">
             <Image
               src={pinkPageContent.mandalaImg}
               alt="Mandala Design"

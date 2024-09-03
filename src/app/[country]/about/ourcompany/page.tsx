@@ -18,12 +18,12 @@ export default function about() {
   return (
     <main className="bg-black  ">
       
-{/* <AboutD /> */}
+
 <AboutOurcompany/>
 <SustainableD/>
 <OurStoryD/>
 <Founders/>
-{/* <OurHistory/> */}
+
 <section id="our-story" className="relative z-20">
         <Grid/>
       </section> 

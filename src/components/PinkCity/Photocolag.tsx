@@ -5,7 +5,7 @@ import { galleryContent } from '../Constants/pinkcity/photocolag-page';
 
 const Gallery = () => {
   return (
-    <div className="relative lg:mx-auto lg:p-44 lg:mt-[32rem] p-10 -top-[20rem] lg:h-full  lg:-mb-[20rem]">
+    <div className="relative lg:mx-auto lg:p-44 lg:mt-[32rem] p-10 -top-[35rem] lg:-top-[20rem] lg:h-full  lg:-mb-[20rem]">
       <div className="flex justify-center lg:visible invisible">
         <Image 
           src={galleryContent.topStrokeImg}
