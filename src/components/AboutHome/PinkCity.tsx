@@ -38,6 +38,9 @@ const PinkCity = () => {
                 <p className='text-white font-poppins underline decoration-white -mt-16'>Read More</p>
               </div>
             </div>
+            {index >= 0 && index < galleryfour.galleryImages.length - 1 && (
+              <div className="absolute right-[-0.497rem] top-3 h-[55vh] w-[2px] bg-[#2d1f66]"></div>
+            )}
           </div>
         ))}
       </div>

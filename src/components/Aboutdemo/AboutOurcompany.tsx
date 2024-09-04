@@ -27,7 +27,7 @@ const Home: React.FC = () => {
           backgroundColor: "#ffffff",
         
           height: "14vh",
-          paddingLeft: "1vw",
+          paddingLeft: "-5vw",
           scrollTrigger: {
             trigger: triggerElement,
             start: "30% 10%",
@@ -90,7 +90,8 @@ const Home: React.FC = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 1024); // 1024px is the breakpoint for lg
     };
-
+  
+  
     // Initial check
     handleResize();
 
@@ -148,9 +149,9 @@ const Home: React.FC = () => {
   return (
     <div className="relative lg:h-screen flex flex-col items-center overflow-hidden min-h-screen w-full lg:top-3 top-[4vh] ">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
-        <div className="trigger lg:fixed lg:-top-[3vh] absolute z-30 lg:mt-[7vh] lg:w-full lg:text-left text-center  lg:left-0 lg:h-[18.5vh]  bottom-[25vh]">
-          <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[1vw] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[5.6vh] font-medium">
-            <span className="lg:text-[#9e9c9c] text-white">
+        <div className="trigger lg:fixed lg:-top-[3vh] absolute z-30 lg:mt-[7vh] lg:w-full lg:text-left text-center lg:left-0 lg:h-[18.5vh]  bottom-[25vh]">
+          <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[4vw] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[vh] font-medium">
+            <span className="lg:text-[#9e9c9c] text-white ">
               <span className="lg:font-semibold">
                 {Page1Data.title
                   .trim()

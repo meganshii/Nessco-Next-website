@@ -68,11 +68,11 @@ const Missionvission: React.FC = () => {
                           <img
                             src={slide.imageSrc}
                             alt={`${slide.title} Icon`}
-                            className="w-48 h-48 object-cover"
+                            className="w-48 h-48 object-cover mb-2 "
                             style={{ height: '15rem', width: '15rem' }}
                           />
                         </div>
-                        <p className="text-lg text-center w-[26rem] font-poppins mb-5">
+                        <p className="text-sm font-semi-medium text-center w-[26rem] font-poppins mb-3 right-10 relative ">
                           {slide.description}
                         </p>
                       </div>

@@ -65,13 +65,13 @@ export const Carousel = () => {
   return (
     <div className="relative overflow-hidden w-full">
       <IoIosArrowBack 
-        className="absolute left-3 top-1/2 transform -translate-y-1/2  text-black shadow-md rounded-full backdrop-blur-md  z-10"
+        className="absolute left-3 top-1/2 transform -translate-y-1/2  text-black shadow-md rounded-full backdrop-blur-lg  z-10"
         size={30}
         onClick={handlePrev}
       />
         
       <IoIosArrowForward
-        className="absolute right-[1vw] top-1/2 transform -translate-y-1/2 text-black rounded-full shadow-md backdrop-blur-md z-10"
+        className="absolute right-[0.100vw] top-1/2 transform -translate-y-1/2 text-black rounded-full shadow-md backdrop-blur-lg z-10"
         size={30}
         onClick={handleNext}
       />

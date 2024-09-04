@@ -11,14 +11,14 @@ const Footer: React.FC = () => {
         <>
             <Subscribe />
     
-            <PolicyHeader />
+            {/* <PolicyHeader /> */}
             <footer className={styles.footer}>
                 <div className={styles.bgimagefooter}></div>
                 <div className={styles.footercontainer}>
                     <div className={styles.footercontent}>
                         <div className={styles.footerlistabout}>
                             <h3 className={`${styles.footerdesctitle} font-bold text-black text-xl`}>Our Stores</h3>
-                            <div className='flex flex-col -space-y-5 font-poppins hover:text-red-60 w-[5rem]'>
+                            <div className='flex flex-col -space-y-5 font-poppins hover:text-red-600 w-[5rem]'>
                                 {footerData.stores.map((store, index) => (
                                     <Link key={index} href="/" passHref>
                                         <p className={styles.footeratags}>{store}</p>

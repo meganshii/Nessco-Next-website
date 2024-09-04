@@ -143,7 +143,7 @@ const Home: React.FC = () => {
   return (
     <div className="relative lg:h-screen flex flex-col items-center overflow-hidden min-h-screen w-full lg:top-3 top-[4vh] ">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
-        <div className="trigger lg:fixed lg:-top-[2vh] absolute z-30 lg:mt-[5vh] lg:w-full w-[13rem] lg:text-left text-center pl-[4vw] lg:left-0 lg:h-[18.5vh] left-[20vw] bottom-[20vh]">
+        <div className="trigger lg:fixed lg:-top-[1vh] absolute z-30 lg:mt-[5vh] lg:w-full w-[13rem] lg:text-left text-center pl-[4vw] lg:left-0 lg:h-[18.5vh] left-[20vw] bottom-[20vh]">
           <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[1vw] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[5.6vh] font-medium">
             <span className="lg:text-[#9e9c9c] text-white">
               <span className="lg:font-semibold">

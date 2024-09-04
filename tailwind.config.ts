@@ -35,7 +35,8 @@ const config: Config = {
         "80": "1.05",
       },
       fontWeight: {
-        "extra-bold": "950", // Custom weight if needed, though 900 is typically the max
+        "extra-bold": "950",
+        "semi-medium":"380",
       },
       fontFamily: {
         montserrat: ["Montserrat", "Poppins"],

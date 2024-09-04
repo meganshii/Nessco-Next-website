@@ -51,7 +51,7 @@ const PinkPage = () => {
               className="object-contain opacity-35 " 
             />
           </div>
-          <div className="relative z-10 text-justify lg:top-3">
+          <div className="relative z-10 text-justify lg:top-3 left-[3vw] lg:left-0">
             <p className="text-gray-700 lg:text-md font-montserrat">
               {pinkPageContent.description.split(' ').map((word, index) => (
                 word === 'ivory' || word === 'machines' ? (

@@ -39,7 +39,7 @@ const SecondPage = () => {
 
       <div className="relative w-full  flex items-center  ">
 
-        <div className="relative flex lg:w-2/5 h-full lg:-mt-0 -mt-[60rem] ">
+        <div className="relative flex lg:w-2/5 h-full lg:-mt-0 -mt-[60rem] bg-red-400">
           <div className="absolute inset-0 flex justify-center items-center lg:h-[65vh] lg:top-3  lg:-left-5  lg:w-[40vw] h-[50vh] w-[91vw]  -top-20  ">
             <Image
               src={secondPageContent.mandalaImg}
@@ -68,7 +68,7 @@ const SecondPage = () => {
         </div>
 
         <div className="flex-1 relative -top-[35vh] lg:top-12 lg:right-16 h-full lg:w-3/4  lg:mt-10  lg:ml-0  items-center justify-center ">
-          <div className="absolute inset-0 flex justify-end items-start lg:h-full lg:w-[50rem] h-[55vh] w-[97vw]">
+          <div className="absolute inset-0 flex justify-end items-start lg:h-full lg:w-[50rem] h-[55vh] w-[100vw] -left-[6vw] lg:left-0">
             <Image
               src={secondPageContent.strokeImg}
               alt="Stroke"

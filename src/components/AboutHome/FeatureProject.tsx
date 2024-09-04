@@ -105,7 +105,7 @@ const FeatureProject: FC = () => {
       { width: 0 },
       {
         width: '100%',
-        duration: 3,
+        duration: 2,
         ease: 'power3.out',
       }
     );
@@ -122,7 +122,7 @@ const FeatureProject: FC = () => {
             z:10,
             duration: 2, // 3-second duration for smooth transition
             ease: 'power3.out',
-            delay: index * 0.2, // Staggered delay based on index for visual effect
+            delay: 0.3, // Staggered delay based on index for visual effect
           },
           "-=2" // Start animation for vertical lines 2 seconds before the horizontal line animation ends
         );
@@ -135,7 +135,7 @@ const FeatureProject: FC = () => {
             {
               y: 0,
               opacity: 1,
-              duration: 2,
+              duration: 1,
               ease: 'power3.out',
             },
             "-=2" // Start animation for images 2 seconds before the vertical lines animation ends
