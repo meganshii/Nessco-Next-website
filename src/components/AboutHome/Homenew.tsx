@@ -29,7 +29,7 @@ const Home: React.FC = () => {
           paddingLeft: "1vw",
           scrollTrigger: {
             trigger: triggerElement,
-            start: "30% 10%",
+            start: "40% 10%",
             end: "10%",
             scrub: true,
           },

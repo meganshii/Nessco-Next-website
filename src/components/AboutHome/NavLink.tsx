@@ -112,21 +112,21 @@ const NavLinksDemo: React.FC<NavLinksDemoProps> = ({ navItems }) => {
   }, []);
 
   return (
-    <div ref={navRef} className="sticky bg-white z-30 top-[17vh]">
-      <nav className="left-0 mb-[4rem] -mt-9 ml-[1.2rem] flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-5 text-black px-1 sm:px-2">
-        {navItems.map((item, index) => (
-          <NavLink
-            key={index}
-            text={item.text}
-            index={index}
-            activeLink={activeLink}
-            handleMouseEnter={handleMouseEnter}
-            handleMouseLeave={handleMouseLeave}
-            handleClick={handleClick(item.ref)}
-          />
-        ))}
-      </nav>
-    </div>
+    <div ref={navRef} className="sticky bg-white z-20 top-[17vh]">
+    <nav className="left-0 mb-[4rem] -mt-9 ml-[1.2rem] flex flex-row flex-wrap text-16 font-poppins space-x-2 sm:space-x-5 text-black px-1 sm:px-2">
+      {navItems.map((item, index) => (
+        <NavLink
+          key={index}
+          text={item.text}
+          index={index}
+          activeLink={activeLink}
+          handleMouseEnter={handleMouseEnter}
+          handleMouseLeave={handleMouseLeave}
+          handleClick={handleClick(item.ref)}
+        />
+      ))}
+    </nav>
+  </div>
   );
 };
 

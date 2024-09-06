@@ -24,13 +24,13 @@ const Home: React.FC = () => {
         const textElement = document.querySelector(".text-element");
 
         gsap.to(triggerElement, {
-          backgroundColor: "#ffffff",
+          backgroundColor: "black",
         
-          height: "14vh",
+          height: "16vh",
           paddingLeft: "-5vw",
           scrollTrigger: {
             trigger: triggerElement,
-            start: "30% 10%",
+            start: "40% 10%",
             end: "10%",
             scrub: true,
           },
@@ -38,11 +38,11 @@ const Home: React.FC = () => {
 
         gsap.to(textElement, {
           fontSize: "3rem",
-          paddingTop: "3vh",
+          paddingTop: "5vh",
           
           scrollTrigger: {
             trigger: triggerElement,
-            start: "30% 10%",
+            start: "40% 10%",
             end: "10%",
             scrub: true,
           },
@@ -54,7 +54,7 @@ const Home: React.FC = () => {
           fontWeight: "600",
           scrollTrigger: {
             trigger: ".trigger",
-            start: "30% 10%",
+            start: "40% 10%",
             end: "10%",
             scrub: true,
 
@@ -149,8 +149,8 @@ const Home: React.FC = () => {
   return (
     <div className="relative lg:h-screen flex flex-col items-center overflow-hidden min-h-screen w-full lg:top-3 top-[4vh] ">
       <div className="relative sm:p-8 md:p-2 lg:px-12 w-full flex-wrap">
-        <div className="trigger lg:fixed lg:-top-[3vh] absolute z-30 lg:mt-[7vh] lg:w-full lg:text-left text-center lg:left-0 lg:h-[18.5vh]  bottom-[25vh]">
-          <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[4vw] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[vh] font-medium">
+        <div className="trigger lg:fixed lg:-top-[4vh] absolute z-30 lg:mt-[7vh] lg:w-full lg:text-left text-center lg:left-0 lg:h-[18.5vh]  bottom-[25vh]">
+          <h1 className="text-element font-poppins lg:pt-[6vh] lg:pl-[4vw] lg:text-[5rem] text-[3.5rem] lg:leading-normal leading-[5vh] font-medium">
             <span className="lg:text-[#9e9c9c] text-white ">
               <span className="lg:font-semibold">
                 {Page1Data.title
@@ -163,7 +163,7 @@ const Home: React.FC = () => {
                 .replace(/\s+\S+$/, "")
                 .slice(1)}
             </span>{" "}
-            <span className="lg:text-[#e12d2c] text-white">
+            <span className="lg:text-[#e12c2c] text-white">
               <span className="lg:font-semibold">
                 {Page1Data.title.trim().match(/\S+$/)?.[0].charAt(0) || ""}
               </span>
