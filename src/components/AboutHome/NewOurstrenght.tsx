@@ -6,13 +6,13 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import { data } from "../Constants/Navbar/about-data";
 
 type Card = {
-    video: string;
-  };
-  
-  type ExampleComponentProps = {
-    active: Card;
-    cards: Card[];
-  };
+  video: string;
+};
+
+type ExampleComponentProps = {
+  active: Card;
+  cards: Card[];
+};
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -40,7 +40,6 @@ export function ExpandableCardDemo() {
 
   useOutsideClick(ref, () => setActive(null));
 
-
   useEffect(() => {
     cards.forEach((card) => {
       const preloadimg = new window.Image();
@@ -49,7 +48,7 @@ export function ExpandableCardDemo() {
   }, [cards]);
 
   return (
-    <div className="h-screen w-full bg-white overflow-hidden">
+    <div className="h-full w-full bg-white overflow-hidden">
       <h2 className="text-5xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative left-9">
         Our Strenght
       </h2>
@@ -93,39 +92,36 @@ export function ExpandableCardDemo() {
               ref={ref}
               className="w-full lg:w-[27vw]  h-[80vh]  md:max-h-[63%] mt-20 flex flex-col bg-[#f7f7f7] dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
             >
-             <div
-          
-             className="relative w-full h-80 lg:h-44 sm:rounded-tr-lg sm:rounded-tl-lg overflow-hidden">
-  {/* Background video */}
-  <Image
-    src={active.video}
-    alt="gif"
-    width={100}
-    height={100}
-    className="absolute inset-0 w-full h-full object-cover"
-  />
+              <div className="relative w-full h-80 lg:h-44 sm:rounded-tr-lg sm:rounded-tl-lg overflow-hidden">
+                {/* Background video */}
+                <Image
+                  src={active.video}
+                  alt="gif"
+                  width={100}
+                  height={100}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
 
-  {/* Title */}
-  <h1 className="absolute bottom-5 left-0 right-0 text-center font-bold text-lg text-white z-10">
-    {active.title}
-  </h1>
+                {/* Title */}
+                <h1 className="absolute bottom-5 left-0 right-0 text-center font-bold text-lg text-white z-10">
+                  {active.title}
+                </h1>
 
-  {/* Overlay image */}
-  <motion.div
-    layoutId={`image-${active.title}-${id}`}
-    className="absolute inset-0 flex items-center justify-center z-20"
-  >
-    <Image
-      priority
-      width={200}
-      height={200}
-      src={active.src}
-      alt={active.title}
-      className="w-20 h-20 sm:rounded-lg object-cover invert"
-    />
-  </motion.div>
-</div>
-
+                {/* Overlay image */}
+                <motion.div
+                  layoutId={`image-${active.title}-${id}`}
+                  className="absolute inset-0 flex items-center justify-center z-20"
+                >
+                  <Image
+                    priority
+                    width={200}
+                    height={200}
+                    src={active.src}
+                    alt={active.title}
+                    className="w-20 h-20 sm:rounded-lg object-cover invert"
+                  />
+                </motion.div>
+              </div>
 
               <div className="">
                 <div className="pt-4 relative p-12 top-10 text-center">
@@ -181,10 +177,15 @@ export function ExpandableCardDemo() {
                   alt="svg"
                   width={100}
                   height={100}
-                  className="object-cover w-full h-full group-hover:invert transition-transform duration-300"
-                
+                  className="object-cover w-full h-full group-hover:filter-white transition-transform duration-300"
                 />
               </div>
+
+              <style jsx>{`
+                .filter-white {
+                  filter: invert(1) brightness(0) contrast(100%);
+                }
+              `}</style>
             </div>
           </motion.div>
         ))}
@@ -232,7 +233,7 @@ const cards = [
       "We leverage cutting-edge technology to design and manufacture advanced paper cup machines, ensuring high efficiency and precision in production.",
     title: "Innovative Technology: ",
     src: "/assets/about/ourcompany/16.svg",
-    video:"/assets/lowgif.gif",
+    video: "/assets/lowgif.gif",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -250,7 +251,7 @@ const cards = [
       "Our stringent quality control processes guarantee that every machine we produce meets the highest industry standards, delivering reliable and consistent performance.",
     title: "Quality Assurance: ",
     src: "/assets/about/ourcompany/17.svg",
-    video:"/assets/giftwo.gif",
+    video: "/assets/giftwo.gif",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -258,7 +259,6 @@ const cards = [
         <p>
           Babu Maan, a legendary Punjabi singer, is renowned for his soulful
           voice and profound lyrics that resonate deeply with his audience.
-         
         </p>
       );
     },
@@ -269,7 +269,7 @@ const cards = [
       "We prioritize our customers' needs by offering personalized solutions and exceptional after-sales support, fostering long-term partnerships.",
     title: "Customer-Centric Approach: ",
     src: "/assets/about/ourcompany/18.svg",
-    video:"/assets/gifthree.gif",
+    video: "/assets/gifthree.gif",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
@@ -277,7 +277,7 @@ const cards = [
         <p>
           Metallica, an iconic American heavy metal band, is renowned for their
           powerful sound and intense performances that resonate deeply with
-          their audience. 
+          their audience.
         </p>
       );
     },
@@ -287,14 +287,14 @@ const cards = [
       "Dedicated to environmental responsibility, we focus on producing eco-friendly machines that help businesses reduce their carbon footprint and promote sustainable practices.",
     title: "Sustainability Commitment: ",
     src: "/assets/about/ourcompany/19.svg",
-    video:"/assets/giffour.gif",
+    video: "/assets/giffour.gif",
     ctaText: "Play",
     ctaLink: "https://ui.aceternity.com/templates",
     content: () => {
       return (
         <p>
           Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry. 
+          innovative sound and profound impact on the music industry.
         </p>
       );
     },

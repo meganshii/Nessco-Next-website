@@ -48,36 +48,36 @@ const Missionvission: React.FC = () => {
   }, [currentSlide, carouselApi]);
 
   return (
-    <div className="relative w-full  p-8 bg-white h-[90vh] overflow-hidden">
-      <h2 className="text-5xl font-bold text-[#3a2a79] mb-8 top-[10] font-poppins">
+    <div className="relative lg:w-full  w-screen p-8 bg-white lg:h-[90vh]  overflow-hidden">
+      <h2 className="lg:text-5xl font-bold text-[#3a2a79] lg:mb-8 lg:top-[10] font-poppins text-lg">
         Mission & Vision
       </h2>
-      <Carousel className="w-full max-w-screen-md" setApi={setCarouselApi}>
+      <Carousel className="lg:w-full lg:max-w-screen-md" setApi={setCarouselApi}>
         <CarouselContent>
           {missionvissionContent.slides.map((slide, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
                 <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-6">
-                    <div className="flex flex-col mb-[20rem]">
-                      <h3 className="text-4xl font-poppins font-bold text-left -mt-[4rem] ml-3">
+                  <CardContent className="lg:flex lg:aspect-square items-center justify-center p-6 ">
+                    <div className="flex flex-col lg:mb-[20rem]">
+                      <h3 className="lg:text-4xl font-poppins font-bold lg:text-left lg:-mt-[4rem] lg:ml-3">
                         {slide.title}
                       </h3>
-                      <div className="flex items-center justify-center space-x-20 mr-10 mt-11 ">
+                      <div className="lg:flex items-center justify-center lg:space-x-20 lg:mr-10 lg:mt-11  ">
                         <div className="flex-shrink-0">
                           <img
                             src={slide.imageSrc}
                             alt={`${slide.title} Icon`}
-                            className="w-48 h-48 object-cover mb-2 "
+                            className="w-48 h-48 object-cover lg:mb-2 "
                             style={{ height: '15rem', width: '15rem' }}
                           />
                         </div>
-                        <p className="text-sm font-semi-medium text-center w-[26rem] font-poppins mb-3 right-10 relative ">
+                        <p className="lg:text-sm text-xs font-semi-medium text-center lg:w-[26rem] w-full font-poppins lg:mb-3 lg:right-10 relative ">
                           {slide.description}
                         </p>
                       </div>
                       {slide.points && (
-                        <div className="flex flex-row text-sm w-[45rem] -ml-6 font-bold ">
+                        <div className="flex flex-row text-sm w-[45rem] -ml-6 font-bold lg:visible invisible">
                           {slide.points.map((point, pointIndex) => (
                             <div key={pointIndex} className="flex ">
                               <div className="w-7 h-7 rounded-full bg-[#312465] text-white flex items-center justify-center font-bold mr-2">
@@ -89,7 +89,7 @@ const Missionvission: React.FC = () => {
                         </div>
                       )}
                       {slide.values && (
-                        <div className="flex flex-row text-sm w-[49rem] text-center font-bold -ml-5 ">
+                        <div className="flex flex-row text-sm w-[49rem] text-center font-bold -ml-5 lg:visible invisible">
                           {slide.values.map((value, valueIndex) => (
                             <div key={valueIndex} className="flex">
                               <Image
@@ -115,7 +115,7 @@ const Missionvission: React.FC = () => {
         <CarouselPrevious onClick={handlePrevious} />
         <CarouselNext onClick={handleNext} />
       </Carousel>
-      <div className="absolute -right-0 top-24 overflow-hidden">
+      <div className="absolute -right-0 top-24 overflow-hidden lg:visible invisible">
         <img
           src={images[currentSlide]}
           alt="Graphic"

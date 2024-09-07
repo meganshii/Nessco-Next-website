@@ -288,13 +288,19 @@ body {
 .mask-gradient-featuredproject {
   position: absolute;
   bottom: 0;
-  top:0;
-   /* Adjust this height based on how much of the bottom you want to mask */
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0) 100%);
+  top: 0;
+  /* Adjust this height based on how much of the bottom you want to mask */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 90%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
-
-
 
 /* timeline */
 
@@ -312,8 +318,20 @@ body {
   right: 0;
   height: 115%;
   z-index: 30;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 15%, rgba(0, 0, 0, 1) 85%, rgba(0, 0, 0, 0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 1) 45%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 85%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
   background-color: black; /* For visibility, adjust the color as needed */
 }
 
@@ -322,10 +340,12 @@ body {
   filter: invert(1) brightness(2); /* Inverts and brightens the image */
 }
 
-.invert:hover {
-  filter: invert(1) brightness(1);
-  /* Force the SVG color to white */
-  color: white; /* Ensure the color is explicitly set to white */
-  fill: white; /* Apply to SVG fill */
-  stroke: white; /* Apply to SVG stroke if necessary */
+/* hide scrollbar from blogs Page3 component */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

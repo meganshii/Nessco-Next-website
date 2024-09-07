@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import Image from 'next/image';
-import { Carousel } from './carasoul'; // Ensure correct path to Carousel component
+import Page4 from './carasoul';
 import { companyContent } from '../Constants/About/ourcompany/comapny-page'; // Adjust path as needed
 
 const OurCompany: FC = () => {
   return (
-    <div className="relative h-[90vh] bg-white text-white flex flex-col items-center">
+    <div className="relative h-[90vh] bg-white text-white lg:flex lg:flex-col items-center">
       {/* Background image */}
       <div className="absolute inset-0">
   <Image
@@ -34,14 +34,16 @@ const OurCompany: FC = () => {
 
       <h1 className="text-5xl font-bold font-poppins z-10  absolute left-9 text-[#3a2a79] top-[5vh]">{companyContent.title}</h1>
 
-      <div className="flex flex-col items-center w-full absolute top-[15vh] bg-green-400 ">
+      <div className="lg:flex lg:flex-col items-center w-full absolute lg:top-[15vh] ">
 
-        <div className="bg-gray-200 bg-opacity-45 rounded-2xl p-3 shadow-lg  w-[50%] absolute -left-5 ">
+        {/* <div className="bg-gray-200 bg-opacity-45 rounded-2xl p-3 shadow-lg  w-[50%] absolute -left-5 ">
           <Carousel />
        
-        </div>
+        </div> */}
 
-        <div className=" p-5 flex-1 font-poppins text-lg text-center text-black  w-[45%] items-end justify-end absolute right-14 ">
+            <Page4 />
+
+        <div className=" lg:p-5 flex-1 font-poppins lg:text-lg text-xs text-center text-black  lg:w-[45%] w-full items-end justify-end absolute lg:right-14  ">
           <p className="mt-5">
             {companyContent.description}
           </p>

@@ -1,98 +1,74 @@
-import { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { gsap } from 'gsap';
-import { IoIosArrowBack } from "react-icons/io";
+"use client";
 import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
+import React, { useEffect, useRef } from "react";
+import Image from "next/image";
+import { StaticImageData } from "next/image";
+import { Page4Data } from "../Constants/About/ourcompanycarasouel";
 
-export const Carousel = () => {
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const [currentIndex, setCurrentIndex] = useState(1); // Start at 1 due to the duplicated image logic
 
-  // Manually defined image width
-  const imageWidth = 350; // You can set this to your desired value
-  const imageHeight = 350; // Set the height to match your design
 
-  const images = [
-    { src: '/assets/about/16.png', alt: 'Image 3' },
-    { src: '/assets/about/17.png', alt: 'Image 4' },
-    { src: '/assets/about/nessco-team.webp', alt: 'Image 6' },
-    { src: '/assets/about/17.png', alt: 'Image 4' },
-    { src: '/assets/about/nessco-team.webp', alt: 'Image 6' },
-  ];
 
-  // Duplicating the first and last images to create a loop effect
-  const imagesWithDupes = [
-    images[images.length - 1], // Duplicate the last image
-    ...images,
-    images[0] // Duplicate the first image
-  ];
+const Page4 = () => {
+  const carouselRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const carousel = carouselRef.current;
-    if (carousel) {
-      gsap.to(carousel, {
-        x: -currentIndex * imageWidth, // Move by the manually set width of the image
-        duration: 1, // Smooth transition duration
-        ease: 'power1.inOut', // Smooth easing
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: -carouselRef.current.offsetWidth,
+        behavior: "smooth",
       });
     }
-  }, [currentIndex, imageWidth]);
-
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) => {
-      if (prevIndex >= imagesWithDupes.length - 1) {
-        setTimeout(() => {
-          setCurrentIndex(1); // Reset to the first actual image
-        }, 1000); // Match the transition duration
-        return imagesWithDupes.length - 1; // Transition to the last duplicate
-      }
-      return prevIndex + 1;
-    });
   };
 
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) => {
-      if (prevIndex <= 0) {
-        setTimeout(() => {
-          setCurrentIndex(imagesWithDupes.length - 2); // Reset to the last actual image
-        }, 1000); // Match the transition duration
-        return 0; // Transition to the first duplicate
-      }
-      return prevIndex - 1;
-    });
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({
+        left: carouselRef.current.offsetWidth,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (
-    <div className="relative overflow-hidden w-full">
-      <IoIosArrowBack 
-        className="absolute left-3 top-1/2 transform -translate-y-1/2  text-black shadow-md rounded-full backdrop-blur-lg  z-10"
-        size={30}
-        onClick={handlePrev}
-      />
-        
-      <IoIosArrowForward
-        className="absolute right-[0.100vw] top-1/2 transform -translate-y-1/2 text-black rounded-full shadow-md backdrop-blur-lg z-10"
-        size={30}
-        onClick={handleNext}
-      />
+    <div className="lg:w-full ">
+      
+      <div className="flex  pb-[5vh] px-[4vw]">
+      </div>
+      <div className="lg:w-[45%] w-[100%] flex items-center  lg:-ml-[1vh] relative justify-start  ">
+        <div className="bg-gray-200 bg-opacity-45 py-[2.5vh] px-[1vw] rounded-[1rem] overflow-hidden">
+          <button
+            className="border-solid border-2  text-[#3a2a79] p-[0.4rem] text-[1.4rem] rounded-[2rem] bg-white absolute top-[28vh] left-2"
+            onClick={scrollLeft}
+          >
+            <IoIosArrowBack />
+          </button>
+          <button
+            className="border-solid border-2  text-[#3a2a79] p-[0.4rem] text-[1.4rem] rounded-[2rem] bg-white absolute top-[28vh] right-0 hover:backdrop-blur-lg"
+            onClick={scrollRight}
+          >
+            <IoIosArrowForward />
+          </button>
+          <div
+            className="overflow-auto lg:w-full scrollbar-hide "
+            ref={carouselRef}     
 
-      <div
-        ref={carouselRef}
-        className="flex whitespace-nowrap transition-transform duration-1000 gap-5"
-        style={{ width: imagesWithDupes.length * imageWidth }}
-      >
-        {imagesWithDupes.map((image, index) => (
-          <div key={index} style={{ width: imageWidth, height: imageHeight }} className="flex-shrink-0">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              width={imageWidth}
-              height={imageHeight}
-              className="rounded-2xl transition-transform duration-1000 ease-in-out"
-            />
+          >
+            <div className="flex lg:justify-start  items-center lg:w-max">
+              {Page4Data.imageWithDescription.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="mx-[0.6vw]  lg:w-[25vw] w-[100%] h-[55vh] bg-[#f2f2f2] flex flex-col items-center justify-center rounded-[1rem] overflow-hidden"
+                >
+                  <Image className="w-full h-full" src={item.img} alt="" />
+                </div>
+              ))}
+            </div>
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
 };
+
+export default Page4;

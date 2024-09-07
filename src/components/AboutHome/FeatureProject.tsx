@@ -182,7 +182,7 @@ const FeatureProject: FC = () => {
               ></div>
               <div
                 ref={(el) => (imagesRef.current[index] = el)}
-                className={`border-2 border-x-gray-200 h-[9rem] rounded-2xl transform transition-transform duration-300 hover:scale-110 ${
+                className={`border-2 border-x-gray-200 h-[9rem] rounded-2xl transform transition-transform duration-300 hover:scale-100 ${
                   machine.id === 1
                     ? 'mt-28'
                     : machine.id === 2

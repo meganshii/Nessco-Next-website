@@ -209,11 +209,11 @@ const Home: React.FC = () => {
               : Page1Data.description}
           </p>
         </div>
-        <div className="lg:static absolute bottom-[32vh] left-[28vw] w-[22%] flex items-center justify-cente">
+        <div className="lg:static absolute bottom-[32vh] left-[35vw] w-[22%] flex items-center justify-center">
           <Image
             src={Page1Data.mainImg}
             alt="Content"
-            className="lg:w-[16vw] max-w-[30vw]"
+            className="lg:w-[16vw] max-w-[40vw] "
           />
         </div>
         <div className="w-[38%] lg:relative flex items-center justify-center ">
