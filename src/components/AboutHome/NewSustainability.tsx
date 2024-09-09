@@ -233,16 +233,16 @@ const NewSustainability: React.FC = () => {
 
       {/* Circle Images */}
       <div className="absolute right-16 top-[20vh]">
-        <div className="border-4 border-gray-300 w-[25vw] h-[50vh] rounded-full">
+        <div className="border-4 border-gray-300 w-[25vw] h-[20rem] rounded-full">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
               className={`bg-white relative w-20 h-20 rounded-full ${
-                index === 0 ? 'top-[31vh] right-[2vw]' : 
-                index === 1 ? '-top-[8vh] right-[2vw]' : 
-                index === 2 ? 'left-[16vw] -top-[28vh]' : 
-                index === 3 ? 'left-[22vw] -top-[19vh]' : 
-                '-top-[10vh] left-[10vw]'
+                index === 0 ? 'top-[12rem] right-[2rem]' : 
+                index === 1 ? '-top-[4rem] right-[1rem]' : 
+                index === 2 ? 'left-[11rem] -top-[12rem]' : 
+                index === 3 ? 'left-[17rem] -top-[7rem]' : 
+                '-top-[4rem] left-[9rem]'
               }`}
               onMouseEnter={() => handleHover(index)}
             >

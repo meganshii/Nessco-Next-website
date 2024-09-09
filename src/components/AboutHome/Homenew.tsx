@@ -25,7 +25,7 @@ const Home: React.FC = () => {
 
         gsap.to(triggerElement, {
           backgroundColor: "#ffffff",
-          height: "13vh",
+          height: "10vh",
           paddingLeft: "1vw",
           scrollTrigger: {
             trigger: triggerElement,
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
         });
 
         gsap.to(textElement, {
-          fontSize: "3rem",
+          fontSize: "2rem",
           paddingTop: "3vh",
           scrollTrigger: {
             trigger: triggerElement,
@@ -48,7 +48,7 @@ const Home: React.FC = () => {
 
         gsap.to(".text-element span", {
           color: "#ededed",
-          fontWeight: "600",
+          fontWeight: "300",
           scrollTrigger: {
             trigger: ".trigger",
             start: "30% 10%",

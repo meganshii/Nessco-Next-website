@@ -74,7 +74,7 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
 
 const Card: React.FC<CardProps> = ({ handleCloseModal, founderData }) => {
   return (
-    <div className="p-1 top-6 bg-white h-[88%] w-[95%] rounded-xl shadow-md relative bottom-5 text-black ">
+    <div className="p-1 top-8 bg-white h-[88%] w-[95%] rounded-xl shadow-md relative bottom-5 text-black ">
       
       {/* Display founder data */}
       <div className="p-4">

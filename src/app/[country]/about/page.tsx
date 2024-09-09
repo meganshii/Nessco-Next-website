@@ -1,4 +1,6 @@
 "use client";
+import { useEffect, useState} from "react";
+import Loader from "@/components/Loader"; // Your loader component
 
 import Home from "@/components/AboutHome/Home";
 import NavLinksDemo from "@/components/AboutHome/NavLink";

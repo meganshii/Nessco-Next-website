@@ -24,9 +24,9 @@ const Home: React.FC = () => {
         const textElement = document.querySelector(".text-element");
 
         gsap.to(triggerElement, {
-          backgroundColor: "black",
+          backgroundColor: "rgba(0, 0, 0, 0.8)",
         
-          height: "16vh",
+          height: "5vh",
           paddingLeft: "-5vw",
           scrollTrigger: {
             trigger: triggerElement,
@@ -34,11 +34,15 @@ const Home: React.FC = () => {
             end: "10%",
             scrub: true,
           },
+          css: {
+            backdropFilter: "blur(30px)",
+            height:'15vh'
+          },
         });
 
         gsap.to(textElement, {
-          fontSize: "3rem",
-          paddingTop: "5vh",
+          fontSize: "2rem",
+          paddingTop: "6vh",
           
           scrollTrigger: {
             trigger: triggerElement,
@@ -51,7 +55,7 @@ const Home: React.FC = () => {
         gsap.to(".text-element span", {
           color: "#ededed",
         
-          fontWeight: "600",
+          fontWeight: "300",
           scrollTrigger: {
             trigger: ".trigger",
             start: "40% 10%",
@@ -163,7 +167,7 @@ const Home: React.FC = () => {
                 .replace(/\s+\S+$/, "")
                 .slice(1)}
             </span>{" "}
-            <span className="lg:text-[#e12c2c] text-white">
+            <span className="lg:text-[#dc0e2a] text-white">
               <span className="lg:font-semibold">
                 {Page1Data.title.trim().match(/\S+$/)?.[0].charAt(0) || ""}
               </span>
@@ -172,7 +176,7 @@ const Home: React.FC = () => {
           </h1>
         </div>
         <motion.div
-          className="h-[calc(100vh-150px)] flex justify-center items-center sm:h-[calc(100vh-120px)] rounded-xl px-[0.5rem]"
+          className="h-[calc(100vh-150px)] flex justify-center items-center sm:h-[calc(100vh-120px)] rounded-xl px-[0.5rem] pt-5"
           ref={videoRef}
           style={{ width: videoWidth, x: videoX, originX: 0.5 }}
         >

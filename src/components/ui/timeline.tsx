@@ -40,8 +40,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
       ref={containerRef}
     >
 
-     <div className="max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10 bg-white sticky top-0 z-50 ">
-  <h2 className="text-lg lg:text-5xl font-poppins text-gray-400 dark:text-white text-center mt-9 ">
+     <div className="max-w-7xl mx-auto py-5 px-4 md:px-8 lg:px-10 bg-black sticky top-0 z-50">
+  <h2 className="text-2xl lg:text-5xl font-poppins text-white dark:text-white text-center lg:mt-9 mt-10 ">
     Our <span className="text-red-600"> History </span>
   </h2>
 </div>
@@ -51,14 +51,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 </div>
 
 
-      <div ref={ref} className="relative max-w-7xl mx-auto pb-20 md:px-10  ">
+      <div ref={ref} className="relative max-w-7xl mx-auto lg:pb-20 md:px-10  ">
         {data.map((item, index) => (
           <div
             key={index}
             className="flex justify-start pt-10 md:pt-40 md:gap-10 "
           >
             <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-7 absolute left-3 md:left-5 w-7 rounded-full bg-black dark:bg-black flex items-center justify-center">
+              <div className="h-7 absolute lg:left-3 left-5 md:left-5 w-7 rounded-full bg-black dark:bg-black flex items-center justify-center">
                 <div className="h-5 w-5 rounded-full bg-neutral-200 dark:bg-neutral-800 border border-neutral-300 dark:border-neutral-700 p-2" />
               </div>
               <h3 className="hidden md:block text-xl md:pl-20 md:text-5xl font-bold text-white dark:text-neutral-500 ">

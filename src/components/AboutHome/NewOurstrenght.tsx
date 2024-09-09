@@ -4,6 +4,8 @@ import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { data } from "../Constants/Navbar/about-data";
+import { IoAddCircle } from "react-icons/io5";
+import { FaCircleMinus } from "react-icons/fa6";
 
 type Card = {
   video: string;
@@ -14,12 +16,22 @@ type ExampleComponentProps = {
   cards: Card[];
 };
 
+const truncateText = (text: string, maxWords: number) => {
+  const wordsArray = text.split(" ");
+  if (wordsArray.length > maxWords) {
+    return wordsArray.slice(0, maxWords).join(" ") + "...";
+  }
+  return text; // Return full text if it's within the limit
+};
+
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
     null
   );
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
+
+  const maxWordsForMobile = 10;
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -40,6 +52,11 @@ export function ExpandableCardDemo() {
 
   useOutsideClick(ref, () => setActive(null));
 
+  const handleClose = (e) => {
+    e.stopPropagation(); // Prevent the click event from bubbling up
+    setActive(null);
+  };
+
   useEffect(() => {
     cards.forEach((card) => {
       const preloadimg = new window.Image();
@@ -48,8 +65,8 @@ export function ExpandableCardDemo() {
   }, [cards]);
 
   return (
-    <div className="h-full w-full bg-white overflow-hidden">
-      <h2 className="text-5xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative left-9">
+    <div className="lg:h-full h-screen w-full bg-white overflow-hidden">
+      <h2 className="lg:text-5xl text-3xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative left-9">
         Our Strenght
       </h2>
 
@@ -81,18 +98,18 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
-              onClick={() => setActive(null)}
+              className="flex relative top-[61vh] left-[36vw] lg:hidden items-center justify-center  rounded-full h-10 w-10"
+              onClick={handleClose}
             >
-              <CloseIcon />
+          <FaCircleMinus className="text-[#3a2a79]" size={30} />
             </motion.button>
 
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full lg:w-[27vw]  h-[80vh]  md:max-h-[63%] mt-20 flex flex-col bg-[#f7f7f7] dark:bg-neutral-900 sm:rounded-3xl overflow-hidden"
+              className="w-[90vw] lg:w-[27vw]  lg:h-[80vh]  md:max-h-[63%] lg:mt-20 -mt-44  flex flex-col bg-[#f7f7f7] dark:bg-neutral-900 sm:rounded-3xl overflow-hidden rounded-xl"
             >
-              <div className="relative w-full h-80 lg:h-44 sm:rounded-tr-lg sm:rounded-tl-lg overflow-hidden">
+              <div className="relative w-full h-52 lg:h-44 sm:rounded-tr-lg sm:rounded-tl-lg overflow-hidden">
                 {/* Background video */}
                 <Image
                   src={active.video}
@@ -142,35 +159,59 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <ul className=" p-12 space-y-3 ">
+      <ul className=" lg:p-12 lg:space-y-3 grid grid-cols-2 gap-2 lg:gap-0 lg:flex lg:flex-col p-5 ">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className=" flex flex-col  md:flex-row justify-between items-center bg-[#f7f7f7] dark:hover:bg-neutral-800 rounded-lg cursor-pointer group"
+            className=" lg:flex flex  flex-col-reverse lg:flex-row justify-between items-center bg-[#f7f7f7] dark:hover:bg-neutral-800 rounded-lg cursor-pointer group lg:w-full lg:h-full h-[40vh]"
           >
-            <div className="flex gap-4 flex-col md:flex-row p-6  ">
-              <div className=" ">
-                <motion.p
+            <div className="md:flex gap-4 flex-col lg:flex-row lg:p-6 grid grid-cols-1 sm:grid-cols-2 ">
+              <div className=" col-span-1">
+                {/* <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-black text-center md:text-left w-[70vw]"
+                  className="text-black text-center md:text-left lg:w-[70vw] lg:text-lg text-xs w-[45vw] lg:px-0 px-2"
                 >
                   {" "}
-                  <span className="text-md font-bold text-[#3a2a79] font-poppins">
+                  <span className="lg:text-md font-bold text-[#3a2a79] font-poppins">
                     {card.title}
                   </span>
                   {card.description}
-                </motion.p>
+                </motion.p> */}
 
-                <div className="relative -left-5 top-[4.5vh] h-[2px] w-[55vh] bg-[#2d1f66] rounded-sm"></div>
+<motion.p
+  layoutId={`description-${card.description}-${id}`}
+  className="text-black text-center md:text-left lg:w-[70vw] lg:text-lg text-xs w-[45vw] lg:px-0 px-2"
+>
+  {/* Title */}
+  <span className="text-center lg:text-left lg:text-md text-lg lg:-mt-0 relative lg:-top-0 -top-8 font-bold lg:text-[#3a2a79] text-black  block">
+    {card.title}
+  </span>
+
+  {/* Paragraph */}
+  <span className="block">
+    {/* Conditionally render a shorter version on mobile */}
+    <span className="block lg:hidden relative -top-7">
+          {/* Use utility function to truncate text */}
+          {truncateText(card.description, maxWordsForMobile)}
+        </span>
+
+    {/* Full description for larger screens */}
+    <span className="hidden lg:block">{card.description}</span>
+  </span>
+  <IoAddCircle className="relative left-[31vw] block lg:hidden text-[#3a2a79]" size={30} />
+</motion.p>
+
+
+                <div className=" lg:visible invisible relative -left-5 top-[4.5vh] h-[2px] w-[55vh] bg-[#2d1f66] rounded-sm"></div>
               </div>
             </div>
-            <div className="flex space-x-8 ml-24 ">
-              <div className="relative left-5  w-[2px] bg-[#2d1f66] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="flex lg:space-x-8 lg:ml-24 ">
+              <div className=" lg:visible invisible relative left-5  w-[2px] bg-[#2d1f66] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div
                 key={index}
-                className="w-full p-5 h-full flex items-center justify-center  group-hover:bg-[#000088] rounded-tr-lg rounded-br-lg transition-colors duration-300 "
+                className="w-full lg:p-5 h-full flex items-center justify-center  lg:group-hover:bg-[#000088] lg:rounded-tr-lg lg:rounded-br-lg transition-colors duration-300 p-7 "
               >
                 <Image
                   src={card.src}
