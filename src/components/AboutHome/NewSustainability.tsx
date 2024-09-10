@@ -183,30 +183,30 @@ const NewSustainability: React.FC = () => {
 
   return (
     <div className="relative w-full p-8 bg-white h-[90vh] overflow-hidden">
-      <h2 className="text-5xl font-bold text-[#3a2a79] mb-8 top-[10] font-poppins">
+      <h2 className="lg:text-5xl text-3xl font-bold text-[#3a2a79] mb-8 top-[10] font-poppins ">
         Sustainability
       </h2>
-
-      <Carousel className="w-full max-w-screen-sm">
+<div className="flex-none flex flex-col">
+      <Carousel className="lg:w-full lg:max-w-screen-sm relative lg:top-0 top-[20rem]">
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={slide.id} className={currentSlide === index ? "block" : "hidden"}>
-              <div className="p-1">
+              <div className="lg:p-1 p-5">
                 <Card>
-                  <CardContent className="flex aspect-square items-center justify-center p-5">
-                    <div className="flex flex-col mb-[20rem] mr-10">
-                      <h3 className="text-3xl font-poppins font-bold text-left">
+                  <CardContent className="flex aspect-square items-center justify-center lg:p-5 ">
+                    <div className="flex flex-col lg:mb-[20rem] lg:mr-10">
+                      <h3 className="lg:text-3xl font-poppins font-bold text-left lg:p-0 p-5">
                         {slide.title}
                       </h3>
-                      <div className="flex items-center justify-center space-x-20 relative left-5 top-10 mt-11">
-                        <div className="flex-shrink-0">
+                      <div className="flex items-center justify-center lg:space-x-20  relative lg:left-5 lg:top-10 lg:mt-11 ">
+                        <div className="flex-shrink-0 ">
                           <img
                             src={slide.img}
                             alt={`Slide ${index + 1} Icon`}
-                            className="w-32 h-32 object-cover mb-2"
+                            className="lg:w-32 lg:h-32 w-28 h-28 object-cover mb-2"
                           />
                         </div>
-                        <p className="text-sm font-semi-medium w-[21rem] font-poppins mb-3 relative">
+                        <p className="lg:text-sm lg:font-semi-medium lg:w-[21rem] w-[21rem] text-xs font-poppins mb-3 relative">
                           {slide.description}
                         </p>
                       </div>
@@ -221,24 +221,24 @@ const NewSustainability: React.FC = () => {
         {/* Arrow buttons with onClick handlers */}
         <IoIosArrowBack
         size={30}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 text-2xl z-10"
+          className="absolute lg:left-0 -left-7 top-1/2 transform -translate-y-1/2 text-2xl z-10"
           onClick={handlePrevious}
         />
         <IoIosArrowForward
         size={30}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 text-2xl z-10"
+          className="absolute lg:right-0 -right-7 top-1/2 transform -translate-y-1/2 text-2xl z-10"
           onClick={handleNext}
         />
       </Carousel>
 
       {/* Circle Images */}
-      <div className="absolute right-16 top-[20vh]">
-        <div className="border-4 border-gray-300 w-[25vw] h-[20rem] rounded-full">
+      <div className="absolute lg:right-16 lg:top-[20vh] top-[15vh] lg:p-0 ">
+        <div className="border-4 border-gray-300 w-[20rem] h-[20rem] rounded-full">
           {slides.map((slide, index) => (
             <div
               key={slide.id}
               className={`bg-white relative w-20 h-20 rounded-full ${
-                index === 0 ? 'top-[12rem] right-[2rem]' : 
+                index === 0 ? 'top-[13rem] right-[1rem]' : 
                 index === 1 ? '-top-[4rem] right-[1rem]' : 
                 index === 2 ? 'left-[11rem] -top-[12rem]' : 
                 index === 3 ? 'left-[17rem] -top-[7rem]' : 
@@ -260,6 +260,7 @@ const NewSustainability: React.FC = () => {
             </div>
           ))}
         </div>
+      </div>
       </div>
     </div>
   );

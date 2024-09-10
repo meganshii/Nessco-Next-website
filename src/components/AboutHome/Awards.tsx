@@ -148,11 +148,11 @@ import Image from "next/image";
 const Awards: FC = () => {
   return(
    <div className="relative w-full  bg-white min-h-svh ">
-<h1 className="text-5xl font-bold p-5 font-montserrat text-[#33246e] ml-10 -mt-12">
+<h1 className="lg:text-5xl text-3xl font-bold p-5 font-montserrat text-[#33246e] lg:ml-10 lg:-mt-12">
         Awards
      </h1>
-     <div className=" ml-16 mt-10 ">
-         <p className="text-lg -mt-5 text-black font-montserrat">
+     <div className=" lg:ml-16 lg:mt-10 mt-5 ml-5">
+         <p className="lg:text-lg -mt-5 text-black font-poppins">
            Recognition affirms our purpose, and shows us we’re on the right
            track. <br />
            Look through the awards we’ve accumulated, and the certifications that
@@ -161,7 +161,7 @@ const Awards: FC = () => {
        </div>
 
 
- <div className="flex   mt-20 p-2 ">
+ <div className="grid grid-cols-3  lg:flex gap-4 lg:mt-20 p-2 mt-10">
 
   <div className="flex flex-col items-center transform transition-transform duration-300 hover:scale-110 hover:text-red-500 -mt-2 ">
     <div className="flex items-center justify-center font-bold ">
@@ -170,24 +170,24 @@ const Awards: FC = () => {
         alt="Icon"
         width={500}
         height={500}
-        className="object-cover "
-        style={{ height: "20vh", width: "20vw" }}
+        className="object-cover  h-[10rem] w-[10rem]"
+      
       />
     </div>
-    <p className="w-[10vw]  mt-4 text-center font-bold">
+    <p className="lg:w-[10vw]  lg:mt-4 text-center font-bold">
       ISO 9001 Certified
     </p>
   </div>
 
-  <div className="flex flex-col items-center  transform transition-transform duration-300 hover:scale-110 -mt-5 hover:text-red-500 ">
-    <div className="text-white flex items-center justify-center font-bold ">
+  <div className="flex flex-col items-center  transform transition-transform duration-300 hover:scale-110 -mt-5 hover:text-red-500">
+    <div className="text-white flex items-center justify-center font-bold">
       <Image
         src="/assets/about/award/icon2.svg"
         alt="Icon"
         width={450}
         height={450}
-        className="object-cover rounded-md"
-        style={{ height: "25vh", width: "20vw" }}
+        className="object-cover rounded-md h-[10rem] w-[10rem]"
+      
       />
     </div>
     <p className="w-[20vw] md:w-[10vw] lg:w-[5vw] text-center font-bold">
@@ -204,11 +204,11 @@ const Awards: FC = () => {
         alt="Icon"
         width={450}
         height={450}
-        className="object-cover"
-        style={{ height: "17vh", width: "20vw" }}
+        className="object-cover  h-[10rem] w-[10rem]"
+     
       />
     </div>
-    <p className="w-[20vw] md:w-[10vw] lg:w-[8vw] mt-9 text-center font-bold ">
+    <p className="w-[30vw] md:w-[10vw] lg:w-[8vw] lg:mt-9 -mt-5 text-center font-bold ">
       Child Labour Free
     </p>
   </div>
@@ -220,11 +220,11 @@ const Awards: FC = () => {
         alt="Icon"
         width={450}
         height={450}
-        className="object-cover "
-        style={{ height: "19vh", width: "18vw" }}
+        className="object-cover  h-[10rem] w-[10rem] "
+       
       />
     </div>
-    <p className="w-[20vw] md:w-[10vw] lg:w-[7vw] mt-5 text-center font-bold ">
+    <p className="w-[30vw] md:w-[10vw] lg:w-[7vw] lg:mt-5 -mt-5 text-center font-bold ">
       Star Export House
     </p>
   </div>
@@ -237,11 +237,11 @@ const Awards: FC = () => {
         alt="Icon"
         width={450}
         height={450}
-        className="object-cover "
-        style={{ height: "19vh", width: "16vw" }}
+        className="object-cover  h-[10rem] w-[10rem]"
+        
       />
     </div>
-    <p className="w-[5rem]  mt-8 text-center font-bold ">
+    <p className="lg:w-[5rem] -mt-5 lg:mt-8 text-center font-bold ">
       CE Certified
     </p>
   </div>
@@ -253,11 +253,11 @@ const Awards: FC = () => {
         alt="Icon"
         width={450}
         height={450}
-        className="object-cover"
-        style={{ height: "18vh", width: "18vw" }}
+        className="object-cover  h-[10rem] w-[10rem]"
+        
       />
     </div>
-    <p className="w-[20vw] md:w-[10vw] lg:w-[7vw] mt-10 text-center font-bold">
+    <p className="w-[20vw] md:w-[10vw] lg:w-[7vw] lg:mt-10 -mt-5 text-center font-bold">
       RoHS Certified
     </p>
   </div>

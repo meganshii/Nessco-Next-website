@@ -41,7 +41,7 @@ export default function about ()
 
 
     return(
-        <main className="bg-[#f5f5f5]">
+        <main className="bg-[#f5f5f5] overflow-hidden">
         {/* <Home /> */}
         <Homenew/>
         <NavLinksDemo navItems={navItems}  />

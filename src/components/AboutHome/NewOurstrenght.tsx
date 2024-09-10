@@ -5,7 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 import { data } from "../Constants/Navbar/about-data";
 import { IoAddCircle } from "react-icons/io5";
-import { FaCircleMinus } from "react-icons/fa6";
+import { RxCross2 } from "react-icons/rx";
 
 type Card = {
   video: string;
@@ -36,11 +36,11 @@ export function ExpandableCardDemo() {
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
-        setActive(false);
+        setActive(null);
       }
     }
 
-    if (active && typeof active === "object") {
+    if (active) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -50,9 +50,10 @@ export function ExpandableCardDemo() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
+
   useOutsideClick(ref, () => setActive(null));
 
-  const handleClose = (e) => {
+  const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation(); // Prevent the click event from bubbling up
     setActive(null);
   };
@@ -66,7 +67,7 @@ export function ExpandableCardDemo() {
 
   return (
     <div className="lg:h-full h-screen w-full bg-white overflow-hidden">
-      <h2 className="lg:text-5xl text-3xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative left-9">
+      <h2 className="lg:text-5xl text-3xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative lg:left-9 left-4">
         Our Strenght
       </h2>
 
@@ -98,10 +99,10 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex relative top-[61vh] left-[36vw] lg:hidden items-center justify-center  rounded-full h-10 w-10"
+              className="flex relative top-[7vh] left-[40vw] lg:hidden items-center justify-center  rounded-full h-10 w-10"
               onClick={handleClose}
             >
-          <FaCircleMinus className="text-[#3a2a79]" size={30} />
+          <RxCross2 className="text-black" size={30}  />
             </motion.button>
 
             <motion.div
@@ -235,38 +236,7 @@ export function ExpandableCardDemo() {
   );
 }
 
-export const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns="http://www.w3.org/2000/svg"
-      width="25"
-      height="25"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4 text-black"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M18 6l-12 12" />
-      <path d="M6 6l12 12" />
-    </motion.svg>
-  );
-};
+
 
 const cards = [
   {

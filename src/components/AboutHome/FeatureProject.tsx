@@ -80,6 +80,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const FeatureProject: FC = () => {
   const [selectedMachine, setSelectedMachine] = useState<Machine>(machines[0]);
+  const [isMobile, setIsMobile] = useState(false);
+
 
   const horizontalLineRef = useRef<HTMLDivElement | null>(null);
   const verticalLinesRef = useRef<(HTMLDivElement | null)[]>([]);
@@ -88,6 +90,19 @@ const FeatureProject: FC = () => {
   const handleMachineClick = (machine: Machine) => {
     setSelectedMachine(machine);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust the breakpoint as needed (768px for mobile/tablet)
+    };
+    
+    handleResize(); // Set initial value
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
   useEffect(() => {
     // Create a GSAP timeline
@@ -148,8 +163,32 @@ const FeatureProject: FC = () => {
 
 
   return (
-    <div className="relative flex flex-col w-full h-[130vh] bg-white">
-      <h1 className="text-5xl font-bold text-[#33246e] font-poppins mt-5 ml-[2rem]">Featured Projects</h1>
+    <div className="relative flex flex-col w-full lg:h-[130vh] bg-white h-full">
+      <h1 className="lg:text-5xl text-3xl font-bold text-[#33246e] font-poppins mt-5 lg:ml-[2rem] ml-4">Featured Projects</h1>
+      {isMobile ? (
+        // Mobile view layout
+        <div className="flex flex-col items-center w-full px-3 relative top-10">
+          {machines.map((machine) => (
+            <div key={machine.id} className="flex flex-row items-center mb-8 border h-[25vh] bg-[#ededed] rounded-2xl ">
+              <div className='w-2/5  '>
+              <Image
+                src={machine.mainImage}
+                alt={machine.title}
+                width={300}
+                height={300}
+                className="object-cover h-[10rem] w-[15rem] "
+              />
+              </div>
+              <div className='h-3/5 relative -top-7'>
+              <h2 className="text-xl font-bold relative w-[10rem] text-[#cf1b2b] mx-3">{machine.title}</h2>
+              <p className="text-xs text-black mt-2  w-[14rem] text-justify mx-3">
+                {machine.description}
+              </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
       <div className="flex flex-col lg:flex-row items-center mt-12">
         <h2 className="text-5xl sm:text-6xl lg:text-5xl font-bold text-gray-400 lg:ml -mt-10 relative left-6">
           {selectedMachine.title}
@@ -169,9 +208,10 @@ const FeatureProject: FC = () => {
           <p className="text-sm text-gray-600">{selectedMachine.description}</p>
         </div>
       </div>
+      )}
 
       {/* Horizontal Line */}
-      <div ref={horizontalLineRef} className="relative w-full h-1 bg-[#3a2a79] -mt-32  ">
+      <div ref={horizontalLineRef} className="relative w-full h-1 bg-[#3a2a79] -mt-32 lg:visible invisible ">
         {/* Vertical Lines */}
         <div className="relative w-full flex justify-around   ">
           {machines.map((machine, index) => (
