@@ -4,7 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import { Page4Data } from "../Constants/About/ourcompanycarasouel";
+import { companyContent } from "../Constants/About/ourcompany/comapny-page.json";
 
 
 
@@ -55,12 +55,12 @@ const Page4 = () => {
 
           >
             <div className="flex lg:justify-start  items-center lg:w-max">
-              {Page4Data.imageWithDescription.map((item, idx) => (
+              {companyContent.imageWithDescription.map((item, idx) => (
                 <div
                   key={idx}
                   className="mx-[0.6vw]  lg:w-[25vw] w-[100%] h-[55vh] bg-[#f2f2f2] flex flex-col items-center justify-center rounded-[1rem] overflow-hidden"
                 >
-                  <Image className="w-full h-full" src={item.img} alt="" />
+                  <Image className="w-full h-full" width={200} height={200} src={item.img} alt="" />
                 </div>
               ))}
             </div>

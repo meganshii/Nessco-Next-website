@@ -3,7 +3,7 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { GiDjedPillar } from "react-icons/gi";
-import styles from './featureproject.module.css';
+import styles from "./featureproject.module.css";
 import {
   Carousel,
   CarouselContent,
@@ -15,11 +15,16 @@ import {
 import Image from "next/image";
 
 // Import TypeScript content object
-import { missionvissionContent } from '../Constants/About/mission-page';
+import { missionvissionContent } from "../Constants/About/mission-page.json";
 
 const Missionvission: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
+  const [currentSlide, setCurrentSlide] = useState<number>(0);
+  const [carouselApi, setCarouselApi] = useState<any | null>(null);
+
+
+  const handleButtonClick = (index: number) => {
+    setCurrentSlide(index); // Update the currentSlide state to the selected index
+  };
 
   const images = [
     "/assets/about/wave.svg", // Image for the first slide
@@ -52,7 +57,26 @@ const Missionvission: React.FC = () => {
       <h2 className="lg:text-5xl font-bold text-[#3a2a79] lg:mb-8 lg:top-[10] font-poppins text-lg">
         Mission & Vision
       </h2>
-      <Carousel className="lg:w-full lg:max-w-screen-md" setApi={setCarouselApi}>
+
+      <div className=" lg:invisible visible w-full h-[5vh] bg-gray-200 rounded-[2rem] relative top-3 flex flex-row gap-2 p-1">
+      {['Mission', 'Vision', 'Culture'].map((label, index) => (
+          <button
+            key={label}
+            onClick={() => handleButtonClick(index)} // Update currentSlide based on button click
+            className={`w-[94vw] rounded-full border-2 ${
+              currentSlide === index
+                ? 'bg-[#3a2a79] text-white' // Change background color when selected
+                : 'bg-[rgb(172,162,201)]'
+            } border-[#3a2a79]`}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      <Carousel
+        className="lg:w-full lg:max-w-screen-md"
+        setApi={setCarouselApi}
+      >
         <CarouselContent>
           {missionvissionContent.slides.map((slide, index) => (
             <CarouselItem key={index}>
@@ -69,7 +93,7 @@ const Missionvission: React.FC = () => {
                             src={slide.imageSrc}
                             alt={`${slide.title} Icon`}
                             className="w-48 h-48 object-cover lg:mb-2 "
-                            style={{ height: '15rem', width: '15rem' }}
+                            style={{ height: "15rem", width: "15rem" }}
                           />
                         </div>
                         <p className="lg:text-sm text-xs font-semi-medium text-center lg:w-[26rem] w-full font-poppins lg:mb-3 lg:right-10 relative ">
@@ -98,9 +122,11 @@ const Missionvission: React.FC = () => {
                                 width={100}
                                 height={100}
                                 className="w-6 h-7 object-cover -mt-6"
-                                style={{ height: '5rem', width: '5rem' }}
+                                style={{ height: "5rem", width: "5rem" }}
                               />
-                              <span className="w-[14rem] -ml-7 items-center">{value.text}</span>
+                              <span className="w-[14rem] -ml-7 items-center">
+                                {value.text}
+                              </span>
                             </div>
                           ))}
                         </div>

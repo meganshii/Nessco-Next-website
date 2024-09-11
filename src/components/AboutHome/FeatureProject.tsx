@@ -180,7 +180,7 @@ const FeatureProject: FC = () => {
               />
               </div>
               <div className='h-3/5 relative -top-7'>
-              <h2 className="text-xl font-bold relative w-[10rem] text-[#cf1b2b] mx-3">{machine.title}</h2>
+              <h2 className="text-xl font-bold relative w-[10rem] text-[#dc0e2a] mx-3">{machine.title}</h2>
               <p className="text-xs text-black mt-2  w-[14rem] text-justify mx-3">
                 {machine.description}
               </p>

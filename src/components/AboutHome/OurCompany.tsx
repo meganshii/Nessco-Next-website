@@ -3,7 +3,7 @@
 import { FC, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Page4 from './carasoul';
-import { companyContent } from '../Constants/About/ourcompany/comapny-page'; // Adjust path as needed
+import { companyContent } from '../Constants/About/ourcompany/comapny-page.json'; // Adjust path as needed
 import MobileCarousel from './Mobilecarasouel';
 
 const OurCompany: FC = () => {

@@ -186,7 +186,7 @@ const NewSustainability: React.FC = () => {
       <h2 className="lg:text-5xl text-3xl font-bold text-[#3a2a79] mb-8 top-[10] font-poppins ">
         Sustainability
       </h2>
-<div className="flex-none flex flex-col">
+<div className="flex-none flex flex-col ">
       <Carousel className="lg:w-full lg:max-w-screen-sm relative lg:top-0 top-[20rem]">
         <CarouselContent>
           {slides.map((slide, index) => (
@@ -221,12 +221,12 @@ const NewSustainability: React.FC = () => {
         {/* Arrow buttons with onClick handlers */}
         <IoIosArrowBack
         size={30}
-          className="absolute lg:left-0 -left-7 top-1/2 transform -translate-y-1/2 text-2xl z-10"
+          className="absolute lg:left-0 right-12 lg:top-1/2 top-[65%] transform -translate-y-1/2 text-2xl z-10 bg-gray-200 rounded-full lg:bg-white"
           onClick={handlePrevious}
         />
         <IoIosArrowForward
         size={30}
-          className="absolute lg:right-0 -right-7 top-1/2 transform -translate-y-1/2 text-2xl z-10"
+          className="absolute lg:right-0 right-0 bg-gray-200 rounded-full lg:bg-white lg:top-1/2 top-[65%] transform -translate-y-1/2 text-2xl z-10"
           onClick={handleNext}
         />
       </Carousel>

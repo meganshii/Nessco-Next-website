@@ -2,7 +2,7 @@
 import React, { useState, useCallback, memo, useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Page1Data } from "@/components/Constants/About/homenew-page";
+import { Page1Data } from "@/components/Constants/About/homenew-page.json";
 import { gsap } from "gsap";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -201,6 +201,8 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.leftBorderImg}
             alt="Content"
+            height={100}
+            width={100}
             className="w-[10vw] absolute -left-[1vw] -top-[3vw] hidden lg:block"
           />
           <p className="lg:static absolute bottom-[6vh] lg:w-[95%] lg:mx-[1rem] mx-[1rem] lg:text-[0.9rem] text-[0.7rem] font-poppins text-center">
@@ -213,6 +215,8 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.mainImg}
             alt="Content"
+            height={100}
+            width={100}
             className="lg:w-[16vw] max-w-[40vw] "
           />
         </div>
@@ -225,6 +229,8 @@ const Home: React.FC = () => {
               <Image
                 src={item.img}
                 alt="Content"
+                height={100}
+                width={100}
                 className="w-[6vw] hidden lg:block"
               />
               <p className="font-medium text-[1.1rem] hidden lg:block">
@@ -235,6 +241,8 @@ const Home: React.FC = () => {
           <Image
             src={Page1Data.rightBorderImg}
             alt="Content"
+            height={100}
+            width={100}
             className="w-[10vw] absolute top-[1vh] -right-[1.5vw] hidden lg:block"
           />
         </div>
