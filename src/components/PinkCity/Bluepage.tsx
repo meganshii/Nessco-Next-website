@@ -4,7 +4,7 @@
 import { useRef } from 'react';
 import Image from 'next/image';
 import styles from './secondpage.module.css';
-import { bluePageContent } from'../Constants/pinkcity/blue-page';
+import { bluePageContent } from'../Constants/pinkcity/PinkcityPage.json';
 
 const Bluepage = () => {
   const bgSvgRef = useRef<HTMLDivElement | null>(null);

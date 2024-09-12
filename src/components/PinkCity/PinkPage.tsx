@@ -8,7 +8,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import styles from './secondpage.module.css';
 import DashedLineWithImage from './Elephant';
 import Bird from './Bird';
-import { pinkPageContent } from '../Constants/pinkcity/Pink-page';
+import { pinkPageContent } from '../Constants/pinkcity/PinkcityPage.json';
 
 const PinkPage = () => {
   const mandalaRef = useRef<HTMLDivElement | null>(null);
@@ -52,7 +52,7 @@ const PinkPage = () => {
             />
           </div>
           <div className="relative z-10 text-justify lg:top-3 left-[3vw] lg:left-0">
-            <p className="text-gray-700 lg:text-md font-montserrat">
+            <p className="text-gray-700 lg:text-md font-poppins">
               {pinkPageContent.description.split(' ').map((word, index) => (
                 word === 'ivory' || word === 'machines' ? (
                   <span key={index} className="text-[#bd6165]">{word} </span>

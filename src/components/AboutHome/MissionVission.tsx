@@ -15,7 +15,7 @@ import {
 import Image from "next/image";
 
 // Import TypeScript content object
-import { missionvissionContent } from "../Constants/About/mission-page.json";
+import { missionvissionContent } from "../Constants/About/AboutUsPage.json";
 
 const Missionvission: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState<number>(0);
@@ -52,13 +52,28 @@ const Missionvission: React.FC = () => {
     }
   }, [currentSlide, carouselApi]);
 
+  const renderDots = () => (
+    <div className="flex justify-center mt-5 lg:hidden">
+      {missionvissionContent.slides.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrentSlide(index)}
+          className={`w-2 h-2 rounded-full mx-2 ${
+            currentSlide === index ? "bg-[#3a2a79]" : "bg-gray-300"
+          }`}
+        ></button>
+      ))}
+    </div>
+  );
+
+
   return (
     <div className="relative lg:w-full  w-screen p-8 bg-white lg:h-[90vh]  overflow-hidden">
       <h2 className="lg:text-5xl font-bold text-[#3a2a79] lg:mb-8 lg:top-[10] font-poppins text-lg">
-        Mission & Vision
+       {missionvissionContent.title}
       </h2>
 
-      <div className=" lg:invisible visible w-full h-[5vh] bg-gray-200 rounded-[2rem] relative top-3 flex flex-row gap-2 p-1">
+      <div className=" lg:invisible visible w-full h-[5vh] font-poppins bg-gray-200 rounded-[2rem] relative top-3 flex flex-row gap-2 p-1">
       {['Mission', 'Vision', 'Culture'].map((label, index) => (
           <button
             key={label}
@@ -141,6 +156,10 @@ const Missionvission: React.FC = () => {
         <CarouselPrevious onClick={handlePrevious} />
         <CarouselNext onClick={handleNext} />
       </Carousel>
+
+       {/* Dots for mobile view */}
+       {renderDots()}
+
       <div className="absolute -right-0 top-24 overflow-hidden lg:visible invisible">
         <img
           src={images[currentSlide]}

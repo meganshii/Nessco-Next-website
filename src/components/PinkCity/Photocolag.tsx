@@ -1,7 +1,7 @@
 // components/Gallery.tsx
 
 import Image from 'next/image';
-import { galleryContent } from '../Constants/pinkcity/photocolag-page';
+import { galleryContent } from '../Constants/pinkcity/PinkcityPage.json';
 
 const Gallery = () => {
   return (

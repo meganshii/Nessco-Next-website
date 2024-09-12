@@ -7,7 +7,7 @@ import { SlArrowRight } from 'react-icons/sl';
 import { gsap } from 'gsap/gsap-core';
 import styles from '../About/about.module.css';
 import bg from '../../../public/assets/about/sustainable.jpeg';
-import { sustainableContent } from '../Constants/About/Sustainable-page'; // Import the dynamic content
+import { sustainableContent } from '../Constants/ourCompany/OurcompanyPage.json'; // Import the dynamic content
 import style  from './Sustainable.module.css'
 
 const SustainableD = () => {
@@ -35,10 +35,10 @@ const SustainableD = () => {
        
 
         <div className="relative  flex flex-col items-center justify-center text-center text-white min-h-screen lg:top-0 top-5">
-          <h1 className="text-5xl font-montserrat font-bold ">
+          <h1 className="text-5xl font-poppins font-bold ">
             {heading} <span className="text-green-500">{highlight}</span>
           </h1>
-          <p className="mt-10 text-sm font-montserrat px-4 md:px-32 text-center">
+          <p className="mt-10 text-sm font-poppins px-4 md:px-32 text-center">
             {description}
           </p>
           <div className={`${styles.container}`}>

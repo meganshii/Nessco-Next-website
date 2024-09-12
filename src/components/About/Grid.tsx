@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { images } from '../Constants/About/Gallery-page'; // Update the path as needed
+import { images } from '../Constants/ourCompany/OurcompanyPage.json'; // Update the path as needed
 import Style from './about.module.css';
 
 const Grid = () => {

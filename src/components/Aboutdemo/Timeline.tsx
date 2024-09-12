@@ -8,7 +8,7 @@ export function TimelineDemo() {
       title: "1998",
       content: (
         <div className="relative lg:bottom-[55vh] bottom-[22vh]">
-          <p className="text-white dark:text-neutral-200 text-xs md:text-lg font-poppins mb-8 lg:w-[31vw] lg:left-[28vw] lg:top-[5vh] top-[43vh] relative  lg:px-8 ">
+          <p className="text-white dark:text-neutral-200 text-xs md:text-lg font-poppins mb-8 lg:w-[31vw] lg:left-[28vw] lg:top-[57vh] top-[43vh] relative  lg:px-8 ">
           Nessco India, founded in 1980, has evolved into a prominent leader in the manufacturing industry. Starting as a small enterprise, the company focused on producing high-quality packaging machinery and equipment. Over the decades, Nessco India has expanded its operations, embracing technological advancements and diversifying its product portfolio to meet the changing needs of the market.
           </p>
           <div className="grid grid-cols-2 gap-4  ">

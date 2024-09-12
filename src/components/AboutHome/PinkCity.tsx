@@ -1,7 +1,7 @@
 // components/Gallery.tsx
 "use client";
 import Image from 'next/image';
-import { galleryfour } from '../Constants/About/pinkcity-homepage';
+import { galleryfour } from '../Constants/About/AboutUsPage.json';
 import { useEffect, useState } from 'react';
 const PinkCity = () => {
 const [isMobile, setIsMobile] = useState(false);
@@ -19,7 +19,7 @@ useEffect(() => {
 
   return (
     <div className="relative mx-auto lg:h-[90vh] h-full bg-white w-screen">
-      <h1 className="lg:text-5xl text-3xl font-bold text-left relative top-[5vh] font-poppins text-[#312465] lg:ml-10 ml-4">The Pink City</h1>
+      <h1 className="lg:text-5xl text-3xl font-bold text-left relative top-[5vh] font-poppins text-[#312465] lg:ml-10 ml-4">{galleryfour.heading}</h1>
       
       <div className="lg:grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-4 gap-6 mb-5 lg:p-6 mr-2 mt-[5vh] lg:w-full lg:h-[66vh] p-1">
         {galleryfour.galleryImages.map((item, index) => (
@@ -78,7 +78,7 @@ useEffect(() => {
                     height={50} 
                     className=" relative -mt-7 ml-[3rem]"
                   />
-                  <p className="text-black  text-xs font-bold font-poppins text-center -mt-8">{item.paragraph}</p>
+                  <p className="text-black  text-xs font-bold font-poppins text-center font-poppins -mt-8">{item.paragraph}</p>
                   <Image 
                     src="/assets/about/sustain/bottomlayer.svg" 
                     alt="Overlay Icon" 

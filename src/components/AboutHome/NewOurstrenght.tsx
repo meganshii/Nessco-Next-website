@@ -6,6 +6,7 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import { data } from "../Constants/Navbar/about-data";
 import { IoAddCircle } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
+import {cards,Heading} from "../Constants/About/AboutUsPage.json"
 
 type Card = {
   video: string;
@@ -68,7 +69,7 @@ export function ExpandableCardDemo() {
   return (
     <div className="lg:h-full h-screen w-full bg-white overflow-hidden">
       <h2 className="lg:text-5xl text-3xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative lg:left-9 left-4">
-        Our Strenght
+       {Heading.title}
       </h2>
 
       <AnimatePresence>
@@ -121,7 +122,7 @@ export function ExpandableCardDemo() {
                 />
 
                 {/* Title */}
-                <h1 className="absolute bottom-5 left-0 right-0 text-center font-bold text-lg text-white z-10">
+                <h1 className="absolute font-poppins bottom-5 left-0 right-0 text-center font-bold text-lg text-white z-10">
                   {active.title}
                 </h1>
 
@@ -150,9 +151,9 @@ export function ExpandableCardDemo() {
                     exit={{ opacity: 0 }}
                     className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400"
                   >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
+                    {typeof active.description === "function"
+                      ? active.description
+                      : active.description}
                   </motion.div>
                 </div>
               </div>
@@ -170,23 +171,14 @@ export function ExpandableCardDemo() {
           >
             <div className="md:flex gap-4 flex-col lg:flex-row lg:p-6 grid grid-cols-1 sm:grid-cols-2 ">
               <div className=" col-span-1">
-                {/* <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-black text-center md:text-left lg:w-[70vw] lg:text-lg text-xs w-[45vw] lg:px-0 px-2"
-                >
-                  {" "}
-                  <span className="lg:text-md font-bold text-[#3a2a79] font-poppins">
-                    {card.title}
-                  </span>
-                  {card.description}
-                </motion.p> */}
+          
 
 <motion.p
   layoutId={`description-${card.description}-${id}`}
-  className="text-black text-center md:text-left lg:w-[70vw] lg:text-lg text-xs w-[45vw] lg:px-0 px-2"
+  className="text-black font-poppins text-center md:text-left lg:w-[70vw] lg:text-lg text-xs w-[45vw] lg:px-0 px-2"
 >
   {/* Title */}
-  <span className="text-center lg:text-left lg:text-md text-lg lg:-mt-0 relative lg:-top-0 -top-8 font-bold lg:text-[#3a2a79] text-black  block">
+  <span className="text-center lg:text-left lg:text-md text-lg lg:-mt-0 relative lg:-top-0 -top-8 font-bold lg:text-[#3a2a79] text-black font-poppins block">
     {card.title}
   </span>
 
@@ -199,7 +191,7 @@ export function ExpandableCardDemo() {
         </span>
 
     {/* Full description for larger screens */}
-    <span className="hidden lg:block">{card.description}</span>
+    <span className="hidden lg:block font-poppins">{card.description}</span>
   </span>
   <IoAddCircle className="relative left-[31vw] block lg:hidden text-[#3a2a79]" size={30} />
 </motion.p>
@@ -219,15 +211,11 @@ export function ExpandableCardDemo() {
                   alt="svg"
                   width={100}
                   height={100}
-                  className="object-cover w-full h-full group-hover:filter-white transition-transform duration-300"
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:text-wh"
                 />
               </div>
 
-              <style jsx>{`
-                .filter-white {
-                  filter: invert(1) brightness(0) contrast(100%);
-                }
-              `}</style>
+            
             </div>
           </motion.div>
         ))}
@@ -237,77 +225,3 @@ export function ExpandableCardDemo() {
 }
 
 
-
-const cards = [
-  {
-    description:
-      "We leverage cutting-edge technology to design and manufacture advanced paper cup machines, ensuring high efficiency and precision in production.",
-    title: "Innovative Technology: ",
-    src: "/assets/about/ourcompany/16.svg",
-    video: "/assets/lowgif.gif",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          We leverage cutting-edge technology to design and manufacture advanced
-          paper cup machines, ensuring high efficiency and precision in
-          production.
-        </p>
-      );
-    },
-  },
-  {
-    description:
-      "Our stringent quality control processes guarantee that every machine we produce meets the highest industry standards, delivering reliable and consistent performance.",
-    title: "Quality Assurance: ",
-    src: "/assets/about/ourcompany/17.svg",
-    video: "/assets/giftwo.gif",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Babu Maan, a legendary Punjabi singer, is renowned for his soulful
-          voice and profound lyrics that resonate deeply with his audience.
-        </p>
-      );
-    },
-  },
-
-  {
-    description:
-      "We prioritize our customers' needs by offering personalized solutions and exceptional after-sales support, fostering long-term partnerships.",
-    title: "Customer-Centric Approach: ",
-    src: "/assets/about/ourcompany/18.svg",
-    video: "/assets/gifthree.gif",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Metallica, an iconic American heavy metal band, is renowned for their
-          powerful sound and intense performances that resonate deeply with
-          their audience.
-        </p>
-      );
-    },
-  },
-  {
-    description:
-      "Dedicated to environmental responsibility, we focus on producing eco-friendly machines that help businesses reduce their carbon footprint and promote sustainable practices.",
-    title: "Sustainability Commitment: ",
-    src: "/assets/about/ourcompany/19.svg",
-    video: "/assets/giffour.gif",
-    ctaText: "Play",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => {
-      return (
-        <p>
-          Led Zeppelin, a legendary British rock band, is renowned for their
-          innovative sound and profound impact on the music industry.
-        </p>
-      );
-    },
-  },
-];

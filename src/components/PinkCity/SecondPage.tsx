@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import styles from "./secondpage.module.css";
 import DashedLineWithImage from "./Elephant";
-import { secondPageContent } from "../Constants/pinkcity/second-page";
+import { secondPageContent } from "../Constants/pinkcity/PinkcityPage.json";
 
 const SecondPage = () => {
   const mandalaRef = useRef<HTMLDivElement | null>(null);
@@ -79,7 +79,7 @@ const SecondPage = () => {
           </div>
 
           <div className="relative z-10 lg:top-8 w-full text-justify lg:w-[60vw] lg:p-0 top-36 ">
-            <p className="text-gray-700 lg:text-lg text-sm lg:p-20 text-center  font-montserrat  lg:ml-0">
+            <p className="text-gray-700 lg:text-lg text-sm lg:p-20 text-center  font-poppins lg:ml-0">
               {secondPageContent.description}
             </p>
           </div>

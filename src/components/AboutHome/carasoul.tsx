@@ -4,7 +4,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { StaticImageData } from "next/image";
-import { companyContent } from "../Constants/About/ourcompany/comapny-page.json";
+import { companyContent } from "../Constants/About/AboutUsPage.json";
 
 
 

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { GrAddCircle } from 'react-icons/gr';
 import { ImCross } from 'react-icons/im';
 import styles from './about.module.css';
-import { founders } from '../Constants/About/OurFounders-page'; // Import the dynamic content
+import { founders,ourfounderheading } from '../Constants/ourCompany/OurcompanyPage.json'; // Import the dynamic content
 import { FaQuoteLeft } from 'react-icons/fa';
 
 interface FounderProps {
@@ -66,7 +66,7 @@ const FounderCard: React.FC<FounderProps & { onOpenModal: () => void }> = ({ nam
             className="inline-block mb-3"
           />
         </a>
-        <p className="text-black font-montserrat leading-5">{description}</p>
+        <p className="text-black font-poppins leading-5">{description}</p>
       </div>
     </div>
   </div>
@@ -77,7 +77,7 @@ const Card: React.FC<CardProps> = ({ handleCloseModal, founderData }) => {
     <div className="p-1 top-8 bg-white h-[88%] w-[95%] rounded-xl shadow-md relative bottom-5 text-black ">
       
       {/* Display founder data */}
-      <div className="p-4">
+      <div className="p-4 font-poppins">
         <h3 className='text-xl font-bold'>{founderData.name}</h3>
         <p className='text-lg'>{founderData.title}</p>
         <p>{founderData.description}</p>
@@ -103,7 +103,7 @@ const Founders = () => {
   return (
     <div className="bg-black text-white py-16 min-h-screen">
       <h2 className="text-center text-5xl font-montserrat mb-8 mt-28">
-        Our Founders
+        {ourfounderheading.title}
       </h2>
       <div className="lg:flex justify-center lg:space-x-8 lg:w-5/6 lg:ml-28  w-[90vw] mx-5 lg:mx-0">
         {founders.map((founder, index) => (
