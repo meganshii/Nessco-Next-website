@@ -49,8 +49,8 @@ const OurCompany: FC = () => {
       {/* Gradient overlay */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[#171033] to-[#300675] opacity-60 z-[-1]"></div> */}
 
-      <h1 className="lg:text-5xl text-3xl font-bold font-poppins z-10  absolute lg:left-9 left-5 text-[#3a2a79] top-[5vh]">{companyContent.title}</h1>
-
+      <h1 className="lg:text-5xl text-2xl font-bold font-poppins z-10  absolute lg:left-9 left-5 text-[#3a2a79] top-[5vh]">{companyContent.title}</h1>
+      <div className=" lg:invisible visible border mt-2 absolute top-0 z-10"></div>
       <div className="lg:flex lg:flex-col items-center w-full absolute lg:top-[15vh] top-20 lg:p-0 p-5 ">
 
         {/* <div className="bg-gray-200 bg-opacity-45 rounded-2xl p-3 shadow-lg  w-[50%] absolute -left-5 ">

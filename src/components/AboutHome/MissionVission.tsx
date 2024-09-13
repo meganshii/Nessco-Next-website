@@ -24,6 +24,7 @@ const Missionvission: React.FC = () => {
 
   const handleButtonClick = (index: number) => {
     setCurrentSlide(index); // Update the currentSlide state to the selected index
+    
   };
 
   const images = [
@@ -69,11 +70,12 @@ const Missionvission: React.FC = () => {
 
   return (
     <div className="relative lg:w-full  w-screen p-8 bg-white lg:h-[90vh]  overflow-hidden">
-      <h2 className="lg:text-5xl font-bold text-[#3a2a79] lg:mb-8 lg:top-[10] font-poppins text-lg">
+      <h2 className="lg:text-5xl font-bold text-[#3a2a79] lg:mb-8 lg:top-[10] font-poppins text-2xl">
        {missionvissionContent.title}
       </h2>
+      <div className=" lg:invisible visible border mt-2"></div>
 
-      <div className=" lg:invisible visible w-full h-[5vh] font-poppins bg-gray-200 rounded-[2rem] relative top-3 flex flex-row gap-2 p-1">
+      <div className=" lg:invisible visible w-full h-[5vh] font-bold font-poppins bg-gray-200 rounded-[2rem] relative top-3 flex flex-row gap-2 p-1">
       {['Mission', 'Vision', 'Culture'].map((label, index) => (
           <button
             key={label}
@@ -81,7 +83,7 @@ const Missionvission: React.FC = () => {
             className={`w-[94vw] rounded-full border-2 ${
               currentSlide === index
                 ? 'bg-[#3a2a79] text-white' // Change background color when selected
-                : 'bg-[rgb(172,162,201)]'
+                : 'bg-[rgb(172,162,201)] text-white '
             } border-[#3a2a79]`}
           >
             {label}

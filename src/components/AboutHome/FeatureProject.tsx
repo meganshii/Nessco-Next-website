@@ -4,6 +4,7 @@ import React, { FC, useState, useEffect, useRef } from 'react';
 import { machines,Featureheading } from '../Constants/About/AboutUsPage.json'; // Adjust the import path as needed
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { GoArrowRight } from 'react-icons/go';
 
  interface Machine {
   id: number;
@@ -100,7 +101,7 @@ const FeatureProject: FC = () => {
 
   return (
     <div className="relative flex flex-col w-full lg:h-[130vh] bg-white h-full">
-      <h1 className="lg:text-5xl text-3xl font-bold text-[#33246e] font-poppins mt-5 lg:ml-[2rem] ml-4">{Featureheading.title}</h1>
+      <h1 className="lg:text-5xl text-2xl font-bold text-[#33246e] font-poppins mt-5 lg:ml-[2rem] ml-4">{Featureheading.title}</h1>
       {isMobile ? (
         // Mobile view layout
         <div className="flex flex-col items-center w-full px-3 relative top-10">
@@ -108,7 +109,7 @@ const FeatureProject: FC = () => {
             <div key={machine.id} className="flex flex-row items-center mb-8 border h-[25vh] bg-[#ededed] rounded-2xl ">
               <div className='w-2/5  '>
               <Image
-                src={machine.mainImage}
+                src={machine.mobileimg}
                 alt={machine.title}
                 width={300}
                 height={300}
@@ -116,15 +117,22 @@ const FeatureProject: FC = () => {
               />
               </div>
               <div className='h-3/5 relative -top-7'>
-              <h2 className="text-xl font-bold relative w-[10rem] text-[#dc0e2a] mx-3 font-poppins">{machine.title}</h2>
+              <h2 className="text-xl font-bold relative w-[10rem] text-[#cf1b2b] mx-3 font-poppins">{machine.title}</h2>
               <p className="text-xs text-black mt-2  w-[14rem] text-justify mx-3 font-poppins">
                 {machine.description}
               </p>
+              <div className="flex flex-row relative -bottom-1 left-36">
+                    <p className="text-black font-bold font-poppins text-xs  ">
+                      Read More
+                    </p>
+                    <GoArrowRight size={30} className="pb-3 font-bold" />
+                    </div>
               </div>
             </div>
           ))}
         </div>
       ) : (
+        // desktop view
       <div className="flex flex-col lg:flex-row items-center mt-12">
         <h2 className="text-5xl sm:text-6xl lg:text-5xl font-bold text-gray-400 lg:ml -mt-10 relative left-6">
           {selectedMachine.title}

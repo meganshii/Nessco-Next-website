@@ -68,7 +68,7 @@ export function ExpandableCardDemo() {
 
   return (
     <div className="lg:h-full h-screen w-full bg-white overflow-hidden">
-      <h2 className="lg:text-5xl text-3xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative lg:left-9 left-4">
+      <h2 className="lg:text-5xl text-2xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative lg:left-9 left-4">
        {Heading.title}
       </h2>
 
@@ -84,7 +84,7 @@ export function ExpandableCardDemo() {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100]">
+          <div className="fixed inset-0  grid place-items-center z-[100] backdrop-blur-md">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -100,10 +100,10 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex relative top-[7vh] left-[40vw] lg:hidden items-center justify-center  rounded-full h-10 w-10"
+              className="flex relative top-14 bg-white  left-[40vw] lg:hidden items-center justify-center  rounded-full h-10 w-10"
               onClick={handleClose}
             >
-          <RxCross2 className="text-black" size={30}  />
+          <RxCross2 className="text-[#3a2a79]" size={30}  />
             </motion.button>
 
             <motion.div
@@ -118,7 +118,7 @@ export function ExpandableCardDemo() {
                   alt="gif"
                   width={100}
                   height={100}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover bg-[#3a2a79]"
                 />
 
                 {/* Title */}
