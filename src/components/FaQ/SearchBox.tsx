@@ -85,12 +85,6 @@ const SearchBox: React.FC<SearchBoxProps> = ({ onCategorySelect, onSearch }) => 
               />
             </div>
           ))}
-          <button
-            onClick={() => setShowCategories(!showCategories)}
-            className="text-[#dc0e2a] font-poppins mt-1"
-          >
-            {showCategories ? "Less" : "Expand"}
-          </button>
         </div>
       </div>
     </div>

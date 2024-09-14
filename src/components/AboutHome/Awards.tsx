@@ -17,7 +17,7 @@ const Awards: FC = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 lg:flex gap-4 lg:mt-20 p-2 mt-10">
+      <div className="grid grid-cols-3 lg:flex lg:space-x-8 gap-4 lg:mt-20 p-2 mt-10 ">
         {awards.map((award) => (
           <div
             key={award.id}

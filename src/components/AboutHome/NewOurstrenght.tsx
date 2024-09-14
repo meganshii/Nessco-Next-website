@@ -6,10 +6,11 @@ import { useOutsideClick } from "@/hooks/use-outside-click";
 import { data } from "../Constants/Navbar/about-data";
 import { IoAddCircle } from "react-icons/io5";
 import { RxCross2 } from "react-icons/rx";
-import {cards,Heading} from "../Constants/About/AboutUsPage.json"
+import { cards, Heading } from "../Constants/About/AboutUsPage.json";
 
 type Card = {
   video: string;
+  hoverSrc:string;
 };
 
 type ExampleComponentProps = {
@@ -51,7 +52,6 @@ export function ExpandableCardDemo() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
 
-
   useOutsideClick(ref, () => setActive(null));
 
   const handleClose = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -69,7 +69,7 @@ export function ExpandableCardDemo() {
   return (
     <div className="lg:h-full h-screen w-full bg-white overflow-hidden">
       <h2 className="lg:text-5xl text-2xl font-bold text-[#3a2a79] mb-4 top-6 font-poppins relative lg:left-9 left-4">
-       {Heading.title}
+        {Heading.title}
       </h2>
 
       <AnimatePresence>
@@ -103,7 +103,7 @@ export function ExpandableCardDemo() {
               className="flex relative top-14 bg-white  left-[40vw] lg:hidden items-center justify-center  rounded-full h-10 w-10"
               onClick={handleClose}
             >
-          <RxCross2 className="text-[#3a2a79]" size={30}  />
+              <RxCross2 className="text-[#3a2a79]" size={30} />
             </motion.button>
 
             <motion.div
@@ -171,31 +171,33 @@ export function ExpandableCardDemo() {
           >
             <div className="md:flex gap-4 flex-col lg:flex-row lg:p-6 grid grid-cols-1 sm:grid-cols-2 ">
               <div className=" col-span-1">
-          
+                <motion.p
+                  layoutId={`description-${card.description}-${id}`}
+                  className="text-black font-poppins text-center md:text-left lg:w-[70vw] lg:text-lg text-xs w-[45vw] lg:px-0 px-2"
+                >
+                  {/* Title */}
+                  <span className="text-center lg:text-left lg:text-md text-lg lg:-mt-0 relative lg:-top-0 -top-8 font-bold lg:text-[#3a2a79] text-black font-poppins block">
+                    {card.title}
+                  </span>
 
-<motion.p
-  layoutId={`description-${card.description}-${id}`}
-  className="text-black font-poppins text-center md:text-left lg:w-[70vw] lg:text-lg text-xs w-[45vw] lg:px-0 px-2"
->
-  {/* Title */}
-  <span className="text-center lg:text-left lg:text-md text-lg lg:-mt-0 relative lg:-top-0 -top-8 font-bold lg:text-[#3a2a79] text-black font-poppins block">
-    {card.title}
-  </span>
+                  {/* Paragraph */}
+                  <span className="block">
+                    {/* Conditionally render a shorter version on mobile */}
+                    <span className="block lg:hidden relative -top-7">
+                      {/* Use utility function to truncate text */}
+                      {truncateText(card.description, maxWordsForMobile)}
+                    </span>
 
-  {/* Paragraph */}
-  <span className="block">
-    {/* Conditionally render a shorter version on mobile */}
-    <span className="block lg:hidden relative -top-7">
-          {/* Use utility function to truncate text */}
-          {truncateText(card.description, maxWordsForMobile)}
-        </span>
-
-    {/* Full description for larger screens */}
-    <span className="hidden lg:block font-poppins">{card.description}</span>
-  </span>
-  <IoAddCircle className="relative left-[31vw] block lg:hidden text-[#3a2a79]" size={30} />
-</motion.p>
-
+                    {/* Full description for larger screens */}
+                    <span className="hidden lg:block font-poppins">
+                      {card.description}
+                    </span>
+                  </span>
+                  <IoAddCircle
+                    className="relative left-[31vw] block lg:hidden text-[#3a2a79]"
+                    size={30}
+                  />
+                </motion.p>
 
                 <div className=" lg:visible invisible relative -left-5 top-[4.5vh] h-[2px] w-[55vh] bg-[#2d1f66] rounded-sm"></div>
               </div>
@@ -204,18 +206,17 @@ export function ExpandableCardDemo() {
               <div className=" lg:visible invisible relative left-5  w-[2px] bg-[#2d1f66] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div
                 key={index}
-                className="w-full lg:p-5 h-full flex items-center justify-center  lg:group-hover:bg-[#000088] lg:rounded-tr-lg lg:rounded-br-lg transition-colors duration-300 p-7 "
+                className="w-full lg:p-5 h-full flex items-center justify-center  lg:group-hover:bg-[#000088] lg:rounded-tr-lg lg:rounded-br-lg transition-colors duration-300 p-7 group "
               >
                 <Image
                   src={card.src}
                   alt="svg"
                   width={100}
                   height={100}
-                  className="object-cover w-full h-full transition-transform duration-300 group-hover:text-wh"
+                  className="object-cover w-full h-full transition-transform duration-300 group-hover:invert(2) "
                 />
+               
               </div>
-
-            
             </div>
           </motion.div>
         ))}
@@ -223,5 +224,3 @@ export function ExpandableCardDemo() {
     </div>
   );
 }
-
-

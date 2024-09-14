@@ -200,6 +200,7 @@
     }
   }
   @media (max-width: 770px) {
+    
     .footercontainer{
       width: 90%;
     }

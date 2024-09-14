@@ -106,7 +106,7 @@ const FeatureProject: FC = () => {
         // Mobile view layout
         <div className="flex flex-col items-center w-full px-3 relative top-10">
           {machines.map((machine) => (
-            <div key={machine.id} className="flex flex-row items-center mb-8 border h-[25vh] bg-[#ededed] rounded-2xl ">
+            <div key={machine.id} className="flex flex-row items-center mb-8 border h-[26vh] bg-[#ededed] rounded-2xl ">
               <div className='w-2/5  '>
               <Image
                 src={machine.mobileimg}
@@ -121,7 +121,7 @@ const FeatureProject: FC = () => {
               <p className="text-xs text-black mt-2  w-[14rem] text-justify mx-3 font-poppins">
                 {machine.description}
               </p>
-              <div className="flex flex-row relative -bottom-1 left-36">
+              <div className="flex flex-row relative pt-1 left-36">
                     <p className="text-black font-bold font-poppins text-xs  ">
                       Read More
                     </p>

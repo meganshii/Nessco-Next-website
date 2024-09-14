@@ -59,7 +59,7 @@ const NewSustainability: React.FC = () => {
                         </h3>
                         <div className="flex flex-row relative w-full ">
                         <p className="lg:invisible visible relative text-[#138808] left-24"> <IoArrowRedoSharp size={20} /></p>
-                        <h4 className="text-black relative text-sm left-24 pl-1 font-bold">Our Approach</h4>
+                        <h4 className="lg:invisible visible  text-black relative text-sm left-24 pl-1 font-bold">Our Approach</h4>
                         </div>
 
                         <div className="flex items-center justify-center lg:space-x-20  relative lg:left-5 lg:top-10 lg:mt-11 ">

@@ -44,8 +44,9 @@ export default function about ()
         <main className="bg-[#f5f5f5] overflow-hidden">
         {/* <Home /> */}
         <Homenew/>
+        <div className="">
         <NavLinksDemo navItems={navItems}  />
-        
+        </div>
         <div id='mission and vission' className="mt-28" ref={missionRef}>
         <Missionvission/>
         </div>

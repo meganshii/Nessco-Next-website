@@ -36,7 +36,7 @@ const ContentCard: React.FC<ContentCardProps> = ({ categories }) => {
   return (
     <div className="flex flex-col gap-4 px-[1vw] ">
       {categories.map((category, categoryIndex) => (
-        <div key={categoryIndex} className="bg-white rounded-lg shadow-lg p-4 h-[69vh]">
+        <div key={categoryIndex} className="bg-white rounded-lg shadow-lg p-4 h-[70vh]">
           <h1 className="text-2xl text-gray-400">
             Questions Related to{" "}
             <span className="text-[#dc0e2a] font-bold">{category.name}</span>
