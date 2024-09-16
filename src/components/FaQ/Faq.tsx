@@ -35,13 +35,13 @@ const FAQ: React.FC = () => {
   };
 
   return (
-    <div className=" h-[90vh] w-full overflow-hidden">
+    <div className=" h-[100vh] w-full overflow-hidden">
         <h1 className="text-5xl font-poppins text-[#dc0e2a] relative mt-20 left-7 font-extrabold ">FAQ'<span className="text-gray-400">s</span></h1>
-        <div className="flex  top-10 relative ">
+        <div className="flex  top-10 relative -space-x-4 ">
       <div className="sticky top-[24vh] lg:w-1/5  px-4 p-1 lg:overflow-auto h-[73vh] no-scrollbar ">
         <SearchBox onCategorySelect={handleCategorySelect} onSearch={handleSearch} />
       </div>
-      <div className="lg:w-[80%] w-full lg:h-[72vh] overflow-auto relative top-4 no-scrollbar">
+      <div className="lg:w-[80%] w-full lg:h-[72vh] overflow-auto relative top-4 no-scrollbar ">
         <ContentCard categories={filteredQuestions} />
       </div>
       </div>
