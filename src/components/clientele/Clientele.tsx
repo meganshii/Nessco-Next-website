@@ -36,12 +36,12 @@ const clientele: React.FC = () => {
   return (
     <>
       <div className="h-full w-full bg-black">
-        <h1 className="relative font-poppins font-bold text-5xl left-7 top-20 text-white ">
+        <h1 className="relative font-poppins font-bold text-5xl left-7 top-[15vh] text-white ">
           Clientele
         </h1>
         <div className="flex justify-between relative">
           {/* Left Hand */}
-          <div className="relative top-14 left-24 z-10" ref={leftHandRef}>
+          <div className="relative top-14 left-[10vw] z-10" ref={leftHandRef}>
             <Image
               src="/assets/clientele/28.svg"
               alt="lefthand"
@@ -52,7 +52,7 @@ const clientele: React.FC = () => {
           </div>
 
           {/* Right Hand */}
-          <div className="relative right-24 top-5" ref={rightHandRef}>
+          <div className="relative right-[11vw] top-5" ref={rightHandRef}>
             <Image
               src="/assets/clientele/29.svg"
               alt="righthand"
@@ -62,7 +62,7 @@ const clientele: React.FC = () => {
             />
           </div>
         </div>
-        <div className="flex  w-full font-poppins pl-5 text-white relative -top-[7vh] ">
+        <div className="flex  w-full font-poppins pl-5 text-white relative ">
           <div className=" w-2/5 text-5xl font-semibold">
             <p className="w-[16rem]">More than 1000 customers</p>
           </div>
